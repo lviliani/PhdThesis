@@ -11,7 +11,7 @@ Let's start!
 
 2 - The CMS experiment at LHC
 
-3 - Objetcs definition and recontruction
+3 - Objects definition and recontruction in CMS
 
 4 - Higgs boson properties in the H->WW decay channel
 
