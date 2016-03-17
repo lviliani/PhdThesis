@@ -7,7 +7,7 @@ Let's start!
 
 # OUTLINE
 
-1 - Physics at LHC
+1 - Electroweak and QCD physics at LHC
 
 2 - The CMS experiment at LHC
 
