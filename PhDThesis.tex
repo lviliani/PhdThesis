@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt,english,twoside,openright]{book}
+\usepackage{babel,epsfig,amssymb,amsmath,latexsym,rotating,numprint,textcomp} 
+\usepackage[utf8]{inputenc}
+\usepackage{appendix}
+%\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[babel]{csquotes}
+\usepackage[backend=biber, sorting=none]{biblatex}
+\usepackage[labelfont=bf]{caption}
+\usepackage{enumerate}
+\usepackage{lscape}
+%\usepackage{emptypage}
+%\pagestyle{headings}
+%\usepackage{acronym}
+\usepackage{pifont}
+
+\pdfinfo{%
+  /Title    (PhD Thesis)
+  /Author   (Lorenzo Viliani)
+}
+
+
+\bibliography{biblio.bib}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\cleardoublepage
+\pagenumbering{roman}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO]{\thepage}
+\fancyhead[LE]{\thepage}
+\tableofcontents
+\cleardoublepage
+
+\input Chapter1/chapter1.tex
+\input Chapter2/chapter2.tex
+\input Chapter3/chapter3.tex
+\input Chapter4/chapter4.tex
+\input Chapter5/chapter5.tex
+\input Chapter6/chapter6.tex
+
+
+\clearpage\thispagestyle{empty}\cleardoublepage
+\addcontentsline{toc}{section}{\bibname}
+\printbibliography
+\clearpage\thispagestyle{empty}\cleardoublepage
+\pagestyle{empty}
+
+\end{document}
