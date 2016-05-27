@@ -1,21 +1,57 @@
-\documentclass[a4paper,12pt,english,twoside,openright]{book}
-\usepackage{babel,epsfig,amssymb,amsmath,latexsym,rotating,numprint,textcomp} 
-\usepackage[utf8]{inputenc}
-\usepackage{appendix}
-%\usepackage{epstopdf}
-\usepackage{booktabs}
+%\documentclass[a4paper,12pt,english,twoside,openright]{book}
+\documentclass[draft,english,booktabs,hyperref,titling]{hepthesis}
+%%% hepthesis requirements
+\usepackage{setspace,fancyhdr,rotating,comment,tocbibind,caption,changepage,varwidth,csquotes,babel,a4wide,amsmath,hyperref,booktabs,draftcopy,lineno,titling}
+%\usepackage[babel]{csquotes}
+\usepackage{hepnames,hepunits,hepparticles}
+\usepackage{epsfig,amssymb,latexsym,numprint,textcomp}
+%\usepackage[utf8]{inputenc}
+%\usepackage{appendix}
+\usepackage{epstopdf}
 \usepackage{subfigure}
 \usepackage{graphicx}
-\usepackage{fancyhdr}
-\usepackage[babel]{csquotes}
 \usepackage[backend=biber, sorting=none]{biblatex}
 \usepackage[labelfont=bf]{caption}
 \usepackage{enumerate}
 \usepackage{lscape}
-%\usepackage{emptypage}
-%\pagestyle{headings}
-%\usepackage{acronym}
+\usepackage{emptypage}
 \usepackage{pifont}
+
+\newcommand{\hww}{\ensuremath{\mathrm{H}\to\mathrm{WW}}\xspace}
+\newcommand{\hwwllnn}{\ensuremath{\mathrm{H}\to\mathrm{WW}\to\mathrm{2\ell2\nu}}\xspace}
+\newcommand{\fb}{\ensuremath{\mathrm{fb}}}
+\newcommand{\pb}{\ensuremath{\mathrm{pb}}}
+\newcommand{\ifb}{\ensuremath{\mathrm{fb^{-1}}}}
+\newcommand{\ipb}{\ensuremath{\mathrm{pb^{-1}}}}
+\newcommand{\WW}{\ensuremath{\mathrm{WW~}}}
+\newcommand{\W}{\ensuremath{\mathrm{W~}}}
+\newcommand{\F}{\ensuremath{\cmsSymbolFace{F}}}
+\newcommand{\V}{\ensuremath{\cmsSymbolFace{V}}\xspace}
+\newcommand{\VVV}{\cmsSymbolFace{VVV}\xspace}
+\newcommand{\Wjets}{\ensuremath{\PW\text{+jets}}\xspace}
+\newcommand{\X}{\ensuremath{\cmsSymbolFace{X}}\xspace}
+\newcommand{\delphill}{\ensuremath{\Delta\phi_{\ell\ell}}}
+\newcommand{\delphillmet}{\ensuremath{\Delta\phi(\ell\ell,\VEtmiss)}}
+\newcommand{\dyll}{\ensuremath{\cPZ/\gamma^*\to \ell^+\ell^-}\xspace}
+\newcommand{\dymm}{\ensuremath{\cPZ/\gamma^*\to\Pgmp\Pgmm}}
+\newcommand{\dytt}{\ensuremath{\cPZ/\gamma^* \to\tau^+\tau^-}}
+\newcommand{\jp}{\ensuremath{J^{P}}\xspace}
+\newcommand{\mll}{\ensuremath{m_{\ell\ell}}\xspace}
+\newcommand{\mt}{\ensuremath{m_\mathrm{T}}\xspace}
+\newcommand{\psvectorKD}{\ensuremath{\mathcal{D}_{1^-}}\xspace}
+\newcommand{\ptl}{\ensuremath{p_\perp^{\ell}}\xspace}
+\newcommand{\ptll}{\ensuremath{\pt^{\ell\ell}}\xspace}
+\newcommand{\qq}{\ensuremath{\Pq\Pq}\xspace}
+\newcommand{\superKD}{\ensuremath{\mathcal{D}_\text{bkg}} }
+\newcommand{\tw}{\ensuremath{\cPqt\PW}\xspace}
+\newcommand{\vectorKD}{\ensuremath{\mathcal{D}_{1^+}} }
+\newcommand{\wgamma}{\ensuremath{\PW\gamma}\xspace}
+\newcommand{\mjj}{\ensuremath{m_{jj}}\xspace}
+\newcommand{\pt}{\ensuremath{p_\mathrm{T}}\xspace}
+\newcommand{\pth}{\ensuremath{p_\mathrm{T}^\mathrm{H}}\xspace}
+
+
+
 
 \pdfinfo{%
   /Title    (PhD Thesis)
@@ -27,10 +63,20 @@
 
 \begin{document}
 
-\pagestyle{empty}
+\begin{frontmatter}
 
+\title{Measurement of the Higgs boson transverse momentum spectrum in the WW decay channel at 8\TeV and first results at 13\TeV}
+\author{Lorenzo Viliani}
+
+\titlepage[of University of Florence]{PhD Thesis}
+
+\begin{abstract}
+Bla bla bla
+\end{abstract}
+
+%\pagestyle{empty}
 \cleardoublepage
-\pagenumbering{roman}
+%\pagenumbering{roman}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
@@ -39,18 +85,28 @@
 \tableofcontents
 \cleardoublepage
 
+\end{frontmatter}
+
+\begin{mainmatter}
+
 \input Chapter1/chapter1.tex
 \input Chapter2/chapter2.tex
 \input Chapter3/chapter3.tex
 \input Chapter4/chapter4.tex
 \input Chapter5/chapter5.tex
 \input Chapter6/chapter6.tex
+\input Chapter7/chapter7.tex
 
+\end{mainmatter}
+
+\begin{backmatter}
 
 \clearpage\thispagestyle{empty}\cleardoublepage
 \addcontentsline{toc}{section}{\bibname}
 \printbibliography
 \clearpage\thispagestyle{empty}\cleardoublepage
-\pagestyle{empty}
+%\pagestyle{empty}
+
+\end{backmatter}
 
 \end{document}
