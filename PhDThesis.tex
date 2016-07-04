@@ -1,5 +1,5 @@
 %\documentclass[a4paper,12pt,english,twoside,openright]{book}
-\documentclass[draft,english,booktabs,hyperref,titling]{hepthesis}
+\documentclass[english,booktabs,hyperref,titling]{hepthesis}
 %%% hepthesis requirements
 \usepackage{setspace,fancyhdr,rotating,comment,tocbibind,caption,changepage,varwidth,csquotes,babel,a4wide,amsmath,hyperref,booktabs,draftcopy,lineno,titling}
 %\usepackage[babel]{csquotes}
@@ -7,15 +7,18 @@
 \usepackage{epsfig,amssymb,latexsym,numprint,textcomp}
 %\usepackage[utf8]{inputenc}
 %\usepackage{appendix}
-\usepackage{epstopdf}
+%\usepackage{epstopdf}
 \usepackage{subfigure}
 \usepackage{graphicx}
+\usepackage{color}
 \usepackage[backend=biber, sorting=none]{biblatex}
 \usepackage[labelfont=bf]{caption}
 \usepackage{enumerate}
 \usepackage{lscape}
 \usepackage{emptypage}
 \usepackage{pifont}
+
+\graphicspath{/home/lviliani/Documenti/PhdThesis/images}
 
 \newcommand{\hww}{\ensuremath{\mathrm{H}\to\mathrm{WW}}\xspace}
 \newcommand{\hwwllnn}{\ensuremath{\mathrm{H}\to\mathrm{WW}\to\mathrm{2\ell2\nu}}\xspace}
@@ -32,15 +35,16 @@
 \newcommand{\X}{\ensuremath{\cmsSymbolFace{X}}\xspace}
 \newcommand{\delphill}{\ensuremath{\Delta\phi_{\ell\ell}}}
 \newcommand{\delphillmet}{\ensuremath{\Delta\phi(\ell\ell,\VEtmiss)}}
-\newcommand{\dyll}{\ensuremath{\cPZ/\gamma^*\to \ell^+\ell^-}\xspace}
-\newcommand{\dymm}{\ensuremath{\cPZ/\gamma^*\to\Pgmp\Pgmm}}
-\newcommand{\dytt}{\ensuremath{\cPZ/\gamma^* \to\tau^+\tau^-}}
+\newcommand{\dyll}{\ensuremath{Z/\gamma^*\to \ell^+\ell^-}\xspace}
+\newcommand{\dymm}{\ensuremath{Z/\gamma^*\to\Pgmp\Pgmm}}
+\newcommand{\dytt}{\ensuremath{Z/\gamma^* \to\tau^+\tau^-}}
 \newcommand{\jp}{\ensuremath{J^{P}}\xspace}
 \newcommand{\mll}{\ensuremath{m_{\ell\ell}}\xspace}
 \newcommand{\mt}{\ensuremath{m_\mathrm{T}}\xspace}
 \newcommand{\psvectorKD}{\ensuremath{\mathcal{D}_{1^-}}\xspace}
 \newcommand{\ptl}{\ensuremath{p_\perp^{\ell}}\xspace}
 \newcommand{\ptll}{\ensuremath{\pt^{\ell\ell}}\xspace}
+\newcommand{\MET}{\ensuremath{\vec{p}_\mathrm{T}^\mathrm{miss}}\xspace}
 \newcommand{\qq}{\ensuremath{\Pq\Pq}\xspace}
 \newcommand{\superKD}{\ensuremath{\mathcal{D}_\text{bkg}} }
 \newcommand{\tw}{\ensuremath{\cPqt\PW}\xspace}
@@ -50,7 +54,12 @@
 \newcommand{\pt}{\ensuremath{p_\mathrm{T}}\xspace}
 \newcommand{\pth}{\ensuremath{p_\mathrm{T}^\mathrm{H}}\xspace}
 \newcommand{\ttbar}{\ensuremath{\mathrm{t}\bar{\mathrm{t}}}\xspace}
-
+\newcommand{\jpb}{{\em JetBProbability }\xspace}
+\newcommand{\tg}{{\em tag}\xspace}
+\newcommand{\probe}{{\em probe}\xspace}
+\newcommand{\tp}{{\em tag-probe}\xspace}
+\newcommand{\tpp}{{\em tag-pass-probe}\xspace}
+\newcommand{\tfp}{{\em tag-fail-probe}\xspace}
 
 
 \pdfinfo{%
@@ -59,7 +68,7 @@
 }
 
 
-\bibliography{PhDThesis.bib}
+\bibliography{PhDThesis}
 
 \begin{document}
 
