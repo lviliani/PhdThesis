@@ -7,65 +7,39 @@ In table \ref{table:yields} are reported the expected number of events for signa
 For what the backgrounds are concerned, the WW has been splitted in bins of \pth and has been left free to float independently in each bin during the fit. For doing this a 100 \% uncertainty has been associated to the expected number of events in each bin, following a prior flat distribution (log uniform distribution). That is why the uncertainty on WW backgrounds and on total background yield are not reported in the table.\\
 The Top background has been divided into two categories of events as explained in \ref{sec:TTBackground}: events with zero jets (Top0jet) and events with more than zero jets (Topge1jet). The yield in the first category has been extracted performing a data driven estimation in a control region. The latter category has been further splitted in the various \pth bins and a data driven estimation has been performed separately in each bin to avoid a shape mismodelling in the \pth distribution for this background.\\
 The final signal to background ratio is around 3~\%, consistent with what illustrated in figure \ref{fig:cutflow}.
-\begin{table}[h!]\begin{center}
-\tiny{
-\begin{tabular}{ c  c  } \hline
- Process  &    Yield  \\ \hline \hline
-       ggHBin0   &      72.97 $~\pm~$       2.74 (         4 \%)  \\
-       ggHBin1   &     175.35 $~\pm~$       6.27 (         4 \%)  \\
-       ggHBin2   &      60.56 $~\pm~$       2.61 (         4 \%)  \\
-       ggHBin3   &      13.92 $~\pm~$       0.81 (         6 \%)  \\
-       ggHBin4   &       4.82 $~\pm~$       0.46 (        10 \%)  \\
-       ggHBin5   &       5.15 $~\pm~$       0.43 (         8 \%)  \\
-       qqHBin0   &       1.02 $~\pm~$       0.05 (         5 \%)  \\
-       qqHBin1   &       6.16 $~\pm~$       0.20 (         3 \%)  \\
-       qqHBin2   &       9.09 $~\pm~$       0.28 (         3 \%)  \\
-       qqHBin3   &       4.99 $~\pm~$       0.17 (         3 \%)  \\
-       qqHBin4   &       2.57 $~\pm~$       0.10 (         4 \%)  \\
-       qqHBin5   &       2.29 $~\pm~$       0.09 (         4 \%)  \\
-        WHBin0   &       1.99 $~\pm~$       0.23 (        12 \%)  \\
-        WHBin1   &       7.12 $~\pm~$       0.46 (         6 \%)  \\
-        WHBin2   &       5.43 $~\pm~$       0.39 (         7 \%)  \\
-        WHBin3   &       1.63 $~\pm~$       0.20 (        12 \%)  \\
-        WHBin4   &       0.80 $~\pm~$       0.14 (        18 \%)  \\
-        WHBin5   &       0.63 $~\pm~$       0.13 (        20 \%)  \\
-        ZHBin0   &       0.86 $~\pm~$       0.15 (        17 \%)  \\
-        ZHBin1   &       2.14 $~\pm~$       0.23 (        11 \%)  \\
-        ZHBin2   &       1.73 $~\pm~$       0.22 (        13 \%)  \\
-        ZHBin3   &       0.75 $~\pm~$       0.14 (        18 \%)  \\
-        ZHBin4   &       0.22 $~\pm~$       0.07 (        32 \%)  \\
-        ZHBin5   &       0.29 $~\pm~$       0.08 (        29 \%)  \\
+
+\begin{table}[htbp]
+\begin{center}
+ {
+\small{
+\setlength{\extrarowheight}{2pt}
+  \caption{Signal prediction, background estimates and observed number of events in data are shown in each \pth{} bin for the signal after applying the analysis selection requirements. The total uncertainty on the number of events is reported. For signal processes, the yield related to the ggH are shown, separated with respect to the contribution of the other production mechanisms (XH=VBF+VH). The WW process includes both quark and gluon induced contribution, while the Top process takes into account both $\mathrm{t\bar t}$ and tW. }\label{table:yields}
+\begin{tabular} {l c c c c c c}
+  \hline \hline
+$\mathbf{p}_{\rm \mathbf{T}}^{\rm \mathbf{H}} \left[\mathrm{\mathbf{GeV}}\right] $	&	\bf{0-15}	&	\bf{15-45}	&	\bf{45-85}	&	\bf{85-125}	&	\bf{125-165}	&	\bf{165-$\boldsymbol{\infty}$} \\ 	
+
 \hline
-        {\bf signal}   &     382.48 $~\pm~$       7.45 (         2 \%)  \\
+
+ggH	&	$73\pm3$	&	$175\pm5$	&                $59\pm3$	&                $15\pm2$	&                $5.1\pm1.5$	&                $4.9\pm1.4$	\\
+XH=VBF+VH	&	$4\pm2$ 	&	$15\pm4$ 	&		 $16\pm4$	&	         $8\pm2$ 	&		 $3.8\pm1.1$ 	&		 $3.0\pm0.8$    \\	
+Out-of-fiducial & $9.2\pm0.5$   &       $19.9\pm0.7$    &      $11.4\pm0.6$    &    $4.4\pm0.3$   &     $1.6\pm0.2$   &   $2.4\pm0.2$ \\
+Data 	&	2182	 	&         5305	 	&	         3042	 	& 	          1263	 	&	         431	 	& 	          343	 	\\
+Total background &  	 $2124\pm128$	 &     $5170\pm321$	 &       $2947\pm293$	 &            $1266\pm175$	 &         $420\pm80$	 &              $336\pm74$	 \\
+
+WW 	& 		$1616\pm107$	 &	 $3172\pm249$	 &	     $865\pm217$	 &	     $421\pm120$	 &	     $125\pm60$	 &		     $161\pm54$	 \\
+Top 	&	$184\pm38$	&	                $1199\pm165$	&	                $1741\pm192$	&	                $735\pm125$	&	                $243\pm51$	& 	        $139\pm49$	\\
+W+jets 	& $134\pm5$ 	&	         $455\pm10$ 	&	         $174\pm6$ 	&	         $48\pm4$ 	&	         $14\pm3$ 	&	         $9\pm3$ 	\\
+WZ+ZZ+VVV & $34\pm4$ 	 &	$107\pm10$ 	&                $71\pm7$ 	&	         $29\pm5$ 	&                $14\pm3$ 	&     $13\pm4$ 	\\
+\dytt 	&	$23\pm3$ 	&         $67\pm5$ 	&         $47\pm4$ 	&         $22\pm3$ 	&         $12\pm2$ 	&         $10\pm2$ 	\\
+W$\gamma^{(*)}$	& $132\pm49$     &             $170\pm58$    &              $48\pm30$ &                  $12\pm9$ &                  $3\pm3$ &                 $5\pm10$ \\
 \hline
-        WWBin0   &    1275.36       \\          
-        WWBin1   &    2392.74       \\
-        WWBin2   &     752.48       \\
-        WWBin3   &     236.66       \\
-        WWBin4   &     111.08       \\
-        WWBin5   &     137.16       \\
-          ggWW   &     253.63 $~\pm~$      77.68 (        31 \%)  \\
-       Top0jet   &     567.26 $~\pm~$      55.37 (        10 \%)  \\
- Topge1jetBin0   &     133.66 $~\pm~$      31.32 (        23 \%)  \\
- Topge1jetBin1   &     930.76 $~\pm~$     208.27 (        22 \%)  \\
- Topge1jetBin2   &    1642.06 $~\pm~$     373.38 (        23 \%)  \\
- Topge1jetBin3   &     818.12 $~\pm~$     202.50 (        25 \%)  \\
- Topge1jetBin4   &     281.85 $~\pm~$      84.30 (        30 \%)  \\
- Topge1jetBin5   &     182.87 $~\pm~$      98.81 (        54 \%)  \\
-          W+jets   &    1169.13 $~\pm~$     175.47 (        15 \%)  \\
-          DY$\tau\tau$   &     167.43 $~\pm~$      50.28 (        30 \%)  \\
-            VV   &     236.68 $~\pm~$      13.41 (         6 \%)  \\
-           VgS   &     188.69 $~\pm~$      56.92 (        30 \%)  \\
-            Vg   &     157.51 $~\pm~$      47.44 (        30 \%)  \\
-           VVV   &      30.52 $~\pm~$      15.29 (        50 \%)  \\
+
 \hline
-    {\bf background}   &   11665.64  \\
-\hline
-\end{tabular}
-}
-\end{center}
-\caption{Expected yields after the full analysis selection. The WW background is left free to float separately in each bin during the fit.}
-\label{table:yields}
+  \end{tabular}
+  }
+  }
+
+  \end{center}
 \end{table}
 
 \subsection{Control plots in the signal region}
@@ -93,6 +67,7 @@ In figure \ref{fig:control_plots} are reported the control plots in the signal r
 \includegraphics[width=0.35\textwidth]{images/mllBin5.pdf}
 }
 \caption{Control plots showing the \mll~distributions in every Higgs \pt bin. Data are superimposed in the region where the signal is expected to be negligible.}\label{fig:control_plots}
+
 \end{figure}
 
 As expected the Top background becomes more important while going to high values of \pth, accordingly to the higher jet multiplicity in that region. The discrepancy between MC prediction and data, especially for low values of Higgs \pt, is due WW background which in this plots is fixed to the MC cross section.
