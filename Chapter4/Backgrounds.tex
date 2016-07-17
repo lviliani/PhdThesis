@@ -4,55 +4,77 @@
 
 \textcolor{red}{Add plots for each background process}
 
-\subsection{$t\bar{t}$ background \label{sec:TTBackground}}
+\subsection{Top quark background \label{sec:TTBackground}}
 
-In this analysis the top background is divided into two different categories depending on the number of jets in the event. For 0-jets events we use the main analysis selections, thus also the top background estimation is the same. For events with more than 0 jets different cuts with respect to the main analysis are applied and the estimation of the top background is performed exploiting a Tag\&Probe technique, explained in details later.
+In this analysis the top quark background is divided into two different categories depending on the number of jets in the event. In the two categories different selections are applied, especially concerning the b-tagging requirements.
 
-\subsubsection{0-jets bin}
-The general strategy for determining the residual top events in the signal region is to first measure the top tagging efficiencies from an orthogonal region of phase space in data.  Then, using this efficiency, propagate from the control region defined as the inversion of one of the top rejection cuts.
-The number of surviving top events would then be:
+The general strategy for determining the residual top events in the signal region is to first measure the top tagging efficiencies from an orthogonal region of phase space in data. The orthogonal phase space is  defined inverting the b-veto requirement of the signal region, in such a way to have a control region enriched in top quark events.  Then, using this efficiency, the number of events with the associated uncertainty is propagated from the control region to the signal region.
+The number of surviving top events in the signal region would then be:
 
 \begin{equation}
  N^{\mathrm{signal}}_{bveto} = N^{\mathrm{control}}_{btag} \cdot \frac{1-\epsilon_{\mathrm{top}}}{\epsilon_{\mathrm{top}}}
 \label{eq:top_equation}
 \end{equation}
 
-where $N^{\rm control}_{btag}$ is the number of events in the inverted
+where $N^{\rm control}_{\rm btag}$ is the number of events in the 
 control region and $\epsilon_{\rm top}$ is the efficiency as measured
-in data. A full description of the method can be found in~\cite{AN-2013-022}. 
+in data.
 
-The amount of tW and \ttbar backgrounds contaminating the signal phase space is
-evaluated in a region obtained inverting the b-veto requirement on jets, and
-then extrapolated to the signal region. 
+The methods to estimate the top background contribution in the two jet categories are different and are explained below.
 
-\subsubsection{Greater than 0-jets bin}
-The strategy for the estimation of the top background in events with at least one jet with $\pt$ greater than 30 \GeV is the following. We first estimate a per jet scale factor for the b-tagging efficiency. This evaluation is performed in a control region, that we will call CtrlTP, containing at least two jets, using a Tag\&Probe technique. The procedure to extract these scale factors is presented in Sec.~\ref{sec:TagAndProbe}. Then we define a larger statistics control region, CtrlDD, by requiring at least one b-tagged jet and we use the simulation, corrected for the previously computed b-tagging efficiency scale factor, to derive the factor that connects the number of events in CtrlDD to the number of events in the signal region. This second step is explained in detail in Sec.~\ref{sec:DD}. 
+
+\subsubsection{0-jets category}
+Most of the top background, composed of \ttbar and tW processes, is rejected in the 0-jet bin by the
+jet veto. The top-tagging efficiency in the zero jet bin, $\epsilon_{\rm tag}^{0-jet}$, is the probability for a top event to
+fail one of either the b-tagging veto or the soft muon veto, and is defined as:
+
+\begin{equation}\label{eq:eff_top_0j}
+\epsilon_{\rm tag} = \frac{N_{\rm tag}^{\rm control}}{N^{\rm control}} \quad ,
+\end{equation}
+
+where $N^{\rm control}$ is the number of events in the top control phase space defined requiring one b-tagged jet with $\pt>30$\GeV, and $N_{\rm tag}^{\rm control}$ is the subset of those events that pass either the soft muon tagging or the low-\pt b jet tagging. The purity of this control sample, as estimated from simulation, is about 97\%. The remaining 3\% background contribution is estimated from simulation and subtracted from the numerator and denominator of Eq.~\eqref{eq:eff_top_0j}. The efficiency $\epsilon_{\rm top}^{0-jet}$ can then be estimated using the following formula:
+
+\begin{equation}\label{eq:eff_top_0j}
+\epsilon_{\rm top}^{0-jet} = f_{\ttbar} \cdot \epsilon_{2b} + f_{tW} \cdot ( x \cdot \epsilon_{2b} + (1-x) \cdot \epsilon_{\rm tag} ) \quad ,
+\end{equation}
+
+\begin{equation}
+\epsilon_{2b} = 1 - (1 - \epsilon_{\rm tag})^{2} \quad ,
+\end{equation}
+where $f_{\ttbar}$ and $f_{tW}$ are the \ttbar and tW fractions respectively, $x$ is the fraction of tW events containing 2 b jets, and $\epsilon_{2b}$ is the efficiency for a top event with 0 counted jets, i.e. two soft b jets, to pass the top veto. For the ratio of \ttbar and tW cross-sections an uncertainty of 17\% is assumed. The fraction $f_{\ttbar}$ is estimated using MC simulation of the \ttbar and tW processes at NLO accuracy.
+
+Using this procedure a data/simulation scale factor of $0.98 \pm 0.17$ is found, and is applied to correct the MC simulation in order to match the data.
+
+
+
+\subsubsection{Category with more than 0 jets}
+The strategy for the estimation of the top background in events with at least one jet with $\pt$ greater than 30 \GeV is the following. First of all the efficiency for tagging a b jet is measured both in data and simulation and the values are used to correct the simulation for different b-tagging efficiencies in data and simulation. This evaluation is performed in a control region, called CtrlTP, containing at least two jets, using a Tag\&Probe technique. The procedure to extract these scale factors is presented in Sec.~\ref{sec:TagAndProbe}. Then a larger statistics control region, CtrlDD, is defined by requiring at least one b-tagged jet and we use the simulation, corrected for the previously computed b-tagging efficiency scale factor, to derive the factor that connects the number of events in CtrlDD to the number of events in the signal region. This second step is explained in detail in Sec.~\ref{sec:DD}. 
 
 \subsubsection{Tag\&Probe \label{sec:TagAndProbe}}
 The Tag\&Probe technique is a method to estimate the efficiency of a selection on data. In can be applied whenever one has two objects in one event, by using one of the two, the \tg{}, to identify the process of interest, and using the second, the \probe{}, to actually measure the efficiency of the selection being studied. In our case we want to measure the b-tagging efficiency, so what we need is a sample with two b-jets per event. The easiest way to construct such a sample is to select $t\bar{t}$ events.
 
-We define a control region, called CrtlTP, which contains events passing the lepton preselection cuts listed in Sec.~\ref{subsec:EventSelection}, and have at least two jets with $p_{T}$ greater than 30 \GeV.
-One of the two leading jets is required to have a \jpb score higher than 0.5. Form events in this control region we built \tp{} pairs as follows. For each event the two leading jets are considered. If the leading jet passes the \jpb cut of 0.5, that is considered a \tg{}, and the sub-leading jet is the \probe{}. In order to avoid any bias that could arise from the probe being always the second jet, the pair is tested also in reverse order, meaning that the sub-leading jet is tested against the \tg{} selection, and in case it passes, then the leading jet is used as \probe{} in an independent \tp{} pair. This means that from each event passing the CrtlTP cuts one can build up to two \tp{} pairs. 
+The CrtlTP control region is defined selecting the events which pass the lepton preselection cuts listed in Sec.~\ref{subsec:EventSelection}, and have at least two jets with \pt greater than 30 \GeV.
+One of the two leading jets is required to have a \jpb score higher than 0.5. From events in this control region we built \tp{} pairs as follows. For each event the two leading jets are considered. If the leading jet passes the \jpb cut of 0.5, that is considered a \tg{}, and the sub-leading jet is the \probe{}. In order to avoid any bias that could arise from the probe being always the second jet, the pair is tested also in reverse order, meaning that the sub-leading jet is tested against the \tg{} selection, and in case it passes, then the leading jet is used as \probe{} in an independent \tp{} pair. This means that from each event passing the CrtlTP cuts one can build up to two \tp{} pairs. 
 
 If the \tg{} selection were sufficient to suppress any non top events, one could estimate the efficiency by dividing the number of \tp{} pairs in which the \probe{} passes the analysis cut \jpb$>$1.4 (\tpp) by the total number of \tp{} pairs. However this is not the case. 
-In order to estimate the efficiency in the presence of background we have chosen a variable that discriminates between true b-jets and other jets in a $t\bar{t}$ sample. The variable is the $p_{T}$ of the \probe{} jet. For real b-jets this variable has a peak around 60 \GeV, while it does not peak for other jets. The idea is to fit simultaneously the $p_{t}$ spectrum for \probe{} jets in \tpp{} and \tfp{} pairs, linking together the normalizations of the two samples as follows:
+In order to estimate the efficiency in the presence of background a variable that discriminates between true b-jets and other jets in a $t\bar{t}$ sample is chosen. The variable is the \pt of the \probe{} jet. For real b-jets this variable has a peak around 60 \GeV, while it does not peak for other jets. The idea is to fit simultaneously the \pt spectrum for \probe{} jets in \tpp{} and \tfp{} pairs, linking together the normalizations of the two samples as follows:
 \begin{equation}
 N_{TPP}=N_{s}\epsilon_{s} + N_b\epsilon_{b}
 \end{equation}
 \begin{equation}
 N_{TFP}=N_{s}(1-\epsilon_{s}) + N_b(1-\epsilon_{b})
 \end{equation}
-where $N_{TPP}$ is the number of \tpp{} pairs, $N_{TFP}$ is the number of \tfp{} pairs, $N_{s}$ is the number of \tp{} pairs in which the probe is a b-jet, $N_{s}$ is the number of \tp{} pairs in which the probe is a not b-jet, $\epsilon_{s}$ is the b-tagging efficiency, $\epsilon_{b}$ is the probability of identifying as b-jet a non-b-jets, i.e. the mistag rate. 
+where $N_{\rm TPP}$ is the number of \tpp{} pairs, $N_{\rm TFP}$ is the number of \tfp{} pairs, $N_{\rm s}$ is the number of \tp{} pairs in which the probe is a b-jet, $N_{\rm b}$ is the number of \tp{} pairs in which the probe is a not b-jet, $\epsilon_{\rm s}$ is the b-tagging efficiency, $\epsilon_{\rm b}$ is the probability of identifying as b-jet a non-b-jets, i.e. the mistag rate. 
 
-We have performed a $\chi^{2}$ simultaneous fit of the \probe{} $p_{T}$ spectrum for \tpp{} and \tfp{} pairs, deriving the shapes for true b-jets and non-b-jets from the simulation, and extracting from the fir $N_{s}$, $N_b$, $\epsilon_{s}$ and $\epsilon_{b}$.
-The result of the fit on MC simulation is shown in Fig.~\ref{fig:mc_tp}. The relevant efficiencies are:
+A $\chi^{2}$ simultaneous fit of the \probe{} \pt spectrum for \tpp{} and \tfp{} pairs is performed, deriving the shapes for true b-jets and non-b-jets from the simulation, and extracting $N_{\rm s}$, $N_{\rm b}$, $\epsilon_{\rm s}$ and $\epsilon_{\rm b}$ from the fit.
+The result of the fit on simulation is shown in Fig.~\ref{fig:mc_tp}. The relevant efficiencies are:
 \begin{equation}
 \epsilon_{s}^{MC}=0.7663\pm0.0072
 \end{equation}
 \begin{equation}
 \epsilon_{b}^{MC}=0.208\pm0.015
 \end{equation}
-We have checked that these values are consistent with the true value for the b-tagging efficiency. The true value is computed by selecting jets that are matched within a cone of $\Delta{R}<0.5$ with a generator level b-quark, and counting the faction of those that pass the \jpb cut of 1.4. This means that the \tp{} method does not introduce biases within the MC statistic accuracy.
+We have checked that these values are consistent with the true value for the b-tagging efficiency. The true value is computed by selecting jets that are matched within a cone of $\Delta{R}<0.5$ with a generator level b-quark, and counting the faction of those that pass the \jpb cut of 1.4. This means that the \tp{} method does not introduce biases within the simulation statistic accuracy.
 
 \begin{figure}[b]
 \centering
@@ -60,7 +82,14 @@ We have checked that these values are consistent with the true value for the b-t
 \caption{Simultaneous fit of the \tpp{} and \tfp{} pairs in the MC.\label{fig:mc_tp}}
 \end{figure}
 
-In order to assess the robustness of the fit we have generated 5000 toy MC samples and fitted them. The toy MC were generated with a statistics equivalent to the one expected in data. All the 5000 fit succeeded, and the pull distributions for $\epsilon_{s}$ and $\epsilon_{b}$ parameters are shown in Fig.~\ref{fig:pullstp}. The pulls are well centered on 0 and have $\sigma$ close to 1, as expected.
+In order to assess the robustness of the fit, 5000 toy MC samples have been generated with a statistics equivalent to the one expected in data and the same fit is performed. All the 5000 fit succeeded, and the pull distributions for $\epsilon_{\rm s}$ and $\epsilon_{\rm b}$ parameters are shown in Fig.~\ref{fig:pullstp}. The plots show the pull of the efficiencies measured in the fit, where the pull variable for each toy $i$ is defined as:
+
+\begin{equation}
+pull(\epsilon_{\rm s (b)}) = \frac{\epsilon_{\rm s (b)}^{\rm true} - \epsilon_{\rm s (b)}^{i}}{\sigma(\epsilon_{\rm s (b)}^{i})}
+\end{equation}
+
+The pulls are centered on 0 and have $\sigma$ close to 1, as expected.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\textwidth]{images/pulls_mc.pdf}
@@ -217,12 +246,12 @@ A comparison of the $\mll$ distribution in the six $\pth$ bins used in the analy
 
 
 
-
+\clearpage
 \subsection{\WW background \label{sec:WWBackground}}
 
 For what the WW background shape is concerned the prediction from the Monte-Carlo simulation has been used.
-This background is divided into six different parts, corresponding to the six bins of \pth considered. In each bin the normalization of the WW background is left free to float and is thus adjusted to match the data by the fit. In this way we minimize an effect that has been observed also in \cite{CMS_AN_2014_056}, that is a difference in shape between the $p_T^{WW}$ theory prediction and the distribution provided by the MC simulation, in our case by \textsc{Madgraph}.\\
-In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_T^{WW}$ spectra of two different qqWW samples: the blue line corresponds to the WW \textsc{Madgraph} samples that we use in this analysis and the red line refers to the same sample in which a reweighing has been applied in order to match the theoretical prediction at NLO+NNLL precision. 
+This background is divided into six different parts, corresponding to the six bins of \pth considered. In each bin the normalization of the WW background is left free to float and is thus adjusted to match the data by the fit. In this way we minimize an effect that has been observed also in \cite{CMS_AN_2014_056}, that is a difference in shape between the $p_\mathrm{T}^\mathrm{WW}$ theory prediction and the distribution provided by the MC simulation, in our case by \textsc{Madgraph}.\\
+In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_\mathrm{T}^\mathrm{WW}$ spectra of two different qqWW samples: the blue line corresponds to the WW \textsc{Madgraph} samples that we use in this analysis and the red line refers to the same sample in which a reweighting has been applied in order to match the theoretical prediction at NLO+NNLL precision. 
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.7\textwidth]{images/WWnlo/WW_WWnlo.pdf}
@@ -341,24 +370,21 @@ performing a closure test in the same-sign data sample (see~\cite{AN-2013-022}).
 The low \MET threshold in e$\mu$ final state
 requires the consideration of the contribution from 
 \dytt\, that is infact estimated from data.
-
 This is accomplished by using 
 \dymm events and replacing muons with a simulated
 $\tau\to l\nu_\tau\bar{\nu_e}$ decay \cite{AN-2011-020}.\\
- 
 After replacing muons from \dymm decays with simulated $\tau$ decays,
 the set of pseudo \dytt events undergoes the reconstruction step.
  
 Good agreement in kinematic distributions for this sample
 and a Monte Carlo based \dytt sample is found.
- 
 The global normalization of pseudo \dytt events is 
 checked in the low \mt spectrum where a rather pure
 \dytt sample is expected.
 
 
 	%-------------------------------------------------------------------------------
-	\subsubsection{ZZ, WZ and W+\texorpdfstring{$\gamma$}{gamma} backgrounds\label{sec:otherbkg}}
+	\subsubsection{ZZ, WZ and W\texorpdfstring{$\gamma$}{gamma} backgrounds\label{sec:otherbkg}}
 
 The WZ and ZZ backgrounds are partially estimated from data when the two
 selected leptons come from the same Z boson. If the leptons come from different

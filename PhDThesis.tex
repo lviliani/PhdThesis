@@ -1,5 +1,5 @@
 %\documentclass[a4paper,12pt,english,twoside,openright]{book}
-\documentclass[english,booktabs,hyperref,titling]{hepthesis}
+\documentclass[english,12pt,booktabs,hyperref,titling,twoside,openright]{hepthesis}
 %%% hepthesis requirements
 \usepackage{setspace,fancyhdr,rotating,comment,tocbibind,caption,changepage,varwidth,csquotes,babel,a4wide,amsmath,hyperref,booktabs,draftcopy,lineno,titling}
 %\usepackage[babel]{csquotes}
@@ -25,12 +25,13 @@
 \renewcommand{\TeV}{\,\oldTeV \xspace}
 \newcommand{\hww}{\ensuremath{{\mathrm{H}\to\mathrm{WW}}}\xspace}
 \newcommand{\hwwllnn}{\ensuremath{{\mathrm{H}\to\mathrm{WW}\to\mathrm{2\ell2\nu}}}\xspace}
-\newcommand{\fb}{\ensuremath{\mathrm{fb}}}
-\newcommand{\pb}{\ensuremath{\mathrm{pb}}}
-\newcommand{\ifb}{\ensuremath{\mathrm{fb^{-1}}}}
-\newcommand{\ipb}{\ensuremath{\mathrm{pb^{-1}}}}
-\newcommand{\WW}{\ensuremath{\mathrm{WW~}}}
-\newcommand{\W}{\ensuremath{\mathrm{W~}}}
+\newcommand{\ttH}{\ensuremath{\mathrm{t\bar{t}H}}\xspace}
+\newcommand{\fb}{\ensuremath{\mathrm{fb}}\xspace}
+\newcommand{\pb}{\ensuremath{\mathrm{pb}}\xspace}
+\newcommand{\ifb}{\ensuremath{\mathrm{fb^{-1}}}\xspace}
+\newcommand{\ipb}{\ensuremath{\mathrm{pb^{-1}}}\xspace}
+\newcommand{\WW}{\ensuremath{\mathrm{WW}}\xspace}
+\newcommand{\W}{\ensuremath{\mathrm{W}}\xspace}
 \newcommand{\F}{\ensuremath{\cmsSymbolFace{F}}}
 \newcommand{\V}{\ensuremath{\cmsSymbolFace{V}}\xspace}
 \newcommand{\VVV}{\cmsSymbolFace{VVV}\xspace}
@@ -47,7 +48,8 @@
 \newcommand{\psvectorKD}{\ensuremath{\mathcal{D}_{1^-}}\xspace}
 \newcommand{\ptl}{\ensuremath{p_\perp^{\ell}}\xspace}
 \newcommand{\ptll}{\ensuremath{\pt^{\ell\ell}}\xspace}
-\newcommand{\MET}{\ensuremath{\vec{p}_\mathrm{T}^\mathrm{\,miss}}\xspace}
+\newcommand{\MET}{\ensuremath{E_\mathrm{T}^\mathrm{\,miss}}\xspace}
+\newcommand{\ptmiss}{\ensuremath{\vec{p}_\mathrm{T}^\mathrm{\,miss}}\xspace}
 \newcommand{\qq}{\ensuremath{\Pq\Pq}\xspace}
 \newcommand{\superKD}{\ensuremath{\mathcal{D}_\text{bkg}} }
 \newcommand{\tw}{\ensuremath{\cPqt\PW}\xspace}
@@ -109,7 +111,9 @@ The Higgs boson transverse momentum (\pt) is reconstructed using the lepton pair
 \input Chapter4/chapter4.tex
 \input Chapter5/chapter5.tex
 \input Chapter6/chapter6.tex
-
+\clearpage
+\appendix
+\input{Appendix/AppendixFiducialRegion.tex}
 \end{mainmatter}
 
 \begin{backmatter}
