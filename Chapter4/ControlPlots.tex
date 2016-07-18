@@ -1,18 +1,91 @@
-\section{Control Plots}
+\section{Signal extraction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\label{sec:ControlPlots}
+\label{sec:Signal extraction}
+
+According to the ``blinding'' policy of the CMS Collaboration, the strategy of the analysis has been scrutinized and approved by a selected committee of internal reviewers before looking at the data in the signal region. This approach prevents the analysts from being biased by the data in the developing phase of the analysis. Below are shown the results after having looked at the data.
+
+
+\section{Fitting procedure}\label{sec:fit}
+
+The signal, including ggH, VBF, and VH production mechanisms, is extracted in each bin of \pth{} by performing a binned maximum likelihood fit simultaneously in all \pth{} bins to a two-dimensional template for signals and backgrounds in the \mll--\mt{} plane.
+Six different signal strength parameters are extracted from the fit, one for each \pth~bin. The relative contributions of the different Higgs production mechanisms in the signal template are taken to be the same as in the SM. The systematic uncertainty sources are considered as nuisance parameters in the fit.
+
+The binning of the \mll and \mt templates is chosen to be:
+\begin{itemize}
+\item {\mll: $[12,30,45,60,75,100,125,150,175,200]$} 
+\item {\mt: $[60,70,80,90,100,110,120,140,160,180,200,220,240,280]$}
+\end{itemize}
+
+To avoid a dependence of the results on the variables used for the template fit, \mll and \mt need to be uncorrelated with respect to \pth.
+This as been verified and the correlation between the discriminating variables and \pth is shown in Fig.~\ref{fig:correlation_ggH} and Fig.~\ref{fig:correlation_vbf} for ggH and VBF production modes respectively.
+
+\begin{figure}[htb]
+\centering
+\subfigure[]{\includegraphics[width=0.45\textwidth]{images/correlationmll_ggH.pdf}}
+\subfigure[]{\includegraphics[width=0.45\textwidth]{images/correlationmth_ggH.pdf}}
+\caption{Correlation between $\pth$ and $\mll$ (a) and between \pth and \mt (b) after the full selection for the ggH production mode.\label{fig:correlation_ggH}}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\subfigure[]{\includegraphics[width=0.45\textwidth]{images/correlationmll_vbf.pdf}}
+\subfigure[]{\includegraphics[width=0.45\textwidth]{images/correlationmth_vbf.pdf}}
+\caption{Correlation between \pth and \mll (a) and between \pth and \mt (b) after the full selection for the VBF production mode.\label{fig:correlation_vbf}}
+\end{figure}
+
+The relative contribution for different production mechanisms in the input signal template is taken to be the same as the SM.
+The signal strength $\mu$ in each bin, i.e. the ratio between the measured cross section and the SM one, $\mu = \sigma/\sigma_\mathrm{SM}$, is allowed to float between -10 and +10, thus allowing negative values. This is mainly intended to allow the error bars to float below 0.
+
+Because of detector resolution effects, some of the reconstructed $\hww$ signal events might originate from outside the fiducial phase space.  
+These out-of-fiducial signal events cannot be precisely handled by the unfolding procedure and must be subtracted from the measured spectrum. The \pth~distribution of the out-of-fiducial signal events is taken from simulation, and each bin is multiplied by the corresponding measured signal strength before performing the subtraction. 
+
+At the end, the number of events in each bin $i$ of the measured spectrum is:
+\begin{equation}
+N_i = \mu_i (s_i -f_i) \quad ,
+\end{equation}
+where $s_i$ and $f_i$ are respectively the number of signal and fake events expected from simulation and $\mu_i$ is the measured signal strength.
+
+The fit makes use of the binned maximum likelihood approach. Each source of systematic uncertainty is represented by a nuisance parameter in the likelihood function. \textcolor{red}{add some techincality about the fit, i.e. different priors of the nuisance parameters etc.}
+
+Before running the fit on the data, the same procedure has been applied on the so called \textit{Asimov data set}\footnote{In a parallel reality imagined by the science fiction writer I. Asimov, politics was run in a peculiar way: instead of mobilizing millions of people to cast their vote to deliberate on something, an algorithm was used to select an individual ``average'' person, and then this person was asked to take the decision on that matter.}, which provides a simple method to obtain the signal sensitivity before looking at the data~\cite{Cowan:2010js}.
+
 
 \subsection{Signal and background yields}\label{subsec:yields}
-In table \ref{table:yields} are reported the expected number of events for signals and backgrounds after the full analysis selection. The uncertainties in the expected number of events correspond to the prefit nuisances effect affecting each process. As can be observed, signals are splitted into different categories depending on the production mode: gluon fusion (ggH), VBF (qqH) and VH (WH and ZH) which includes also ttH production. Each signal is again splitted in six different contributions related to the \pth bins. The total expected signal yield after the analysis selection is $382 \pm 7$ events.\\
-For what the backgrounds are concerned, the WW has been splitted in bins of \pth and has been left free to float independently in each bin during the fit. For doing this a 100 \% uncertainty has been associated to the expected number of events in each bin, following a prior flat distribution (log uniform distribution). That is why the uncertainty on WW backgrounds and on total background yield are not reported in the table.\\
-The Top background has been divided into two categories of events as explained in \ref{sec:TTBackground}: events with zero jets (Top0jet) and events with more than zero jets (Topge1jet). The yield in the first category has been extracted performing a data driven estimation in a control region. The latter category has been further splitted in the various \pth bins and a data driven estimation has been performed separately in each bin to avoid a shape mismodelling in the \pth distribution for this background.\\
-The final signal to background ratio is around 3~\%, consistent with what illustrated in figure \ref{fig:cutflow}.
+
+
+
+A comparison of data and background prediction is shown in
+Fig.~\ref{fig:mllSignalRegion}, where the \mll{} distribution is shown for each of the six \pth{} bins. Distributions correspond to the \mt{} window of [60, 110]\GeV, in order to emphasize the Higgs boson signal~\cite{Chatrchyan:2013iaa}.
+
+\begin{figure}[!htbp]
+\centering
+\subfigure{
+\includegraphics[width=0.35\textwidth]{images/unblinding/mllBin0.pdf}
+}
+\subfigure{
+\includegraphics[width=0.35\textwidth]{images/unblinding/mllBin1.pdf}
+}
+\\
+\subfigure{
+\includegraphics[width=0.35\textwidth]{images/unblinding/mllBin2.pdf}
+}
+\subfigure{
+\includegraphics[width=0.35\textwidth]{images/unblinding/mllBin3.pdf}
+}
+\\
+\subfigure{
+\includegraphics[width=0.35\textwidth]{images/unblinding/mllBin4.pdf}
+}
+\subfigure{
+\includegraphics[width=0.35\textwidth]{images/unblinding/mllBin5.pdf}
+}
+\caption{Distributions of the \mll~variable in each of the six \pth{} bins. Background normalizations correspond to the values obtained from the fit. Signal normalization is fixed to the SM expectation. The distributions are shown in an \mt{}~window of [60,110]\GeV in order to emphasize the Higgs boson (H) signal. The signal contribution is shown both stacked on top of the background and superimposed to it. Ratios of the expected and observed event yields in individual bins are shown in the panels below the plots. The uncertainty band shown in the ratio plot corresponds to the envelope of systematic uncertainties after performing the fit to the data.}\label{fig:mllSignalRegion}
+\end{figure}
+
+The signal and background yields after the analysis selection are reported in Table \ref{table:yields}.
 
 \begin{table}[htbp]
-\begin{center}
- {
-\small{
-\setlength{\extrarowheight}{2pt}
+\begin{center}{
   \caption{Signal prediction, background estimates and observed number of events in data are shown in each \pth{} bin for the signal after applying the analysis selection requirements. The total uncertainty on the number of events is reported. For signal processes, the yield related to the ggH are shown, separated with respect to the contribution of the other production mechanisms (XH=VBF+VH). The WW process includes both quark and gluon induced contribution, while the Top process takes into account both $\mathrm{t\bar t}$ and tW. }\label{table:yields}
 \begin{tabular} {l c c c c c c}
   \hline \hline
@@ -36,38 +109,21 @@ W$\gamma^{(*)}$	& $132\pm49$     &             $170\pm58$    &              $48\
 
 \hline
   \end{tabular}
-  }
+  
   }
 
   \end{center}
 \end{table}
 
-\subsection{Control plots in the signal region}
-In figure \ref{fig:control_plots} are reported the control plots in the signal region for the \mll~ distribution in all the \pth bins. Data points are superimposed to MC distributions only in the high \mll~ region (above 70~\GeV), where no signal is expected. The error bands shown in these plots correspond to the total prefit uncertainty, taking into account all the sources of error. The very large uncertainties are expected and are related to the 100~\% uncertainty assigned to the WW floating background. The error band will decrease once the fit will be performed, i.e using the postfit values of the nuisance parameters, and the WW yield will be adapted to data.
-\begin{figure}[htb]
-\centering
-\subfigure[Bin1]{
-\includegraphics[width=0.35\textwidth]{images/mllBin0.pdf}
-}
-\subfigure[Bin2]{
-\includegraphics[width=0.35\textwidth]{images/mllBin1.pdf}
-}
-\\
-\subfigure[Bin3]{
-\includegraphics[width=0.35\textwidth]{images/mllBin2.pdf}
-}
-\subfigure[Bin4]{
-\includegraphics[width=0.35\textwidth]{images/mllBin3.pdf}
-}
-\\
-\subfigure[Bin5]{
-\includegraphics[width=0.35\textwidth]{images/mllBin4.pdf}
-}
-\subfigure[Bin6]{
-\includegraphics[width=0.35\textwidth]{images/mllBin5.pdf}
-}
-\caption{Control plots showing the \mll~distributions in every Higgs \pt bin. Data are superimposed in the region where the signal is expected to be negligible.}\label{fig:control_plots}
 
+%The signal yield after the fit with data is found to be of $318 \pm 12$ events, to be compared with the expected value of $382 \pm 7$ events.
+The spectrum shown in Fig. \ref{fig:pre_unfolding} is obtained after having performed the fit and after the subtraction of the out-of-fiducial signal events, but before undergoing the unfolding procedure. The theoretical distribution after the detector simulation and event reconstruction is also shown for comparison.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{images/unblinding/pth_reco_paper.pdf}
+\caption{Differential Higgs boson production cross section as a function of the reconstructed \pth{}, before applying the unfolding procedure. Data values after the background subtraction are shown together with the statistical and the systematic uncertainties, determined propagating the sources of uncertainty through the fit procedure. The line and dashed area represent the SM theoretical estimates in which the acceptance of the dominant ggH contribution is modelled by \textsc{Powheg V1}. The sub-dominant component of the signal is denoted as XH=VBF+VH, and is shown with the cross filled area separately.}\label{fig:pre_unfolding}
 \end{figure}
 
 As expected the Top background becomes more important while going to high values of \pth, accordingly to the higher jet multiplicity in that region. The discrepancy between MC prediction and data, especially for low values of Higgs \pt, is due WW background which in this plots is fixed to the MC cross section.

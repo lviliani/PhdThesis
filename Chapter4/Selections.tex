@@ -31,8 +31,8 @@ The \WW -like event preselection consists of the following set of cuts:
   \end{itemize}
 \item {\bf Extra lepton veto}: the event is required to have two and only two opposite-sign leptons passing the lepton selection.
 \item {\bf \MET preselection}: particle flow \MET is required to be greater than $20$\GeV.
-\item {\bf Di-lepton mass cut}: $m_{\ell\ell} > 12$\GeV in order to reject low mass resonances and QCD backgrounds.
-\item {\bf Di-lepton $p_T$ cut}: $p_T^{\ell\ell} > 30$\GeV.
+\item {\bf Di-lepton mass cut}: $\mll > 12$\GeV in order to reject low mass resonances and QCD backgrounds.
+\item {\bf Di-lepton $p_T$ cut}: $\ptll > 30$\GeV.
 \item {\bf projected \MET selection}: minimum projected \MET required to be larger than 20~\GeV.
 \item {\bf Transverse mass}: $m_T^H>60$\GeV to reject Drell-Yan to $\tau\tau$ events. 
 \end{enumerate}
@@ -41,7 +41,7 @@ The selection for 0-jets events relies on a soft muon veto, which rejects events
 The latter requirement exploits the Track Counting High Efficiency tagger (TCHE) to reject soft jets that are likely to come from b quarks hadronization.
 These are exactly the same requirements applied in the 0-jets bin of the main analysis.
 
-For events with a jet multiplicity greater or equal than one, we apply a different selection with respect to the main analysis. In this case we exploit the good b-tagging performances of the \textit{JetBProbability} tagger to reject all the jets with $p_T > 30$~\GeV that are likely to come from a b quark. This jet veto relies on a cut on the \textit{JetBProbability} tagger discriminant as has been also done in the VH (\hwwllnn) analysis \cite{CMS_PAS_HIG_13-017}. Any jet with a discriminant value below $1.4$ is identified as a non b-jet. The analysis selection requires no b-tagged jets with $p_T > 30$~\GeV.
+For events with a jet multiplicity greater or equal than one, we apply a different selection with respect to the main analysis. In this case we exploit the good b-tagging performances of the \textit{JetBProbability} tagger to reject all the jets with $\pt > 30$~\GeV that are likely to come from a b quark. This jet veto relies on a cut on the \textit{JetBProbability} tagger discriminant as has been also done in the VH (\hwwllnn) analysis \cite{CMS_PAS_HIG_13-017}. Any jet with a discriminant value below $1.4$ is identified as a non b-jet. The analysis selection requires no b-tagged jets with $\pt > 30$~\GeV.
 
 \begin{figure}[b]
 \centering
@@ -49,7 +49,7 @@ For events with a jet multiplicity greater or equal than one, we apply a differe
 \caption{Effect of single selections on MC samples. The signal (red line) is multiplied by 100 and superimposed on stacked backgrounds. In each bin, corresponding to a different selection, is reported the expected number of events in MC at a luminosity of $19.46~\mathrm{fb}^{-1}$.\label{fig:cutflow}}
 \end{figure}
 
-A  cut-flow plot is reported in figure \ref{fig:cutflow} showing the effect of each selection on top of Monte Carlo samples. In the first bin, labelled as \textit{No cut}, no selection has been applied and the bin content correspond to the total expected number of events with a luminosity of $19.46~\mathrm{fb}^{-1}$. All the events in this bin have at least two leptons with a loose transverse momentum cut of $8$~\GeV. In the following bin the lepton cuts are applied, including the requirement to have two opposite-sign and opposite-flavour leptons and the extra lepton veto. Then are progressively reported all the other selections, showing the effect of each cut on backgrounds and signal. For each selection is also reported the expected signal over background ratio which after the full selection reach a maximum value around $3\%$.
+A  cut-flow plot is reported in figure \ref{fig:cutflow} showing the effect of each selection on top of Monte Carlo samples. In the first bin, labelled as \textit{No cut}, no selection has been applied and the bin content correspond to the total expected number of events with a luminosity of $19.46~\mathrm{fb}^{-1}$. All the events in this bin have at least two leptons with a loose transverse momentum cut of $8$\GeV. In the following bin the lepton cuts are applied, including the requirement to have two opposite-sign and opposite-flavour leptons and the extra lepton veto. Then are progressively reported all the other selections, showing the effect of each cut on backgrounds and signal. For each selection is also reported the expected signal over background ratio which after the full selection reach a maximum value around $3\%$.
 
 \begin{figure}[t]
 \centering
@@ -62,8 +62,8 @@ A  cut-flow plot is reported in figure \ref{fig:cutflow} showing the effect of e
 \caption{Efficiency of the full selection (a) and fake rate (b) as a function of $p_T^H$.\label{fig:sel_eff}}
 \end{figure}
 
-The selection efficiency is shown in Fig.~\ref{fig:sel_eff} (a). The efficiency denominator is the number of events that pass the acceptance, while the numerator is the number of events that pass both the selection and the acceptance, in each \pth bin. The fake rate, defined by the ratio of signal events that pass the selection but are not within the acceptance, divided by the total number of events passing both the selection and the acceptance is shown in Fig.~\ref{fig:sel_eff} (b). For both the selection efficiency and the fake rate the signal samples included correspond to the \textit{ggH}, \textit{VBF} and \textit{VH} production mechanisms.
+The selection efficiency is shown in Fig.~\ref{fig:sel_eff} (a). The efficiency denominator is the number of events that pass the acceptance, while the numerator is the number of events that pass both the selection and the acceptance, in each \pth bin. The fake rate, defined by the ratio of signal events that pass the selection but are not within the acceptance, divided by the total number of events passing both the selection and the acceptance is shown in Fig.~\ref{fig:sel_eff} (b). For both the selection efficiency and the fake rate the signal samples included correspond to the ggH, VBF and VH production mechanisms.
 The overall efficiency and fake rate are: $\epsilon=0.362\pm{0.005}$ and $fake~rate=0.126\pm0.004$, where the errors are only statistical.
 
-If we define a $4\pi$ acceptance, requiring just that the Higgs decays to WW and then to $2l2\nu$, the efficiency is $\epsilon=0.03960\pm{0.00033}$. 
+If a $4\pi$ acceptance is defined, requiring just that the Higgs decays to WW and then to $2\ell2\nu$, the efficiency is $\epsilon=0.03960\pm{0.00033}$. 
 

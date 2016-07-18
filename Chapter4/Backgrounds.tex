@@ -102,14 +102,14 @@ An example fit for one of the toys is shown in  Fig.~\ref{fig:toy_tp}
 \caption{Fit of a toy MC sample.\label{fig:toy_tp}}
 \end{figure}
 
-Before running the fit on data we have tried to validate the shapes used in the fit with data. To do so, we have made a much more pure $t\bar{t}$ selection, by requiring exactly two jets with \jpb score higher than 1.5 and no additional b-tagged jets, even if they have $\pt$ smaller than 30 \GeV. On this purer sample we have compared data against the shape used to fit the true b-jets in the \tpp{} distribution. The result is shown in Fig.~\ref{fig:purett} and shows good agreement.
+Before running the fit on data, the shapes used in the fit have been validated. To do so, a purer top enriched phase space has been defined by requiring exactly two jets with \jpb score higher than 1.5 and no additional b-tagged jets, rejecting also jets with \pt smaller than 30 \GeV. On this purer sample we have compared data against the shape used to fit the true b-jets in the \tpp{} distribution. The result is shown in Fig.~\ref{fig:purett} and shows good agreement.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.6\textwidth]{images/passprobe_data_mc.pdf}
-\caption{Shape comparison for the \probe{} $\pt$ spectrum in data and in MC in a very pure $t\bar{t}$ sample.\label{fig:purett}}
+\caption{Shape comparison for the \probe{} \pt spectrum in data and in MC in a very pure \ttbar sample.\label{fig:purett}}
 \end{figure}
 
-We have finally performed the fit on data, as shown in Fig.~\ref{fig:data_tp}, which results in in the following efficiencies:
+Finally the fit has been performed on data, as shown in Fig.~\ref{fig:data_tp}, providing the following efficiencies:
 \begin{equation}
 \epsilon_{s}^{Data}=0.769\pm0.022
 \end{equation}
@@ -122,24 +122,28 @@ We have finally performed the fit on data, as shown in Fig.~\ref{fig:data_tp}, w
 \includegraphics[width=0.8\textwidth]{images/data_ptprobe.pdf}
 \caption{Simultaneous fit of the \tpp{} and \tfp{} pairs in data.\label{fig:data_tp}}
 \end{figure}
-Further checks on the Tag\&Probe efficiencies are shown in Appendix~\ref{app:tpfractw}, which concern the uncertainty related to the not perfect knowledge of the $tW/t\bar{t}$ ratio in the MC.
+
+Further studies have been performed to assess the effect of the relative uncertainty on the \ttbar and tW event fractions. The same procedure described above has been applied to different simulation templates obtained varying the \ttbar and tW fractions within theoretical uncertainties, and the effect on the parameters extracted with the fit procedure is found to be well below the fit uncertainties.
 
 
 \subsubsection{Data driven estimation \label{sec:DD}}
-In addition to the b-tagging efficiency, the other ingredient to estimate the $t\bar{t}$ background is the process cross section. The idea is to measure the cross section in a $t\bar{t}$ enriched control region, that we call CtrlDD. CtrlDD is defined according to the lepton preselection cuts defined in Sec.~\ref{subsec:EventSelection}, and requiring in addition at least one jet with \jpb score higher than 1.4.
+In addition to the b-tagging efficiency, the other ingredient to estimate the \ttbar background is the process cross section. The idea is to measure the cross section in a \ttbar enriched control region, that is called CtrlDD. CtrlDD is defined according to the lepton preselection cuts defined in Sec.~\ref{sec:Selections}, and requiring in addition at least one jet with \jpb score higher than 1.4.
 
-From the simulation we derive the factor $\alpha$ that connects CrtlDD to the signal region, from the ratio of $t\bar{t}$ events in the two regions.
+From the simulation we derive the factor $\alpha$ that connects CrtlDD to the signal region, calculating the ratio of \ttbar events in the two regions:
+
 \begin{equation}
-\alpha=\frac{N_{t\bar{t}~MC}^{SIG}}{N_{t\bar{t}~MC}^{CtrlDD}}.
-\end{equation}
-We then count events CtrlDD in data, we subtract the expected number of events from non-$t\bar{t}$ backgrounds, and we obtain $N_{t\bar{t}~Data}^{CtrlDD}$. We finally obtain the number of expected $t\bar{t}$ events in the signal region ($N_{t\bar{t}~Data}^{SIG}$) as:
-\begin{equation}
-N_{t\bar{t}~Data}^{SIG} = \alpha{}N_{t\bar{t}~Data}^{CtrlDD}.
+\alpha=\frac{N_{\ttbar~MC}^{SIG}}{N_{\ttbar~MC}^{CtrlDD}} \quad.
 \end{equation}
 
-In evaluating $\alpha$ and its error we made use of the b-tagging efficiencies determined in Sec.~\ref{sec:TagAndProbe}. 
-%Since the efficiency and mistag rate that we have measured on data are close to the one in the MC we have decided assume a scale factor of 1 for both b-tagging efficiency and mis-tag rate, with an error that covers all of the difference between data and MC and the statistical uncertainty of the Tag\&Probe fit. In other other 
-For each event we derive an efficiency scale factor and a mistag rate scale factor, depending on whether the event is in the signal or CtrlDD regions.
+The number of events in the CtrlDD region in data is counted, subtracting the expected number of events from non-\ttbar backgrounds, and obtaining $N_{\ttbar~Data}^{CtrlDD}$. Finally the number of expected \ttbar events in the signal region ($N_{\ttbar~Data}^{SIG}$) is obtained as:
+
+\begin{equation}
+N_{\ttbar~Data}^{SIG} = \alpha{}N_{\ttbar~Data}^{CtrlDD}.
+\end{equation}
+
+In evaluating $\alpha$ and its error the b-tagging efficiencies determined in Sec.~\ref{sec:TagAndProbe} are used. 
+For each event an efficiency scale factor and a mistag rate scale factor are derived, depending on whether the event falls in the signal or CtrlDD region.
+
 \begin{equation}
 \label{eq:sfsig}
 SF_{SIG} = \left(\frac{1-\epsilon_{s}^{Data}}{1-\epsilon_{s}^{MC}}\right)^{min(2, n_{b-jets})} \left(\frac{1-\epsilon_{b}^{Data}}{1-\epsilon_{b}^{MC}}\right)^{n_{non-b-jets}} 
@@ -149,36 +153,21 @@ SF_{SIG} = \left(\frac{1-\epsilon_{s}^{Data}}{1-\epsilon_{s}^{MC}}\right)^{min(2
 \label{eq:sfbkg}
 SF_{CtrlDD} = \left(\frac{\epsilon_{s}^{Data}}{\epsilon_{s}^{MC}}\right)^{(jet1 == b-jet)} \left(\frac{\epsilon_{b}^{Data}}{\epsilon_{b}^{MC}}\right)^{(jet1 == non-b-jets)} 
 \end{equation}
+
 where $n_{b-jets})$ is the number of true b-jets in the event and $n_{non-b-jets}$ is the number of non-b-jets in the event. The writing $jet1 == b-jet$ ($jet1 == non-b-jets$) is a boolean flag that is true when the leading jet, the one used for the CtrlDD selection, is (not) a true b-jet.
 
-Since the efficiency and mistag rate that we have measured on data are close to the one in the MC we have decided to assume a scale factor of 1 for both b-tagging efficiency and mis-tag rate. This means that the central values of the scale factors defined in Eq.~\ref{eq:sfsig} and Eq.~\ref{eq:sfbkg} is 1, but these numbers have an error that is derived assuming an uncertainty on $\epsilon_{s}^{Data}$ and $\epsilon_{b}^{Data}$ that covers both the statistical error from the fit of the two quantities and the difference with respect to the MC.
-This results in an up variation and a down variation of the scale factors in the signal region and CtrlDD regions, that is used to derive an error on $\alpha$.
+Since the efficiency and mistag rate that have been measured on data are close to the one in the simulation, it was decided to assume a scale factor of 1 for both b-tagging efficiency and mis-tag rate. This means that the central values of the scale factors defined in Eq.~\ref{eq:sfsig} and Eq.~\ref{eq:sfbkg} is 1, but these numbers have an error that is derived assuming an uncertainty on $\epsilon_{s}^{Data}$ and $\epsilon_{b}^{Data}$ that covers both the statistical error from the fit of the two quantities and the difference with respect to the simulation.
+This results in an up and a down variations of the scale factors in the signal and CtrlDD regions, that is used to derive an error on $\alpha$.
 
-We have decided to make a data driven estimation of the $t\bar{t}$ background with the method described above in each of the $\pth$ bins independently. The reason why we have chosen to make this estimation in $\pth$ bins, rather than inclusively is explained in Fig.~\ref{fig:ttpth}. In this plot the $t\bar{t}$ background is normalized to the cross section measured by CMS. The binning is the same chosen for the analysis. As shown in the ratio plot, an overall normalization factor would not be able to accommodate for the variations of the Data/MC ratio from bin to bin.
+A data driven estimation of the top quark background with the method described above is performed in each of the \pth bins independently. The reason to make this estimation in $\pth$ bins, rather than inclusively is explained in Fig.~\ref{fig:ttpth}, where the \pth distribution is shown in the CtrlDD region normalized to the cross section measured by a specific analysis of CMS \textcolor{red}{REFERENZA}. As shown in the ratio plot, an overall normalization factor would not be able to accommodate for the variations of the Data/simulation ratio from bin to bin.
+
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.6\textwidth]{images/ttpth.pdf}
-\caption{$\pth$ variable in the CtrlDD control region.\label{fig:ttpth}}
+\caption{$\pth$ distribution in the CtrlDD control region.\label{fig:ttpth}}
 \end{figure}
 
-The $\alpha$ factors for each bin and the number of events in signal, CtrlDD region in MC as well as in data are listed in Tab.~\ref{tab:ttdd}.
-%\centering
-%\begin{tabular}{c c c c c c}
-%\hline
-%$\pth$ bin & $N_{t\bar{t}~Data}^{CtrlDD}$ & $N_{t\bar{t}~MC}^{CtrlDD}$ & $N_{t\bar{t}~MC}^{SIG}$ & $\alpha$ & $\Delta\alpha$ \\
-%\hline
-%1 & 406.73 & 358.78 & 117.83 & 0.328 & 0.075 \\ 
-
-%2 & 2929.25 & 2703.44 & 859.08 & 0.318 & 0.071 \\ 
-
-%3 & 5723.95 & 5465.37 & 1567.86 & 0.287 & 0.065 \\ 
-
-%4 & 3863.39 & 3774.66 & 799.41 & 0.212 & 0.052 \\ 
-
-%5 & 1533.61 & 1589.53 & 292.06 & 0.184 & 0.055 \\ 
-
-%6 & 703.52 & 825.11 & 214.33 & 0.256 & 0.140 \\ 
-%\hline
+The $\alpha$ factors for each bin and the number of events in signal, CtrlDD regions in MC as well as in data are listed in Tab.~\ref{tab:ttdd}.
 
 \begin{table}
 \centering
@@ -186,7 +175,7 @@ The $\alpha$ factors for each bin and the number of events in signal, CtrlDD reg
 
 \hline\hline
 
-$p_T^H$ bin & $N_{CTRL}^{DATA}$ & $N_{CTRL}^{TOP}$ &  $N_{SIG}^{TOP}$ &
+\pth bin & $N_{CTRL}^{DATA}$ & $N_{CTRL}^{TOP}$ &  $N_{SIG}^{TOP}$ &
 $\alpha$ & $\Delta\alpha$ \\ 
 
 \hline
@@ -247,16 +236,18 @@ A comparison of the $\mll$ distribution in the six $\pth$ bins used in the analy
 
 
 \clearpage
-\subsection{\WW background \label{sec:WWBackground}}
+\subsection{WW background \label{sec:WWBackground}}
 
-For what the WW background shape is concerned the prediction from the Monte-Carlo simulation has been used.
-This background is divided into six different parts, corresponding to the six bins of \pth considered. In each bin the normalization of the WW background is left free to float and is thus adjusted to match the data by the fit. In this way we minimize an effect that has been observed also in \cite{CMS_AN_2014_056}, that is a difference in shape between the $p_\mathrm{T}^\mathrm{WW}$ theory prediction and the distribution provided by the MC simulation, in our case by \textsc{Madgraph}.\\
-In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_\mathrm{T}^\mathrm{WW}$ spectra of two different qqWW samples: the blue line corresponds to the WW \textsc{Madgraph} samples that we use in this analysis and the red line refers to the same sample in which a reweighting has been applied in order to match the theoretical prediction at NLO+NNLL precision. 
+For what the WW background shape is concerned, the prediction from the MC simulation has been used.
+This background is divided into six different parts, corresponding to the six \pth bins considered. In each bin the normalization of the WW background is left free to float, in such a way to adjust it to match the data during the fit procedure. In this way we minimize an effect that has been observed also in \cite{CMS_AN_2014_056} \textcolor{red}{REFERENZA NON AN}, that is a difference in shape between the $p_\mathrm{T}^\mathrm{WW}$ theory prediction and the distribution provided by the simulation, in our case by \textsc{Madgraph} generator.\\
+In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_\mathrm{T}^\mathrm{WW}$ spectra of two different qqWW samples: one obtained with the \textsc{Madgraph} generator and the other after applying to the same distribution a reweighting in order to match the theoretical prediction at NLO+NNLL precision. 
+
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.7\textwidth]{images/WWnlo/WW_WWnlo.pdf}
-\caption{}\label{fig:ww_wwnlo}
+\caption{Comparison between the $p_\mathrm{T}^\mathrm{WW}$ distributions obtained with two different MC generators: the blue line corresponds to the \textsc{Madgraph} generator and the red line refers to he same sample in which a reweighting has been applied in order to match the theoretical prediction at NLO+NNLL precision. }\label{fig:ww_wwnlo}
 \end{figure}
+
 A shape discrepancy can be clearly observed and the effect becomes larger at high values of \pth.\\
 In order to assess if these discrepancy has a not negligible effect on the shapes of the variables that we use for the fit, \mll and \mt, we checked these distributions in every \pth bin, comparing several samples. In particular we compared the \textsc{Madgraph} sample used for the nominal shape, the \textsc{Madgraph} sample with NLO+NNLL  reweighting, a \textsc{Powheg} NLO sample and an \textsc{aMC@NLO} sample.
 The results of this comparison are shown in figures \ref{fig:ww_mll} and \ref{fig:ww_mth}. The discrepancy in shape among the different models is within the statistical accuracy of the MC samples. 
@@ -336,14 +327,14 @@ Backgrounds containing one or two fake leptons are estimated from events
 selected with relaxed lepton quality criteria, using the efficiencies for
 real and fake leptons to pass the tight lepton quality cuts of the analysis. 
 
-A data-driven approach, described in detail in~\cite{AN-2010-261} and~\cite{AN-2010-397}, is pursued 
+A data-driven approach, described in detail in~\cite{AN-2010-261} and~\cite{AN-2010-397} \textcolor{red}{REFERENZE}, is pursued 
 to estimate this background. A set of loosely selected lepton-like objects, referred to as the 
 'fakeable object' or ``denominator'' from here on, is defined in a sample of events 
 dominated by dijet production. The denominator object definition used in the full 2012
-data is described in~\cite{AN-2012-378}.
+data is described in~\cite{AN-2012-378} \textcolor{red}{REFERENZA}.
 
 To measure the fake rate we count how many fakeable objects pass the full lepton selection 
-of the analysis, parametrized as a function of the phase space of the fakeable lepton, therefore 
+of the analysis, parameterized as a function of the phase space of the fakeable lepton, therefore 
 it is extracted in bins of $\eta$ and p$_T$.
 
 
@@ -357,11 +348,11 @@ fakeable objects is taken as the probability for a fakeable object to fake a lep
 It is then used to extrapolate from the loose leptons sample to a sample of leptons satisfying the  
 full selection. 
 
-The details of the method implementation can be found in~\cite{AN-2013-022}.
+The details of the method implementation can be found in~\cite{AN-2013-022} \textcolor{red}{REFERENZE}.
 % and only final results are quoted
 %here. The resultant background yield estimates at the \WW selection level are given in Table~\ref{tab:WjetsBackground}.
 The systematic uncertainty is evaluated by varying the jet thresholds in the di-jet control sample, and by
-performing a closure test in the same-sign data sample (see~\cite{AN-2013-022}). In both cases it is about 36\%.
+performing a closure test in the same-sign data sample (see~\cite{AN-2013-022}) \textcolor{red}{REFERENZE}. In both cases it is about 36\%.
 
 	%-------------------------------------------------------------------------------
 	\subsubsection{Drell-Yan to \texorpdfstring{$\tau\tau$}{tau tau} background\label{sec:DYtautaubkg}}
@@ -372,7 +363,7 @@ requires the consideration of the contribution from
 \dytt\, that is infact estimated from data.
 This is accomplished by using 
 \dymm events and replacing muons with a simulated
-$\tau\to l\nu_\tau\bar{\nu_e}$ decay \cite{AN-2011-020}.\\
+$\tau\to l\nu_\tau\bar{\nu_e}$ decay \cite{AN-2011-020} \textcolor{red}{REFERENZE}.\\
 After replacing muons from \dymm decays with simulated $\tau$ decays,
 the set of pseudo \dytt events undergoes the reconstruction step.
  
@@ -407,7 +398,7 @@ cross-section for the covered phase space is large, a conservative 100\%
 uncertainty has been given to it. 
 A $k$-factor for W+$\gamma^{*}$ of $1.5\pm0.5$ based on a dedicated measurement of 
 tri-lepton decays, W+$\gamma^{*} \to e\mu\mu$ and W+$\gamma^{*} \to \mu\mu\mu$,
-is applied~\cite{WGammaStarStudy}. 
+is applied~\cite{WGammaStarStudy} \textcolor{red}{REFERENZE}. 
 The contribution of W+$\gamma^{(*)}$ is also
 constrained by a closure test with same sign leptons on data, which reveals a
 good compatibility of the data with the expected background.
