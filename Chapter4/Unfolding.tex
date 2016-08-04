@@ -33,7 +33,7 @@ Since the response matrix is in general limited by the statistical uncertainties
 of the response matrix are sizeable, the unfolded distribution has large variance and 
 strong negative correlations between the neighbouring bins~\cite{Cowan:2002in}.
 Several unfolding methods with regularization are available in literature, such as a method based on the Bayes' theorem, which overcome 
-the unfolding instability using an iterative procedure~\cite{D'Agostini:1994zf}.
+the unfolding instability using an iterative procedure~\cite{DAgostini:1994zf}.
 One possible solution is the utilization of regularization methods.
 Such methods introduce a regularization function that controls the smoothness of the distribution 
 and depends generally on one regularization parameter, which can be controlled
@@ -113,6 +113,13 @@ matrix of the measured distribution. The nuisance parameters belonging to this c
 are the background shape and normalization uncertainties.
 To extract the effect of type A uncertainties a dedicated fit is performed,
 fixing to constant all the nuisance parameters in the model, but type A nuisance parameters.
+The correlation matrix among six signal strengths including all type A uncertainties is shown in Fig.~\ref{fig:typeA_corr}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{images/typeACovMatrix.pdf}
+\caption{Correlations among the six signal strengths including all type A uncertainties.}\label{fig:typeA_corr}
+\end{figure}
 
 The nuisance parameters falling in the type B class are:
 \begin{itemize}
@@ -136,7 +143,7 @@ performed, each time fixing  the nuisance parameter value to $\pm 1$  standard
 deviation with respect
 to its nominal value. The results of the fits are then compared to the results of the full fit obtained by floating  all the nuisance parameters, thus 
 determining the relative uncertainty on the signal strengths due to each
-nuisance parameter, as shown in Tab.~\ref{tab:typeBsyst}.
+nuisance parameter, as shown in Tab.~\ref{table:corr_syst}.
 Using these uncertainties, the measured spectra for each type B
 source are built.
 The effects are propagated through the unfolding by building the corresponding variations of the response matrix and unfolding the

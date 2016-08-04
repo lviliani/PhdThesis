@@ -137,62 +137,23 @@ The following experimental systematic sources have been taken into account:
 
 \begin{itemize}
 
-\item {\bf Renormalization and factorization scale uncertainties:}
-  The uncertainties on the total cross sections due to renormalization and factorization scales are assigned to MC-driven backgrounds (ggWW, WZ, ZZ).
-  For signal these uncertainties are separated in two categories: those affecting the selection efficiency and those affecting the jet bin fractions.
-  The effect of renormalization and factorization scales on the selection efficiency is of the order of 2\% for all the processes.\\
-  Although this analysis is inclusive in number of jets we have to take into account how the QCD scales affect the jet bin migrations because of the b-tagging veto efficiency. The efficiency of this selection depends on jet multiplicity and the effect of the QCD scale variation has been evaluated using the Stewart-Tackman method, as explained in \ref{subsec:stewart-tackman}.
-     
-  %For signal, they are separated in three components: total cross section 
-  %(1-2\% for VBF and VH, 15-20\% for ggH), acceptance (2\% for all processes), and jet bin fractions (for ggH only, ~35\%).
-  %for jet bin uncertainty we apply 11\% for 0 and 1 jet bin and 21\% for 2 jets bin, 
-  %it is detailed described at section~\ref{sec:SystematicsJetBin}.
-%%%  The measurement of the systematic error due to the jet binning is described in detail in Appendix~\ref{sec:ggHcontamination}.
-  
+\item {\bf QCD scale uncertainties:}
+  The uncertainties on the total cross sections due to the choice of the renormalization and factorization scale are assigned to MC-driven backgrounds (ggWW, WZ, ZZ).
+  For the signal processes these uncertainties are separated in two categories: those affecting the selection efficiency and those affecting the jet bin fractions.
+  The effect of renormalization and factorization scale on the selection efficiency is of the order of 2\% for all processes.
+  Although this analysis is inclusive in number of jets, the effect of the QCD scale variation on the jet bin migrations has to be taken into account because of the b-tagging veto efficiency. The efficiency of this selection depends on jet multiplicity and the effect of the QCD scale variation has been evaluated using the Stewart-Tackman method, as explained in \ref{subsec:stewart-tackman}.
+
 \item {\bf PDFs uncertainties:} 
-  In this analysis we have to include a nuisance taking into account the effect of PDFs on the analysis selection efficiency.
-  Different sets of PDFs have been tested and the final effect on signal efficiency is of the order of 1\%. Details can be found in the WW cross section measurement analysis note.
-%  The PDFs uncertainties affect both the cross section and the acceptance....
-  %Different sets of Parton Density Functions have
-  %been tested, which change the acceptance of the measurement. The effect on the
-  %signal efficiency is about 5\%.
-  %Effects of the order of 4\% are also expected for \WW and di-boson production.
+  The utilization of different PDF sets can affect both the normalization and the shapes of the signal contributions. The uncertainty related due to the variations in the choice of PDFs is considered following the PDF4LHC~\cite{Alekhin:2011sk,Botje:2011sn} prescription, using CT10, NNPDF2.1~\cite{Ball:2011mu} and MSTW2008~\cite{Martin:2009iq} PDF sets.
 
-%\item {\bf Higgs-\WW interference:} The uncertainty on 
-%  the interference description of Higgs production with the $gg \to \WW$ process
-%  are taken into account. This systematic is negligible for $m_H<400$ \GeV
-%  thanks to the \mth~ selections applied~\cite{Campbell:2011cu},
-%  and ranges from 1\%
-%  to 27\% between $m_H=400$ and $m_H=600$ \GeV.  
-%
-%\item {\bf Underlying event and parton shower modeling:} 
-%  The effect of varying the underlying event
-%  and parton shower modeling is estimated to be between about 22\% for the $gg \to H$ process
-%  and 10\% for VBF.
-%  The systematic effect has been estimated varying the parton shower tunes
-%  and disabling the underlying event simulation.
-%%%  Details about the estimation are reported in the Appendix \ref{sec:UEPS}.
+
 \item {\bf \boldmath{WW}:} 
-  Due to the fact that the WW shape is entirely taken from Monte Carlo simulation, the analysis is strongly
-  relying on theoretical models and can thus be strongly affected by their uncertainties. Especially higher 
-  order QCD radiation effects have an influence on the generated WW shape. To study this impact, the shapes 
-  of the distributions produced with MadGraph (which is the generator for the Monte Carlo simulation used in the analysis) are compared to the ones produced with MC@NLO. The comparison is performed separately in each bin of \pth and the uncertainty in each bin is always less than few percent. A comparison of the \mll and \mt shapes for the WW background using different MC generators is reported in section \ref{sec:WWBackground}.
-
-%  \item {\bf \boldmath{\WW} electroweak component:} 
-%  the WW electroweak production (WW scattering) becomes an important background once
-%  VBF selections are applied, and it counts as much as the QCD production of WW pairs.
-%  The WW elctroweak component has been simulated with two independent
-%  LO generators (Madgraph and Phantom) and lead to
-%  a discrepancy of about 30\% that is taken into account as a systematic error.
-%  Since the error from LO to NLO cross section varies between 0.8 and 1.2
-%   depending on the kinematical selections \cite{Jager:2006zc,Jager:2013mu}, 
-%  a conservative 20\% normalization error is used.
-%  The scale variations in the NLO calculations are then 
-%  found to be sub-dominant (2\%).
-
+  Due to the fact that the WW shape is entirely taken from simulation, the analysis is strongly
+  relying on theoretical models and can thus be strongly affected by their uncertainties. Especially higher order QCD radiative effects have an influence on the generated WW shape. To study this impact, the shapes of the distributions produced with the \textsc{MadGraph} generator (which is the generator for the MC simulation used in the analysis) are compared to the ones produced with \textsc{mc@nlo}. The comparison is performed separately in each bin of \pth and the uncertainty includes shape differences originating from the renormalization and factorization scale choice. A comparison of the \mll and \mt shapes for the WW background using different MC generators is reported in section \ref{sec:WWBackground}.
 \end{itemize} 
 
 \subsubsection{Jets multiplicity uncertainty \label{subsec:stewart-tackman}}
+
 The jet bin uncertainty on ggH sample has been evaluated using the Stewart-Tackman method, following the recipe proposed in ``Procedure for the LHC Higgs boson search combination'' ~\cite{CMS-NOTE-2011-005}.\\
 Three nuisance parameters have been calculated according to the table \ref{table:jet_binning_theory}, where $\kappa = \sqrt{exp(\epsilon_{-}) exp(\epsilon_{+})}$ and $\epsilon_{\pm}$ are relative QCD scale uncertainties. Exclusive cross sections for 0, 1 and 2-jet bins are calculated for the default QCD scale and their variation by changing the scale by a factor of $2$ and $1/2$ (up/down). The $f_n$ constants represent the exclusive theoretical $n$ jet bin fractions.
 
@@ -258,8 +219,6 @@ QCDscale\_ggH1in &0.997   &  0.993  &   0.984  &   0.975 &    0.946 &    0.974  
 \end{center}
 \end{table}
 
-%Detailed summary of main sources of systematic uncertainty (normalization, experimental and theoretical)
-% is presented at Table~\ref{tab:Systematics}.
 
 %-------------------------------------------------------------------------------
 \subsection{Monte Carlo statistics}
@@ -301,3 +260,53 @@ To account for statistical uncertainties, for each distribution going into the s
 the $+1\sigma$ and $-1\sigma$ shapes were obtained by adding/subtracting the statistical error 
 in each bin and renormalize it to the nominal distribution. In addition to this procedure a constant 
 normalization uncertainty due to the finite statistics of the sample, used to extract the shape, is assigned.
+
+A summary of the main sources of systematic uncertainty and the corresponding estimate is reported in Table~\ref{tab:Systematics}.
+
+\begin{table}[h]
+\small{
+  \begin{center}
+  \caption{Main sources of systematic uncertainties and their estimate. The
+  first category reports the uncertainties in the normalization of background
+  contributions. The experimental and theoretical uncertainties refer to the
+  effect on signal yields. A range is specified if the uncertainty varies
+  across the $\pth$ bins.}
+  \label{tab:Systematics}
+  \begin{tabular}{cc}
+  \hline\hline
+  \multicolumn{2}{c} {\bf{Uncertainties in backgrounds contributions}} \\
+  \hline
+  Source  & Uncertainty \\
+  \hline
+  $\rm{t\bar{t}}$, tW      & 20--50$\%$ \\
+  W+ jets              & $40\%$ \\
+  WZ, ZZ              & $4\%$ \\
+  W$\gamma^{(*)}$  & $30\%$ \\
+  \hline\hline
+  \multicolumn{2}{c} {\bf{Effect of the experimental uncertainties on the signal and background yields}}\\
+  \hline
+  Source & Uncertainty\\
+  \hline
+  Integrated luminosity        & $2.6\%$ \\
+  Trigger efficiency           & 1--2$\%$\\
+  Lepton reconstruction and identification & 3--4$\%$\\
+  Lepton energy scale          & 2--4$\%$ \\
+  \MET modelling          & $2\%$ \\
+  Jet energy scale             & $10\%$ \\
+  Pileup multiplicity          & $2\%$ \\
+  b mistag modelling	       & $3\%$ \\	
+  \hline\hline
+  \multicolumn{2}{c}{\bf{Effect of the theoretical uncertainties on signal yield}}\\
+  \hline
+  Source & Uncertainty \\
+  \hline
+  b jet veto scale factor              & 1--2$\%$\\
+  PDF                                  & $1\%$ \\
+  WW background shape                  & $1\%$\\
+  \hline
+  \end{tabular}
+  \end{center}
+}
+\end{table}
+
+

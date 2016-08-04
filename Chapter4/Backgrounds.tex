@@ -154,7 +154,7 @@ SF_{SIG} = \left(\frac{1-\epsilon_{s}^{Data}}{1-\epsilon_{s}^{MC}}\right)^{min(2
 SF_{CtrlDD} = \left(\frac{\epsilon_{s}^{Data}}{\epsilon_{s}^{MC}}\right)^{(jet1 == b-jet)} \left(\frac{\epsilon_{b}^{Data}}{\epsilon_{b}^{MC}}\right)^{(jet1 == non-b-jets)} 
 \end{equation}
 
-where $n_{b-jets})$ is the number of true b-jets in the event and $n_{non-b-jets}$ is the number of non-b-jets in the event. The writing $jet1 == b-jet$ ($jet1 == non-b-jets$) is a boolean flag that is true when the leading jet, the one used for the CtrlDD selection, is (not) a true b-jet.
+where $n_{b-jets}$ is the number of true b-jets in the event and $n_{non-b-jets}$ is the number of non-b-jets in the event. The writing $jet1 == b-jet$ ($jet1 == non-b-jets$) is a boolean flag that is true when the leading jet, the one used for the CtrlDD selection, is (not) a true b-jet.
 
 Since the efficiency and mistag rate that have been measured on data are close to the one in the simulation, it was decided to assume a scale factor of 1 for both b-tagging efficiency and mis-tag rate. This means that the central values of the scale factors defined in Eq.~\ref{eq:sfsig} and Eq.~\ref{eq:sfbkg} is 1, but these numbers have an error that is derived assuming an uncertainty on $\epsilon_{s}^{Data}$ and $\epsilon_{b}^{Data}$ that covers both the statistical error from the fit of the two quantities and the difference with respect to the simulation.
 This results in an up and a down variations of the scale factors in the signal and CtrlDD regions, that is used to derive an error on $\alpha$.
@@ -360,7 +360,7 @@ performing a closure test in the same-sign data sample (see~\cite{AN-2013-022}) 
 
 The low \MET threshold in e$\mu$ final state
 requires the consideration of the contribution from 
-\dytt\, that is infact estimated from data.
+\dytt\, that is in fact estimated from data.
 This is accomplished by using 
 \dymm events and replacing muons with a simulated
 $\tau\to l\nu_\tau\bar{\nu_e}$ decay \cite{AN-2011-020} \textcolor{red}{REFERENZE}.\\
@@ -368,7 +368,7 @@ After replacing muons from \dymm decays with simulated $\tau$ decays,
 the set of pseudo \dytt events undergoes the reconstruction step.
  
 Good agreement in kinematic distributions for this sample
-and a Monte Carlo based \dytt sample is found.
+and a MC based \dytt sample is found.
 The global normalization of pseudo \dytt events is 
 checked in the low \mt spectrum where a rather pure
 \dytt sample is expected.
