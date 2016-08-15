@@ -10,9 +10,10 @@ This modification significantly reduces the uncertainties related to the modelli
 \subsection{Event reconstruction and selections}\label{sec:Selections}
 
 %%% Physics objects definition
+\textcolor{red}{Add more info about electron and muons and check the consistency with the Fakeable object definition.}
 The electron selection is based on two multivariate discriminants, one specialised in identifying the electron object and the other for isolation. The cut value for each discriminant is optimised to provide a good fake electron rejection and to improve the signal acceptance.
 
-Muons are reconstructed using the standard CMS selection and are required to be identified both in the tracker (\textit{tracker muon}) and in the muon chambers (\textit{global muon}). Additionally quality criteria on the muon track are required, such as to have at least 10 hits in the tracker (at least one of which in the pixel detector) and to have $\chi^2/ndf < 10$.
+Muons are reconstructed using the standard CMS selection and are required to be identified both in the tracker (\textit{Tracker Muon}) and in the muon chambers (\textit{Global Muon}). Additionally quality criteria on the muon track are required, such as to have at least 10 hits in the tracker (at least one of which in the pixel detector) and to have $\chi^2/ndf < 10$.
 Muon isolation is based on the Particle-Flow algorithm. An MVA approach is considered, based on the radial distributions of the Particle-Flow candidates inside a cone of radius 0.5 around the muon direction.
 
 The efficiencies for the identification and isolation of the electrons and muons are measured in data and in simulation selecting a pure sample of leptons coming from the Z$\to\ell\ell$ decay. The measured efficiencies are used as scale factors to correct the MC simulation to precisely model the data. Similarly, the trigger efficiency extracted fromdata is applied toMC samples to correct for the additional loss.
@@ -21,7 +22,7 @@ Jets in this analysis are reconstructed by combining the energy measured in the 
 
 \textcolor{red}{Here I could add some details about jets (see AN/2012-194) if they are not already discussed in the objects section.}
 
-Background events from \ttbar and single-top production are rejected applying a soft-muon veto and b-tagging veto. The former selection requires that in the event there are no muons from b-decays passing the following cuts: 
+Background events from \ttbar and tW production are rejected applying a soft-muon veto and b-tagging veto. The former selection requires that in the event there are no muons from b-decays passing the following cuts: 
 \begin{itemize}
 \item the muon is reconstructed as TrackerMuon (and passes the TMLastStationTight ID);
 \item the number of hits of the muon in the Silicon Tracker is greater than 10;
@@ -35,27 +36,26 @@ In the following a b-tagged jet is defined as a jet, within $|\eta|<2.4$ (b-tagg
 
 
 %%% Event selection
-The event selection consists of several steps. The first step is to select \WW -like events applying a selection that is heavily based on the main analysis selection except for few different cuts explained below.
-The \WW -like event preselection consists of the following set of cuts:
+The event selection consists of several steps. The first step is to select \WW -like events applying a selection that consists of the following set of cuts:
 \begin{enumerate}
 \item {\bf Lepton preselection}:
   \begin{itemize}
-  \item at least two opposite-sign and opposite-flavour ($e\mu$) leptons reconstructed in the event;
+  \item at least two opposite-charge and opposite-flavour (e$\mu$) isolated leptons reconstructed in the event;
   \item $|\eta|<2.5$ for electrons and $|\eta|<2.4$ for muons;
-  \item $\pt>20~\GeV$ for the leading lepton. For the trailing lepton, the transverse momentum is required to be larger than 10~\GeV.
+  \item $\pt>20\GeV$ for the leading lepton. For the trailing lepton, the transverse momentum is required to be larger than 10\GeV.
   \end{itemize}
 \item {\bf Extra lepton veto}: the event is required to have two and only two opposite-sign leptons passing the lepton selection.
-\item {\bf \MET preselection}: particle flow \MET is required to be greater than $20$\GeV.
-\item {\bf Di-lepton mass cut}: $m_{\ell\ell} > 12$\GeV in order to reject low mass resonances and QCD backgrounds.
-\item {\bf Di-lepton $p_T$ cut}: $p_T^{\ell\ell} > 30$\GeV.
-\item {\bf projected \MET selection}: minimum projected \MET required to be larger than 20~\GeV.
+\item {\bf \MET preselection}: particle flow \MET is required to be greater than 20\GeV.
+\item {\bf Di-lepton mass cut}: $\mll > 12$\GeV in order to reject low mass resonances and QCD backgrounds.
+\item {\bf Di-lepton \pt cut}: $\ptll > 30$\GeV.
+\item {\bf projected \MET selection}: minimum projected \MET required to be larger than 20\GeV.
 \item {\bf Transverse mass}: $\mt>60$\GeV to reject Drell-Yan to $\tau\tau$ events. 
 \end{enumerate}
-In addition to the \WW-like preselection other cuts are applied in order to reduce the top background (\ttbar and single-top), which is one of the main backgrounds in this final state. We operate two different selections depending on the number of jets with $\pt > 30$\GeV in the event. This is done to suppress the top background both in the low \pth region, where 0-jets events have the biggest contribution, and for higher values where also larger jet multiplicity events are important.
-The selection for 0-jets events relies on a soft muon veto, which rejects events with non-isolated soft muons (likely belonging to b-jets), and on a soft jets (with $\pt < 30$\GeV) anti b-tagging requirement.
-The latter requirement exploits the Track Counting High Efficiency tagger (TCHE) to reject soft jets that are likely to come from b quarks hadronization.
+In addition to the \WW-like preselection other cuts are applied in order to reduce the top quark background (both \ttbar and tW), which is one of the main backgrounds in this final state. Two different selections are used depending on the number of jets with $\pt > 30$\GeV in the event. This is done to suppress the top quark background both in the low \pth region, where 0-jets events have the largest contribution, and for higher \pth values where also larger jet multiplicity events are important.
+The selection for 0-jets events relies on the soft-muon veto and on a soft jets (with $\pt < 30$\GeV) anti b-tagging requirement.
+The latter requirement exploits the TCHE algorithm to reject soft jets that are likely to come from b quarks hadronization.
 
-For events with a jet multiplicity greater or equal than one, a different selection is applied. In this case we exploit the good b-tagging performances of the \textit{JetBProbability} tagger to reject all the jets with $\pt > 30$~\GeV that are likely to come from a b quark. This jet veto relies on a cut on the \textit{JetBProbability} tagger discriminant. Any jet with a discriminant value below $1.4$ is identified as a non b-jet. The analysis selection requires to have no events containing b-tagged jets with $\pt > 30$\GeV.
+For events with a jet multiplicity greater or equal than one, a different selection is applied. In this case we exploit the good b-tagging performances of the JP tagger to reject all the jets with $\pt > 30$\GeV that are likely to come from a b quark hadronization. The analysis selection requires to have no events containing b-tagged jets with $\pt > 30$\GeV.
 
 \begin{figure}[b]
 \centering
@@ -63,7 +63,7 @@ For events with a jet multiplicity greater or equal than one, a different select
 \caption{Effect of single selections on MC samples. The signal (red line) is multiplied by 100 and superimposed on stacked backgrounds. In each bin, corresponding to a different selection, is reported the expected number of events in MC at a luminosity of $19.46~\mathrm{fb}^{-1}$.\label{fig:cutflow}}
 \end{figure}
 
-A  cut-flow plot is reported in figure \ref{fig:cutflow} showing the effect of each selection on top of Monte Carlo samples. In the first bin, labelled as \textit{No cut}, no selection has been applied and the bin content correspond to the total expected number of events with a luminosity of $19.46~\mathrm{fb}^{-1}$. All the events in this bin have at least two leptons with a loose transverse momentum cut of 8\GeV. In the following bin the lepton cuts are applied, including the requirement to have two opposite-sign and opposite-flavour leptons and the extra lepton veto. Then are progressively reported all the other selections, showing the effect of each cut on backgrounds and signal. For each selection is also reported the expected signal over background ratio which after the full selection reach a maximum value around $3\%$.
+A  cut-flow plot is reported in figure \ref{fig:cutflow} showing the effect of each selection using signal and background simulations. In the first bin, labelled as \textit{No cut}, no selection has been applied and the bin content correspond to the total expected number of events with a luminosity of $19.4~\mathrm{fb}^{-1}$. All the events in this bin have at least two leptons with a loose transverse momentum cut of 8\GeV. In the following bin the lepton cuts are applied, including the requirement to have two opposite-sign and opposite-flavour leptons and the extra lepton veto. Then are progressively reported all the other selections, showing the effect of each cut on backgrounds and signal. For each selection is also reported the expected signal over background ratio which after the full selection reach a maximum value around $3\%$.
 
 \subsection{Fiducial phase space}
 The Higgs boson transverse momentum is measured in a fiducial phase space, whose requirements are chosen in order to minimize the dependence of the measurements on the underlying model of the Higgs boson properties and its production mechanism.
@@ -107,21 +107,15 @@ The first one is that the choice of the binning in the \pth{} spectrum needs to 
 The second implication is that migrations of events across bins are significant and an unfolding procedure needs to be applied to correct for selection efficiencies and bin migration effects.
 
 Given these aspects the criterion that was used to define the \pth bin size is devised to keep under control the bin migrations due to the finite resolution.
-
-For any given bin $i$ we can define the purity $P_i$ on a signal sample as the number events that are generated and also reconstructed in that bin, $N_i^\mathrm{GEN|RECO}$, divided by the number of events reconstructed there $N_i^\mathrm{RECO}$:
+For any given bin $i$ we can define the purity $P_i$ on a signal sample as the number events that are generated and also reconstructed in that bin, $N_i^\mathrm{GEN|RECO}$, divided by the number of events reconstructed there, $N_i^\mathrm{RECO}$:
 \begin{equation}
 P_i = \frac{N_i^\mathrm{GEN|RECO}}{N_i^\mathrm{RECO}} \qquad .
 \end{equation}
-Where $N_i^\mathrm{GEN|RECO}$ is the number of events that are both generated and
-reconstructed in a $\pth$ bin $i$, while $N_i^\mathrm{RECO}$ is the number of events
-that are reconstructed in bin $i$. We have chosen the bin width in such a way
-as to make the smallest bins able to ensure a purity of about 60\% on a gluon fusion sample.
-Following this prescription we have divided the whole $\pth$ range in six
-different bins: \mbox{[0-15 GeV]}, \mbox{[15-45 GeV]}, \mbox{[45-85 GeV]},
-\mbox{[85-125 GeV]}, \mbox{[125-165 GeV]}, \mbox{[165-$\infty$ GeV]}.
+The bin width is chosen in such a way as to make the smallest bins able to ensure a purity of about 60\% on a ggH signal sample.
+Following this prescription we have divided the whole \pth range in the following six bins: \mbox{[0-15 GeV]}, \mbox{[15-45 GeV]}, \mbox{[45-85 GeV]}, \mbox{[85-125 GeV]}, \mbox{[125-165 GeV]}, \mbox{[165-$\infty$ GeV]}.
 
-The efficiency of the analysis selection with respect to the fiducial phase space is reported in Fig.~\ref{fig:sel_eff} (a) for each \pth bin. The efficiency denominator is the number of events that are inside the fiducial phase space, while the numerator is the number of events that pass both the analysis and the fiducial phase space selections, in each \pth bin. The fake rate, defined by the ratio of signal events that pass the analysis selection but are not within the fiducial phase space, divided by the total number of events passing both the analysis and the fiducial phase space selections is shown in Fig.~\ref{fig:sel_eff} (b). For both the selection efficiency and the fake rate, all the signal production mechanisms are included.
-The overall efficiency and fake rate are: $\epsilon=0.362\pm{0.005}$ and $fake~rate=0.126\pm0.004$, where the errors are only statistical.
+The efficiency of the analysis selection with respect to the fiducial phase space is reported in Fig.~\ref{fig:sel_eff} (a) for each \pth bin. The efficiency denominator is the number of events that are inside the fiducial phase space, while the numerator is the number of events that pass both the analysis and the fiducial phase space selections. The fake rate, defined by the ratio of signal events that pass the analysis selection but are not within the fiducial phase space, divided by the total number of events passing both the analysis and the fiducial phase space selections is shown in Fig.~\ref{fig:sel_eff} (b). For both the selection efficiency and the fake rate, all the signal production mechanisms are included.
+The overall efficiency and fake rate are: $\epsilon=0.362\pm{0.005}$ and $fake~rate=0.126\pm0.004$, where only statistical uncertainties are taken into account.
 
 \begin{figure}[t]
 \centering
@@ -133,7 +127,6 @@ The overall efficiency and fake rate are: $\epsilon=0.362\pm{0.005}$ and $fake~r
 }
 \caption{Efficiency of the full selection (a) and fake rate (b) as a function of \pth.\label{fig:sel_eff}}
 \end{figure}
-
 
 If a $4\pi$ acceptance is defined, requiring just that the Higgs decays to WW and then to $2\ell2\nu$, the efficiency becomes $\epsilon=0.03960\pm{0.00033}$ and the fake rate is zero. 
 

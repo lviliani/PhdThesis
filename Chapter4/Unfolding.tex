@@ -113,12 +113,20 @@ matrix of the measured distribution. The nuisance parameters belonging to this c
 are the background shape and normalization uncertainties.
 To extract the effect of type A uncertainties a dedicated fit is performed,
 fixing to constant all the nuisance parameters in the model, but type A nuisance parameters.
-The correlation matrix among six signal strengths including all type A uncertainties is shown in Fig.~\ref{fig:typeA_corr}.
+The correlation matrix among the six signal strengths corresponding to the six \pth bins, including all type A uncertainties, is shown in Fig.~\ref{fig:typeA_corr}.
+The correlation cor($i$,$j$) of bins $i$ and $j$ is defined as:	
+
+\begin{equation}\label{eq:correlation}
+\mathrm{cor}(i,j) = \frac{ \mathrm{cov}(i,j) }{  s_{i}s_{j} } \qquad ,
+\end{equation} 
+
+where $\mathrm{cov}(i,j)$ is the covariance of bins $i$ and $j$, and ($s_{i}$,
+$s_{j}$) are the standard deviations of bins $i$ and $j$,  respectively.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{images/typeACovMatrix.pdf}
-\caption{Correlations among the six signal strengths including all type A uncertainties.}\label{fig:typeA_corr}
+\caption{Correlations among the signal strengths corresponding to the six \pth bins including all type A uncertainties.}\label{fig:typeA_corr}
 \end{figure}
 
 The nuisance parameters falling in the type B class are:

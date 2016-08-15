@@ -157,9 +157,9 @@ SF_{CtrlDD} = \left(\frac{\epsilon_{s}^{Data}}{\epsilon_{s}^{MC}}\right)^{(jet1 
 where $n_{b-jets}$ is the number of true b-jets in the event and $n_{non-b-jets}$ is the number of non-b-jets in the event. The writing $jet1 == b-jet$ ($jet1 == non-b-jets$) is a boolean flag that is true when the leading jet, the one used for the CtrlDD selection, is (not) a true b-jet.
 
 Since the efficiency and mistag rate that have been measured on data are close to the one in the simulation, it was decided to assume a scale factor of 1 for both b-tagging efficiency and mis-tag rate. This means that the central values of the scale factors defined in Eq.~\ref{eq:sfsig} and Eq.~\ref{eq:sfbkg} is 1, but these numbers have an error that is derived assuming an uncertainty on $\epsilon_{s}^{Data}$ and $\epsilon_{b}^{Data}$ that covers both the statistical error from the fit of the two quantities and the difference with respect to the simulation.
-This results in an up and a down variations of the scale factors in the signal and CtrlDD regions, that is used to derive an error on $\alpha$.
+This results in an up and a down variation of the scale factors in the signal and CtrlDD regions, that is used to derive an error on $\alpha$.
 
-A data driven estimation of the top quark background with the method described above is performed in each of the \pth bins independently. The reason to make this estimation in $\pth$ bins, rather than inclusively is explained in Fig.~\ref{fig:ttpth}, where the \pth distribution is shown in the CtrlDD region normalized to the cross section measured by a specific analysis of CMS \textcolor{red}{REFERENZA}. As shown in the ratio plot, an overall normalization factor would not be able to accommodate for the variations of the Data/simulation ratio from bin to bin.
+A data driven estimation of the top quark background with the method described above is performed in each of the \pth bins independently. The reason to make this estimation in $\pth$ bins, rather than inclusively is explained in Fig.~\ref{fig:ttpth}, where the \pth distribution is shown in the CtrlDD region normalized to the cross section measured by a specific CMS analysis~\cite{Khachatryan:2016mqs}. As shown in the ratio plot, an overall normalization factor would not be able to accommodate for the variations of the data/simulation ratio from bin to bin.
 
 \begin{figure}[b]
 \centering
@@ -168,35 +168,24 @@ A data driven estimation of the top quark background with the method described a
 \end{figure}
 
 The $\alpha$ factors for each bin and the number of events in signal, CtrlDD regions in MC as well as in data are listed in Tab.~\ref{tab:ttdd}.
-
 \begin{table}
 \centering
 \begin{tabular}{c c c c c c}
-
-\hline\hline
-
-\pth bin & $N_{CTRL}^{DATA}$ & $N_{CTRL}^{TOP}$ &  $N_{SIG}^{TOP}$ &
+\hline
+\pth [\GeV] & $N_{CTRL}^{DATA}$ & $N_{CTRL}^{TOP}$ &  $N_{SIG}^{TOP}$ &
 $\alpha$ & $\Delta\alpha$ \\ 
-
+\hline\hline
+$[0--15]$ & 406.71 & 358.78 & 117.83 & 0.328 & 0.075 \\ 
+$[15--45]$ & 2930.14 & 2703.44 & 859.08 & 0.318 & 0.071 \\ 
+$[45--85]$ & 5481.02 & 5207.48 & 1506.05 & 0.289 & 0.065 \\ 
+$[85--125]$ & 4126.35 & 4032.56 & 861.22 & 0.214 & 0.052 \\ 
+$[125--165]$ & 1612.64 & 1654.27 & 304.69 & 0.184 & 0.055 \\ 
+$[165--\infty]$ & 647.50 & 760.37 & 201.70 & 0.265 & 0.147 \\ 
 \hline
-
-1 & 406.71 & 358.78 & 117.83 & 0.328 & 0.075 \\ 
-
-2 & 2930.14 & 2703.44 & 859.08 & 0.318 & 0.071 \\ 
-
-3 & 5481.02 & 5207.48 & 1506.05 & 0.289 & 0.065 \\ 
-
-4 & 4126.35 & 4032.56 & 861.22 & 0.214 & 0.052 \\ 
-
-5 & 1612.64 & 1654.27 & 304.69 & 0.184 & 0.055 \\ 
-
-6 & 647.50 & 760.37 & 201.70 & 0.265 & 0.147 \\ 
-
-\hline
-
 \end{tabular}
-\caption{Table of data driven scale factors.\label{tab:ttdd}}
+\caption{Data driven scale factors related to the top quark background estimation.\label{tab:ttdd}}
 \end{table}
+
 A comparison of the $\mll$ distribution in the six $\pth$ bins used in the analysis in CtrlDD after the data driven correction is shown in Fig.~\ref{fig:mllCtrlDD}
 \begin{figure}[htb]
 \centering
@@ -238,9 +227,9 @@ A comparison of the $\mll$ distribution in the six $\pth$ bins used in the analy
 \clearpage
 \subsection{WW background \label{sec:WWBackground}}
 
-For what the WW background shape is concerned, the prediction from the MC simulation has been used.
-This background is divided into six different parts, corresponding to the six \pth bins considered. In each bin the normalization of the WW background is left free to float, in such a way to adjust it to match the data during the fit procedure. In this way we minimize an effect that has been observed also in \cite{CMS_AN_2014_056} \textcolor{red}{REFERENZA NON AN}, that is a difference in shape between the $p_\mathrm{T}^\mathrm{WW}$ theory prediction and the distribution provided by the simulation, in our case by \textsc{Madgraph} generator.\\
-In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_\mathrm{T}^\mathrm{WW}$ spectra of two different qqWW samples: one obtained with the \textsc{Madgraph} generator and the other after applying to the same distribution a reweighting in order to match the theoretical prediction at NLO+NNLL precision. 
+For what the $\mathrm{qq\to W^{+}W^{-}}$ background shape is concerned, the prediction from the simulation is used.
+This background is divided into six different parts, corresponding to the six \pth bins defined in the analysis. The normalization of the $\mathrm{qq\to W^{+}W^{-}}$ background is left free to float in each bin, in such a way to adjust it in order to match the data during the fit procedure. In this way we minimize the shape difference between the $p_\mathrm{T}^\mathrm{WW}$ theory prediction and the distribution provided by the simulation, in our case the \textsc{Madgraph} generator.\\
+In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_\mathrm{T}^\mathrm{WW}$ spectra of two different $\mathrm{qq\to W^{+}W^{-}}$ samples: one obtained with the \textsc{Madgraph} generator and the other after applying to the same distribution a reweighting in order to match the theoretical prediction at NLO+NNLL precision.
 
 \begin{figure}[b]
 \centering
@@ -248,33 +237,35 @@ In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_\mathrm{T}^\ma
 \caption{Comparison between the $p_\mathrm{T}^\mathrm{WW}$ distributions obtained with two different MC generators: the blue line corresponds to the \textsc{Madgraph} generator and the red line refers to he same sample in which a reweighting has been applied in order to match the theoretical prediction at NLO+NNLL precision. }\label{fig:ww_wwnlo}
 \end{figure}
 
-A shape discrepancy can be clearly observed and the effect becomes larger at high values of \pth.\\
-In order to assess if these discrepancy has a not negligible effect on the shapes of the variables that we use for the fit, \mll and \mt, we checked these distributions in every \pth bin, comparing several samples. In particular we compared the \textsc{Madgraph} sample used for the nominal shape, the \textsc{Madgraph} sample with NLO+NNLL  reweighting, a \textsc{Powheg} NLO sample and an \textsc{aMC@NLO} sample.
-The results of this comparison are shown in figures \ref{fig:ww_mll} and \ref{fig:ww_mth}. The discrepancy in shape among the different models is within the statistical accuracy of the MC samples. 
+A shape discrepancy can be clearly observed and the effect becomes larger at high values of \pth.
+In order to assess the effect of this discrepancy on the shapes of the variables used for the signal extraction, \mll and \mt, the shapes have been checked in all \pth bins, comparing different MC samples. The \textsc{Madgraph} sample used for the nominal shape is compared to the \textsc{Madgraph} sample with NLO+NNLL  reweighting, a \textsc{Powheg} sample with NLO accuracy and an \textsc{aMC@NLO} sample.
+The results of this comparison are shown in figures \ref{fig:ww_mll} and \ref{fig:ww_mth}. The shape discrepancy among the different models is included as an additional systematic uncertainty.
 
 \begin{figure}[htb]
 \centering
-\subfigure[\mll bin 1]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin1.pdf}}
-\subfigure[\mll bin 2]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin2.pdf}}\\
-\subfigure[\mll bin 3]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin3.pdf}}
-\subfigure[\mll bin 4]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin4.pdf}}\\
-\subfigure[\mll bin 5]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin5.pdf}}
-\subfigure[\mll bin 6]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin6.pdf}}\\
+\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin1.pdf}}
+\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin2.pdf}}\\
+\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin3.pdf}}
+\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin4.pdf}}\\
+\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin5.pdf}}
+\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin6.pdf}}\\
 \caption{Comparison between the default WW background sample and other theoretical models for the \mll distributions in every \pth bin.\label{fig:ww_mll}}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\subfigure[\mt bin 1]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin1.pdf}}
-\subfigure[\mt bin 2]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin2.pdf}}\\
-\subfigure[\mt bin 3]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin3.pdf}}
-\subfigure[\mt bin 4]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin4.pdf}}\\
-\subfigure[\mt bin 5]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin5.pdf}}
-\subfigure[\mt bin 6]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin6.pdf}}\\
+\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin1.pdf}}
+\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin2.pdf}}\\
+\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin3.pdf}}
+\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin4.pdf}}\\
+\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin5.pdf}}
+\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin6.pdf}}\\
 \caption{Comparison between the default WW background sample and other theoretical models for the \mt distributions in every \pth bin.\label{fig:ww_mth}}
 \end{figure}
 
+The agreement of the \mll and \mt shapes between simulation and data for this background was checked in a signal-free control, defined selecting events with values of \mll greater than 60\GeV.
 
+The gluon-induced WW process, i.e. gg$\to \mathrm{W^{+}W^{-}}$, has a sub-dominant contribution with respect to the quark-induced process, being the cross section ratio between the two of about 5\%. The \mll and \mt shapes for this background are taken from simulation while the cross section is scaled to the approximate NLO calculation~\cite{Bonvini:2013jha,Passarino:2013bha}.
 
 
 
@@ -322,35 +313,96 @@ The results of this comparison are shown in figures \ref{fig:ww_mll} and \ref{fi
 \subsection{Other backgrounds\label{sec:OtherBackgrounds}}
 
 	%------------------------------------------------------------------------------------
-	\subsubsection{W+jets background\label{sec:wjetsbkg}}	
-Backgrounds containing one or two fake leptons are estimated from events
-selected with relaxed lepton quality criteria, using the efficiencies for
-real and fake leptons to pass the tight lepton quality cuts of the analysis. 
-
-A data-driven approach, described in detail in~\cite{AN-2010-261} and~\cite{AN-2010-397} \textcolor{red}{REFERENZE}, is pursued 
-to estimate this background. A set of loosely selected lepton-like objects, referred to as the 
-'fakeable object' or ``denominator'' from here on, is defined in a sample of events 
-dominated by dijet production. The denominator object definition used in the full 2012
-data is described in~\cite{AN-2012-378} \textcolor{red}{REFERENZA}.
-
+	\subsubsection{Fake leptons background\label{sec:wjetsbkg}}	
+	
+Events in which W bosons are produced in association with jets, as well as multi-jet events, constitute a background for this analysis, because one or more jets can be misidentified as leptons. The rate at which jets are misidentified as leptons may be not accurately described in simulation, hence a data driven method is used to estimate this background. 
+	
+The idea is to estimate the background containing one or two fake leptons selecting events with relaxed lepton quality criteria, i.e. looser with respect to the selections used at the analysis level, and computing the efficiencies for real and fake leptons to pass the tight lepton quality requirements of the analysis. 
+A data-driven approach is pursued to estimate this background. A set of loosely selected lepton-like objects, referred to as the ``fakeable object' or ``denominator'' from here on, is defined in a data set of events dominated by dijet production.
 To measure the fake rate we count how many fakeable objects pass the full lepton selection 
 of the analysis, parameterized as a function of the phase space of the fakeable lepton, therefore 
-it is extracted in bins of $\eta$ and p$_T$.
-
-
+it is extracted in bins of $\eta$ and \pt.
 The ratio of the fully identified lepton, referred as ``numerator'', to the 
 fakeable objects is taken as the probability for a fakeable object to fake a lepton:
 
-\begin{equation} 
-{\mbox Fake\ Rate } = \frac{\# of \ fully \ reconstructed \ leptons}{\# of \ fakeable \ objects} 
+\begin{equation} \label{eq:fake_rate}
+{Fake\ Rate } = \frac{\# of \ fully \ reconstructed \ leptons}{\# of \ fakeable \ objects} 
 \end{equation}
 
 It is then used to extrapolate from the loose leptons sample to a sample of leptons satisfying the  
-full selection. 
+full selection.
 
-The details of the method implementation can be found in~\cite{AN-2013-022} \textcolor{red}{REFERENZE}.
-% and only final results are quoted
-%here. The resultant background yield estimates at the \WW selection level are given in Table~\ref{tab:WjetsBackground}.
+The definition of the denominator is of large impact in the systematic uncertainties related to this method. For the 2012 data taking period a summary of the selections used for the numerator and the denominator of Eq.~\eqref{eq:fake_rate} is shown below for electrons and muons respectively.
+For electrons the denominator is defined by the following requirements:
+
+\begin{itemize}
+\item $\sigma_\mathrm{i\eta i\eta} < 0.01 (0.03)$ for barrel (endcap);
+\item $|\Delta\phi_\mathrm{in}| < 0.15 (0.10)$ for barrel (endcap);
+\item $|\Delta\eta_\mathrm{in}| < 0.007 (0.009)$ for barrel (endcap);
+\item $H/E < 0.12 (0.10)$ for barrel (endcap);
+\item electron conversion rejection;
+\item $|d_0| < 0.02$\,cm;
+\item $\frac{\sum_\mathrm{trk}E_\mathrm{T}}{\pt^\mathrm{ele}} < 0.2$;
+\item $\frac{\sum_\mathrm{ECAL}E_\mathrm{T}}{\pt^\mathrm{ele}} < 0.2$;
+\item $\frac{\sum_\mathrm{HCAL}E_\mathrm{T}}{\pt^\mathrm{ele}} < 0.2$.
+\end{itemize}
+
+For muons the selection are loosened with respect to the tight analysis selection requiring that:
+
+\begin{itemize}
+\item $|d_0| < 0.02$\,cm;
+\item MVA isolation output $> -0.6$.
+\end{itemize}
+
+%shown in Table~\ref{tab:fake_muons} and \ref{tab_fake_electrons} for muons and electrons respectively.
+
+%\begin{table}
+%\centering
+%\begin{tabular}{c c c}
+%\hline
+%Selection & Numerator & Denominator \\
+%\hline\hline
+%Muon ID & Global Muon + Tracker Muon & Tracker Muon \\
+%\pt     & $\pt>20$\GeV & $\pt>20$\GeV \\
+%$\eta$  & $|\eta|<2.4$ & $|\eta|<2.4$ \\
+%Isolation & $(\mathrm{trackIso+caloIso})/\pt < 0.15$ & $(\mathrm{trackIso+caloIso})/\pt < 1$ \\
+%\# inner tracker hits & $\mathrm{\# hits} > 10$ & $\mathrm{\# hits} > 10$ \\
+%\# pixel hits & $\mathrm{\# hits} > 0$ & $\mathrm{\# hits} > 0$ \\
+%Global $\chi^2$ & $\chi^2/\mathrm{ndof} < 10$ & -- \\
+%$d0$ & $d0 < 0.02$\,cm & $d0 < 0.02$\,cm \\
+%$dz$ & $dz < 1$\,cm & $dz < 1$\,cm \\
+%\# valid SA hits & $>0$ & -- \\
+%\# muon stations & $>1$ & -- \\
+%\hline
+%\end{tabular}
+%\caption{Numerator and denominator selections for muons.\label{tab:fake_muons}}
+%\end{table}
+
+The dijet enriched data set used for the fake rate measurement, which is selected using single lepton triggers with low \pt thresholds, it is not a pure sample containing just fake leptons, but may still contain prompt leptons coming from the W and Z boson decays. To reject muons from the W decay, the events are required to have $\MET<20$\GeV and a W transverse mass below 20\GeV as well. Muons from the Z decay are instead remove requiring $m_{\mu\mu}>20$\GeV and $m_{\mu\mu} \notin [76,106]$\GeV. For electrons the Z mass peak veto is enlarged to $m_\mathrm{ee} \notin [60,120]$\GeV. Finally both electrons and muons are required to be isolated from the leading jet in the event, i.e. $\Delta\phi(\ell,j)>1$. The residual prompt lepton contamination from EW processes such as W/Z+jets production, which can bias the fake rate measurement, is estimated using simulation and subtracted from both the numerator and denominator. The contamination from EW processes is different for the numerator and denominator and is particularly important for relatively high lepton \pt values.
+
+In addition to the fake rate, also a prompt lepton rate is evaluated, defined as the probability of a prompt lepton passing the loose requirements to also pass the tight analysis selections.
+The prompt rate is also measured in data, defining a control region enriched in $\mathrm{Z} \to \ell\ell$ events, selecting dilepton events with an invariant mass of the two leptons in the Z peak mass region.
+
+Both the fake and prompt rate are used to reweight the data samples used in the analysis in order to obtain directly from data the contribution of the fake lepton background. The method to apply those rates is explained below in the simple case of just one lepton in the data sample, i.e. data selected by single lepton triggers, but can be straightforwardly generalized to more complex situations.
+Suppose that the total number of leptons passing the loose requirements, $N_\ell$, is made up of $N_p$ prompt and $N_f$ fake leptons. $N_p$ and $N_f$ cannot be directly measured but one can measure the number of events where no leptons, $N_{t0}$, or one lepton, $N_{t1}$, pass the tight analysis requirement. These numbers are related by the following equations:
+
+\begin{equation}\label{eq:fake_single_lep}
+\begin{gathered}
+    N_\ell = N_p + N_f = N_{t0} + N_{t1}\\
+    N_{t0} = (1-p)N_p + (1-f)N_f\\
+    N_{t1} = pN_p + fN_f
+\end{gathered}
+\end{equation}
+
+where $p$ and $f$ are the prompt and fake rates respectively. Equation~\eqref{eq:fake_single_lep} can be inverted to obtain the number of prompt and fake leptons:
+
+\begin{equation}\label{eq:fake_prompt}
+\begin{gathered}
+    N_p = \frac{1}{p-f}\left[ (1-f)N_{t1} - fN_{t0}  \right]\\
+    N_f = \frac{1}{p-f}\left[ pN_{t0} - (1-p)N_{t1}  \right]\\
+\end{gathered}
+\end{equation}
+
 The systematic uncertainty is evaluated by varying the jet thresholds in the di-jet control sample, and by
 performing a closure test in the same-sign data sample (see~\cite{AN-2013-022}) \textcolor{red}{REFERENZE}. In both cases it is about 36\%.
 
