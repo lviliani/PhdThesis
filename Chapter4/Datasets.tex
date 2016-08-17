@@ -1,4 +1,4 @@
-\section{Datasets, Triggers and MC samples}
+\section{Data sets, triggers and MC samples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:Datasets}
 
@@ -7,15 +7,13 @@ This analysis relies on the published \hww measurements~\cite{Chatrchyan:2013iaa
 %-------------------------------------------------------------------------------
 \subsection{Datasets and triggers\label{subsec:Datasets}}
 
-The datasets used for the analysis correspond to 19.4\ifb at $\sqrt{s}=8$\TeV  of integrated luminosity composed of the following CMS data taking periods during 2012: 2012A (892~$\mathrm{pb}^{-1}$), 2012B (4440~$\mathrm{pb}^{-1}$), and 2012C (6898~$\mathrm{pb}^{-1}$) and 2012D (7238~$\mathrm{pb}^{-1}$).
+The data sets used for the analysis correspond to 19.4\ifb at $\sqrt{s}=8$\TeV  of integrated luminosity composed of the following CMS data taking periods during 2012: 2012A (892~$\mathrm{pb}^{-1}$), 2012B (4440~$\mathrm{pb}^{-1}$), and 2012C (6898~$\mathrm{pb}^{-1}$) and 2012D (7238~$\mathrm{pb}^{-1}$).
 Data have been checked and validated and only data corresponding to good data taking quality are considered.
 The $\mathrm{e}^{\pm}\mu^{\mp}$ final state is considered in this analysis.
-%The following five Primary Datasets have been used for the signal extraction: SingleElectron, SingleMu and MuEG (Muon-ElectronGamma).
 
 For the data samples, the events are required to fire one of the unprescaled
-single-electron, single-muon or muon-electron triggers.
-A full description of these triggers in given in~\cite{AN-2012-228} for 8 \TeV data. Although identification and isolation criteria are
-also applied, a brief overview of the HLT \pt criteria on the leptons
+single-electron, single-muon or muon-electron triggers. Due the rather high LHC instantaneous luminosity the single-lepton triggers must have high HLT \pt thresholds, otherwise the rate of these triggers would be too large to be sustained. The double-lepton triggers allow to lower down the \pt thresholds while keeping a sustainable trigger rate, thus maintaining a good sensitivity to the Higgs boson signal, for which the lepton \pt can be rather small.
+A brief overview of the HLT \pt criteria on the leptons
 is given in Table~\ref{tab:trigger}. While the HLT lepton \pt thresholds of 17 and 8 \GeV for the double
 lepton triggers accommodate the offline lepton \pt selection of 20 and 10 \GeV, the higher \pt thresholds
 in the single lepton triggers help partially recovering double lepton trigger inefficiencies
@@ -27,14 +25,12 @@ as a high \pt lepton is on average expected due to the kinematic of the Higgs de
          Double set of thresholds indicates the thresholds for each leg of the double lepton triggers.}
 \begin{tabular}{ccc}
 \hline
-Trigger Path      & 7 \TeV                   & 8 \TeV \\
+Trigger Path       & 8 \TeV \\
 \hline \hline
-Single-Electron   & $\pt > 27 $ \GeV         & $\pt > 27   $ \GeV         \\  
-Single-Muon       & $\pt > 15 $ \GeV         & $\pt > 24   $ \GeV         \\ 
-%Double-Electron   & $\pt > 17$ and $8 $ \GeV & $\pt > 17$ and $8   $ \GeV         \\ 
-%Double-Muon       & $\pt > 17$ and $8 $ \GeV & $\pt > 17$ and $8   $ \GeV         \\ 
-Muon-Electron     & $\pt > 17$ and $8 $ \GeV & $\pt > 17$ and $8   $ \GeV         \\ 
-Electron-Muon     & $\pt > 17$ and $8 $ \GeV & $\pt > 17$ and $8   $ \GeV         \\ 
+Single-Electron    & $\pt > 27 $ \GeV         \\  
+Single-Muon        & $\pt > 24 $ \GeV         \\ 
+Muon-Electron      & $\pt > 17$ and $8 $ \GeV         \\ 
+Electron-Muon      & $\pt > 17$ and $8 $ \GeV         \\ 
 \hline
 \end{tabular}
 \label{tab:trigger} 

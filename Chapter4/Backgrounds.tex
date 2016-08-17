@@ -2,7 +2,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:Backgrounds}
 
-\textcolor{red}{Add plots for each background process}
 
 \subsection{Top quark background \label{sec:TTBackground}}
 
@@ -175,12 +174,12 @@ The $\alpha$ factors for each bin and the number of events in signal, CtrlDD reg
 \pth [\GeV] & $N_{CTRL}^{DATA}$ & $N_{CTRL}^{TOP}$ &  $N_{SIG}^{TOP}$ &
 $\alpha$ & $\Delta\alpha$ \\ 
 \hline\hline
-$[0--15]$ & 406.71 & 358.78 & 117.83 & 0.328 & 0.075 \\ 
-$[15--45]$ & 2930.14 & 2703.44 & 859.08 & 0.318 & 0.071 \\ 
-$[45--85]$ & 5481.02 & 5207.48 & 1506.05 & 0.289 & 0.065 \\ 
-$[85--125]$ & 4126.35 & 4032.56 & 861.22 & 0.214 & 0.052 \\ 
-$[125--165]$ & 1612.64 & 1654.27 & 304.69 & 0.184 & 0.055 \\ 
-$[165--\infty]$ & 647.50 & 760.37 & 201.70 & 0.265 & 0.147 \\ 
+$[0 \textendash 15]$ & 406.71 & 358.78 & 117.83 & 0.328 & 0.075 \\ 
+$[15 \textendash 45]$ & 2930.14 & 2703.44 & 859.08 & 0.318 & 0.071 \\ 
+$[45 \textendash 85]$ & 5481.02 & 5207.48 & 1506.05 & 0.289 & 0.065 \\ 
+$[85 \textendash 125]$ & 4126.35 & 4032.56 & 861.22 & 0.214 & 0.052 \\ 
+$[125 \textendash 165]$ & 1612.64 & 1654.27 & 304.69 & 0.184 & 0.055 \\ 
+$[165 \textendash \infty]$ & 647.50 & 760.37 & 201.70 & 0.265 & 0.147 \\ 
 \hline
 \end{tabular}
 \caption{Data driven scale factors related to the top quark background estimation.\label{tab:ttdd}}
@@ -228,7 +227,7 @@ A comparison of the $\mll$ distribution in the six $\pth$ bins used in the analy
 \subsection{WW background \label{sec:WWBackground}}
 
 For what the $\mathrm{qq\to W^{+}W^{-}}$ background shape is concerned, the prediction from the simulation is used.
-This background is divided into six different parts, corresponding to the six \pth bins defined in the analysis. The normalization of the $\mathrm{qq\to W^{+}W^{-}}$ background is left free to float in each bin, in such a way to adjust it in order to match the data during the fit procedure. In this way we minimize the shape difference between the $p_\mathrm{T}^\mathrm{WW}$ theory prediction and the distribution provided by the simulation, in our case the \textsc{Madgraph} generator.\\
+This background is divided into six different parts, corresponding to the six \pth bins defined in the analysis. The normalization of the $\mathrm{qq\to W^{+}W^{-}}$ background is left free to float in each bin, in such a way to adjust it in order to match the data during the fit procedure. In this way the shape difference between the $p_\mathrm{T}^\mathrm{WW}$ theory prediction and the distribution provided by the simulation, which is obtained with the \textsc{Madgraph} generator, is minimized.\\
 In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_\mathrm{T}^\mathrm{WW}$ spectra of two different $\mathrm{qq\to W^{+}W^{-}}$ samples: one obtained with the \textsc{Madgraph} generator and the other after applying to the same distribution a reweighting in order to match the theoretical prediction at NLO+NNLL precision.
 
 \begin{figure}[b]
@@ -243,30 +242,48 @@ The results of this comparison are shown in figures \ref{fig:ww_mll} and \ref{fi
 
 \begin{figure}[htb]
 \centering
-\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin1.pdf}}
-\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin2.pdf}}\\
-\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin3.pdf}}
-\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin4.pdf}}\\
-\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin5.pdf}}
-\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mllBin6.pdf}}\\
+\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin1.pdf}}
+\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin2.pdf}}\\
+\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin3.pdf}}
+\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin4.pdf}}\\
+\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin5.pdf}}
+\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin6.pdf}}\\
 \caption{Comparison between the default WW background sample and other theoretical models for the \mll distributions in every \pth bin.\label{fig:ww_mll}}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin1.pdf}}
-\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin2.pdf}}\\
-\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin3.pdf}}
-\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin4.pdf}}\\
-\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin5.pdf}}
-\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.45\textwidth]{images/WWnlo/mthBin6.pdf}}\\
+\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin1.pdf}}
+\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin2.pdf}}\\
+\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin3.pdf}}
+\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin4.pdf}}\\
+\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin5.pdf}}
+\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin6.pdf}}\\
 \caption{Comparison between the default WW background sample and other theoretical models for the \mt distributions in every \pth bin.\label{fig:ww_mth}}
 \end{figure}
 
-The agreement of the \mll and \mt shapes between simulation and data for this background was checked in a signal-free control, defined selecting events with values of \mll greater than 60\GeV.
-
 The gluon-induced WW process, i.e. gg$\to \mathrm{W^{+}W^{-}}$, has a sub-dominant contribution with respect to the quark-induced process, being the cross section ratio between the two of about 5\%. The \mll and \mt shapes for this background are taken from simulation while the cross section is scaled to the approximate NLO calculation~\cite{Bonvini:2013jha,Passarino:2013bha}.
 
+The agreement of the \mll and \mt shapes between simulation and data for this background was checked in a signal-free control, defined selecting events with values of \mll greater than 70\GeV. A comparison of the \mll and \mt shapes in data and simulation is shown in Fig.~\ref{fig:WW} for events containing zero and one jets, inclusive in \pth.
+
+\begin{figure}[htb]
+\centering
+\subfigure[\mll{} -- 0 jets]{
+\includegraphics[width=0.4\textwidth]{images/WWctrl/mll0j.pdf}
+}
+\subfigure[\mt{} -- 0 jets]{
+\includegraphics[width=0.4\textwidth]{images/WWctrl/mt0j.pdf}
+}
+\\
+\subfigure[\mll{} -- 1 jet]{
+\includegraphics[width=0.4\textwidth]{images/WWctrl/mll1j.pdf}
+}
+\subfigure[\mt{} -- 1 jet]{
+\includegraphics[width=0.4\textwidth]{images/WWctrl/mt1j.pdf}
+}
+
+\caption{Comparison of the \mll and \mt shapes in data and simulation for events with zero and 1 jets, inclusive in \pth. The events are required to pass the analysis requirements and, in order to define a signal-free control region, to have $\mll > 70$\GeV.\label{fig:WW}}
+\end{figure}
 
 
 
@@ -313,7 +330,7 @@ The gluon-induced WW process, i.e. gg$\to \mathrm{W^{+}W^{-}}$, has a sub-domina
 \subsection{Other backgrounds\label{sec:OtherBackgrounds}}
 
 	%------------------------------------------------------------------------------------
-	\subsubsection{Fake leptons background\label{sec:wjetsbkg}}	
+	\subsubsection{W+jets background\label{sec:wjetsbkg}}	
 	
 Events in which W bosons are produced in association with jets, as well as multi-jet events, constitute a background for this analysis, because one or more jets can be misidentified as leptons. The rate at which jets are misidentified as leptons may be not accurately described in simulation, hence a data driven method is used to estimate this background. 
 	
@@ -383,7 +400,7 @@ The dijet enriched data set used for the fake rate measurement, which is selecte
 In addition to the fake rate, also a prompt lepton rate is evaluated, defined as the probability of a prompt lepton passing the loose requirements to also pass the tight analysis selections.
 The prompt rate is also measured in data, defining a control region enriched in $\mathrm{Z} \to \ell\ell$ events, selecting dilepton events with an invariant mass of the two leptons in the Z peak mass region.
 
-Both the fake and prompt rate are used to reweight the data samples used in the analysis in order to obtain directly from data the contribution of the fake lepton background. The method to apply those rates is explained below in the simple case of just one lepton in the data sample, i.e. data selected by single lepton triggers, but can be straightforwardly generalized to more complex situations.
+Both the fake and prompt rate are used to reweight the data samples used in the analysis in order to obtain directly from data the contribution of the fake lepton background. The method to apply those rates is explained below in the simple case of just one lepton in the data sample, i.e. data selected by single lepton triggers, but can be straightforwardly generalized to situations with more than one lepton.
 Suppose that the total number of leptons passing the loose requirements, $N_\ell$, is made up of $N_p$ prompt and $N_f$ fake leptons. $N_p$ and $N_f$ cannot be directly measured but one can measure the number of events where no leptons, $N_{t0}$, or one lepton, $N_{t1}$, pass the tight analysis requirement. These numbers are related by the following equations:
 
 \begin{equation}\label{eq:fake_single_lep}
@@ -403,27 +420,123 @@ where $p$ and $f$ are the prompt and fake rates respectively. Equation~\eqref{eq
 \end{gathered}
 \end{equation}
 
-The systematic uncertainty is evaluated by varying the jet thresholds in the di-jet control sample, and by
-performing a closure test in the same-sign data sample (see~\cite{AN-2013-022}) \textcolor{red}{REFERENZE}. In both cases it is about 36\%.
+The number of fake events passing the tight analysis requirement is $N_\mathrm{fake} = f N_f$. The fake background contribution is estimated directly from data, applying the kinematics-dependent weights ($f$ and $p$ are estimated in bins of $\pt$ and $\eta$) defined in Eq.\eqref{eq:fake_prompt}.
+
+The prompt and fake rate estimations after the removal of the EW contribution are shown in Tables~\ref{table:prompt_rate} and \ref{table:fake_rate} separately for electrons and muons.
+
+\begin{table}[h]
+  \begin{center}
+    \caption{Measured prompt rate for electrons and muons in bins of $\eta$, \pt. Only the statistical uncertainties are shown.}
+    \label{table:prompt_rate}
+    \begin{tabularx}{\textwidth}{@{}XXXX@{}}
+      \hline
+      \multicolumn{4}{c}{Electron prompt rate}                             \\ \hline
+      \pt range [\GeV]    & $0 < \eta \leq 1.4442$ & $1.4442 < \eta \leq 1.566$  & $1.566 < \eta$ \\ \hline
+      $10 < \pt \leq 15$  &  0.5738 $\pm$ 0.0045 & 0.5366 $\pm$ 0.0204 & 0.2947 $\pm$ 0.0047 \\
+      $15 < \pt \leq 20$  &  0.7091 $\pm$ 0.0020 & 0.5484 $\pm$ 0.0185 & 0.4477 $\pm$ 0.0034 \\
+      $20 < \pt \leq 25$  &  0.7175 $\pm$ 0.0013 & 0.6297 $\pm$ 0.0067 & 0.6200 $\pm$ 0.0001 \\
+      $25 < \pt \leq 50$  &  0.9219 $\pm$ 0.0002 & 0.8404 $\pm$ 0.0007 & 0.8509 $\pm$ 0.0001 \\
+      $\pt > 50$          &  0.9693 $\pm$ 0.0002 & 0.9398 $\pm$ 0.0021 & 0.9385 $\pm$ 0.0005\\
+
+ 
+\hline
+    \end{tabularx}
+    
+    %\begin{tabular}{l|cc}
+    \begin{tabularx}{\textwidth}{@{}XXX@{}}
+      \multicolumn{3}{c}{Muon prompt rate}                                \\ \hline
+      \pt range [\GeV]    & $0 < \eta \leq 1.5$ & $1.5 < \eta \leq 2.5$ \\ \hline
+      $10 < \pt \leq 15$ & 0.7119 $\pm$ 0.0003 & 0.7582 $\pm$ 0.0006\\
+      $15 < \pt \leq 20$ & 0.8049 $\pm$ 0.0018 & 0.8495 $\pm$ 0.0001 \\
+      $20 < \pt \leq 25$ & 0.9027 $\pm$ 0.0008 & 0.8948 $\pm$ 0.0012\\
+      $25 < \pt \leq 50$ & 0.9741 $\pm$ 0.0001 & 0.9627 $\pm$ 0.0002 \\
+      $\pt > 50$         & 0.9900 $\pm$ 0.0001 & 0.9875 $\pm$ 0.0003 \\
+
+
+\hline
+
+   \end{tabularx}
+    
+  \end{center}
+\end{table}
+
+
+\begin{table}[h]
+  \begin{center}
+    \caption{Measured electrons and muons fake rates in bins of $\eta$ and \pt, after the EWK correction. Only statistical uncertainties are shown.}
+    \label{table:fake_rate}
+    \begin{tabular}{l|cccc}   
+    \hline
+    \multicolumn{5}{c}{electron fake rate}                                                                           \\ \hline
+    \pt range [\GeV]   &  $0 < \eta \le 1$   &  $1 < \eta \le 1.479$  &  $1.479 < \eta \le 2$  &  $2 < \eta \le 2.5$ \\ \hline
+
+   $10 < \pt \leq 15 $ & 0.045 $\pm$ 0.005 & 0.033 $\pm$ 0.004 & 0.008 $\pm$ 0.002 & 0.021 $\pm$ 0.005\\
+   $15 < \pt \leq 20 $ & 0.044 $\pm$ 0.003 & 0.049 $\pm$ 0.003 & 0.017 $\pm$ 0.001 & 0.017 $\pm$ 0.002 \\
+   $20 < \pt \leq 25 $ & 0.041 $\pm$ 0.002 & 0.064 $\pm$ 0.003 & 0.025 $\pm$ 0.002 & 0.025 $\pm$ 0.002\\
+   $25 < \pt \leq 30 $ & 0.059 $\pm$ 0.003 & 0.101 $\pm$ 0.005 & 0.041 $\pm$ 0.003 & 0.043 $\pm$ 0.003 \\
+   $30 < \pt \leq 35 $ & 0.084 $\pm$ 0.006 & 0.111 $\pm$ 0.009 & 0.058 $\pm$ 0.006 & 0.066 $\pm$ 0.005 \\
+
+    \hline\hline
+
+
+    \multicolumn{5}{c}{muon fake rate}                                                                               \\ \hline
+    \pt range [\GeV]   & $0 < \eta \le 1$    &  $1 < \eta \le 1.479$  &  $1.479 < \eta \le 2$  &  $2 < \eta \le 2.5$ \\ \hline
+    $10 < \pt \leq 15 $ &  0.131 $\pm$ 0.002 & 0.154 $\pm$ 0.004 & 0.194 $\pm$ 0.005 & 0.241 $\pm$ 0.009 \\
+    $15 < \pt \leq 20 $ &  0.143 $\pm$ 0.007 & 0.191 $\pm$ 0.012 & 0.235 $\pm$ 0.016 & 0.308 $\pm$ 0.027 \\
+    $20 < \pt \leq 25 $ &  0.198 $\pm$ 0.005 & 0.239 $\pm$ 0.009 & 0.221 $\pm$ 0.011 & 0.271 $\pm$ 0.021 \\
+    $25 < \pt \leq 30 $ &  0.182 $\pm$ 0.011 & 0.228 $\pm$ 0.018 & 0.195 $\pm$ 0.022 & 0.287 $\pm$ 0.045\\
+    $30 < \pt \leq 35 $ &  0.170 $\pm$ 0.021 & 0.244 $\pm$ 0.036 & 0.195 $\pm$ 0.041 & 0.289 $\pm$ 0.111 \\
+
+\hline  
+  \end{tabular}
+  \end{center}
+\end{table} 
+
+The region obtained by reversing the opposite sign lepton requirement in the analysis selection 
+is enriched with W+jets events where one of the jets is misidentified as a lepton. The fake 
+rate procedure can be applied to this same-sign control region to perform a closure test of the
+method. 
+The results of the closure test on same-sign events gives good agreement with the expectations.
+
+The systematic uncertainty on the prompt and fake rate estimation is evaluated by varying the jet thresholds in the dijet control sample, and an uncertainty on the background normalization is added according to the agreement with data in the same-sign control region. The systematic uncertainty amounts to about 36\% of the fake background yield.
+
+
+
+
+
+
+
+
+
 
 	%-------------------------------------------------------------------------------
 	\subsubsection{Drell-Yan to \texorpdfstring{$\tau\tau$}{tau tau} background\label{sec:DYtautaubkg}}
 
 
-The low \MET threshold in e$\mu$ final state
+The low \MET threshold in the e$\mu$ final state
 requires the consideration of the contribution from 
-\dytt\, that is in fact estimated from data.
-This is accomplished by using 
-\dymm events and replacing muons with a simulated
-$\tau\to l\nu_\tau\bar{\nu_e}$ decay \cite{AN-2011-020} \textcolor{red}{REFERENZE}.\\
+\dytt, that estimated from data.
+This is accomplished by selecting \dymm events in data and replacing both muons with a simulated
+$\tau\to \ell\nu_\tau\bar{\nu_\ell}$ decay~\cite{Chatrchyan:2013iaa}, thus obtaining a ``hybrid'' event. The Z boson four-momentum is reconstructed in data from the four-momenta of the daughter muons. Then a simulation step allows the replacement of the muon objects with $\tau$ leptons, in such a way to preserve the Z boson momentum direction is preserved in its rest frame. The \dytt decay is simulated with the \textsc{tauola} package~\cite{Jadach:1990mz} to correctly describe the $\tau$-polarization effects.
+
 After replacing muons from \dymm decays with simulated $\tau$ decays,
-the set of pseudo \dytt events undergoes the reconstruction step.
- 
+the set of pseudo-\dytt events undergoes the reconstruction step.
 Good agreement in kinematic distributions for this sample
 and a MC based \dytt sample is found.
-The global normalization of pseudo \dytt events is 
+The global normalization of pseudo-\dytt events is 
 checked in the low \mt spectrum where a rather pure
 \dytt sample is expected.
+
+This method allows to avoid the simulation of very large MC samples that would be needed for an accurate description of this process. 
+
+
+
+
+
+
+
+
+
 
 
 	%-------------------------------------------------------------------------------
@@ -437,10 +550,11 @@ rejected by requiring only two high \pt isolated leptons in the event.
 %As the extra lepton veto and the \met cuts do not remove the ZZ~$\to 2\ell 2\nu$
 %decays, a non-negligible fraction of these events survives the selection for $ee$ and $\mu\mu$ channels only. 
 
-The W+$\gamma^{(*)}$ background, where the photon decays to an electron-positron pair,
+The W$\gamma^{(*)}$ background, where the photon decays to an electron-positron pair,
 is expected to be very small, thanks to the stringent photon conversion
-requirements.
- Since the WZ simulated sample has a generation level cut on the
+requirements. This background also includes events where a real photon is produced in association with the W boson. These events constitute a background for this analysis because the photon can interact with the tracker material converting to an electron-positron pair.
+
+Since the WZ simulated sample has a generation level cut on the
 di-lepton invariant mass ($m_{\ell\ell} >$ 12~\GeV) and the cross-section raises
 quickly with the lowering of this threshold, a dedicated \textsc{Madgraph} sample has
 been produced with lower momentum cuts on two of the three leptons
@@ -448,10 +562,10 @@ been produced with lower momentum cuts on two of the three leptons
 estimated with this sample is still very small, and since the uncertainty on the
 cross-section for the covered phase space is large, a conservative 100\%
 uncertainty has been given to it. 
-A $k$-factor for W+$\gamma^{*}$ of $1.5\pm0.5$ based on a dedicated measurement of 
-tri-lepton decays, W+$\gamma^{*} \to e\mu\mu$ and W+$\gamma^{*} \to \mu\mu\mu$,
-is applied~\cite{WGammaStarStudy} \textcolor{red}{REFERENZE}. 
-The contribution of W+$\gamma^{(*)}$ is also
+A $k$-factor for W$\gamma^{*}$ of $1.5\pm0.5$ based on a dedicated measurement of 
+tri-lepton decays, W$\gamma^{*} \to e\mu\mu$ and W$\gamma^{*} \to \mu\mu\mu$,
+is applied~\cite{Chatrchyan:2013iaa}. 
+The contribution of W$\gamma^{(*)}$ is also
 constrained by a closure test with same sign leptons on data, which reveals a
 good compatibility of the data with the expected background.
 

@@ -10,7 +10,7 @@ This modification significantly reduces the uncertainties related to the modelli
 \subsection{Event reconstruction and selections}\label{sec:Selections}
 
 %%% Physics objects definition
-\textcolor{red}{Add more info about electron and muons and check the consistency with the Fakeable object definition.}
+
 The electron selection is based on two multivariate discriminants, one specialised in identifying the electron object and the other for isolation. The cut value for each discriminant is optimised to provide a good fake electron rejection and to improve the signal acceptance.
 
 Muons are reconstructed using the standard CMS selection and are required to be identified both in the tracker (\textit{Tracker Muon}) and in the muon chambers (\textit{Global Muon}). Additionally quality criteria on the muon track are required, such as to have at least 10 hits in the tracker (at least one of which in the pixel detector) and to have $\chi^2/ndf < 10$.
@@ -20,18 +20,18 @@ The efficiencies for the identification and isolation of the electrons and muons
 
 Jets in this analysis are reconstructed by combining the energy measured in the calorimeters and tracks from charged particles on basis of the standard CMS particle flow algorithm and using the anti-$k_T$ clustering algorithm with $\mathrm{R} = 0.5$. Events will be classsified into zero jet, one jet and VBF topologies by counting jets within $|\eta| < 4.7$ and for $\pt > 30$\GeV.
 
-\textcolor{red}{Here I could add some details about jets (see AN/2012-194) if they are not already discussed in the objects section.}
+\textcolor{red}{Add MET definition and more details}
 
 Background events from \ttbar and tW production are rejected applying a soft-muon veto and b-tagging veto. The former selection requires that in the event there are no muons from b-decays passing the following cuts: 
 \begin{itemize}
-\item the muon is reconstructed as TrackerMuon (and passes the TMLastStationTight ID);
+\item the muon is reconstructed as TrackerMuon;
 \item the number of hits of the muon in the Silicon Tracker is greater than 10;
 \item the transverse impact parameter of the muon is less than 0.2 cm;
 \item if $\pt > 20$\GeV then the muon is required to be non-isolated with $ISO/\pt > 0.1$.
 \end{itemize}
 
-The latter veto rejects events that contain jets tagged as b-jets using two different algorithms for high and low \pt jets. For jets with \pt between 10 and 30 GeV, the Track-Counting-High-Efficiency (TCHE) algorithm, with a cut at 2.1 on the discriminating variable, is applied.
-For jets above 30 GeV, a more performant algorithm, Jet-Probability (JP), is used. Jets are identified as b-jets by the JP algorithm if the discriminating variable has a value above 1.4.
+The latter veto rejects events that contain jets tagged as b-jets using two different algorithms for high and low \pt jets. For jets with \pt between 10 and 30\GeV, the Track-Counting-High-Efficiency (TCHE) algorithm, with a cut at 2.1 on the discriminating variable, is applied.
+For jets above 30\GeV, a better performing algorithm, Jet-Probability (JP), is used. Jets are identified as b-jets by the JP algorithm if the discriminating variable has a value above 1.4.
 In the following a b-tagged jet is defined as a jet, within $|\eta|<2.4$ (b-tagging requires the tracker information), with a value of the discriminating variable above the mentioned thresholds for the two algorithms.  
 
 
