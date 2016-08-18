@@ -16,11 +16,15 @@ The electron selection is based on two multivariate discriminants, one specialis
 Muons are reconstructed using the standard CMS selection and are required to be identified both in the tracker (\textit{Tracker Muon}) and in the muon chambers (\textit{Global Muon}). Additionally quality criteria on the muon track are required, such as to have at least 10 hits in the tracker (at least one of which in the pixel detector) and to have $\chi^2/ndf < 10$.
 Muon isolation is based on the Particle-Flow algorithm. An MVA approach is considered, based on the radial distributions of the Particle-Flow candidates inside a cone of radius 0.5 around the muon direction.
 
-The efficiencies for the identification and isolation of the electrons and muons are measured in data and in simulation selecting a pure sample of leptons coming from the Z$\to\ell\ell$ decay. The measured efficiencies are used as scale factors to correct the MC simulation to precisely model the data. Similarly, the trigger efficiency extracted fromdata is applied toMC samples to correct for the additional loss.
+The efficiencies for the identification and isolation of the electrons and muons are measured in data and in simulation selecting a pure sample of leptons coming from the Z$\to\ell\ell$ decay, and using a Tag and Probe technique very similar to the one described in Sec.~\ref{subsec:Datasets} for the trigger efficiency. In this case, the probe lepton is defined by loose isolation and identification requirements and the efficiency to pass the tight analysis selections is measured performing a simultaneous fit of signal plus background in two categories, corresponding to events in which the probe lepton pass or fail the analysis requirements. For the electrons, the resonant signal contribution in the fit is modelled as the convolution of a Breit-Wigner and a Crystal-Ball function. A polynomial function is added to take into account the tail in the low mass region. For muons the signal is fitted using the sum of two Voigtian functions. For both electrons and muons the background contribution is modelled as a third order Bernstein polynomial function.
+The efficiencies for data and simulation are extracted as parameters of the fit and are used as scale factors to correct the MC simulation to precisely model the data.
+
+\textcolor{red}{This part would probably end up in the Object Reconstruction chapter}
 
 Jets in this analysis are reconstructed by combining the energy measured in the calorimeters and tracks from charged particles on basis of the standard CMS particle flow algorithm and using the anti-$k_T$ clustering algorithm with $\mathrm{R} = 0.5$. Events will be classsified into zero jet, one jet and VBF topologies by counting jets within $|\eta| < 4.7$ and for $\pt > 30$\GeV.
 
-\textcolor{red}{Add MET definition and more details}
+In addition to the standard CMS PF \MET, in this analysis a \textit{projected} \MET variable is also used. The \textit{projected} \MET is defined as the component of \ptmiss transverse to the nearest lepton if the lepton is situated within the azimuthal angular window of $\pm \pi/2$ from the \ptmiss direction, or the \MET itself otherwise.
+Since the \MET resolution is degraded by pileup, the minimum of two projected \MET variables is used: one constructed from all identified particles (full projected \MET), and another constructed from the charged particles only (track projected \MET).
 
 Background events from \ttbar and tW production are rejected applying a soft-muon veto and b-tagging veto. The former selection requires that in the event there are no muons from b-decays passing the following cuts: 
 \begin{itemize}
@@ -46,9 +50,9 @@ The event selection consists of several steps. The first step is to select \WW -
   \end{itemize}
 \item {\bf Extra lepton veto}: the event is required to have two and only two opposite-sign leptons passing the lepton selection.
 \item {\bf \MET preselection}: particle flow \MET is required to be greater than 20\GeV.
+\item {\bf projected \MET selection}: minimum projected \MET required to be larger than 20\GeV.
 \item {\bf Di-lepton mass cut}: $\mll > 12$\GeV in order to reject low mass resonances and QCD backgrounds.
 \item {\bf Di-lepton \pt cut}: $\ptll > 30$\GeV.
-\item {\bf projected \MET selection}: minimum projected \MET required to be larger than 20\GeV.
 \item {\bf Transverse mass}: $\mt>60$\GeV to reject Drell-Yan to $\tau\tau$ events. 
 \end{enumerate}
 In addition to the \WW-like preselection other cuts are applied in order to reduce the top quark background (both \ttbar and tW), which is one of the main backgrounds in this final state. Two different selections are used depending on the number of jets with $\pt > 30$\GeV in the event. This is done to suppress the top quark background both in the low \pth region, where 0-jets events have the largest contribution, and for higher \pth values where also larger jet multiplicity events are important.
@@ -60,10 +64,10 @@ For events with a jet multiplicity greater or equal than one, a different select
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.8\textwidth]{images/cutflow2.pdf}
-\caption{Effect of single selections on MC samples. The signal (red line) is multiplied by 100 and superimposed on stacked backgrounds. In each bin, corresponding to a different selection, is reported the expected number of events in MC at a luminosity of $19.46~\mathrm{fb}^{-1}$.\label{fig:cutflow}}
+\caption{Effect of single selections on MC samples. The signal (red line) is multiplied by 100 and superimposed on stacked backgrounds. In each bin, corresponding to a different selection, is reported the expected number of events in MC at a luminosity of $19.46~\mathrm{fb}^{-1}$.}\label{fig:cutflow}
 \end{figure}
 
-A  cut-flow plot is reported in figure \ref{fig:cutflow} showing the effect of each selection using signal and background simulations. In the first bin, labelled as \textit{No cut}, no selection has been applied and the bin content correspond to the total expected number of events with a luminosity of $19.4~\mathrm{fb}^{-1}$. All the events in this bin have at least two leptons with a loose transverse momentum cut of 8\GeV. In the following bin the lepton cuts are applied, including the requirement to have two opposite-sign and opposite-flavour leptons and the extra lepton veto. Then are progressively reported all the other selections, showing the effect of each cut on backgrounds and signal. For each selection is also reported the expected signal over background ratio which after the full selection reach a maximum value around $3\%$.
+A  cut-flow plot is reported in Fig.~\ref{fig:cutflow}, showing the effect of each selection using signal and background simulations. In the first bin, labelled as ``No cut'', no selectio is applied and the bin content corresponds to the total expected number of events with a luminosity of $19.4~\mathrm{fb}^{-1}$. All the events in this bin have at least two leptons with a loose transverse momentum cut of 8\GeV. In the following bin the lepton cuts are applied, including the requirement to have two opposite-sign and opposite-flavour leptons and the extra lepton veto. Then all the other selections are progressively reported, showing the effect of each cut on the background and signal yields. For each selection the expected signal over background ratio is also shown, which, after the full selection requirements, reach a maximum value of about $3\%$.
 
 \subsection{Fiducial phase space}
 The Higgs boson transverse momentum is measured in a fiducial phase space, whose requirements are chosen in order to minimize the dependence of the measurements on the underlying model of the Higgs boson properties and its production mechanism.
@@ -71,7 +75,7 @@ The Higgs boson transverse momentum is measured in a fiducial phase space, whose
 The exact requirements are determined by considering the two following correlated quantities: the reconstruction efficiency for signal events originating from within the fiducial phase space (fiducial signal efficiency $\epsilon_{\rm{fid}}$), and the ratio of the number of reconstructed signal events that are from outside the fiducial phase space (``out-of-fiducial'' signal events) to the number from within the fiducial phase space. The requirement of having a small fraction of out-of-fiducial signal events, while at the same time preserving a high value of the fiducial signal efficiency $\epsilon_{\rm{fid}}$, leads to a loosening of the requirements on the low-resolution variables,  \MET and \mt, with respect to the analysis selection.
 
 The fiducial phase space used for the cross section measurements is defined at the particle level by the requirements given in Table~\ref{table:fid_cuts}. The leptons are defined as Born-level leptons, i.e. before the emission of final-state radiation (FSR), and are required not to  originate from leptonic $\tau$ decays. The effect of including FSR is evaluated to be of the order of 5\% in each \pth{} bin.
-For the VH signal process the two leptons are required to originate from the \hwwllnn~decays in order to 
+For the VH signal process, the two leptons are required to originate from the \hwwllnn decays in order to 
 avoid including leptons coming from the associated W or Z boson.
 
 \begin{table}[h]
@@ -79,7 +83,6 @@ avoid including leptons coming from the associated W or Z boson.
 \begin{center}
 \begin{tabular}{l r}\hline\hline
 \bf{Physics quantity} & \bf{Requirement} \\
-%\multicolumn{2}{|c|}{\bf{Kinematic requirements for the \hww fiducial phase space}}\\
 \hline
 Leading lepton \pt & $\pt > 20$\GeV \\
 Subleading lepton \pt & $\pt > 10$\GeV \\
@@ -99,7 +102,7 @@ A detailed description of the fiducial region definition and its optimization is
 
 Experimentally, the Higgs boson transverse momentum is reconstructed as the vector sum of the lepton momenta in the transverse plane and \MET.
 \begin{equation}
-\vec{p}_\mathrm{T}^\mathrm{\,H} = \vec{p}_\mathrm{T}^{\,\ell\ell} + \vec{p}_\mathrm{T}^\mathrm{\,miss}
+\vec{p}_\mathrm{T}^\mathrm{~H} = \vec{p}_\mathrm{T}^{~\ell\ell} + \vec{p}_\mathrm{T}^\mathrm{~miss}
 \end{equation}
 Compared to other differential analysis of the Higgs cross section, such as those in the ZZ and $\gamma\gamma$ decay channels, this analysis has to cope with the limited resolution due to the \MET entering the transverse momentum measurement.
 The effect of the limited \MET resolution has two main implications on the analysis strategy.
@@ -115,7 +118,7 @@ The bin width is chosen in such a way as to make the smallest bins able to ensur
 Following this prescription we have divided the whole \pth range in the following six bins: \mbox{[0-15 GeV]}, \mbox{[15-45 GeV]}, \mbox{[45-85 GeV]}, \mbox{[85-125 GeV]}, \mbox{[125-165 GeV]}, \mbox{[165-$\infty$ GeV]}.
 
 The efficiency of the analysis selection with respect to the fiducial phase space is reported in Fig.~\ref{fig:sel_eff} (a) for each \pth bin. The efficiency denominator is the number of events that are inside the fiducial phase space, while the numerator is the number of events that pass both the analysis and the fiducial phase space selections. The fake rate, defined by the ratio of signal events that pass the analysis selection but are not within the fiducial phase space, divided by the total number of events passing both the analysis and the fiducial phase space selections is shown in Fig.~\ref{fig:sel_eff} (b). For both the selection efficiency and the fake rate, all the signal production mechanisms are included.
-The overall efficiency and fake rate are: $\epsilon=0.362\pm{0.005}$ and $fake~rate=0.126\pm0.004$, where only statistical uncertainties are taken into account.
+The overall efficiency and fake rate are $\epsilon=0.362\pm{0.005}$ and $fake~rate=0.126\pm0.004$ respectively, where only statistical uncertainties are taken into account.
 
 \begin{figure}[t]
 \centering
@@ -128,7 +131,7 @@ The overall efficiency and fake rate are: $\epsilon=0.362\pm{0.005}$ and $fake~r
 \caption{Efficiency of the full selection (a) and fake rate (b) as a function of \pth.\label{fig:sel_eff}}
 \end{figure}
 
-If a $4\pi$ acceptance is defined, requiring just that the Higgs decays to WW and then to $2\ell2\nu$, the efficiency becomes $\epsilon=0.03960\pm{0.00033}$ and the fake rate is zero. 
+If a $4\pi$ acceptance is defined, requiring just that the Higgs decays to WW and then to $2\ell2\nu$, the efficiency becomes $\epsilon=0.0396\pm{0.0003}$ and the fake rate is zero. 
 
 
 

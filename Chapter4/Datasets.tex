@@ -37,12 +37,47 @@ Electron-Muon      & $\pt > 17$ and $8 $ \GeV         \\
 \end{center}
 \end{table}
 
-No trigger requirement is made on the simulated events but the combined trigger efficiency
-is estimated from data and applied as a weight to all simulated events. The detailed trigger efficiencies 
-and the weighting procedure can be found in Appendix C of~\cite{AN-2013-022}~\cite{AN-2013-052}. The average
-trigger efficiency for signal events that pass the full event selection
-is measured to be about 96\% in the $e\mu$ final state for a Higgs 
-boson mass of about 125\GeV. 
+The trigger is not simulated in MC samples but the combined trigger efficiency
+is estimated from data and applied as a weight to all simulated events. The trigger efficiency for single and double lepton triggers is calculated using a Tag and Probe technique separately for muons and electrons, in bins of $\eta$ and \pt.
+The Tag and Probe method uses a known mass resonance (e.g. $J/\Psi$, Z) to select particles of the desired type, and probe the efficiency of a particular selection criterion on these particles. In general the ``tag'' is an object that passes a set of very
+tight selection criteria designed to isolate the required particle type. Tags are often referred
+to as a “golden” electrons or muons and the fake rate for passing tag selection criteria should
+be very small. A generic set of the desired particle type (i.e. with potentially very loose selection criteria) known as ``probes'' is selected by pairing these objects with tags such that the
+invariant mass of the combination is consistent with the mass of the resonance. Combinatoric
+backgrounds may be eliminated through any of a variety of background subtraction methods
+such as fitting, or sideband subtraction. The definition of the probe objects depend on the
+specifics of the selection criterion being examined. The simple expression to get the efficiency $\epsilon$
+as a function of \pt and $\eta$ is given below:
+
+\begin{equation}
+\epsilon(\pt,\eta) = \frac{ N^\mathrm{probe}_\mathrm{pass}}{N^\mathrm{probe}_\mathrm{pass} + N^\mathrm{probe}_\mathrm{fail}}
+\end{equation}
+
+For double lepton triggers the efficiency is calculated separately for each leg of the trigger and then combined together. The combined efficiency is then used as a kinematics-dependent weight to be applied on top of simulated events.
+
+The event efficiency $\epsilon_\mathrm{ev}$ for an event with two leptons to pass the single lepton trigger is given by the following formula:
+
+\begin{equation}\label{eq:single_trigg}
+\epsilon_\mathrm{ev} = 1 - (1-\epsilon_{S,\ell1})\cdot(1-\epsilon_{S,\ell2})\quad,
+\end{equation}
+
+where $\epsilon_{S,\ell1}$ and $\epsilon_{S,\ell2}$ are the efficiencies for the leading and subleading lepton to pass the single lepton trigger. In other words, the dilepton event passes the single lepton trigger if either one of the two leptons passes the single lepton trigger, excluding the cases for which both leptons pass the trigger. For double lepton triggers, the event efficiency can be written as:
+
+\begin{equation}\label{eq:double_trigg}
+\epsilon_\mathrm{ev}  = \epsilon_{D,\ell1}^\mathrm{lead} \cdot \epsilon_{D,\ell2}^\mathrm{trail} + (  1 -  \epsilon_{D,\ell1}^\mathrm{lead} \cdot \epsilon_{D,\ell2}^\mathrm{trail})\cdot\epsilon_{D,\ell1}^\mathrm{trail} \cdot \epsilon_{D,\ell2}^\mathrm{lead} \quad,
+\end{equation}
+
+where $\epsilon_{D,\ell1}^{\mathrm{lead}(trail)}$ is the efficiency of the first lepton to pass the leading (trailing) leg of the double lepton trigger, and $\epsilon_{D,\ell2}^{\mathrm{lead}(trail)}$ is the efficiency of the second lepton to pass the leading (trailing) leg of the double lepton trigger. The final event efficiency applied to reweight the events in simulation is given by the boolean OR of the event efficiencies corresponding to the single and double lepton triggers, which, using Eqs.~\eqref{eq:single_trigg} and ~\eqref{eq:double_trigg}, can be written as:
+
+\begin{equation}
+\begin{split}
+\epsilon_\mathrm{ev} & = 1 - (1-\epsilon_{S,\ell1})\cdot(1-\epsilon_{S,\ell2}) + \\
+                     & + (1-\epsilon_{S,\ell1})\cdot(1-\epsilon_{S,\ell2}) \cdot \\
+                     & \cdot [ \epsilon_{D,\ell1}^\mathrm{lead} \cdot \epsilon_{D,\ell2}^\mathrm{trail} + (  1 -  \epsilon_{D,\ell1}^\mathrm{lead} \cdot \epsilon_{D,\ell2}^\mathrm{trail})\cdot\epsilon_{D,\ell1}^\mathrm{trail} \cdot \epsilon_{D,\ell2}^\mathrm{lead} ] \quad.
+\end{split}
+\end{equation}
+
+The term that multiplies the double lepton trigger event efficiency is needed to ensure that the events passing the double lepton trigger do not pass also the single lepton trigger.
 
 %-------------------------------------------------------------------------------
 \subsection{Monte-Carlo samples\label{subsec:MC}}
