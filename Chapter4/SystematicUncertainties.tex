@@ -186,13 +186,33 @@ The following experimental systematic sources have been taken into account:
   relying on theoretical models and can thus be strongly affected by their uncertainties. Especially higher order QCD radiative effects have an influence on the generated WW shape. To study this impact, the shapes of the distributions produced with the \textsc{MadGraph} generator (which is the generator for the MC simulation used in the analysis) are compared to the ones produced with \textsc{mc@nlo}. The comparison is performed separately in each bin of \pth and the uncertainty includes shape differences originating from the renormalization and factorization scale choice. A comparison of the \mll and \mt shapes for the WW background using different MC generators is reported in section \ref{sec:WWBackground}.
 \end{itemize} 
 
-\subsubsection{Jets multiplicity uncertainty \label{subsec:stewart-tackman}}
+\subsubsection{Jet multiplicity uncertainty \label{subsec:stewart-tackman}}
 
-The jet bin uncertainty on ggH sample has been evaluated using the Stewart-Tackman method, following the recipe proposed in Refs.~\cite{Stewart:2011cf,Heinemeyer:2013tqa}.
-Three nuisance parameters have been calculated according to the table \ref{table:jet_binning_theory}, where $\kappa = \sqrt{\exp{\epsilon_{-}} \exp{\epsilon_{+}}}$ and $\epsilon_{\pm}$ are relative QCD scale uncertainties. Exclusive cross sections for 0, 1 and 2-jet bins are calculated for the default QCD renormalization and factorization scales, and their variation by changing the scales by a factor of $2$ and $1/2$ respectively. The $f_n$ constants represent the exclusive theoretical $n$ jet bin fractions.
+The jet bin uncertainty on the ggH production mode has been evaluated using the Stewart-Tackman method, following the recipe proposed in Refs.~\cite{Stewart:2011cf,Heinemeyer:2013tqa}.
+Three independent nuisance parameters have to be associated with the inclusive ggH production cross sections $\sigma_{\geq 0}$, $\sigma_{\geq 1}$ and $\sigma_{\geq 2}$, which corresponds to the cross sections with $\geq 0$ jets, $\geq 1$ jet and $\geq 2$ jets respectively. According to the agreement on the treatment of uncertainties in the combination of ATLAS and CMS results~\cite{ATLAS:2011tau}, these nuisance parameters are labelled as \emph{QCDscale\_ggH}, \emph{QCDscale\_ggH1in} and \emph{QCDscale\_ggH2in}. However, in case the analysis is split in exclusive jet multiplicity bins, the jet bin uncertainties can be evaluated taking into account the correct correlations among the three nuisances following the Stewart-Tackman prescription.
+Even though this analysis is inclusive in number of jets, the jet binning uncertainties must be included due to the presence of the b-jet veto, that introduces a dependency of the selection efficiency on the number of jets in the event. The veto efficiency has been evaluated in all the \pth bins defined in the analysis and as a function of jets multiplicity. The results are shown in Figs.~\ref{fig:veto_eff_pth} and \ref{fig:veto_eff_njet}. The drop of the veto efficiency at high values of \pth is due to the correlation with jets multiplicity.
+	 	
+\begin{figure}[htb]
+\centering
+	\subfigure[]{
+		\centering
+		\includegraphics[width=0.45\textwidth]{images/eff_vs_pth.pdf}
+		\label{fig:veto_eff_pth}
+	}
+	\subfigure[]{
+		\centering
+		\includegraphics[width=0.45\textwidth]{images/eff_vs_jet.pdf}
+		\label{fig:veto_eff_njet}
+	}
+\caption{(a) Efficiency of the b-tagging veto in different bins of \pth. (b) Efficiency of the b-tagging veto in different bins of \pth, as a function of number of jets.}
+\end{figure}
+
+The first step of this procedure is to take the inclusive ggH cross section, $\sigma_\mathrm{ggH}$, and to convert the relative QCD up/down scale uncertainties, $\epsilon_+$ and $\epsilon_-$, to a log-normal uncertainty, i.e. $\kappa = \sqrt{\exp{(\epsilon_+)}\cdot \exp{(\epsilon_-)}}$. The exclusive cross sections, $\sigma_0$, $\sigma_1$ and $\sigma_2$, can be calculated starting from $\sigma_\mathrm{ggH}$ and using the selection efficiencies for the three jet bins. For every exclusive cross section the corresponding relative uncertainty is computed varying the renormalization ($\mu_R$) and factorization ($\mu_F$) scales independently of a factor 2 and $1/2$, and taking the cross section value corresponding to half of the maximum variation. The inclusive cross sections are then obtained summing the exclusive cross sections and propagating the uncertainties, i.e. $\sigma_{\geq 0 } = \sigma_0 + \sigma_1 + \sigma_2$, $\sigma_{\geq 1} = \sigma_1 + \sigma_2$, $\sigma_{\geq 2} = \sigma_2$.
+
+The three nuisance parameters, including all the proper correlations among the jet bins, are defined according to Table~\ref{table:jet_binning_theory}, where the $f_n$ constants represent the exclusive theoretical $n$ jet bin fractions, i.e. $f_0 = \sigma_0/\sigma_{\geq 0}$, $f_1 = \sigma_1/\sigma_{\geq 0}$, $f_2 = \sigma_2/\sigma_{\geq 0}$.
 
 \begin{table}[h]
-\caption{Numerical calculation for the systematics uncertainty of jet binning.}
+\caption{Numerical calculation for the systematic uncertainties of jet binning.}
 \label{table:jet_binning_theory}
 \begin{center}
 \begin{tabular}{|l|c|c|c|}
@@ -200,55 +220,45 @@ Three nuisance parameters have been calculated according to the table \ref{table
 Nuisance parameter & 0-jet bin                                              & 1-jet bin                                            & 2-jet bin \\ 
 \hline
 &&& \\
-QCDscale           & $\kappa = (\kappa_{\ge 0})^{\frac{1}{f_0}} $           &                                                      & \\ 
+QCDscale\_ggH          & $\Delta^0_{\geq 0} = (\kappa_{\ge 0})^{\frac{1}{f_0}} $    &      & \\ 
 &&&\\\hline
 &&&\\
-QCDscale1in        & $\kappa = (\kappa_{\ge 1})^{- \frac{f_1 + f_2}{f_0}} $ & $\kappa = (\kappa_{\ge 1})^{\frac{f_1 + f_2}{f_1}} $ & \\ 
+QCDscale\_ggH1in       & $\Delta^0_{\geq 1} = (\kappa_{\ge 1})^{- \frac{f_1 + f_2}{f_0}} $ & $\Delta^1_{\geq 1} = (\kappa_{\ge 1})^{\frac{f_1 + f_2}{f_1}} $ & \\ 
 &&&\\ \hline
 &&&\\
-QCDscale2in        &                                                        & $\kappa = (\kappa_{\ge 2})^{- \frac{f_2}{f_1}} $     & $\kappa = (\kappa_{\ge 2})$ \\ 
+QCDscale\_ggH2in        &                                                        & $\Delta^1_{\geq 2} = (\kappa_{\ge 2})^{- \frac{f_2}{f_1}} $     & $\Delta^2_{\geq 2} = (\kappa_{\ge 2})$ \\ 
 &&&\\\hline
 
 \end{tabular}
 \end{center}
 \end{table}
 
-Even though this analysis is inclusive in number of jets, the jet binning uncertainties must be included because the presence of the b-jet veto introduce a dependency of the selection efficiency on the number of jets in the event. The veto efficiency has been calculated in all the \pth bins defined in the analysis and as a function of jets multiplicity. The results are shown in Figs.~\ref{fig:veto_eff_pth} and \ref{fig:veto_eff_njet}. The drop of the veto efficiency at high values of \pth is due to the correlation with jets multiplicity.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.5\textwidth]{images/eff_vs_pth.pdf}
-\caption{Efficiency of the b-tagging veto in different bins of \pth.\label{fig:veto_eff_pth}}
-\end{figure}
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.5\textwidth]{images/eff_vs_jet.pdf}
-\caption{Efficiency of the b-tagging veto in different bins of \pth, as a function of number of jets.\label{fig:veto_eff_njet}}
-\end{figure}
-
-The nuisance parameters reported in table \ref{table:jet_binning_theory} have then been calculated for each \pth bin embedding the veto efficiency and using the following formulas:
+The nuisance parameters reported in table \ref{table:jet_binning_theory} have then been calculated for each \pth bin embedding the b-jet veto efficiency and using the following formulas:
 \begin{equation}
-QCDscale\_ggH=\frac{ggH0*f_{0}*\epsilon_{0}+ggH1in0*f_{1}*\epsilon_{1}}{ggH0*f_{0}*\epsilon_{0}+ggH1in0*f_{1}*\epsilon_{0}}
+\emph{QCDscale\_ggH}=\frac{\Delta^0_{\geq 0}\cdot f_{0}\cdot \varepsilon_{0}+\Delta^0_{\geq 1}\cdot f_{1}\cdot\varepsilon_{1}}{\Delta^0_{\geq 0}\cdot f_{0}\cdot \varepsilon_{0}+\Delta^0_{\geq 1}\cdot f_{1}\cdot \varepsilon_{0}} \quad,
 \end{equation}
 \begin{equation}
-QCDscale\_ggH1in=\frac{ggH1in1*f_{1}*\epsilon_{1}+ggH2in1*f_{2}*\epsilon_{2}}{ggH1in1*f_{1}*\epsilon_{1}+ggH2in1*f_{2}*\epsilon_{1}}
+\emph{QCDscale\_ggH1in}=\frac{\Delta^1_{\geq 1}\cdot f_{1}\cdot \varepsilon_{1}+\Delta^1_{\geq 2}\cdot f_{2}\cdot \varepsilon_{2}}{\Delta^1_{\geq 1}\cdot f_{1} \cdot \varepsilon_{1}+\Delta^1_{\geq 2}\cdot f_{2}\cdot \varepsilon_{1}} \quad,
 \end{equation}
 \begin{equation}
-QCDscale\_ggH2in=1
+QCDscale\_ggH2in=1 \quad,
 \end{equation}
-
-These nuisance parameters are expected to be equal to one in case the efficiency is independent on the number of jets, i.e if $\epsilon_0 = \epsilon_1 = \epsilon_2$.\\
-The values obtained are reported in table \ref{table:jet_binning_meas} for each \pth bin.
+where $\varepsilon_0$, $\varepsilon_1$ and $\varepsilon_2$ are the selection efficiencies for the three jet categories.
+These nuisance parameters are expected to be equal to one in case the efficiency is independent on the number of jets, i.e if $\varepsilon_0 = \varepsilon_1 = \varepsilon_2$.\\
+The numerical values obtained following this procedure are reported in Table~\ref{table:jet_binning_meas} for each \pth bin.
 
 \begin{table}[h]
 \caption{Values of the jet binning nuisance parameters for different \pth bins.}
 \label{table:jet_binning_meas}
 \begin{center}
 \begin{tabular}{ccccccc}
-& Bin 1 & Bin 2 & Bin 3 & Bin 4  & Bin 5 & Bin 6\\
-\hline
+\toprule
+\multirow{2}{*}{Nuisance parameter} & \multicolumn{6}{c}{\pth bin [GeV]} \\
+& [0-15] & [15-45] & [45-85] & [85-125] & [125-165] & [165-$\infty$]\\
+\midrule
 QCDscale\_ggH  & 0.998  &   0.993  &   0.989  &   1.000  &   1.000   &  1.000 \\
 QCDscale\_ggH1in &0.997   &  0.993  &   0.984  &   0.975 &    0.946 &    0.974  \\
+\bottomrule
 \end{tabular}
 \end{center}
 \end{table}
