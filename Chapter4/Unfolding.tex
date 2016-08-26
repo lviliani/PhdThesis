@@ -44,6 +44,7 @@ unfolded result, and biasing the unfolded distribution towards the one used to
 build the response matrix. 
 The main feature of this method is the use of the singular value decomposition of the response matrix, including an additional term to suppress the oscillatory component of the solution, i.e. the regularization term, which represents some \textit{a priori} knowledge of the final solution.
 The regularization parameter is chosen to obtain results that are robust against numerical instabilities and statistical fluctuations, following the prescription described in Ref.~\cite{Hocker:1995kb}.
+\textcolor{red}{Maybe I should add an appendix describing the SVD method in details}
 
 The response matrix is built as a two-dimensional histogram, with the
 generator-level \pth{} on the $y$ axis and the same variable after the reconstruction on the $x$ axis, using the same binning for both distributions.
