@@ -1,4 +1,4 @@
-\chapter{Higgs boson properties in the \hww decay channel}\label{chap4}
+\chapter{Higgs boson properties in the \hww decay channel}\label{chap3}
 
-\input{Chapter4/HiggsBoson.tex}
-\input{Chapter4/HWWchannel.tex}
+\input{Chapter3/HiggsBoson.tex}
+\input{Chapter3/HWWchannel.tex}
