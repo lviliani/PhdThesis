@@ -1,6 +1,6 @@
 \section{Analysis strategy}\label{chap5:analysis_strategy}
 
-\subsection{Event selection and objetc definition}
+\subsection{Event reconstruction}
 
 Regarding the electrons, muons, jets and \MET definition and reconstruction, the standard CMS recommendations described in Chapter~\ref{chap2} are used. The specific selections used in this analysis are briefly summarised below.
 
@@ -13,7 +13,7 @@ Muons are identified according to the CMS recommendations for the medium working
 \item $|d_{z}| < 0.1$\,cm, where $d_z$ is the longitudinal distance of the muon track in the tracker extrapolated along the beam direction.
 \end{itemize}
 
-For the muon isolation the CMS recommended particle flow isolation based on the tight working point is used, corresponding to a requirement on the isolation variable of $ISO_\mathrm{tight} < 0.15$. In addition a tracker relative isolation is also applied.
+For the muon isolation, the CMS recommended particle flow isolation based on the tight working point is used, corresponding to a requirement on the isolation variable of $ISO_\mathrm{tight} < 0.15$. In addition a tracker relative isolation is also applied.
 
 For the electron identification, the tight working point is used. In addition some additional cuts to make the selection ``trigger-safe'' are included. This is done because the electron triggers already include some identification and isolation requirements that are based on the raw detector information, while the offline selections make use of particle flow requirements. The ``trigger-safe'' selections are defined to make the the offline identification and isolation requirements tighter with respect to the online triggers.
 
@@ -72,6 +72,9 @@ assessment was repeated for the three working points.
 With these selection we find the significance values listed in
 Table~\ref{tab:significance_wp_combine} for the three working points.
 \begin{table}
+\caption{Significance corresponding to the three working points and for
+different jet categories using a shape
+analysis.\label{tab:significance_wp_combine}}
 \begin{center}
 \begin{tabular}{cccc}
 \toprule
@@ -83,9 +86,6 @@ $0+1$ jets & 2.481 & 2.479 & 2.420 \\
 \bottomrule
 \end{tabular}
 \end{center}
-\caption{Significance corresponding to the three working points and for
-different jet categories using a shape
-analysis.\label{tab:significance_wp_combine}}
 \end{table}
 
 The working point providing the best significance in the combined $0+1$ jets category is found to be the loose one.
@@ -141,7 +141,7 @@ leading lepton \pt greater than 20\GeV and sub-leading lepton \pt greater than
 \end{itemize}
 Although a Z+jets sample is dominated by light flavor jets, a b-veto on an
 alternative algorithm (TCHE) is applied to reduce the contamination from b-jets,
-especially above the cMVAv2 cut.  This helps mitigating possible data/simulation discrepancies in the modeling of the heavy/light flavor ratio.
+especially above the cMVAv2 cut.  This helps mitigating possible data/simulation discrepancies in the modeling of the heavy/light flavour ratio.
 The comparison between data and simulation after the event reweighting is shown in Figs.~\ref{fig:bpogSF} and \ref{fig:bpogSF_Z} for the b-jets and light jets enriched control regions, respectively.
 
 \begin{figure}[!h]
@@ -158,3 +158,117 @@ jet in the b-jets enriched control region.\label{fig:bpogSF}}
 \caption{B tagging cMVAv2 discriminator for the leading (a) and the subleading (b)
 jet in the light jets enriched control region.\label{fig:bpogSF_Z}}
 \end{figure}
+
+\subsection{Event selection and background rejection}\label{chap5:eventSel}
+
+Since the ggH production mechanism, which is the main production mode for a Higgs mass of around 125\GeV, is characterized by the emission of few jets arising from initial or final state radiation, this analysis is limited to events with no jets or one jet. Due to the large DY background in di-electrons and di-muons events, only the $e\mu$ final state is studied in this early Run 2 data analysis, including the indirect contribution from $\tau$ leptons decaying to electron or muons.
+Exactly one electron and one muon are required to be reconstructed in the event with opposite charges and a minimum \pt of 10 (13)\GeV for  the muon (electron). One of the two leptons should also have a \pt greater than 20\GeV and both leptons are required to be well identified and isolated to reject fake leptons and leptons coming from QCD sources. To suppress background processes with three or more leptons in the final state, such as ZZ, WZ, Z$\gamma$, W$\gamma$, or tri-boson production, no additional identified and isolated lepton with $\pt>10$\GeV should be reconstructed. The low \mll region dominated by QCD production of leptons
+is not considered in the analysis and \mll is requested to be higher than 12\GeV. To suppress the background arising from DY events decaying to a $\tau$ lepton pair which subsequently
+decays to an $e\mu$ final state and suppress processes without genuine \MET, a minimal \MET of 20\GeV
+is required. The DY background is further reduced by requesting $\ptll > 30$\GeV.
+ Finally the contribution from leptonic decays of single top and \ttbar production is reduced by requesting
+that no jets with $\pt>20$\GeV are identified by the b tagging algorithm as originating from a b quark in the event.
+
+The requirements described above define the WW baseline selection. After those requirements the data sample is dominated by events arising from the non-resonant WW production and \ttbar production. To further reduce the effect of these backgrounds on the signal sensitivity, the events are categorized depending on the jet multiplicity, counting jets with $\pt > 30$\GeV. Events with zero associated jets mainly arise from the WW production, while WW and \ttbar productions have a similar contribution in the category with one jet. Higher jet multiplicity categories, which are sensitive to other Higgs production mechanisms, such as VBF, are not included in this analysis, given the very low expected yield for other production modes with the analysed integrated luminosity.
+
+Distributions of some variables of interest for the 0 and 1 jet categories separately, but merging the e$\mu$ and $\mu$e final states together, are shown in Figs.~\ref{fig:distr1}, \ref{fig:distr2} and \ref{fig:distr3} after applying the WW baseline selections, with the addition of a cut on \mll to remove the Higgs signal contribution ($\mll > 80$\GeV), and a cut on \mt to be orthogonal to the $\mathrm{Z}\gamma^* \to \tau\tau$ background control region ($\mt > 60$\GeV).
+
+\begin{figure}
+\centering
+\subfigure[0 jets - $\pt^{\ell,1}$]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of0j_pt1}
+}
+\subfigure[0 jets - $\eta^{\ell,1}$]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of0j_eta1}
+}\\
+\subfigure[1 jet - $\pt^{\ell,1}$]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_pt1}
+}
+\subfigure[1 jet - $\eta^{\ell,1}$]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_eta1}
+}
+\caption{Distributions of \pt (left) and $\eta$ (right) of the leading lepton for events with 0 jet (upper row) and 1 jet (lower row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram) at the WW selection level. The last bin of the histograms includes overflows. The simulation of the WW background is normalized to data.}\label{fig:distr1}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfigure[0 jets - $\pt^{\ell,2}$]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of0j_pt2}
+}
+\subfigure[0 jets - $\eta^{\ell,2}$]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of0j_eta2}
+}\\
+\subfigure[1 jet - $\pt^{\ell,2}$]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_pt2}
+}
+\subfigure[1 jet - $\eta^{\ell,2}$]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_eta2}
+}
+\caption{Distributions of \pt (left) and $\eta$ (right) of the subleading lepton for events with 0 jets (upper row) and 1 jet (lower row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram) at the WW selection level. The last bin of the histograms includes overflows. The simulation of the WW background is normalized to data.}\label{fig:distr2}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfigure[0 jets - \MET]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of0j_met}
+}
+\subfigure[0 jets - \ptll]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of0j_ptll}
+}\\
+\subfigure[1 jet - \MET]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_met}
+}
+\subfigure[1 jet - \ptll]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_ptll}
+}
+\caption{Distributions of \MET (left) and \ptll (right) for events with 0 jets (upper row) and 1 jet (lower row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram) at the WW selection level. The last bin of the histograms includes overflows. The simulation of the WW background is normalized to data.}\label{fig:distr3}
+\end{figure}
+
+The W+jets background, where one jet can be misidentified as a lepton, is a sub-dominant background in the phase space defined by the analysis kinematic requirements. The 0 ad 1 jets categories are further split according to the lepton flavour to e$\mu$ and $\mu$e, where the first lepton refers to the leading one. In this way an improvement of about 10\% in terms of the signal significance can be achieved, exploiting the different W+jets background contribution in the two categories. Indeed the probability for a jet to be misidentified as an electron or a muon is not the same.
+
+
+
+\subsection{Signal extraction}
+
+To extract the Higgs boson signal contribution in the four previously mentioned categories, a similar approach to the one used in the Run 1 analysis~\cite{Chatrchyan:2013iaa} is pursued. The analysis is based on two-dimensional templates of \mll versus \mt to discriminate signal and background contributions. The \mll template is defined using 5 bins from $\mll=10$\GeV up to $\mll=110$\GeV, while for the \mt template 7 bins are defined in the range $60\GeV < \mt < 200$\GeV. The phase space with $\mt<60$\GeV is used as an orthogonal control region to extract the normalization of the DY background. A binned maximum likelihood fit to the signal and background two-dimensional templates is performed to extract the signal strength in the four categories.
+
+Distributions of the \mll and \mt variables after the WW level selection are shown in Fig.~\ref{fig:mllandmt} for the 0 and 1 jet categories separately, but merging the e$\mu$ and $\mu$e final states together.
+
+\begin{figure}
+\centering
+\subfigure[0 jets - \mll]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_hww2l2v_13TeV_of0j_mll}
+}
+\subfigure[0 jets - \mt]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_hww2l2v_13TeV_of0j_mth}
+}\\
+\subfigure[1 jet - \mll]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_hww2l2v_13TeV_of1j_mll}
+}
+\subfigure[1 jet - \mt]{
+  \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_hww2l2v_13TeV_of1j_mth}
+}
+\caption{Distributions of \mll (left) and \mt (right) for events with 0 jets (upper row) and 1 jet (lower row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram) at the WW selection level. The last bin of the histograms includes overflows. The simulation of the WW background is normalized to data.}\label{fig:mllandmt}
+\end{figure}
+
+The statistical methodology used to interpret the data and to combine the results from the independent 0-jet and 1-jet categories in the e$\mu$ and $\mu$e final states has been developed by the ATLAS and CMS collaborations in the context of the LHC Higgs Combination Group~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba}.
+The number of events in each category and in each bin of two-dimensional template is modelled as a Poisson random variable,
+with a mean value given by the sum of the contributions from all the processes under consideration.
+Systematic uncertainties are represented by individual nuisance parameters
+with log-normal distributions. The uncertainties affect the overall
+normalization of the signal and backgrounds
+as well as the shape of the predictions across the distribution of the observables.
+Correlation between systematic uncertainties in different categories 
+are taken into account. 
+
+
+
+
+
+
+
+
+
+
+
+
