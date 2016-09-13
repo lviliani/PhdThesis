@@ -42,7 +42,52 @@ The signal extraction is based on a binned maximum likelihood fit using the \mti
 where the first number represents the lower edge of the first bin while the other numbers represent the upper edges. The last bin is an overflow bin.
 
 In order to test different resonance decay widths hypotheses, the signal samples, which are generated with a decay width corresponding to the expected value for a SM Higgs boson at that mass ($\Gamma_\mathrm{SM}$), are reweighted to obtain the desired width value ($\Gamma'$). In particular the following values are used: $\Gamma' = \Gamma_\mathrm{SM}$, $\Gamma' = 0.49 \times \Gamma_\mathrm{SM}$, $\Gamma' = 0.25 \times \Gamma_\mathrm{SM}$ and $\Gamma' = 0.09 \times \Gamma_\mathrm{SM}$.
+The reweighting is performed at generator level by computing the ratio of two relativistic Breit Wigner distributions with different decay widths, $f(E,\Gamma',M_\mathrm{X})/f(E,\Gamma_\mathrm{SM},M_\mathrm{X})$, where:
+\begin{equation}
+f(E) \propto \frac{1}{(E^2 - M^2)^2 + M^2\Gamma^2} \quad .
+\end{equation}
+Here, $f(E,\Gamma_\mathrm{SM},M_\mathrm{X})$ represents the distribution used for the simulation of the signal at a mass $M_\mathrm{X}$, and $f(E,\Gamma',M_\mathrm{X})$ the distribution with the new decay width. Each event is multiplied by this ratio (which depends on the energy $E$ of the event) to obtain the reweighted distribution.
 
+When a resonance with a non negligible width is considered, it is important to take into account the interference effects both with the gg$\to$WW background and the SM Higgs boson off-shell tail.
+A study of the interference effects for a resonance X produced through the gluon fusion mechanism is performed within the \textsc{MCFM}+\textsc{JHUGen} framework, and including NNLO corrections for cross section using \textsc{HNNLO} program~\cite{Grazzini:2008tf} based on \textsc{MCFM}. The matrix element package MELA supports all of these processes and allows fast MC re-weighting and optimal discriminant calculation. The basic idea of this approach is to compute the matrix elements of the processes under study with the \textsc{MCFM} and \textsc{JHUGen} generators, including the interference terms, and using these matrix elements to compute an event weight used to reweight the simulated samples. Using this approach the simulated events can be reweighted according to different scenarios, for instance including some or all the interference terms, allowing a detailed study of the interference contribution. The effect of the various interference terms for the $M_\mathrm{X}$ variable at generator level is shown in Fig.~\ref{fig:int300}, after having applied the WW baseline selections. As can be observed the contribution of the interference of the scalar resonance with the gg$\to$WW background 
+and with SM Higgs boson have opposite sign and partially cancel out. This cancellation effect is different for different resonance masses and depends on the event selection.
+In particular the interference term with the SM Higgs off-shell tail is positive for values below $M_\mathrm{X}$ while it turns negative above $M_\mathrm{X}$. The contribution of the interference with the gg$\to$WW background is instead characterized by an opposite sign lineshape, thus leading to a partial cancellation when considering the total interference.
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.7\textwidth]{images/13TeV/Interference/int300.pdf}
+\caption{
+    Distribution of the $M_\mathrm{X}$ variable for a resonance mass of 300\GeV, showing the various interference terms after the WW baseline selections.}
+    \label{fig:int300}
+\end{figure}
 
+The effect of the resulting interference contribution including all the different terms is shown in Fig.~\ref{fig:mti_int} for the \mti signal templates, in the three categories separately and for different $M_\mathrm{X}$ hypotheses.
+
+\begin{figure}[htb]
+\centering
+\subfigure[$M_\mathrm{X}=300$\GeV - 0 jets]{
+\includegraphics[width=0.3\textwidth]{images/13TeV/Interference/0j_300.eps}
+}
+\subfigure[$M_\mathrm{X}=300$\GeV - 1 jet]{
+\includegraphics[width=0.3\textwidth]{images/13TeV/Interference/1j_300.eps}
+}
+\subfigure[$M_\mathrm{X}=300$\GeV - VBF]{
+\includegraphics[width=0.3\textwidth]{images/13TeV/Interference/VBF_300.eps}
+}\\
+\subfigure[$M_\mathrm{X}=700$\GeV - 0 jets]{
+\includegraphics[width=0.3\textwidth]{images/13TeV/Interference/0j_700.eps}
+}
+\subfigure[$M_\mathrm{X}=700$\GeV - 1 jet]{
+\includegraphics[width=0.3\textwidth]{images/13TeV/Interference/1j_700.eps}
+}
+\subfigure[$M_\mathrm{X}=700$\GeV - VBF]{
+\includegraphics[width=0.3\textwidth]{images/13TeV/Interference/VBF_700.eps}
+}
+
+\caption{
+    Distributions of the \mti variable for $M_\mathrm{X}=$300 and 700\GeV, showing the signal (both the ggH and VBF processes) and the interference contributions in the three jet categories.}
+    \label{fig:mti_int}
+\end{figure}
+
+The interference contribution is thus not negligible, especially for large values of $M_\mathrm{X}$, and is included in the analysis as part of the signal contribution. More specifically, during the fit procedure the signal yield is scaled by the signal strength parameter $\mu$ (which is the parameter of interest of the fit), while the interference yield is scaled by $\sqrt{\mu}$.
 

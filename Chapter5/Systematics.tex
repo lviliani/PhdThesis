@@ -1,0 +1,47 @@
+\section{Systematic uncertainties}\label{chap5:systs}
+
+The systematic uncertainties affecting this measurement can be divided into three categories: the uncertainties on the background estimation, experimental uncertainties and theoretical uncertainties.
+
+The first category includes the uncertainties related to the background normalization and shape. For the non-resonant WW production the shape is taken from simulation. The input normalization to the fit is set to the expected value from simulation, and an unconstrained nuisance parameter with a flat distribution is associated to this number. This is done separately for the two jet categories.
+
+The top quark background shape is taken from simulation after correcting for the b tagging scale factors. An uncertainty due to these scale factors is included and affects both the normalization and the shape of the top quark background. The uncertainties on the normalization are treated similarly to the WW background case, but constraining the corresponding nuisances by means of the two control regions orthogonal to the signal phase space. A similar procedure is used for the DY background.
+
+Effects due to experimental uncertainties are studied by applying a scaling and smearing of
+certain variables related to the physics objects, e.g. the \pt of the leptons, followed by a subsequent recalculation of all the correlated variables. This is done for simulation, to account for possible systematic mismodeling.
+
+All experimental sources, except luminosity, are treated both as normalization and shape uncertainties, and are correlated among the signal and background processes and all the categories. The following experimental uncertainties are considered:
+\begin{itemize}
+\item the uncertainty determined by the CMS online luminosity monitoring, 2.7\% for the first data collected at $\sqrt{s}=13$\TeV;
+\item the acceptance uncertainty associated with the combination of single and double lepton triggers, which is 2\%;
+\item the lepton reconstruction and identification efficiencies uncertainties, that are in the range 0.5-5\% for electrons and 1-7\% for muons depending on \pt and $\eta$;
+\item the muon momentum and electron energy scale and resolution uncertainties, that amount to 0.01-0.5\% for electrons and 0.5-1.5\% for muons depending on \pt and $\eta$;
+\item the jet energy scale uncertainties, that vary between 1-11\% depending on the \pt and $\eta$ of the jet;
+\item the \MET resolution uncertainty, that is taken into account by propagating the corresponding uncertainties on the leptons and jets;
+\item the scale factors correcting the b tagging efficiency and mistagging rate, that are varied within their uncertainties. This systematic uncertainty is anticorrelated between the top control regions and the other ones.
+\end{itemize}
+
+The uncertainties in the signal and background production rates due
+to theoretical uncertainties include several components, which are assumed to be
+independent: the PDFs and $\alpha_{s}$, the underlying event and parton shower model,
+and the effect of missing higher-order corrections via variations of the renormalization
+and factorization scales.
+
+The effects of the variation of PDFs, $\alpha_s$ and renormalization/factorization QCD scales, mainly affect the signal processes, being the most important backgrounds estimated using data driven techniques. However, the uncertainties on minor backgrounds that are estimated from simulation are taken into account. These uncertainties are split in the uncertainties on the cross section, which are computed by the LHC cross section working group~\cite{YRtmp}, and on the selection efficiency~\cite{Butterworth:2015oua}. The PDFs and $\alpha_{s}$ signal cross section normalization uncertainties are $^{+7.4\%}_{-7.9\%}$ and $^{+7.1\%}_{-6.0\%}$ for ggH and $\pm 0.7\%$ and $\pm 3.2\%$ for VBF Higgs production mechanism. The PDFs and $\alpha_{s}$ acceptance uncertainties are less than 1\% for gluon- and quark-induced processes. The effect of the QCD scales variation on the selection efficiency is around 1-3\% depending on the specific process. To estimate these uncertainties, the events are reweighted according to different QCD scales or different PDF sets and the selection efficiency is recomputed each time. For the QCD scale uncertainty the maximum variation with respect to the nominal value is taken as the uncertainty. For the case of PDF and $\alpha_s$ uncertainties, the distribution of the selection efficiency is built taking into account all the replicas in the NNPDF3.0 set and the uncertainty is estimated as the standard deviation of that distribution.
+
+In addition, the categorization of events based on jet multiplicity introduces additional uncertainties on the ggH production mode related to missing higher order corrections. These uncertainties are evaluated following the prescription described in Sec.~\cite{subsec:stewart-tackman} and correspond to 5.6\% for the 0-jet and 13\% for the 1-jet bin categories.
+
+The underlying event uncertainty is estimated by comparing two different \textsc{pythia 8} tunes,
+while parton shower modelling uncertainty is estimated by comparing samples interfaced
+with the \textsc{pythia 8} and \textsc{herwig++} parton shower programs. 
+The effect on the ggH (VBF) signal expected yield is about 5\% (5\%) for the \textsc{pythia 8} tune variation and about 7\% (10\%) for the parton shower description.
+
+Other specific theoretical uncertainties are associated to some backgrounds. An uncertainty on the ratio of the \ttbar and tW cross sections is included. Indeed, these two processes are characterized by a different number of b-jets in the final state (2 b-jets for \ttbar and 1 for tW) and the b-veto acts differently for the two. A variation of the relative ratio of the cross sections can thus cause a migration of events from the 0 to the 1 jet categories and viceversa. The corresponding uncertainty is of 8\%, according to the theoretical cross section calculations~\cite{topxsec,singletop}.
+
+The $\mathrm{gg}\to\mathrm{WW}$ background LO cross section predicted by the \textsc{mcfm} generator is scaled to the NLO calculation, applying a k-factor of 1.4 with an uncertainty of 15\%~\cite{Caola:2015rqy}. The interference term between the $\mathrm{gg}\to\mathrm{WW}$ and the ggH signal is also included and simulated with LO accuracy using \textsc{mcfm}. The k-factor to scale the interference term is 1.87, given by the geometrical average of the LO to NNLO gg$\to$H$\to$WW scale factor (2.5) and the LO to NLO $\mathrm{gg}\to\mathrm{WW}$ scale factor (1.4). The uncertainty on this value is estimated as the maximum variation with respect to the two scale factors mentioned above, and is found to be of 25\%. Anyway, with the current amount of integrated luminosity, the interference contribution is found to be negligible.
+
+For what the $\mathrm{qq}\to\mathrm{WW}$ background shape is concerned, an uncertainty related to the diboson \pt reweighting is evaluated varying the renormalization, factorization and resummation QCD scales.
+
+Finally, the uncertainties due to the limited statistical accuracy of the MC simulations are also taken into account, including an independent uncertainty for each bin of the two-dimensional distribution, and for each category. The uncertainty for a certain bin and process is given by the standard deviation of the Poisson distribution with mean corresponding to the number of MC events in that bin.
+
+
+ 
