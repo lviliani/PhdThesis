@@ -11,7 +11,7 @@
 \usepackage{subfigure}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage[backend=biber, sorting=none]{biblatex}
+\usepackage[backend=biber, sorting=none, citestyle=numeric-comp]{biblatex}
 \usepackage[format=plain,labelfont=bf]{caption}
 \usepackage{enumerate}
 \usepackage{lscape}
@@ -23,8 +23,10 @@
 \linenumbers
 
 \graphicspath{/home/lviliani/Documenti/PhdThesis/images}
+\let\oldMeV\MeV
 \let\oldGeV\GeV
 \let\oldTeV\TeV
+\renewcommand{\MeV}{\,\oldMeV \xspace}
 \renewcommand{\GeV}{\,\oldGeV \xspace}
 \renewcommand{\TeV}{\,\oldTeV \xspace}
 \newcommand{\hww}{\ensuremath{{\mathrm{H}\to\mathrm{WW}}}\xspace}
