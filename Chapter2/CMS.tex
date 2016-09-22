@@ -4,7 +4,7 @@
 
 The CMS apparatus is a general purpose detector situated in one of the four LHC interaction points\footnote{The CMS detector is placed in a cavern 100\,m underground in the area called Point 5, near the village of Cessy, in France.}. The detector is designed to investigate a wide range of physics, from the search of the Higgs boson, to SM measurements and BSM physics searches. To achieve this goal, the detector is able to identify and reconstruct all the physics objects that may be produced in the proton proton collisions: electrons, muons, photons and jets. The main feature of the CMS detector is a superconducting solenoidal magnet which is capable to produce a $3.8$\,T magnetic field. Such a strong magnetic field is the key aspect which permits to have a compact design of the detector. The detector has a cylindrical structure, which is typical of general purpose detectors, which consists of several cylindrical detecting layers, coaxial with the beam direction (\emph{barrel} region), closed at both ends with detecting disks (\emph{endcap} region), in such a way to ensure the hermetic closure of the apparatus.
 
-The coordinate system used by CMS is a right-handed Cartesian system, with the origin in the nominal beam collision point inside the detector. The $x$-axis is chose to point radially towards the center of the LHC circumference and the $y$-axis is directed upwards along the vertical. The $z$-axis is oriented along the beam direction, according to the counter-clockwise direction of the LHC ring if seen from above. The CMS cylindrical symmetry and the Lorentz invariant description of the proton proton collisions, suggest the use of a pseudo-angular reference frame, described by the triplet of coordinates $(r,\phi,\eta)$, where $r$ is the distance from the $z$-axis, $\phi$ is the azimuthal angle, measured starting from the $x$-axis positive direction, and $\eta$ is the pseudorapidity, defined by the following equation:
+The coordinate system used by CMS is a right-handed Cartesian system, with the origin at the center of the detector, in the nominal beam collision point. The $x$-axis is chose to point radially towards the center of the LHC circumference and the $y$-axis is directed upwards along the vertical. The $z$-axis is oriented along the beam direction, according to the anticlockwise direction of the LHC ring if seen from above. The CMS cylindrical symmetry and the Lorentz invariant description of the proton proton collisions, suggest the use of a pseudo-angular reference frame, described by the triplet of coordinates $(r,\phi,\eta)$, where $r$ is the distance from the $z$-axis, $\phi$ is the azimuthal angle, measured starting from the $x$-axis positive direction, and $\eta$ is the pseudorapidity, defined by the following equation:
 \begin{equation}
 \eta = - \ln\left( \tan\frac{\theta}{2}\right) \quad,
 \end{equation}
@@ -36,18 +36,86 @@ The schematic view of the CMS detector, which has a length of 21.5\,m, a diamete
 
 In Fig.~\ref{fig:CMSslice} the response of the various CMS sub-detectors to the passage of different types of particles is sketched. In the following sections a brief description of each sub-detector is given.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The solenoid}
+
+The CMS magnet~\cite{CMSmagnet}, which contains the tracker, the electromagnetic and the hadronic calorimeters, is the biggest superconducting solenoid ever built. The solenoid can generate a magnetic field of $3.8$\,T in the internal bore, which has a diameter of 6\,m and a length of $12.5$\,m. The energy stored in the magnet is about $2.7$\,GJ at full current. The superconductor is made of four Niobium-Titanium layers and it is cooled down to about 4\,K through a liquid Helium cooling plant. In case of a quench, when the magnet loses its superconducting property, the energy is dumped to resistors within 200\,ms. The magnet return yoke of the barrel is composed with three sections along the $z$-axis; each one is split into 4 layers (holding the muon chambers in the gaps). Most of the iron volume is saturated or nearly saturated, and the field in the yoke is about the half ($1.8$\,T) of the field in the central volume.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The tracker}
 
-	\subsubsection{The pixel detector}
+The silicon tracker is the detector closest to the beam collision point. Its goal is the high resolution reconstruction of the trajectories of charged particles originating from the interaction point and the identification of the position of secondary vertices produced by particles with a short mean life time (in particular hadrons containing the b quark, that decay after few hundred of \micron). The events produced in the proton proton collisions can be very complex and track reconstruction is an entangled pattern recognition problem. Indeed, at the nominal instantaneous luminosity of operation, an average of about 20 pile up events overlapping to the event of interest are expected, leading to about 1000 tracks to be reconstructed every 25\,ns. In order to make the pattern recognition easier, two requirements are fundamental:
+\begin{itemize}
+\item a low occupancy detector;
+\item a large redundancy of the measured points (\emph{hits}) per track.
+\end{itemize}
+The first requirement is achieved building a detector with high granularity\footnote{The granularity of a detector is defined as the angular range ($\Delta\eta\times\Delta\phi$) that each individual element is able to resolve.}. The redundancy of the hits is instead achieved having several detecting layers, and is necessary to reduce the ambiguity on the assignment of the hits to a given track. Nevertheless, the amount of tracker material has to be as low as possible, in order to avoid compromising the measurement of the particle trajectory. An excessive amount of material would indeed deteriorate the measurement, mainly because of the increased probability of particle multiple scattering. The outer detectors such as ECAL would be influenced by the material as well, for example because of the increased probability for a photon to convert to an electron-positron pair in the tracker material. For this reasons, the tracker layers are limited in number and thickness.
 
-	\subsubsection{The microstrip detector}
+The tracker comprises a large silicon strip detector with a small silicon pixel detector inside it. In the central $\eta$ region, the pixel tracker consists of three co-axial barrel layers at radii between $4.4$\,cm and $10.2$\,cm and the strip tracker consists of ten co-axial barrel layers extending outwards to a radius of $110$\,cm. Both sub-detectors are completed by endcaps on either
+side of the barrel, each consisting of two disks in the pixel tracker, and three small plus nine large disks in the strip tracker. The endcaps extend the acceptance of the tracker up to $|\eta|<2.5$. A three-dimensional schematic view of the tracker is shown in Fig.~\ref{fig:tracker3D}, while in Fig.~\ref{fig:tracker2D} a pictorial representation of a slice of the tracker is displayed, showing the various layers of the sub-detectors.
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.6\textwidth]{images/tracker.pdf}
+\caption{Three-dimensional schematic view of the CMS silicon tracker.}\label{fig:tracker3D}
+\end{figure}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{images/tracker2D.pdf}
+\caption{Pictorial view of a tracker slice in the r-z plane. Pixel modules are
+shown in red, single-sided strip modules are depicted as black thin lines and
+strip stereo modules are shown as blue thick lines.}\label{fig:tracker2D}
+\end{figure}
 
+The whole tracker has a cylindrical shape with a length of $5.8$\,m and a diameter of $2.5$\,m, with the axis aligned to the beams direction. The average number of hits per track is 12-14, in order to have a high reconstruction efficiency and a low rate of fake tracks.
+
+The material budget of the tracker as obtained from a simulation of the detector is shown in Fig.~\ref{fig:material_budget}, reported both in units of radiation length $t/X_0$ and in units of nuclear interaction length $t/\lambda_I$, as a function of $\eta$. The region $1 < |\eta| < 2$ exhibits a larger material budget due to the presence of cables and services.
+\begin{figure}[htb]
+\centering
+\subfigure{
+\includegraphics[width=0.45\textwidth]{images/materialBudget_X.png}
+}
+\subfigure{
+\includegraphics[width=0.45\textwidth]{images/materialBudget_lambda.png}
+}
+\caption{Total thickness $t$ of the tracker material expressed in units of $X_0$ (left) and $\lambda_I$ (right), as a function of $\eta$. The contribution to the total material budget of each part of the detector is shown.}\label{fig:material_budget}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{The pixel detector}
+
+The pixel detector, shown in Fig.~\ref{fig:pixel}, is mainly used as starting point in the CMS track reconstruction and is of fundamental importance for the reconstruction of primary and secondary vertices. 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{images/pixel.png}
+\caption{Schematic view of the CMS pixel detector.}\label{fig:pixel}
+\end{figure}
+The pixel detector is placed in the closest position to the collision point, where the amount of radiation is larger. It is placed in the region $|\eta|<2.5$ and consists of three cylindrical layers 53\,cm long in the barrel region, located at $r=4.4$, $7.3$ and $10.2$\,cm, and two pairs of endcap disks with radii between 6 and 15\,cm at $z=\pm34.5$ and $\pm46.5$\,cm, covering a total area of about $1\,\mathrm{m^2}$. The detector is composed of many modules, for a total of 768 in the barrel and 672 in the endcaps. Each endcap is composed of 24 segments, each one tilted with respect to the adjacent ones adnd containing 7 modules. Each module consists of several units which contain a highly segmented silicon sensor with a thickness of 250\micron. In order to achieve an optimal vertex position resolution in both the $(r,\phi)$ and $z$-coordinates, a design with a rectangular pixel shape with an area of $150\time100\,\micron^2$ was adopted, with the $100\,\micron$ size oriented along the $(r,\phi)$ direction in the barrel region, and along the $z$-direction in the endcap region. The achievable hit reconstruction resolution is about 10--15\,\micron in the barrel and 15\,\micron in the endcaps.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{The microstrip detector}
+
+In this region of the detector the radiation flow is low enough to allow the use of a less segmented device, such as the silicon microstrip detector.
+The microstrip tracker is composed of 15148 silicon modules, covering a total area of about $193\,\mathrm{m^2}$ with a total of 9.3 million strips. Two types of modules are installed: single sided modules consist of one sensor sticked onto a carbon fiber support together with the readout electronics, with the silicon strips laying along the $z$ direction in the barrel and along the $(r,\phi)$ direction in the endcaps. The other type of module, referred to as stereo-module, consists of two sensors sticked together back to back and tilted of a relative angle of 100\,mrad. This combination allows a three-dimensional measurement of the particle interaction point, providing the information along the $z$-direction. The whole microstrip tracker is $5.4$\,m long and extends up to $r=1.1$\,m. As the pixel detector, the microstrip detector consists of a barrel and an endcap region and is divided into four distinct parts, as shown in Fig.~\ref{fig:tracker2D}. The barrel is made up of the following parts:
+\begin{itemize}
+\item TIB (\emph{Tracker Inner Barrel}): it consists of four cylindrical coaxial layers, covering the region up to $|z|<65$\,cm. In this region the detectors have a thickness of 300\,\micron and the strips are separated by a variable pitch between 80 and 120\,\micron. The first two layers are composed of stereo modules while the other layers have single-sided modules. Since the strips are oriented along the $z$ axis, the position resolution is more precise in the $(r,\phi)$ direction, about $23 -- 34$\,\micron, with respect to the $z$ direction, where a resolution of about 230\,\micron is obtained thanks to the stereo modules.
+\item TOB (\emph{Tracker Outer Barrel}): it consists of six cylindrical coaxial layers, placed in the region $55\,\mathrm{cm} < r < 65\,\mathrm{cm}$ and $|z|<110$\,cm. Stereo modules are mounted on the two inner layers. Since the density of particles passing through this region is lower with respect to the TIB, the pitch between the strips is larger ($120 -- 180$\,\micron) and the strips are longer ($190$\,mm). The spatial resolution varies in the range $25 - 52$\,\micron in the $(r,\phi)$ direction, and is about 530\,\micron in the $z$ coordinate in the stereo modules.
+\end{itemize}
+The endcaps are also made up of two parts:
+\begin{itemize}
+\item TID (\emph{Tracker Inner Disk}): it consists of six disks, three per side, placed orthogonally with respect to the beam axis, between the TIB and the TOB. The modules are positioned in a ring shape, with the strips oriented in the radial direction, and they are alternately placed on the internal and on the external side of the disk. The two innermost rings of the TID are equipped with stereo modules. The thickness of the silicon is 300\,\micron.
+\item TEC {\emph{Tracker EndCap}}: each one of the two TEC is made of nine disks which extend to the region $120\,\mathrm{cm} < |z| < 280\,\mathrm{cm}$. Each disk is divided into 8 slices in each of which a number ranging from 4 to 7 modules are mounted in a ring shape, depending on the position along $z$. Also in this case the modules are alternately mounted on the internal and on the external side of the disk, with the strips radially oriented. On the two innermost rings and on the fifth one the stereo modules are installed to measure the $z$ coordinate. The thickness of the sensors range between 300 and 500\,\micron depending on the disk.
+\end{itemize}
+
+The tracker is operated at low temperature in order to reduce those radiation damage induced effects that have a temperature dependence, such as the increase of the leakage current and the long-term increase of the depletion voltage (also called reverse annealing)\footnote{The tracker in Run 1 was operated at a temperature of $+4^{\circ}$C}, but during the Long Shutdown 1 a new cooling dry gas plant has been installed and the tracker is now operating at the lower temperature of $-15^{\circ}$C.
+
+The alignment of the tracker modules is very important to obtain a high spatial resolution. Deviations are caused by assembly inaccuracy, deformations due to cooling and stress from the magnetic field. Therefore, three methods are used for the tracker alignment.
+The geometry was determined during the assembly to an accuracy of 80 to 150\,\micron. An infrared laser system is used for continuous monitoring of the position of selected tracker modules. The final alignment is done with tracks from well known physics processes, e.g. cosmic muons or muon pairs from the $J\Psi$, $\Upsilon$ or Z decays.
 \subsection{The electromagnetic calorimeter (ECAL)}
 
 \subsection{The hadronic calorimeter (HCAL)}
 
-\subsection{The solenoid}
+
 
 \subsection{The muon system}
 
