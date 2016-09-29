@@ -157,6 +157,50 @@ consisting of two units placed in the very forward region ($3<|\eta|<5$) outside
 \includegraphics[width=0.6\textwidth]{images/hcal.png}
 \caption{Longitudinal view of the CMS detector showing the HCAL sub-detectors.}\label{fig:hcal}
 \end{figure}
+In order to maximize particle containment for a precise missing transverse energy measurement, the amount of absorber material was maximized, reducing therefore the amount of the active material. Since HCAL is mostly placed inside the magnetic coil, a non-magnetic material like brass was chosen as absorber. HB and HE are therefore made with 5\,cm brass absorber layers interleaved with 3.7\,mm plastic scintillators. The scintillation light is collected by wavelength shifting (WLS) fibres and read out by hybrid photodiodes (HPD). The granularity of the calorimeter is $\Delta\eta\times\Delta\phi = 0.087 \times 0.087$ for $|\eta|<1.6$ and $\Delta\eta\times\Delta\phi \approx 0.17 \times 0.17$ for $|\eta|\geq1.6$. HO is made of 5 rings installed in the wheel that compose the return yoke and is divided in 12 sectors, each one covering a $30\degree$ angle in $\phi$. It consists of scintillating layers, with the same granularity as HB, and the solenoid coil is used as an additional absorber to increase the effective depth of the calorimeter in the barrel region, which is extended up to $11.8\,\lambda_I$, thus improving the energy resolution.
+
+The energy resolution in the different regions of HCAL can be parametrized using a stochastic and a constant term, as follows:
+
+\begin{equation}
+\begin{split}
+\left(\frac{\sigma_E}{E}\right)^2 &= \left(\frac{90\% \mathrm{GeV}^{1/2}}{\sqrt{E}}\right)^2 + \left(4.5\%\right)^2 \qquad \mathrm{in~ the~ barrel/endcap}\quad,\\
+\left(\frac{\sigma_E}{E}\right)^2 &= \left(\frac{172\% \mathrm{GeV}^{1/2}}{\sqrt{E}}\right)^2 + \left(9\%\right)^2 \qquad \mathrm{in~ the~ HF}\quad,
+\end{split}
+\end{equation}
+where $E$ is expressed in GeV.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The muon system}
+The CMS muon system~\cite{muon} is dedicated to the identification and measure of high \pt muons, in combination with the tracker. The system is placed outside the magnetic coil, embedded in the return yoke, to fully exploit the 1.8\,T return flux.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{images/muonsyst.png}
+\caption{Schematic view of a quadrant of the CMS muon system.}\label{fig:muonsyst}
+\end{figure}
+As shown in Fig.~\ref{fig:muonsyst}, the system consists of three types of independent gaseous particle detectors:
+\begin{itemize}
+\item \emph{Drift Tubes} (DT) are placed in the barrel region, where the occupancy is relatively low ($< 10\,\mathrm{Hz/m^2}$);
+\item \emph{Cathode Strip Chambers} (CSC) are installed in the endcaps, where the occupancy is higher ($> 100\,\mathrm{Hz/m^2}$);
+\item \emph{Resistive Plate Chambers} (RPC) are placed both in the barrel and endcaps.
+\end{itemize}
+The DT system is placed in the region of the barrel with $|\eta|<1.2$, where the magnetic field is sufficiently weak and homogeneous. Along the longitudinal direction, the barrel region is divided in 5 wheels, which are subdivided in 12 sectors covering a $30\degree$ azimuthal angle each. The wheels are composed of 4 concentric rings of chambers, called \emph{stations}, interspersed in the layers of the iron return yoke, and each one formed by 12 DT chambers. The basic element of the DT system is a rectangular drift tube cell with a transverse size of $13\times42\,\mathrm{mm^2}$ and a variable length from 2 to 4\,m. The chambers are filled with a gas mixture of Ar (85\%) and $\mathrm{CO_2}$ (15\%) and are grouped in the radial direction to form detection layers. Groups of four layers form a \emph{superlayer}. In each superlayer two chambers have anode wires parallel to the beam axis and two have perpendicular wires, thus providing two measurements of the $(r,\phi)$ coordinate and two measurements of the $z$ coordinate of the track hit positions.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{images/drifttube.png}
+\caption{Schematic representation of a drift tube chamber, showing the drift lines in presence of magnetic field.}\label{fig:dt}
+\end{figure}
+As shown in Fig.~\ref{fig:dt}, each chamber is made of a stainless steel anode wire between two parallel aluminium plates with ``I'' shaped spacer cathodes, isolated from the aluminium plates with polycarbonate plastic, and the hit resolution is about $100\,\micron$ in both $(r,\phi)$ and $(r,z)$ directions.
+
+In the endcaps, the high and non-uniform magnetic field and the particle rate do not allow to use drift tubes detectors to perform measurements. Therefore, a solution based on the CSC detector has been adopted. CSC are multi-wire proportional chambers with the cathodes segmented into strips oriented radially and transversely with respect to the anode wires (see Fig.~\ref{fig:csc}), allowing a simultaneous measurement of two coordinates ($r$ through the wires and $\phi$ using the strips). The CSC chambers are filled with a gas mixture of Ar (40\%), $\mathrm{CO_2}$ (50\%) and $\mathrm{CF_4}$ (10\%) and provide a spatial resolution of about $80\mbox{--}85\,\micron$.
+The drift path of the charge carriers is shorter with respect to the drift tubes, therefore these detectors can be placed in regions with higher flows of charged particles and less homogeneous magnetic fields. The CSC coverage is $0.8 < |\eta| < 2.4$.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{images/csc.png}
+\caption{Schematic representation of CSC cathode (left) and anode (right) panels.}\label{fig:csc}
+\end{figure}
+
+RPCs are used both in barrel and endcaps, complementing DT and CSC systems, in order to ensure robustness and redundancy to the muon spectrometer.
+RPCs are gaseous detectors characterized by a coarse spatial resolution, but are able to perform precise time measurements, comparable with the ones provided by scintillators. These chambers are made of 4 bakelite planes, with a bulk resistivity of $10^{10}\mbox{--}10^{11}\,\Omega cm$. The 2\,mm gap between the plates is filled with a mixture of $\mathrm{C_2 H_2 F_4}$ (94.5\%) and Isobutane. 
+The central part of the chamber is equipped with insulated aluminum strips, used to collect the signal generated by crossing particles. In the barrel the strips are rectangularly segmented and run along the beam axis, whereas the endcaps are equipped with trapezoidal shaped strips. The detector operates in avalanche mode, and covers the region $|\eta|<2.1$.
 
