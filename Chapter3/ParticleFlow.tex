@@ -25,10 +25,4 @@ These elements are then connected to each other using a link algorithm, which id
 \item Charged hadrons: the remaining tracks give rise to \emph{PF charged hadrons}. Tracks can be linked to ECAL and HCAL clusters, and the energy is determined taking into account information from calorimeters;
 \item Photons and neutral hadrons: ECAL clusters not linked with tracks give rise to \emph{PF photons}, while the remaining HCAL clusters are identified as \emph{PF neutral hadrons}.
 \end{itemize}
-After the identification of all PF candidates in the event, \emph{PF jets} are clustered as described in Sec.~\ref{chap2:jets}. The last step is the reconstruction of the \emph{PF \ptmiss}, which is given by:
-
-\begin{equation} 
-\ptmiss = - \sum_{\mathrm{PF\,obj}} \vec{p}_\mathrm{T}^\mathrm{\,PF\,obj} \quad,
-\end{equation}
-
-where the sum extends over all the PF objects. The \MET is defined as the modulus of \ptmiss.
+After the identification of all PF candidates in the event, \emph{PF jets} are clustered as described in Sec.~\ref{chap2:jets}. The last step is the reconstruction of the \emph{PF \ptmiss}, which is described in Sec.~\ref{sec:met}. The missing transverse energy, \MET, is defined as the modulus of \ptmiss.

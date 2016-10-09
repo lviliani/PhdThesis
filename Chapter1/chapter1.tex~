@@ -1,0 +1,9 @@
+\chapter{Electroweak and QCD physics at LHC}\label{chap1}
+\thispagestyle{empty}
+
+\include{Chapter1/SM.tex}
+\include{Chapter1/Higgs.tex}
+\include{Chapter1/QCD.tex}
+\include{Chapter1/ppInt.tex}
+\include{Chapter1/MC.tex}
+\include{Chapter1/HiggsExp.tex}
