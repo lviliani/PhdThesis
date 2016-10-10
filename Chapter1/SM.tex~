@@ -2,5 +2,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:SM}
 
-The Standard Model of Particle Physics (SM) is the theory that describes all fundamental constituents of matter and their interactions. It is a quantum field theory based on a $\mathrm{SU(3)_c \otimes SU(2)_L \otimes U(1)_Y}$ local gauge symmetry, and is capable to provide a quantitative description of three of the four interactions in nature: electromagnetism, weak interaction and strong nuclear force.
-During the past decades the predictions of the SM have been confirmed by experimental results with outstanding precision.
+The Standard Model of Particle Physics (SM) is the theory that describes all fundamental constituents of matter and their interactions. It is a renormalisable quantum field theory based on a $\mathrm{SU(3)_c \otimes SU(2)_L \otimes U(1)_Y}$ local gauge symmetry, and is capable to provide a quantitative description of three of the four interactions in nature: electromagnetism, weak interaction and strong nuclear force. The aforementioned symmetry holds only if the fermion fields are massless, in contrast with the experimental observations of massive fermions. A mechanism, known as \emph{spontaneous symmetry breaking}, is introduced in the SM allowing the elementary particles to acquire mass. This mechanism requires the presence of a new field, known as Higgs field. During the past decades the predictions of the SM have been confirmed by experimental results with outstanding precision, and in 2012 the existence of a new boson consistent with the predicted Higgs boson was announced by the ATLAS and CMS experiments at CERN.
+
+According to the SM, the ordinary matter is made up of spin-$1/2$ particles, denoted as fermions. The fermions are subdivided into two classifications of elementary particles: leptons and quarks. Both classes consist of six particles, grouped into three doublets, called generations. Additional three doublets for each class are composed of leptons and quarks antiparticles. A charged particle with electric charge $Q=-1$, either the electron e, the muon $\mu$ or the tauon $\tau$, and a neutral particle, the corresponding neutrino, compose the following lepton generations, ordered according to an increasing mass hierarchy:
+
+\begin{equation}
+\label{eq:leptons}
+\begin{pmatrix} e^-       \\ \nu_e      \end{pmatrix}, \quad
+\begin{pmatrix} \mu^-     \\ \nu_{\mu}  \end{pmatrix}, \quad
+\begin{pmatrix} \tau^-    \\ \nu_{\tau} \end{pmatrix}  \quad .
+\end{equation}
+
+Charged leptons can interact via the electromagnetic and weak force, while neutrinos, that are assumed to be massless, can interact only through the weak interaction.
+
+Similarly, the quarks are organized in pairs composed of a particle with $Q=+2/3$, \emph{up} (\emph{u
+}), \emph{charm} (\emph{c}) and \emph{top} (\emph{t}) quarks, and another particle with $Q=-1/3$, \emph{down} (\emph{d}), \emph{strange} (\emph{s}) and \emph{bottom} (\emph{b}) quarks:
+
+\begin{equation}
+\label{eq:leptons}
+\begin{pmatrix} u       \\ d      \end{pmatrix}, \quad
+\begin{pmatrix} c       \\ s      \end{pmatrix}, \quad
+\begin{pmatrix} t       \\ b      \end{pmatrix}  \quad .
+\end{equation}
+
+As well as leptons, quarks can interact via the electromagnetic and weak forces, but also via the strong interaction, responsible of their confinement within hadrons. In fact, free quarks are not observed in nature, but they bind together forming two categories of hadrons: mesons, bound states of a quark q and an anti-quark $\mathrm{\bar{q}}$, and baryons, bound states of three quarks.
+
+In the SM the interaction between elementary particles occurs through the exchange of spin-1 particles, known as bosons, which identify the fundamental forces. The photon $\gamma$ is the mediator of the electromagnetic interaction, the $\mathrm{W^{\pm}}$ and Z bosons are the mediators of the weak interaction, while the strong force is mediated by eight gluons g. Electromagnetic and weak interaction are actually the manifestation of the same fundamental interaction, the electroweak force.
+
+\begin{comment}
+The SM can be divided in two sectors: the electroweak sector and the strong sector, known as Quantum Chromo-Dynamics (QCD).
+QCD is the theory of strong force and describes the interactions between quarks and gluons, in particular how they bind together to form the class of particles known as hadrons. Its lagrangian satisfies the $\mathrm{SU(3)_c}$ gauge symmetry and its characteristics are briefly described in Sec.~\ref{sec:QCD}. 
+
+The lagrangian governing the electroweak sector is instead invariant under gauge transformations of the $\mathrm{SU(2)_L \otimes U(1)_Y}$ symmetry group. The $\mathrm{SU(2)_L \otimes U(1)_Y}$ symmetry group describes the unification of the weak and electromagnetic interactions, the first term refers to the weak isospin charge ($I$), and the second one to the weak hypercharge ($Y$), defined as $Y = 2(Q - I_3)$, where $Q$ is the electric charge and $I_3$ is the third component of the weak isospin. 
+Left-handed ($L$) fermions~\footnote{In 1957 the experiments lead by Madame Wu and Garwin-Lederman-Weinrich confirmed that the parity symmetry is violated for weak charged current interactions, proving that only left-handed particles or right-handed antiparticles are involved in these interactions.} are paired into isospin doublets ($I=1/2$) whereas right-handed ($R$) fermions are represented as isospin singlets ($I=0$). The presence of these gauge symmetries gives rise to four gauge fields: $W^i$ ($i=1,2,3$) related to the $\mathrm{SU(2)}$ group, and $B$ related to the $\mathrm{U(1)}$ group. The electroweak lagrangian can be written as:
+
+\begin{equation}
+\mathcal{L}_\mathrm{EW} =  
+\end{equation}
+
+\end{comment}
