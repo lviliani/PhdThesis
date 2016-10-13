@@ -2,17 +2,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:Datasets}
 
-This analysis relies on the published \hww measurements~\cite{Chatrchyan:2013iaa} in terms of code, selections and background estimates for both the ggH and VBF prodocution mechanisms.
-
 %-------------------------------------------------------------------------------
 \subsection{Data sets and triggers\label{subsec:Datasets}}
 
-The data sets used for the analysis correspond to 19.4\ifb at $\sqrt{s}=8$\TeV  of integrated luminosity composed of the following CMS data taking periods during 2012: 2012A (892~$\mathrm{pb}^{-1}$), 2012B (4440~$\mathrm{pb}^{-1}$), and 2012C (6898~$\mathrm{pb}^{-1}$) and 2012D (7238~$\mathrm{pb}^{-1}$).
-Data have been checked and validated and only data corresponding to good data taking quality are considered.
-The $\mathrm{e}^{\pm}\mu^{\mp}$ final state is considered in this analysis.
+The data set used for the analysis corresponds to 19.4\ifb of proton-proton collisions at $\sqrt{s}=8$\TeV, collected by the CMS detector during 2012.
+Only data corresponding to good data taking quality are considered.
 
-For the data samples, the events are required to fire one of the unprescaled
-single-electron, single-muon or muon-electron triggers. Due the rather high LHC instantaneous luminosity the single-lepton triggers must have high HLT \pt thresholds, otherwise the rate of these triggers would be too large to be sustained. The double-lepton triggers allow to lower down the \pt thresholds while keeping a sustainable trigger rate, thus maintaining a good sensitivity to the Higgs boson signal, for which the lepton \pt can be rather small.
+Events are required to fire one of the unprescaled single-electron, single-muon or muon-electron triggers. Due the rather high LHC instantaneous luminosity the single-lepton triggers must have high HLT \pt thresholds, otherwise the rate of these triggers would be too large to be sustained. The double-lepton triggers allow to lower down the \pt thresholds while keeping a sustainable trigger rate, thus maintaining a good sensitivity to the Higgs boson signal, for which the lepton \pt can be rather small.
 A brief overview of the HLT \pt criteria on the leptons
 is given in Table~\ref{tab:trigger}. While the HLT lepton \pt thresholds of 17 and 8 \GeV for the double
 lepton triggers accommodate the offline lepton \pt selection of 20 and 10 \GeV, the higher \pt thresholds
@@ -100,29 +96,23 @@ the \textsc{Madgraph 5.1.3}~\cite{Alwall:2014hca} event generator.
 \end{itemize}
 For leading-order generators samples, the \textsc{cteq6l}~\cite{Lai:2010nw} set of parton distribution functions
 (PDF) is used, while \textsc{ct10}~\cite{Lai:2010vv} is used for next-to-leading order (NLO) ones.
-Cross section calculations~\cite{Dittmaier:2011ti} at next-to-next-to-leading order (NNLO) are used for the \hww process, while NLO calculations are used for background cross sections.
+Cross section calculations at next-to-next-to-leading order (NNLO) are used for the \hww process~\cite{Dittmaier:2011ti}.
 The $\hww$ process simulation is reweighted so that the \pth{} spectrum and inclusive production cross section closely match the SM calculations that have NNLO+NNLL pQCD accuracy in the description of the Higgs boson inclusive production, in accordance with the LHC Higgs Cross Section Working Group recommendations~\cite{Heinemeyer:2013tqa}.
 The reweighting of the \pth{} spectrum is achieved by tuning the \textsc{Powheg} generator, as described in detail in Ref.~\cite{Alioli:2010xd}.
-Cross sections computed with NLO pQCD accuracy~\cite{Heinemeyer:2013tqa} are used for the background processes.
-The contribution of the \ttH production mechanisms is checked to be negligible in each bin of \pth (below 1\%) and is not included among the different production mechanisms. In Fig.~\ref{fig:signal_comp} the relative fraction of the four production mechanisms is shown for each \pth bin.
+Cross sections computed with NLO pQCD accuracy are used for the background processes~\cite{Heinemeyer:2013tqa}.
+The contribution of the \ttH production mechanism is checked to be negligible in each bin of \pth (below 1\%) and is not included among the different production mechanisms. In Fig.~\ref{fig:signal_comp} the relative fraction of the four production mechanisms is shown for each \pth bin.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.7\textwidth]{images/signal_composition_ttH.pdf}
-\caption{Relatve fraction of ggH, VBF, VH and ttH in each bin of the Higgs boson transverse momentum.}\label{fig:signal_comp}
+\caption{Relative fraction of ggH, VBF, VH and ttH in each bin of the Higgs boson transverse momentum.}\label{fig:signal_comp}
 \end{figure}
-
 
 For all processes, the detector response is simulated using a detailed description of the CMS detector, based on the \textsc{Geant4} package~\cite{Agostinelli:2002hh}.
 
 Minimum bias events are superimposed on the simulated events to emulate the additional 
-pp interactions per bunch crossing (pileup). The number of pile-up events simulated in the MC samples
-(in the same bunch crossing, in time, or in the previous or following one, out of time pileup)
-have been generated poissonianly sampling from a distribution similar to what
-is expected from data. For a given range of analyzed runs, the mean number of pileup interactions per bunch crossing is estimated per luminosity block using the instantaneous luminosity provided by the LHC, integrated over the entire run range and normalized.
-The average number of pileup events per beam crossing in the 2011 data is about 10, and in the 2012 data it is about 20.
-
-The simulated events are reweighted to correct for observed differences between data and simulation in the number of pileup events, as shown in Fig.~\ref{fig:nvertices}, trigger efficiency, and lepton reconstruction and identification efficiencies~\cite{Chatrchyan:2013iaa}.
+proton-proton interactions per bunch crossing. The pile up multiplicity in simulated events has been generated poissonianly sampling from a distribution similar to the one expected from data.
+The simulated events are reweighted to correct for observed differences between data and simulation in the number of pile up events, as shown in Fig.~\ref{fig:nvertices}.
 
 \begin{figure}[htb]
 \centering

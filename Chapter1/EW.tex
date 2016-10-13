@@ -35,6 +35,58 @@ In order to complete the $\mathrm{SU(2)}$ invariance of the theory, a third cons
 J_\mu^3 = bar{\chi}_L \gamma_\mu \dfrac{1}{2} \tau_3 \chi_L = \dfrac{1}{2}\bar{\nu}_L \gamma_\mu \nu_L -  \dfrac{1}{2}\bar{\ell}_L \gamma_\mu \ell_L \quad,
 \end{equation}
 
-The three currents $J_\mu^\pm$ and $J_\mu^3$ constitute an isospin triplet of weak currents. Nevertheless, $J_\mu^3$ cannot be identified with the weak neutral current, because the weak neutral current involves both left- and right-handed components. The electromagnetic current cannot be represented by $J_\mu^3$ as well, for the aforementioned reasons and because it cannot be coupled with the uncharged neutrino.
+The three currents $J_\mu^\pm$ and $J_\mu^3$ constitute an isospin triplet of weak currents, with corresponding charges
 
-In order to save the $\mathrm{SU(2)}$ symmetry, the existence of a new $\mathrm{U(1)}$ symmetry is required, and a new conserved current arises.
+\begin{equation}
+T^i = \int J_0^i(x)d^3x \quad,
+\end{equation}
+
+that generate the $\mathrm{SU(2)}_L$ algebra defined by the following rules:
+
+\begin{equation}
+\left[T^i, T^j \right] = i \varepsilon_{ijk} T^k \quad.
+\end{equation}
+
+Nevertheless, $J_\mu^3$ cannot be identified with the weak neutral current, because the weak neutral current involves both left- and right-handed components. The electromagnetic current cannot be represented by $J_\mu^3$ as well, for the aforementioned reasons and because it cannot be coupled with the uncharged neutrino.
+
+In order to save the $\mathrm{SU(2)}$ symmetry, the existence of a new $\mathrm{U(1)}$ symmetry is required, and a new conserved current arises. The new symmetry is known as hypercharge symmetry ($\mathrm{U(1)_Y}$) and the corresponding conserved current is:
+
+\begin{equation}
+j_\mu^Y = \bar{\psi} \gamma_\mu Y \psi \quad,
+\end{equation}
+
+where $\psi$ is a generic Dirac spinor and the hypercharge $Y$ is defined as:
+
+\begin{equation}
+Y = 2(Q - T_3)
+\end{equation}
+
+The $j_\mu^Y$ current is unchanged under $\mathrm{SU(2)}_L$ transformations (is an isospin singlet). The electromagnetic and weak interactions can be incorporated defining the electromagnetic current as:
+
+\begin{equation}
+j_\mu^{em} = J_\mu^3 + \dfrac{1}{2} j_\mu^Y \quad,
+\end{equation}
+
+which represents the electroweak unification. 
+\begin{comment}
+Also, the weak neutral current $J_\mu^{NC}$ can be written as a combination of $J_\mu^3$ and $j_\mu^{em}$ as follows:
+
+\begin{equation}
+J_\mu^{NC} = J_\mu^3 - \sin ^2 \theta_W j_\mu^{em} \quad,
+\end{equation}
+
+where $\theta_W$ is the Weinberg angle.
+\end{comment}
+The electroweak lagrangian can be expressed in a local $\mathrm{SU(2)}_L \otimes \mathrm{U(1)}_Y$ gauge invariant form by introducing the covariant derivatives $\mathcal{D}_\mu$ in place of the ordinary derivatives:
+
+\begin{equation}
+\mathcal{D}_\mu = \partial_\mu + i g \vec{A}_\mu \cdot \frac{\vec{\tau}}{2} - \frac{1}{2}i g' Y B_\mu \quad ,
+\end{equation}
+
+where $\vec{A}_\mu$ is a vector of three gauge fields satisfying the local $\mathrm{SU(2)}$ symmetry, and $B_\mu$ is the gauge field assuring the $\mathrm{U(1)}$ symmetry. The parameters $g$ and $g'$ represent the coupling constants for the gauge fields. The electroweak lagrangian can thus be written as:
+
+\begin{equation}
+\mathcal{L} = \sum_{f} \bar{\psi}i\gamma_\mu\mathcal{D}_\mu\psi = \sum_{f} \bar{\psi}i\gamma_\mu\partial_\mu\psi + \mathcal{L}_int \quad,
+\end{equation}
+
+where $\mathcal{L}_int$ represents the interaction terms.
