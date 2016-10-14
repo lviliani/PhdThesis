@@ -1,12 +1,31 @@
 \section{Background estimation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:Backgrounds}
-
+The signal extraction procedure requires the determination of the normalization and the (\mll, \mt)
+shape for each background source. In this section, the methods used to estimate these quantities are described.
 
 \subsection{Top quark background \label{sec:TTBackground}}
 
-In this analysis the top quark background is divided into two different categories depending on the number of jets in the event. In the two categories different selections are applied, especially concerning the b-tagging requirements.
+In this analysis the top quark background is divided into two different categories depending on the number of jets in the event. Different selections are applied in the two categories, especially concerning the b tagging requirements, as explained in Sec.~\ref{sec:Selections}.
+A top quark enriched control region, $CR_{\ttbar}$, is defined for each of the two categories in order to estimate the process cross section directly from data. For the category with 0 counted jets, the control region is defined selecting events containing at least one soft jet, i.e. with $\pt < 30$\GeV, that is identified as a b-jet by the TCHE and soft-muon algorithms. In the category with more than 0 counted jets, a similar control region is defined requiring events to contain at least one jet with $\pt>30$\GeV identified by the JP algorithm. The control regions defined in this way are very pure and can be used to normalize the simulation prediction to the data (data-driven method).
 
+Since the $CR_{\ttbar}$ control region and the signal region ($SR$) are orthogonal, a factor $\alpha$ connecting the number of events in the two has to be evaluated using simulation:
+
+\begin{equation}
+\alpha = \frac{N_\mathrm{MC}^{SR}}{N_\mathrm{MC}^{CR_{\ttbar}}} \quad ,
+\end{equation}
+
+where $N_\mathrm{MC}^{SR}$ and $N_\mathrm{MC}^{CR_{\ttbar}}$ are the number of \ttbar events obtained from simulation in the $SR$ and $CR_{\ttbar}$ regions, respectively. The number of \ttbar events in data in the $CR_{\ttbar}$ region, $N_\mathrm{Data}^{CR_{\ttbar}}$, can be estimated subtracting the expected number of non \ttbar events. Finally, the number of expected events in the $SR$ region $N_\mathrm{Data}^{SR}$, can be obtained using the following formula:
+
+\begin{equation}
+N_\mathrm{Data}^{SR} = \alpha N_\mathrm{Data}^{CR_{\ttbar}} \quad .
+\end{equation}
+
+Before applying this procedure, the simulated events have been reweighted using the b tagging efficiency scale factors described in Sec.~\ref{sec:ScaleFactors}.
+
+In the 0 jets category the residual top quark background is very small, and its normalization is estimated inclusively in \pth. For the other category, the aforementioned procedure is applied independently in each \pth bin, rather than inclusively, because an overall normalization factor would not be able to cover the discrepancies between data and simulation from bin to bin. This can be understood looking at the \pth distribution in the $CR_{\ttbar}$ region, shown in Fig.~\ref{fig:ttpth}, where the data and simulation are compared.
+
+\begin{comment}
 The general strategy for determining the residual top events in the signal region is to first measure the top tagging efficiencies from an orthogonal region of phase space in data. The orthogonal phase space is  defined inverting the b-veto requirement of the signal region, in such a way to have a control region enriched in top quark events.  Then, using this efficiency, the number of events with the associated uncertainty is propagated from the control region to the signal region.
 The number of surviving top events in the signal region would then be:
 
@@ -45,86 +64,6 @@ where $f_{\ttbar}$ and $f_\mathrm{tW}$ are the \ttbar and tW fractions respectiv
 Using this procedure a data/simulation scale factor of $0.98 \pm 0.17$ is found, and is applied to correct the MC simulation in order to match the data.
 
 
-
-\subsubsection{Category with more than 0 jets}
-The strategy for the estimation of the top background in events with at least one jet with $\pt$ greater than 30 \GeV is the following. First of all the efficiency for tagging a b jet is measured both in data and simulation and the values are used to correct the simulation for different b-tagging efficiencies in data and simulation. This evaluation is performed in a control region, called CtrlTP, containing at least two jets, using a Tag\&Probe technique. The procedure to extract these scale factors is presented in Sec.~\ref{sec:TagAndProbe}. Then a larger statistics control region, CtrlDD, is defined by requiring at least one b-tagged jet and we use the simulation, corrected for the previously computed b-tagging efficiency scale factor, to derive the factor that connects the number of events in CtrlDD to the number of events in the signal region. This second step is explained in detail in Sec.~\ref{sec:DD}. 
-
-\subsubsection{Tag\&Probe \label{sec:TagAndProbe}}
-The Tag\&Probe technique is a method to estimate the efficiency of a selection on data. In can be applied whenever one has two objects in one event, by using one of the two, the \tg{}, to identify the process of interest, and using the second, the \probe{}, to actually measure the efficiency of the selection being studied. In our case we want to measure the b-tagging efficiency, so what we need is a sample with two b-jets per event. The easiest way to construct such a sample is to select \ttbar events.
-
-The CrtlTP control region is defined selecting the events which pass the lepton preselection cuts listed in Sec.~\ref{sec:Selections}, and have at least two jets with \pt greater than 30 \GeV.
-One of the two leading jets is required to have a \jpb score higher than 0.5. From events in this control region we built \tp{} pairs as follows. For each event the two leading jets are considered. If the leading jet passes the \jpb cut of 0.5, that is considered a \tg{}, and the sub-leading jet is the \probe{}. In order to avoid any bias that could arise from the probe being always the second jet, the pair is tested also in reverse order, meaning that the sub-leading jet is tested against the \tg{} selection, and in case it passes, then the leading jet is used as \probe{} in an independent \tp{} pair. This means that from each event passing the CrtlTP cuts one can build up to two \tp{} pairs. 
-
-If the \tg{} selection were sufficient to suppress any non top events, one could estimate the efficiency by dividing the number of \tp{} pairs in which the \probe{} passes the analysis cut \jpb$>$1.4 (\tpp) by the total number of \tp{} pairs. However this is not the case. 
-In order to estimate the efficiency in the presence of background a variable that discriminates between true b-jets and other jets in a $t\bar{t}$ sample is chosen. The variable is the \pt of the \probe{} jet. For real b-jets this variable has a peak around 60 \GeV, while it does not peak for other jets. The idea is to fit simultaneously the \pt spectrum for \probe{} jets in \tpp{} and \tfp{} pairs, linking together the normalizations of the two samples as follows:
-\begin{equation}
-N_{TPP}=N_{s}\epsilon_{s} + N_b\epsilon_{b}
-\end{equation}
-\begin{equation}
-N_{TFP}=N_{s}(1-\epsilon_{s}) + N_b(1-\epsilon_{b})
-\end{equation}
-where $N_{\rm TPP}$ is the number of \tpp{} pairs, $N_{\rm TFP}$ is the number of \tfp{} pairs, $N_{\rm s}$ is the number of \tp{} pairs in which the probe is a b-jet, $N_{\rm b}$ is the number of \tp{} pairs in which the probe is a not b-jet, $\epsilon_{\rm s}$ is the b-tagging efficiency, $\epsilon_{\rm b}$ is the probability of identifying as b-jet a non-b-jets, i.e. the mistag rate. 
-
-A $\chi^{2}$ simultaneous fit of the \probe{} \pt spectrum for \tpp{} and \tfp{} pairs is performed, deriving the shapes for true b-jets and non-b-jets from the simulation, and extracting $N_{\rm s}$, $N_{\rm b}$, $\epsilon_{\rm s}$ and $\epsilon_{\rm b}$ from the fit.
-The result of the fit on simulation is shown in Fig.~\ref{fig:mc_tp}. The relevant efficiencies are:
-\begin{equation}
-\epsilon_{s}^{MC}=0.7663\pm0.0072
-\end{equation}
-\begin{equation}
-\epsilon_{b}^{MC}=0.208\pm0.015
-\end{equation}
-We have checked that these values are consistent with the true value for the b-tagging efficiency. The true value is computed by selecting jets that are matched within a cone of $\Delta{R}<0.5$ with a generator level b-quark, and counting the faction of those that pass the \jpb cut of 1.4. This means that the \tp{} method does not introduce biases within the simulation statistic accuracy.
-
-\begin{figure}[b]
-\centering
-\includegraphics[width=0.8\textwidth]{images/mc_pt_probe.pdf}
-\caption{Simultaneous fit of the \tpp{} and \tfp{} pairs in the MC.\label{fig:mc_tp}}
-\end{figure}
-
-In order to assess the robustness of the fit, 5000 toy MC samples have been generated with a statistics equivalent to the one expected in data and the same fit is performed. All the 5000 fit succeeded, and the pull distributions for $\epsilon_{\rm s}$ and $\epsilon_{\rm b}$ parameters are shown in Fig.~\ref{fig:pullstp}. The plots show the pull of the efficiencies measured in the fit, where the pull variable for each toy $i$ is defined as:
-
-\begin{equation}
-pull(\epsilon_{\rm s (b)}) = \frac{\epsilon_{\rm s (b)}^{\rm true} - \epsilon_{\rm s (b)}^{i}}{\sigma(\epsilon_{\rm s (b)}^{i})}
-\end{equation}
-
-The pulls are centered on 0 and have $\sigma$ close to 1, as expected.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.8\textwidth]{images/pulls_mc.pdf}
-\caption{Pulls of the $\epsilon_{s}$ and $\epsilon_{b}$ parameters in 5000 toy MC.\label{fig:pullstp}}
-\end{figure}
-An example fit for one of the toys is shown in  Fig.~\ref{fig:toy_tp}
-\begin{figure}[b]
-\centering
-\includegraphics[width=0.8\textwidth]{images/mc_pt_probe_toy.pdf}
-\caption{Fit of a toy MC sample.\label{fig:toy_tp}}
-\end{figure}
-
-Before running the fit on data, the shapes used in the fit have been validated. To do so, a purer top enriched phase space has been defined by requiring exactly two jets with \jpb score higher than 1.5 and no additional b-tagged jets, rejecting also jets with \pt smaller than 30 \GeV. On this purer sample we have compared data against the shape used to fit the true b-jets in the \tpp{} distribution. The result is shown in Fig.~\ref{fig:purett} and shows good agreement.
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.6\textwidth]{images/passprobe_data_mc.pdf}
-\caption{Shape comparison for the \probe{} \pt spectrum in data and in MC in a very pure \ttbar sample.\label{fig:purett}}
-\end{figure}
-
-Finally the fit has been performed on data, as shown in Fig.~\ref{fig:data_tp}, providing the following efficiencies:
-\begin{equation}
-\epsilon_{s}^{Data}=0.769\pm0.022
-\end{equation}
-\begin{equation}
-\epsilon_{b}^{Data}=0.121\pm0.054
-\end{equation}
-
-\begin{figure}[b]
-\centering
-\includegraphics[width=0.8\textwidth]{images/data_ptprobe.pdf}
-\caption{Simultaneous fit of the \tpp{} and \tfp{} pairs in data.\label{fig:data_tp}}
-\end{figure}
-
-Further studies have been performed to assess the effect of the relative uncertainty on the \ttbar and tW event fractions. The same procedure described above has been applied to different simulation templates obtained varying the \ttbar and tW fractions within theoretical uncertainties, and the effect on the parameters extracted with the fit procedure is found to be well below the fit uncertainties.
-
-
 \subsubsection{Data driven estimation \label{sec:DD}}
 In addition to the b-tagging efficiency, the other ingredient to estimate the \ttbar background is the process cross section. The idea is to measure the cross section in a \ttbar enriched control region, that is called CtrlDD. CtrlDD is defined according to the lepton preselection cuts defined in Sec.~\ref{sec:Selections}, and requiring in addition at least one jet with \jpb score higher than 1.4.
 
@@ -159,44 +98,44 @@ Since the efficiency and mistag rate that have been measured on data are close t
 This results in an up and a down variation of the scale factors in the signal and CtrlDD regions, that is used to derive an error on $\alpha$.
 
 A data driven estimation of the top quark background with the method described above is performed in each of the \pth bins independently. The reason to make this estimation in $\pth$ bins, rather than inclusively is explained in Fig.~\ref{fig:ttpth}, where the \pth distribution is shown in the CtrlDD region normalized to the cross section measured by a specific CMS analysis~\cite{Khachatryan:2016mqs}. As shown in the ratio plot, an overall normalization factor would not be able to accommodate for the variations of the data/simulation ratio from bin to bin.
+\end{comment}
 
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.6\textwidth]{images/ttpth.pdf}
-\caption{$\pth$ distribution in the CtrlDD control region.\label{fig:ttpth}}
+\caption{Distribution of \pth in the $CR_{\ttbar}$ region, comparing data and simulation.\label{fig:ttpth}}
 \end{figure}
 
-The $\alpha$ factors for each bin and the number of events in signal, CtrlDD regions in MC as well as in data are listed in Tab.~\ref{tab:ttdd}.
+The results of the method discussed before are listed in Tab.~\ref{tab:ttdd} for each bin of \pth.
+
 \begin{table}
+\caption{Data driven scale factors related to the top quark background estimation.\label{tab:ttdd}}
 \centering
 \begin{tabular}{c c c c c c}
-\hline
-\pth [\GeV] & $N_{CTRL}^{DATA}$ & $N_{CTRL}^{TOP}$ &  $N_{SIG}^{TOP}$ &
-$\alpha$ & $\Delta\alpha$ \\ 
-\hline\hline
-$[0 \textendash 15]$ & 406.71 & 358.78 & 117.83 & 0.328 & 0.075 \\ 
-$[15 \textendash 45]$ & 2930.14 & 2703.44 & 859.08 & 0.318 & 0.071 \\ 
-$[45 \textendash 85]$ & 5481.02 & 5207.48 & 1506.05 & 0.289 & 0.065 \\ 
-$[85 \textendash 125]$ & 4126.35 & 4032.56 & 861.22 & 0.214 & 0.052 \\ 
-$[125 \textendash 165]$ & 1612.64 & 1654.27 & 304.69 & 0.184 & 0.055 \\ 
-$[165 \textendash \infty]$ & 647.50 & 760.37 & 201.70 & 0.265 & 0.147 \\ 
-\hline
+\toprule
+\pth [\GeV] & $N_\mathrm{Data}^{CR_{\ttbar}}$ & $N_\mathrm{MC}^{CR_{\ttbar}}$ &  $N_\mathrm{MC}^{SR}$ & $\alpha$ & $\Delta\alpha$ \\ 
+\midrule
+$[0 \textendash 15]$ & 406.7 & 358.8 & 117.8 & 0.33 & 0.08 \\ 
+$[15 \textendash 45]$ & 2930.1 & 2703.4 & 859.1 & 0.32 & 0.07 \\ 
+$[45 \textendash 85]$ & 5481.0 & 5207.5 & 1506.1 & 0.29 & 0.07 \\ 
+$[85 \textendash 125]$ & 4126.4 & 4032.6 & 861.2 & 0.21 & 0.05 \\ 
+$[125 \textendash 165]$ & 1612.6 & 1654.3 & 304.7 & 0.18 & 0.06 \\ 
+$[165 \textendash \infty]$ & 647.5 & 760.4 & 201.7 & 0.27 & 0.15 \\ 
+\bottomrule
 \end{tabular}
-\caption{Data driven scale factors related to the top quark background estimation.\label{tab:ttdd}}
 \end{table}
 
-A comparison of the $\mll$ distribution in the six $\pth$ bins used in the analysis in CtrlDD after the data driven correction is shown in Fig.~\ref{fig:mllCtrlDD}
+A comparison of the \mll distributions in the $CR_{\ttbar}$ region for data and simulation is shown in Fig.~\ref{fig:mllCtrlDD}, separately for each \pth bin and after the application of the data-driven factors. The agreement between data and simulation is found to be satisfactory within uncertainties.
+
 \begin{figure}[htb]
 \centering
-\subfigure[$\pth<15\GeV$]{\includegraphics[width=0.35\textwidth]{images/mllBin0CtrlDD.pdf}}
-\subfigure[$15\GeV<\pth<45\GeV$]{\includegraphics[width=0.35\textwidth]{images/mllBin1CtrlDD.pdf}}
-
-\subfigure[$45\GeV<\pth<85\GeV$]{\includegraphics[width=0.35\textwidth]{images/mllBin2CtrlDD.pdf}}
-\subfigure[$85\GeV<\pth<125\GeV$]{\includegraphics[width=0.35\textwidth]{images/mllBin3CtrlDD.pdf}}
-
-\subfigure[$125\GeV<\pth<165\GeV$]{\includegraphics[width=0.35\textwidth]{images/mllBin4CtrlDD.pdf}}
-\subfigure[$\pth>165\GeV$]{\includegraphics[width=0.35\textwidth]{images/mllBin5CtrlDD.pdf}}
-\caption{$\mll$ distributions in the CtrlDD region for the different $\pth$ bins.\label{fig:mllCtrlDD}}
+\subfigure[$\pth<15\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin0CtrlDD.pdf}}
+\subfigure[$15\GeV<\pth<45\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin1CtrlDD.pdf}}
+\subfigure[$45\GeV<\pth<85\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin2CtrlDD.pdf}}\\
+\subfigure[$85\GeV<\pth<125\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin3CtrlDD.pdf}}
+\subfigure[$125\GeV<\pth<165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin4CtrlDD.pdf}}
+\subfigure[$\pth>165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin5CtrlDD.pdf}}
+\caption{Comparison of the \mll distributions in the $CR_{\ttbar}$ region for data and simulation in each \pth bin, after the application of the data-driven factors.\label{fig:mllCtrlDD}}
 \end{figure}
 
 
@@ -204,67 +143,9 @@ A comparison of the $\mll$ distribution in the six $\pth$ bins used in the analy
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\clearpage
 \subsection{WW background \label{sec:WWBackground}}
 
-For what the $\mathrm{qq\to W^{+}W^{-}}$ background shape is concerned, the prediction from the simulation is used.
-This background is divided into six different parts, corresponding to the six \pth bins defined in the analysis. The normalization of the $\mathrm{qq\to W^{+}W^{-}}$ background is left free to float in each bin, in such a way to adjust it in order to match the data during the fit procedure. In this way the shape difference between the $p_\mathrm{T}^\mathrm{WW}$ theory prediction and the distribution provided by the simulation, which is obtained with the \textsc{Madgraph} generator, is minimized.\\
-In figure \ref{fig:ww_wwnlo} a comparison is shown between the $p_\mathrm{T}^\mathrm{WW}$ spectra of two different $\mathrm{qq\to W^{+}W^{-}}$ samples: one obtained with the \textsc{Madgraph} generator and the other after applying to the same distribution a reweighting in order to match the theoretical prediction at NLO+NNLL precision.
-
-\begin{figure}[b]
-\centering
-\includegraphics[width=0.7\textwidth]{images/WWnlo/WW_WWnlo.pdf}
-\caption{Comparison between the $p_\mathrm{T}^\mathrm{WW}$ distributions obtained with two different MC generators: the blue line corresponds to the \textsc{Madgraph} generator and the red line refers to he same sample in which a reweighting has been applied in order to match the theoretical prediction at NLO+NNLL precision. }\label{fig:ww_wwnlo}
-\end{figure}
-
-A shape discrepancy can be clearly observed and the effect becomes larger at high values of \pth.
-In order to assess the effect of this discrepancy on the shapes of the variables used for the signal extraction, \mll and \mt, the shapes have been checked in all \pth bins, comparing different MC samples. The \textsc{Madgraph} sample used for the nominal shape is compared to the \textsc{Madgraph} sample with NLO+NNLL  reweighting, a \textsc{Powheg} sample with NLO accuracy and an \textsc{aMC@NLO} sample.
-The results of this comparison are shown in figures \ref{fig:ww_mll} and \ref{fig:ww_mth}. The shape discrepancy among the different models is included as an additional systematic uncertainty.
-
-\begin{figure}[htb]
-\centering
-\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin1.pdf}}
-\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin2.pdf}}\\
-\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin3.pdf}}
-\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin4.pdf}}\\
-\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin5.pdf}}
-\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mllBin6.pdf}}\\
-\caption{Comparison between the default WW background sample and other theoretical models for the \mll distributions in every \pth bin.\label{fig:ww_mll}}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin1.pdf}}
-\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin2.pdf}}\\
-\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin3.pdf}}
-\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin4.pdf}}\\
-\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin5.pdf}}
-\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.4\textwidth]{images/WWnlo/mthBin6.pdf}}\\
-\caption{Comparison between the default WW background sample and other theoretical models for the \mt distributions in every \pth bin.\label{fig:ww_mth}}
-\end{figure}
-
-The gluon-induced WW process, i.e. gg$\to \mathrm{W^{+}W^{-}}$, has a sub-dominant contribution with respect to the quark-induced process, being the cross section ratio between the two of about 5\%. The \mll and \mt shapes for this background are taken from simulation while the cross section is scaled to the approximate NLO calculation~\cite{Bonvini:2013jha,Passarino:2013bha}.
-
-The agreement of the \mll and \mt shapes between simulation and data for this background was checked in a signal-free control, defined selecting events with values of \mll greater than 70\GeV. A comparison of the \mll and \mt shapes in data and simulation is shown in Fig.~\ref{fig:WW} for events containing zero and one jets, inclusive in \pth.
+First of all, the \mll and \mt shapes of the $\mathrm{qq\to W^{+}W^{-}}$ background process have been compared to the data in a signal free phase space, as shown in Fig.~\ref{fig:WW}. The signal-free region is defined requiring the preselections described in Sec.~\ref{sec:Selections} with the additional cut $\mll>70$\GeV. The comparison, which is performed inclusively in \pth in the 0 and 1 jet categories, shows a good data to simulation agreement within uncertainties.
 
 \begin{figure}[htb]
 \centering
@@ -282,58 +163,60 @@ The agreement of the \mll and \mt shapes between simulation and data for this ba
 \includegraphics[width=0.4\textwidth]{images/WWctrl/mt1j.pdf}
 }
 
-\caption{Comparison of the \mll and \mt shapes in data and simulation for events with zero and 1 jets, inclusive in \pth. The events are required to pass the analysis requirements and, in order to define a signal-free control region, to have $\mll > 70$\GeV.\label{fig:WW}}
+\caption{Comparison of the \mll and \mt shapes in data and simulation for events with 0 and 1 jets, inclusive in \pth. The events are required to pass the analysis requirements and, in order to define a signal-free control region, to have $\mll > 70$\GeV.\label{fig:WW}}
 \end{figure}
 
+In this analysis the $\mathrm{qq\to W^{+}W^{-}}$ background normalization is left free to float in each of the six \pth bins to match the data during the fitting procedure. This choice helps mitigating the \pth shape difference between data and simulation. This difference is due to missing higher order QCD corrections in the adopted simulation, obtained using the \textsc{Madgraph} generator. In fact, as shown in Fig.~\ref{fig:ww_wwnlo}, the theoretical calculations for this process performed at NLO QCD accuracy and including soft-gluon resummation effects, i.e. NLO+NNLL accuracy, predict a rather different \pth spectrum.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.6\textwidth]{images/WWnlo/WW_WWnlo.pdf}
+\caption{Comparison between the $p_\mathrm{T}^\mathrm{WW}$ distributions obtained with two different MC generators: the blue line corresponds to the \textsc{Madgraph} generator and the red line refers to he same sample in which a reweighting has been applied in order to match the theoretical prediction at NLO+NNLL precision. }\label{fig:ww_wwnlo}
+\end{figure}
+
+To check the residual dependence of the \mll and \mt shapes on the generator used for simulating the $\mathrm{qq\to W^{+}W^{-}}$ process, the shapes obtained using different generators have been compared in each \pth bin, as shown in Figs.~\ref{fig:ww_mll} and \ref{fig:ww_mth}. The usage of different generators only mildly affect the \mll and \mt shapes. Nevertheless the observed differences are taken as shape uncertainties and propagated through the fit.
+
+\begin{figure}[htb]
+\centering
+\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mllBin1.pdf}}
+\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mllBin2.pdf}}
+\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mllBin3.pdf}}\\
+\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mllBin4.pdf}}
+\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mllBin5.pdf}}
+\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mllBin6.pdf}}
+\caption{Comparison between the \mll shape obtained with the default $\mathrm{qq\to W^{+}W^{-}}$ background simulation (\textsc{Madgraph}) and other theoretical models in every \pth bin.\label{fig:ww_mll}}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\subfigure[$0<\pth<15$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mthBin1.pdf}}
+\subfigure[$15<\pth<45$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mthBin2.pdf}}
+\subfigure[$45<\pth<85$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mthBin3.pdf}}\\
+\subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mthBin4.pdf}}
+\subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mthBin5.pdf}}
+\subfigure[$\pth>165$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/mthBin6.pdf}}
+\caption{Comparison between the \mt shape obtained with the default $\mathrm{qq\to W^{+}W^{-}}$ background simulation (\textsc{Madgraph}) and other theoretical models in every \pth bin.\label{fig:ww_mth}}
+\end{figure}
+
+The gluon-induced WW process, i.e. gg$\to \mathrm{W^{+}W^{-}}$, has a sub-dominant contribution with respect to the quark-induced process, being the cross section ratio between the two of about 5\%. The \mll and \mt shapes for this background are taken from simulation while the cross section is scaled to the approximate NLO calculation~\cite{Bonvini:2013jha,Passarino:2013bha}.
 
 
 
 
 
 
+\subsection{W+jets background\label{sec:wjetsbkg}}	
 
+The non-prompt lepton background, originating from leptonic decays of heavy quarks, hadrons
+misidentified as leptons, and electrons from photon conversions in W+jets and QCD multijet production, is suppressed by the identification and isolation requirements on electrons and muons,  as described in Sec.~\ref{sec:leptonID}. The remaining contribution from the non-prompt lepton background is estimated directly from data and is ascribable especially to W+jets production. A control sample is defined by one lepton that passes the standard lepton selection criteria and another lepton candidate that fails the criteria, but passes a looser selection, resulting in a sample of ``pass-fail'' lepton pairs. 
 
+The efficiency, $\varepsilon_\mathrm{pass}$, for a jet that satisfies the loose lepton requirements to pass the standard selection is determined using an independent sample dominated by events with non-prompt leptons from QCD multijet processes. However, this sample is not a pure sample containing just non-prompt leptons, but may still contain prompt leptons coming from the W and Z boson decays. To reject muons from the W decay, the events are required to have $\MET<20$\GeV and a W transverse mass below 20\GeV as well. Muons from the Z decay are instead removed requiring $m_{\mu\mu} \notin [76,106]$\GeV. For electrons the Z mass peak veto is enlarged to $m_\mathrm{ee} \notin [60,120]$\GeV. Finally, prompt electrons and muons are required to be isolated from the leading jet in the event, i.e. $\Delta\phi(\ell,j)>1$. The residual prompt lepton contamination from EW processes such as W/Z+jets production, which can bias the fake rate measurement, is estimated using simulation and subtracted. This contribution is negligible for small values of the lepton \pt and increases at larger \pt values.
 
+The $\varepsilon_\mathrm{pass}$ efficiency, parameterized as a function of \pt and $\eta$ of the lepton, is then used to weight the events in the pass-fail sample by $\varepsilon_\mathrm{pass}/(1-\varepsilon_\mathrm{pass})$, to obtain the estimated contribution from the non-prompt lepton background in the signal region. The systematic uncertainties from the determination of $\varepsilon_\mathrm{pass}$ dominate the overall uncertainty of this method. The systematic uncertainty has two sources:  the dependence of $\varepsilon_\mathrm{pass}$ on the sample composition, and the method. The first source is estimated by modifying the jet \pt threshold in the QCD multijet sample, which modifies the jet sample composition.  The uncertainty in the method is obtained from a closure test, where $\varepsilon_\mathrm{pass}$ is derived from simulated QCD multijet events and applied to simulated samples to predict the number of background events. The total uncertainty in $\varepsilon_\mathrm{pass}$,  including the statistical precision of the control sample, is of the order of 40\%.
 
+A validation of the estimate of this background is performed in a control sample obtained selecting events with two leptons with same charge, which is enriched in W+jets events. The results of this closure test show good agreement between data and the estimated background.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Other backgrounds\label{sec:OtherBackgrounds}}
-
-	%------------------------------------------------------------------------------------
-	\subsubsection{W+jets background\label{sec:wjetsbkg}}	
-	
-Events in which W bosons are produced in association with jets, as well as multi-jet events, constitute a background for this analysis, because one or more jets can be misidentified as leptons. The rate at which jets are misidentified as leptons may be not accurately described in simulation, hence a data driven method is used to estimate this background. 
-	
+\begin{comment}
 The idea is to estimate the background containing one or two fake leptons selecting events with relaxed lepton quality criteria, i.e. looser with respect to the selections used at the analysis level, and computing the efficiencies for real and fake leptons to pass the tight lepton quality requirements of the analysis. 
 A data-driven approach is pursued to estimate this background. A set of loosely selected lepton-like objects, referred to as the ``fakeable object' or ``denominator'' from here on, is defined in a data set of events dominated by dijet production.
 To measure the fake rate we count how many fakeable objects pass the full lepton selection 
@@ -499,73 +382,37 @@ method.
 The results of the closure test on same-sign events gives good agreement with the expectations.
 
 The systematic uncertainty on the prompt and fake rate estimation is evaluated by varying the jet thresholds in the dijet control sample, and an uncertainty on the background normalization is added according to the agreement with data in the same-sign control region. The systematic uncertainty amounts to about 36\% of the fake background yield.
+\end{comment}
 
 
 
 
 
+\subsection{\dytt background\label{sec:DYtautaubkg}}
 
-
-
-
-
-	%-------------------------------------------------------------------------------
-	\subsubsection{Drell-Yan to \texorpdfstring{$\tau\tau$}{tau tau} background\label{sec:DYtautaubkg}}
-
-
-The low \MET threshold in the e$\mu$ final state
-requires the consideration of the contribution from 
-\dytt, that estimated from data.
+The low \MET threshold in the e$\mu$ final state requires the consideration of the contribution from \dytt, that estimated from data.
 This is accomplished by selecting \dymm events in data and replacing both muons with a simulated
-$\tau\to \ell\nu_\tau\bar{\nu_\ell}$ decay~\cite{Chatrchyan:2013iaa}, thus obtaining a ``hybrid'' event. The Z boson four-momentum is reconstructed in data from the four-momenta of the daughter muons. Then a simulation step allows the replacement of the muon objects with $\tau$ leptons, in such a way to preserve the Z boson momentum direction is preserved in its rest frame. The \dytt decay is simulated with the \textsc{tauola} package~\cite{Jadach:1990mz} to correctly describe the $\tau$-polarization effects.
+$\tau\to \ell\nu_\tau\bar{\nu_\ell}$ decay~\cite{Chatrchyan:2013iaa}, thus obtaining a ``hybrid'' event. The Z boson four-momentum is reconstructed in data from the four-momenta of the daughter muons. Then a simulation step allows the replacement of the muon objects with $\tau$ leptons, in such a way to preserve the Z boson momentum direction in its rest frame. The \dytt decay is simulated with the \textsc{tauola} package~\cite{Jadach:1990mz} to correctly describe the $\tau$-polarization effects.
 
-After replacing muons from \dymm decays with simulated $\tau$ decays,
-the set of pseudo-\dytt events undergoes the reconstruction step.
-Good agreement in kinematic distributions for this sample
-and a MC based \dytt sample is found.
-The global normalization of pseudo-\dytt events is 
-checked in the low \mt spectrum where a rather pure
-\dytt sample is expected.
+After replacing muons from \dymm decays with simulated $\tau$ decays, the set of pseudo-\dytt events undergoes the reconstruction step. Good agreement in kinematic distributions for this sample
+and a simulated \dytt sample is found. The global normalization of pseudo-\dytt events is checked in the low \mt spectrum, where a rather pure sample enriched in \dytt events is expected.
 
-This method allows to avoid the simulation of very large MC samples that would be needed for an accurate description of this process. 
+This method allows to avoid the simulation of very large MC samples that would be needed for an accurate description of this process, given its large cross section. 
 
 
 
 
 
+\subsubsection{Diboson backgrounds\label{sec:otherbkg}}
 
+The WZ and ZZ background events are largely rejected by requiring exactly two high \pt isolated leptons with opposite charge and different flavour in the event. 
 
+The W$\gamma^*$ electroweak process is included in standard CMS simulations as a part of the WZ
+process using the \textsc{MadGraph} generator. Nevertheless, the low \mll region is not properly covered since the standard simulations have a generator-level requirement of $m_{\gamma^*}>12$\GeV and there could be a significant rate of events below that threshold passing the selection criteria of the analysis. The low \mll spectrum of the W$\gamma^*$ process has been produced using a dedicated simulation with \textsc{MadGraph}, requiring two leptons each with $\pt > 5$\GeV and no restrictions on the third lepton. However, in order to have a reliable prediction of the background cross section, the simulation needs to be validated using data in a control region.
 
+A high purity W$\gamma^*$ phase space is defined selecting events with three muons, where the two muons with lowest invariant mass, which is required to be less than 12\GeV, are assumed to originate from the $\gamma^*$ decay. The top quark background contribution is suppressed using a b tagging veto. The W+jets and multijet contributions are rejected requiring the minimum transverse mass of each lepton and \MET to be larger than 25\GeV, and the transverse mass of the lepton associated with the W boson and \MET to be larger than 45\GeV. Moreover, the $J/\Psi$ meson decay are rejected by requiring $|m_{\mu^{\pm}\mu^{\mp}} - m_{J/\Psi}|>0.1$\GeV.
+The measured data/simulation scale factor in this control region is found to be $1.5 \pm 0.5$.
 
+The W$\gamma$ background can also contribute to the signal phase space, because the photon can interact with the tracker material converting to an $\mathrm{e^+e^-}$ pair. Its normalization is taken from simulation while the \mll and \mt shapes are checked selecting a data sample with one lepton and one photon, finding a good agreement within uncertainties.
 
-
-	%-------------------------------------------------------------------------------
-	\subsubsection{ZZ, WZ and W\texorpdfstring{$\gamma$}{gamma} backgrounds\label{sec:otherbkg}}
-
-The WZ and ZZ backgrounds are partially estimated from data when the two
-selected leptons come from the same Z boson. If the leptons come from different
-bosons the contribution is expected to be small. The WZ component is largely
-rejected by requiring only two high \pt isolated leptons in the event. 
-%The missing energy requirement makes the ZZ~$\to 4\ell$ component almost negligible.
-%As the extra lepton veto and the \met cuts do not remove the ZZ~$\to 2\ell 2\nu$
-%decays, a non-negligible fraction of these events survives the selection for $ee$ and $\mu\mu$ channels only. 
-
-The W$\gamma^{(*)}$ background, where the photon decays to an electron-positron pair,
-is expected to be very small, thanks to the stringent photon conversion
-requirements. This background also includes events where a real photon is produced in association with the W boson. These events constitute a background for this analysis because the photon can interact with the tracker material converting to an electron-positron pair.
-
-Since the WZ simulated sample has a generation level cut on the
-di-lepton invariant mass ($m_{\ell\ell} >$ 12~\GeV) and the cross-section raises
-quickly with the lowering of this threshold, a dedicated \textsc{Madgraph} sample has
-been produced with lower momentum cuts on two of the three leptons
-($\pt > 5$~\GeV) and no cut on the third one. The surviving contribution
-estimated with this sample is still very small, and since the uncertainty on the
-cross-section for the covered phase space is large, a conservative 100\%
-uncertainty has been given to it. 
-A $k$-factor for W$\gamma^{*}$ of $1.5\pm0.5$ based on a dedicated measurement of 
-tri-lepton decays, W$\gamma^{*} \to e\mu\mu$ and W$\gamma^{*} \to \mu\mu\mu$,
-is applied~\cite{Chatrchyan:2013iaa}. 
-The contribution of W$\gamma^{(*)}$ is also
-constrained by a closure test with same sign leptons on data, which reveals a
-good compatibility of the data with the expected background.
 
