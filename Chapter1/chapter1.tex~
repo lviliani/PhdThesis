@@ -6,9 +6,10 @@ In addition, the phenomenology of the proton-proton interactions is described an
 Eventually, an overview of the Higgs boson physics from an experimental point of view is reported.
 
 \input{Chapter1/SM.tex}
-\input{Chapter1/EW.tex}
-\input{Chapter1/Higgs.tex}
+%\input{Chapter1/EW.tex}
+%\input{Chapter1/Higgs.tex}
+\input{Chapter1/BSM.tex}
 \input{Chapter1/QCD.tex}
-\input{Chapter1/ppInt.tex}
-\input{Chapter1/MC.tex}
-\input{Chapter1/HiggsExp.tex}
+%\input{Chapter1/ppInt.tex}
+%\input{Chapter1/MC.tex}
+\input{Chapter1/HiggsPheno.tex}

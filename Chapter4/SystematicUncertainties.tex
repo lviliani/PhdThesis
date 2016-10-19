@@ -4,17 +4,19 @@
 
 Systematic uncertainties play an important role in this analysis where
 no strong mass peak is expected due to the presence of undetected
-neutrinos in the final state.  One of the most important sources of
-systematic uncertainty is the normalization of the backgrounds that
-are estimated on data control samples whenever is possible.
+neutrinos in the final state. They arise from three sources: background predictions, experimental measurements, and theoretical uncertainties. One of the most important sources is the normalization of the backgrounds that are estimated on data control samples whenever is possible.
 
-A summary of the main sources of systematic uncertainty and the corresponding estimate is reported in Table~\ref{tab:Systematics}. A detailed description of each source of systematic uncertainty is discussed in the following sections.
+The systematic uncertainties can affect the measured signal strengths in different ways. The uncertainties on the background predictions can be divided in those affecting the background cross section, the (\mll, \mt) shape or both. As an example, systematic uncertainties changing the background cross section are the ones related to the background data-driven estimation, while the b tagging uncertainties only have an effect on the (\mll, \mt) shape. Uncertainties such as lepton energy scale can instead affect both normalization and shape. Also, uncertainties affecting the signal (\mll, \mt) shape reflect on an uncertainty on the measured signal strength. 
+
+A summary of the main sources of systematic uncertainty and the corresponding estimate is reported in Table~\ref{tab:Systematics}. A brief description of each source of systematic uncertainty is discussed in the following sections.
+
+The uncertainties related to the unfolding procedure are treated separately and are discussed in Sec.~\ref{sec:uncunf}.
 
 \begin{table}[h]
 \small{
   \begin{center}
   \caption{Main sources of systematic uncertainties and their estimate. The
-  first category reports the uncertainties in the normalization of background
+  first category reports the uncertainties on the normalization of background
   contributions. The experimental and theoretical uncertainties refer to the
   effect on signal yields. A range is specified if the uncertainty varies
   across the $\pth$ bins.}
@@ -26,9 +28,9 @@ A summary of the main sources of systematic uncertainty and the corresponding es
   Source  & Uncertainty \\
   \hline
   $\rm{t\bar{t}}$, tW      & 20--50$\%$ \\
-  W+ jets              & $40\%$ \\
+  W+jets              & $40\%$ \\
   WZ, ZZ              & $4\%$ \\
-  W$\gamma^{(*)}$  & $30\%$ \\
+  W$\gamma^{*}$, W$\gamma$  & $30\%$ \\
   \hline\hline
   \multicolumn{2}{c} {\bf{Effect of the experimental uncertainties on the signal and background yields}}\\
   \hline
@@ -58,52 +60,29 @@ A summary of the main sources of systematic uncertainty and the corresponding es
 
 
 %-------------------------------------------------------------------------------
-\subsection{Background normalization uncertainties}
+\subsection{Background predictions uncertainties}
 %-------------------------------------------------------------------------------
 
-The signal extraction is performed subtracting the estimated backgrounds to the event counts in data.
-This uncertainty depends on the background: 
-  \begin{itemize}
-    \item {\bf\boldmath \ttbar and tW backgrounds:} 
-      The efficiency on jets b-tagging is estimated using the Tag\&Probe technique in data
-      and simulation control regions, as explained in \ref{sec:TagAndProbe}. 
-      A per-jet scale factor, which takes into account the possibly different efficiency of the anti b-tagging selection in data and simulation, 
-      is computed by means of the efficiency measured with the Tag\&Probe method.
-%      \begin{equation}
-%      w_{b-tag}^{n} = \left( \frac{1-\epsilon_{b-tag}^{DATA}}{1-\epsilon_{b-tag}^{MC}} \right)^n
-%      \end{equation}
-%      where $w_{b-tag}^{n}$ is the weight applied to events in the signal region with $n$ true 
-%      b-jets and $\epsilon_{b-tag}^{DATA}$ and $\epsilon_{b-tag}^{MC}$ are the per-jet b-tagging efficiencies measured in data and MC respectively. 
-      The Tag\&Probe method has been used also to measure the mistag rates in data and simulation, which are the probability to b-tag a jet that is not produced by the hadronization of a b quark.
-%      The mistag scale factor $w_{mistag}^{n}$ is evaluated as:
-%      \begin{equation}
-%      w_{mistag}^{n} = \left( \frac{1-\epsilon_{mistag}^{DATA}}{1-\epsilon_{mistag}^{MC}} \right)^n
-%      \end{equation}
-      These factors are used to reweigh the Top MC samples as explained in \ref{sec:TTBackground}. The uncertainties provided by the Tag\&Probe fit are then propagated to the factor $\alpha$ that is used in the top data driven estimation \ref{sec:DD}.
-      These uncertainties are embedded in a systematic error that affects the shape of the Top background in each \pth bin.
-      
-      Provided that the simulated samples include both \ttbar and tW processes, a systematic uncertainty related to the tW$/$\ttbar fraction has been included.
-      In fact, a relative variation of the contribution of these two processes could modify the shape of the MC sample, and is thus included as a shape uncertainty affecting the top quark background shape in each \pth bin in a correlated way. 
-      %The associated uncertainty ($\sim$30\%) is 
-      %shared between the statistical of the control sample and the 
-      %systematic one.
+The signal extraction is performed fitting the estimated background contributions and subtracting them to the event counts in data. Therefore, the uncertainties on the background predictions indirectly reflect as uncertainties on the signal measurements. A list of the most important background uncertainties is given below.
+
+\begin{itemize}
+\item {\bf\boldmath \ttbar and tW backgrounds:}    
+the shapes of these backgrounds are corrected for different b tagging efficiency in data and simulation, and the normalization is taken from data in a top quark enriched control region independently in each \pth bin, as explained in Sec.~\ref{sec:TTBackground}. The uncertainties related to this procedure arise from the sample size in the control regions for each \pth bin, and are embedded in the $\alpha$ factors used to extrapolate
+the top quark background normalization from the control region to the signal region. They vary from 20\% to 50\% depending on the \pth bin.
+   
+The simulated samples include both \ttbar and tW processes, a systematic uncertainty related to the tW$/$\ttbar fraction has been included.
+In fact, a relative variation of the contribution of these two processes could modify the shape of the simulated sample, and is thus included as a shape uncertainty affecting the (\mll, \mt) shape in each \pth bin in a correlated way. 
+
+\item {\bf \boldmath{WW background}:} 
+due to the fact that the WW background (\mll, \mt) shape is entirely taken from simulation, the analysis is relying on theoretical models and can thus be affected by their uncertainties. Especially higher order QCD radiative effects have an influence on the generated WW shape. To study this impact, the shapes of the distributions produced with the \textsc{MadGraph} generator are compared to the ones produced with \textsc{mc@nlo} and other generators (see Sec.~\ref{sec:WWBackground}). The comparison is performed separately in each bin of \pth and the uncertainty includes shape differences originating from the renormalization and factorization scale choice. The effect on the signal strengths is found to be of the order of 1\%.
+  
+\item {\bf\boldmath W+jets background:} 
+the systematic uncertainties on the W+jets background arise from the estimation method explained in Sec.~\ref{sec:wjetsbkg}. This uncertainty has two sources: the dependence of $\varepsilon_\mathrm{pass}$ on the sample composition, and the method. The first source is estimated by modifying the jet \pt threshold in the QCD multijet sample, which modifies the jet sample composition.  The uncertainty in the method is obtained from a closure test, where $\varepsilon_\mathrm{pass}$ is derived from simulated QCD multijet events and applied to simulated samples to predict the number of background events. The total uncertainty in $\varepsilon_\mathrm{pass}$, including the statistical precision of the control sample, is of the order of 40\%.
  
-    \item {\bf\boldmath W+jets background:} It is estimated with data control
-      sample as described in Sec.\ref{sec:wjetsbkg}. With 19.4\ifb at 8 \TeV,
-      the uncertainty receives similar contributions from statistics
-      and systematic error (mainly jet composition differences
-      between the fake rate estimation sample and the application
-      sample), the total error being about 40\%, dominated by the closure
-      test of the method on a same-sign control region.
- 
-    \item {\bf\boldmath WZ,ZZ,W$\gamma^{(*)}$ backgrounds:} those backgrounds, which are
-      expected to give a small contribution, are estimated from
-      simulation. Uncertainties on the cross sections
-      reported in \cite{xsecSM,bib:ellis} are 4\% for WZ and 2.5\% for ZZ.
-      A 30\% uncertainty is assigned to the $W\gamma$ \cite{WgammaXsec} yield and another 30\% on $W\gamma^{(*)}$ contribution according 
-      to the uncertainty on the normalization study (see Sec.~\ref{sec:otherbkg}).
+\item {\bf\boldmath Diboson backgrounds:} 
+these backgrounds are expected to give a small contribution in the signal phase space. Uncertainties on the cross sections reported in \cite{xsecSM,bib:ellis} are 4\% for WZ and 2.5\% for ZZ. A 30\% uncertainty is assigned to the $W\gamma$ \cite{WgammaXsec} yield and another 30\% on $W\gamma^{*}$ contribution according to the uncertainty on the normalization study (see Sec.~\ref{sec:diboson}).
       
-  \end{itemize}
+\end{itemize}
 
 %-------------------------------------------------------------------------------
 \subsection{Experimental uncertainties \label{subsec:expsyst}}
@@ -112,56 +91,34 @@ This uncertainty depends on the background:
 The following experimental systematic sources have been taken into account:
 
 \begin{itemize}
-\item {\bf Luminosity:} Using the online luminosity monitoring CMS
-  reached an uncertainty on the luminosity of 2.6\% at 8 \TeV.
+\item {\bf Luminosity:} using the CMS online luminosity monitoring system, the uncertainty on the integrated luminosity (19.4\ifb) collected during the 2012 data taking period is found to be of $2.6\%$.
 
-\item {\bf Trigger efficiency.} The uncertainties for both electrons and muons
-  are at 1-2\% level, which is added together to the lepton efficiency uncertainty.
+\item {\bf Trigger efficiency:} the uncertainties for both electrons and muons, estimated as described in Sec.~\ref{sec:trigeff}, are at 1-2\% level.
 
 \item {\bf Lepton reconstruction and identification efficiency:} 
-   The lepton reconstruction and identification efficiencies are measured with the Tag\&Probe
-   method in data. To correct for the difference in the lepton identification
-   efficiencies between data and MC, a scale factor is applied to MC.
-   The uncertainties resulting from this procedure on the lepton efficiencies are 4\% for electrons and 3\% for muons.
+this uncertainty is estimated with the Tag and Probe technique described in Sec.~\ref{sec:leptonID}, resulting in a 4\% uncertainty for electrons and 3\% for muons.
 
 \item {\bf Muon momentum and electron energy scale:} 
-  The momentum scale of leptons have relatively large uncertainties due to different detector effects. 
-  For electrons a scale  uncertainty of 2\% for the barrel, and 4\% for the endcaps respectively, 
-  is assigned. 
-  For muons, a momentum scale uncertainty of 1.5\%, independent of its pseudorapidity,  is assigned. 
+the momentum scale of leptons has relatively large uncertainties due to different detector effects, as explained in Sec.~\ref{sec:leptonID}. For electrons a scale  uncertainty of 2\% for the barrel, and 4\% for the endcaps respectively, is assigned. For muons, a momentum scale uncertainty of 1.5\%, independent on the muon pseudorapidity, is assigned.
 
-\item {\bf {\boldmath \MET} modeling:} 
-  The \MET measurement is affected by the possible mis-measurement of 
+\item {\bf {\boldmath \MET} modelling:} 
+  the \MET measurement is affected by the possible mis-measurement of 
   individual particles addressed above, as well as the additional contributions 
-  from the pile-up interactions. 
+  from the pile-up interactions, as described in Sec.~\ref{sec:met}. 
   The effect of the missing transverse momentum resolution on the event selection
   is studied by applying a Gaussian smearing of 10\% on the $x$- and
   $y$-components of the missing transverse momentum. All correlated variables,
-  like the transverse mass, are recalculated. 
-  %The effect is found to be around 2\%.
+  like the transverse mass, are recalculated. The effect is found to be around 2\%.
 
 \item {\bf Jet energy scale (JES) uncertainties:} 
-  It affects both the jet multiplicity and the 
-  jet kinematic variables, such as $m_\mathrm{jj}$.
-  We estimate this uncertainty applying variations of the official
-  jet uncertainties on the JES (which depend on $\eta$ and $\pt$ of the jet 
-   \cite{JEC2012}) and
-  compute the variation of the selection efficiency. %It turns out to be about 10\%.
+  JES uncertainties affect both the jet multiplicity and the jet kinematic variables, reflecting also on the (\mll, \mt) shape.
+  This uncertainty is estimated varying the kinematics of the reconstructed jets within the uncertainties on the JES (which depend on $\eta$ and $\pt$ of the jet) described in Sec.~\ref{sec:jets}, and recomputing all the correlated variables, like \mll and \mt.
 
-\item {\bf b jets mistag modeling:}
-     A fraction of signal events is rejected because erroneously identified as b jets by the b-tagging algorithms.
-     The mistag rate, as measured with the Tag\&Probe technique described in Sec.~\ref{sec:TTBackground}, comes with an uncertainty due to different modeling of the b-tagging performance in data and simulation.
+\item {\bf b-jets misidentification modelling:}
+a fraction of signal events is rejected because erroneously identified as b-jets by the b tagging algorithms. The misidentification probability, as measured with the Tag and Probe technique described in Sec.~\ref{sec:ScaleFactors}, has an uncertainty related to different b tagging performance in data and simulation. This affects also non-top quark backgrounds.
           
-\item {\bf Pileup multiplicity:} Some of the variables used in the
-  analysis are affected by the average number of pileup
-  interactions. The simulated events have been reweighted according
-  the instantaneous luminosity measured on data.
-  The error in the average number of pileup interactions measured in data
-  and the simulation of the modeling and physics aspects of the pileup simulation 
-  gives an uncertainty of 5\% on the 
-  distribution used in the reweighting procedure.
-  This uncertainty is propagated through all
-  the analysis, and the estimated uncertainty on the efficiency is 2\%.
+\item {\bf Pileup multiplicity:} 
+some of the variables used in the analysis are affected by the average number of pile up interactions. The simulated events have been reweighted according to the instantaneous luminosity measured on data. The error on the average number of pile up interactions measured in data and the simulation of the modelling and physics aspects of the pile up simulation provide an uncertainty of at most 5\% on the distribution used in the reweighting procedure. This uncertainty is propagated through all the analysis, and the estimated uncertainty on the signal strengths do not exceed 2\%.
 
 \end{itemize}
 
@@ -169,23 +126,20 @@ The following experimental systematic sources have been taken into account:
 \subsection{Theoretical uncertainties \label{subsec:thsyst}}
 %-------------------------------------------------------------------------------
 
+Theoretical uncertainties generally arise from missing higher-order corrections in QCD and PDF uncertainties. These uncertainties can affect both the cross section and the (\mll, \mt) shape of the background predictions, as well as the shape of the signal model.
+
 \begin{itemize}
 
 \item {\bf QCD scale uncertainties:}
-  The uncertainties on the total cross sections due to the choice of the renormalization and factorization scale are assigned to MC-driven backgrounds.
-  For the signal processes these uncertainties are separated in two categories: those affecting the selection efficiency and those affecting the jet bin fractions.
-  The effect of renormalization and factorization scale on the selection efficiency is of the order of 2\% for all processes.
-  Although this analysis is inclusive in number of jets, the effect of the QCD scale variation on the jet bin migrations has to be taken into account because of the b-tagging veto efficiency. The efficiency of this selection depends on jet multiplicity and the effect of the QCD scale variation has been evaluated using the Stewart-Tackman method, as explained in \ref{subsec:stewart-tackman}.
+the uncertainties on the total cross sections due to the choice of the renormalization and factorization scale are assigned to simulation-driven backgrounds. For the signal processes these uncertainties are separated in two categories: those affecting the selection efficiency and those affecting the jet bin fractions. The effect of renormalization and factorization scale on the selection efficiency is of the order of 2\% for all processes. Although this analysis is inclusive in number of jets, the effect of the QCD scales variation on the jet bin migrations has to be taken into account because of the b tagging veto efficiency. Indeed, the b tagging veto efficiency is not flat as a function of jet multiplicity not \pth, as shown in Fig.~\ref{fig:bveto_eff}, therefore introducing a dependence of the selection efficiency on the number of jets on the event.
+In order to take into account this effect, an uncertainty on the ggH production mode has been included according to the Stewart-Tackman method, following the recipe proposed in Refs.~\cite{Stewart:2011cf,Heinemeyer:2013tqa}. The effect on the signal strengths is found to be of the order of 1--2\%.
 
 \item {\bf PDFs uncertainties:} 
-  The utilization of different PDF sets can affect both the normalization and the shapes of the signal contributions. The uncertainty related due to the variations in the choice of PDFs is considered following the PDF4LHC~\cite{Alekhin:2011sk,Botje:2011sn} prescription, using CT10, NNPDF2.1~\cite{Ball:2011mu} and MSTW2008~\cite{Martin:2009iq} PDF sets.
+the utilization of different PDF sets can affect the (\mll, \mt) shapes of the signal contributions, as well as the normalization and shape of the background predictions. The uncertainty related due to the variations in the choice of PDFs is considered following the PDF4LHC~\cite{Alekhin:2011sk,Botje:2011sn} prescription, using CT10, NNPDF2.1~\cite{Ball:2011mu} and MSTW2008~\cite{Martin:2009iq} PDF sets. The effect on the signal strengths is found to be of at most 1\%.
 
-
-\item {\bf \boldmath{WW}:} 
-  Due to the fact that the WW shape is entirely taken from simulation, the analysis is strongly
-  relying on theoretical models and can thus be strongly affected by their uncertainties. Especially higher order QCD radiative effects have an influence on the generated WW shape. To study this impact, the shapes of the distributions produced with the \textsc{MadGraph} generator (which is the generator for the MC simulation used in the analysis) are compared to the ones produced with \textsc{mc@nlo}. The comparison is performed separately in each bin of \pth and the uncertainty includes shape differences originating from the renormalization and factorization scale choice. A comparison of the \mll and \mt shapes for the WW background using different MC generators is reported in section \ref{sec:WWBackground}.
 \end{itemize} 
 
+\begin{comment}
 \subsubsection{Jet multiplicity uncertainty} \label{subsec:stewart-tackman}
 
 The jet bin uncertainty on the ggH production mode has been evaluated using the Stewart-Tackman method, following the recipe proposed in Refs.~\cite{Stewart:2011cf,Heinemeyer:2013tqa}.
@@ -204,7 +158,7 @@ Even though this analysis is inclusive in number of jets, the jet binning uncert
 		\includegraphics[width=0.45\textwidth]{images/eff_vs_jet.pdf}
 		\label{fig:veto_eff_njet}
 	}
-\caption{(a) Efficiency of the b-tagging veto in different bins of \pth. (b) Efficiency of the b-tagging veto in different bins of \pth, as a function of number of jets.}
+\caption{(a) Efficiency of the b-tagging veto in different bins of \pth. (b) Efficiency of the b-tagging veto in different bins of \pth, as a function of number of jets.}\label{fig:bveto_eff}
 \end{figure}
 
 The first step of this procedure is to take the inclusive ggH cross section, $\sigma_\mathrm{ggH}$, and to convert the relative QCD up/down scale uncertainties, $\epsilon_+$ and $\epsilon_-$, to a log-normal uncertainty, i.e. $\kappa = \sqrt{\exp{(\epsilon_+)}\cdot \exp{(\epsilon_-)}}$. The exclusive cross sections, $\sigma_0$, $\sigma_1$ and $\sigma_2$, can be calculated starting from $\sigma_\mathrm{ggH}$ and using the selection efficiencies for the three jet bins. For every exclusive cross section the corresponding relative uncertainty is computed varying the renormalization ($\mu_R$) and factorization ($\mu_F$) scales independently of a factor 2 and $1/2$, and taking the cross section value corresponding to half of the maximum variation. The inclusive cross sections are then obtained summing the exclusive cross sections and propagating the uncertainties, i.e. $\sigma_{\geq 0 } = \sigma_0 + \sigma_1 + \sigma_2$, $\sigma_{\geq 1} = \sigma_1 + \sigma_2$, $\sigma_{\geq 2} = \sigma_2$.
@@ -262,44 +216,21 @@ QCDscale\_ggH1in &0.997   &  0.993  &   0.984  &   0.975 &    0.946 &    0.974  
 \end{tabular}
 \end{center}
 \end{table}
-
+\end{comment}
 
 %-------------------------------------------------------------------------------
 \subsection{Statistics uncertainty of the simulated samples}
 %-------------------------------------------------------------------------------
 
 Due to the large range of weights used to correct the simulated distributions in order to
-match those in data, the effective size of the MC samples are sometimes smaller than
+match those in data, the effective size of the simulated samples are sometimes smaller than
 the actual number of events in the sample.
-The statistical uncertainties of the event yields estimated from MC samples
-are included as nuisance parameters in the fit and have a small impact on the final result.
+The uncertainties due to the finite statistics of the simulated samples are taken into account and propagated through the final result. Their effect on the signal strengths is found to be negligible.
 
 %-------------------------------------------------------------------------------
-\subsection{Treatment of systematic uncertainties in the shape analysis}\label{sec:syst_treatment}
+\subsection{Treatment of systematic uncertainties in the analysis}\label{sec:syst_treatment}
 %-------------------------------------------------------------------------------
 
-One can distinguish between normalization uncertainties, where a systematic
-effect is changing the normalization of a given process assuming the shape is not affected, and
-shape uncertainties where the actual change in the shape of the distribution is
-taken into account. The normalization uncertainties enter the shape analysis as
-a constant normalization factor, whereas for shape uncertainties the nominal and
-the $+1\sigma$ and $-1\sigma$ shapes enter the analysis in form of three histograms
-with the same normalization. 
+As explained before, one can distinguish between normalization uncertainties, where a systematic effect is changing the normalization of a given process assuming the (\mll, \mt) shape is not affected, and shape uncertainties where the actual change in the (\mll, \mt) shape of the process is taken into account. The normalization uncertainties enter the analysis as constant normalization factors, whereas for shape uncertainties the nominal and the $+1\sigma$ and $-1\sigma$ shapes enter the analysis in form of three histograms with the same normalization. 
 
-For the W+jets background, the shape differences for different jet \pt thresholds in the 
-di-jet control sample are considered separately for electron and muon fakes, while the
-other sources of systematics are taken as normalization uncertainties as in the cut-based
-analysis.
-
-Effects from experimental uncertainties are studied by applying a scaling and smearing of certain variables of the physics objects, followed by a subsequent
-recalculation of all the correlated variables. This is done for simulation, to account for possible systematic mis-measurements of the data.
-All experimental sources from Section~\ref{subsec:expsyst} but luminosity
-are treated both as normalization and shape uncertainties.
-For background with a data-driven normalization estimation,
-only the shape uncertainty is considered.
-
-To account for statistical uncertainties, for each distribution going into the shape analysis, 
-the $+1\sigma$ and $-1\sigma$ shapes were obtained by adding/subtracting the statistical error 
-in each bin and renormalizing it to the nominal distribution. In addition to this procedure a constant 
-normalization uncertainty due to the finite statistics of the MC sample used to extract the shape is assigned.
-
+Effects from experimental uncertainties are studied by applying a scaling and smearing of certain variables of the physics objects, followed by a subsequent recalculation of all the correlated variables. This is done for simulation, to account for possible systematic mis-measurements of the data. All experimental sources from Section~\ref{subsec:expsyst} but luminosity are treated both as normalization and shape uncertainties. For background with a data-driven normalization estimation, only the shape uncertainty is considered.
