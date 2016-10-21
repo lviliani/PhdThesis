@@ -1,4 +1,4 @@
-\chapter{Electroweak and QCD physics at LHC}\label{chap1}
+\chapter{Physics at the LHC}\label{chap1}
 \thispagestyle{empty}
 
 In this chapter the Standard Model of particle physics is briefly described, in particular the main characteristics of the electroweak and strong interactions are discussed, as well as the machanism of the electroweak symmetry breaking.
@@ -8,8 +8,9 @@ Eventually, an overview of the Higgs boson physics from an experimental point of
 \input{Chapter1/SM.tex}
 %\input{Chapter1/EW.tex}
 %\input{Chapter1/Higgs.tex}
-\input{Chapter1/BSM.tex}
 \input{Chapter1/QCD.tex}
+\input{Chapter1/BSM.tex}
 %\input{Chapter1/ppInt.tex}
 %\input{Chapter1/MC.tex}
 \input{Chapter1/HiggsPheno.tex}
+\input{Chapter1/HiggsExp.tex}

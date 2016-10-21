@@ -6,6 +6,9 @@ In this section the Higgs boson production modes and decay channels are describe
 
 %One of the main goals of the LHC was the search for the SM Higgs boson over a wide range of masses. This goal has been achieved in 2012, when the ATLAS and CMS collaborations announced the discovery of a new boson with mass $m_\mathrm{H} = 125$\GeV~\cite{Aad:2012tfa,Chatrchyan:2012xdj}, consistent with the SM Higgs boson prediction.
 
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Higgs boson production mechanisms and decay channels}
 
@@ -73,6 +76,32 @@ The branching ratio to the WW and ZZ decay channels are instead dominant when in
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The \hww decay channel}
+As stated in the previous section, the \hww decay channel is one of the channels with the largest branching ratio across the full Higgs boson mass range. For Higgs boson masses below two times the W boson mass, $m_\mathrm{H} < 2m_\mathrm{W}$, the decay to two real W boson is energetically forbidden, therefore one of the two W bosons is produced \emph{off-shell}. The W boson can in turn decay to hadrons, with a branching ratio of 67.41\%, or to leptons ($\mathrm{W}\to\ell\nu$) with a branching ratio of 10.86\%. The fully hadronic decay $\mathrm{H\to W^+W^- \to 4q}$ is thus the most probable decay mode, but the presence of four jets in the final state makes it hard to separate the signal from the overwhelming background contribution. The semi-leptonic final state, where one W boson decays to leptons and the other to hadrons, still has large branching ratio and can exploit the presence of one electron or muon to tag the events. Nevertheless the background contribution is, even in this case, very large.
+
+The analyses presented in this work are focused on the fully leptonic final state, \hwwllnn, which, despite the lower branching ratio with respect to the other decay modes, is characterized by a clean signature and affected by much less background contribution. The signature of this final state is characterized by two leptons with opposite charge and a moderate amount of missing transverse energy, due to the presence of two neutrinos in the final state. In general the two leptons are characterized by high \pt values and, in case one of the W boson is off-shell (as for the SM Higgs boson case), the corresponding lepton has on average a smaller \pt with respect to the one arising from the on-shell W boson.
+
+The final state with two same flavour leptons is not taken into account in the analyses discussed in this work, since it provides a smaller signal significance with respect to the different flavour case due to the presence of the huge background from Drell-Yan processes.
+
+Because of the presence of missing transverse energy in the final state, is not possible to reconstruct the full Higgs boson mass in this channel, and other methods must be used to distinguish between signal and background contributions.
+
+The most important background processes contributing to this final state are the non-resonant $\mathrm{q\bar q \to W^+W^-}$ and the \ttbar production, whose Feynman diagrams are illustrated in Fig.~\ref{fig:wwandtop}. The first one is characterized by a final state identical to signal, while the latter has, in addition, two b quarks arising from the top quark decay. Despite the same final state in signal and $\mathrm{q\bar q \to W^+W^-}$ processes, the lepton kinematics is rather different. For the signal process, the W boson originates from a spin-0 particle decay and their spins must therefore be antiparallel, implying that the charged leptons produced in their decays appear preferentially in the same hemisphere~\cite{Ellis:2012wg}. In contrast, there is no preferential spin direction in the background case.
+For this reason the azimuthal angle difference between the two leptons is on average smaller for signal than for background, resulting in a smaller dilepton invariant mass in the former case.
+
+\begin{figure}[htb]
+\centering
+\subfigure[$\mathrm{q\bar q \to W^+W^-}$]{
+  \includegraphics[width=0.4\textwidth]{images/WW.pdf}
+}
+\subfigure[\ttbar]{
+  \includegraphics[width=0.4\textwidth]{images/ttbar.pdf}
+}
+\caption{Feynman diagrams corresponding to the $\mathrm{q\bar q \to W^+W^-}$ (left) and \ttbar (right) processes. The \ttbar diagram represents just one of the possible ways to produce a pair of top quarks.}\label{fig:wwandtop}
+\end{figure}
+
+Other sub-dominant backgrounds arise from single top quark (tW, s-channel or t-channel), Drell-Yan, W+jets, di-boson and tri-boson processes.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Higgs boson kinematics}
@@ -125,7 +154,7 @@ and four-momentum conservation. The beam remnant handling is thus another step i
 \item finally, the event generator takes care of decaying $\tau$ leptons and B hadrons. Particles with very short lifetime are generally decayed by the generator itself, while those with longer lifetimes are left undecayed.
 \end{itemize}
 
-The calculation of the hard process cross section is performed using the Matrix Element (ME) method, which is available for a variety of processes and consists on the exact matrix element calculation of the Feynman diagram of the process of interest. This approach is performed using perturbative QCD calculations and provide an analytically exact solution. Tree-level cross sections can be calculated including up to several partons (more than eight) in the final state. Loop calculations are instead more complex and are available only for a limited set of processes. 
+The calculation of the hard process cross section is performed using the Matrix Element (ME) method, which is available for a variety of processes and consists on the exact matrix element calculation of the Feynman diagram of the process of interest. This approach is performed using perturbative QCD calculations and provide an analytically exact solution. Tree-level cross sections can be calculated including up to several partons in the final state. Loop calculations are instead more complex and are available only for a limited set of processes. 
 
 The ME method presents two complications: the first one arise from the presence in the calculation of partons with low transverse momentum (\emph{soft} divergence) and the second to situations in which the emitted parton is collinear to the radiating parton (\emph{collinear} divergence). Both these cases lead to divergences that spoil the perturbative calculation. The virtual corrections would cancel these divergences but, since at tree-level they are not included, the phase space has to be carefully tailored to avoid the problematic regions. This means that the matrix
 element cross section calculations are performed away from soft and collinear divergences. Therefore, in order to produce realistic events, the phase space regions omitted in the ME calculation need to handled using a different method, the Parton Shower calculation.
@@ -135,12 +164,11 @@ and the application of an angular sorting procedure in the emission of partons a
 
 The two aforementioned techniques are therefore complementary and their combined application in the intermediate cases allows to exploit the characteristics of the two algorithms in the respective limits of validity. Several prescriptions exist to combine together the ME and PS calculations avoiding double-counting or holes in the phase space~\cite{Hoche:2006ph}.
 
-In this work the \textsc{Powheg} and \textsc{MadGraph} (and its evolution \textsc{MadGraph5\_aMC@NLO}) generators are mostly used for the ME calculation, interfaced to \textsc{Pythia} for the PS and hadronization. 
+In this work the \textsc{Powheg}~\cite{Kramer:2005hw,Frixione:2007vw,Lavesson:2008ah,Alioli:2008tz, Nason:2009ai} and \textsc{MadGraph} (and its evolution \textsc{MadGraph5\_aMC@NLO}) generators~\cite{Alwall:2014hca} are mostly used for the ME calculation, interfaced to \textsc{Pythia}~\cite{Sjostrand:2006za,Sjostrand:2007gs} for the PS and hadronization. 
 
-\textsc{Powheg} is a ME event generator that performs calculations with NLO QCD accuracy and provides an easy prescription for the interface to PS programs. It can be used to generate events corresponding to a large number of predefined processes. It is used for the simulation of the majority of the processes involving Higgs boson production, as ggH and VBF. The \textsc{JHUGen} generator, which is capable to include all spin correlations, is usually employed together with \textsc{Powheg} to simulate the Higgs boson decay to whatever final state is desired.
-
+\textsc{Powheg} is a ME event generator that performs calculations with NLO QCD accuracy and provides an easy prescription for the interface to PS programs. It can be used to generate events corresponding to a large number of predefined processes. It is used for the simulation of the majority of the processes involving Higgs boson production, as ggH and VBF. The \textsc{JHUGen}~\cite{JHUGen} generator, which is capable to include all spin correlations, is usually employed together with \textsc{Powheg} to simulate the Higgs boson decay to whatever final state is desired. In the analyses described in Chapter~\ref{chap4} two versions of this generator are used for simulating events produced via the ggH mechanism: \textsc{Powheg V1} and the more recent \textsc{Powheg V2}, which takes into account the finite mass of the bottom and top quarks in the ggH loop.
 
 \textsc{MadGraph5\_aMC@NLO} is a software that allows to generate amplitudes and events for any user defined process (with up to 9 external particles) with LO or NLO QCD accuracy.
 
-\textsc{Pythia} is a general purpose generator. It contains a large subprocess library covering SM and BSM physics. It can be used standalone as a ME generator to perform cross section calculation and generate event at LO QCD accuracy, or interfaced to a ME generator like \textsc{Powheg} or \textsc{MadGraph5\_aMC@NLO} as a PS and for the simulation of the hadronization process.
+\textsc{Pythia} is a general purpose generator. It contains a large subprocess library covering SM and BSM physics. It can be used standalone as a ME generator to perform cross section calculation and generate events at LO QCD accuracy, or interfaced to a ME generator like \textsc{Powheg} or \textsc{MadGraph5\_aMC@NLO} as a PS and for the simulation of the hadronization process.
 

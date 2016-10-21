@@ -19,7 +19,7 @@ Similarly, the quarks are organized in pairs composed of a particle with $Q=+2/3
 }), \emph{charm} (\emph{c}) and \emph{top} (\emph{t}) quarks, and another particle with $Q=-1/3$, \emph{down} (\emph{d}), \emph{strange} (\emph{s}) and \emph{bottom} (\emph{b}) quarks:
 
 \begin{equation}
-\label{eq:leptons}
+\label{eq:quarks}
 \begin{pmatrix} u       \\ d      \end{pmatrix}, \quad
 \begin{pmatrix} c       \\ s      \end{pmatrix}, \quad
 \begin{pmatrix} t       \\ b      \end{pmatrix}  \quad .
