@@ -42,7 +42,7 @@ The resulting matrix, including all signal sources and normalized by row, is sho
 The diagonal bins correspond to the purity $P$, defined as the ratio of the number of events generated and reconstructed in a given bin, to the
 number of events generated in that bin. The same matrix, normalized by column, is shown in Fig.~\ref{fig:matrix}(b). In this case the diagonal bins correspond to the stability $S$, defined as the ratio of the number of events generated and reconstructed in a given bin, and the number of events reconstructed in that bin. The $S$ and $P$ parameters provide an estimate of the \pth resolution and migration effects, the main source being the limited resolution in the measurement of \MET.
 
-\begin{figure}[!h]
+\begin{figure}[htb]
 \centering
 \subfigure[Response matrix normalized by row]{
 \includegraphics[width=0.45\textwidth]{images/matrix_byrow_paper.pdf}
@@ -61,27 +61,27 @@ The \textsc{JHUGen} generator sample is used to build the response matrix while 
 In order to further prove the choice of the regularization parameter, a large number of simulated pseudo-experiments has been generated to verify that the coverage of the unfolded uncertainties obtained with this procedure is as expected.
 From each pseudo-experiment the reconstructed \pth spectrum is obtained and then unfolded using the procedure described above, including only the statistical uncertainties. The coverage is calculated for each \pth bin, counting the number of pseudo-experiments for which the statistical uncertainty covers the true value. The results are shown in Table~\ref{tab:coverage} for different values of the regularization parameter: starting from $k_\mathrm{reg}=2$ (stronger regularization) up to $k_\mathrm{reg}=5$ (weaker regularization). The criterion for choosing the best $k_\mathrm{reg}$ value is to increase the regularization as much as possible without introducing a bias, i.e. until a 68\% coverage is fulfilled. This criterion leads to the same result as the prescription described before, strengthening the choice of $k_\mathrm{reg}=3$.
 
-\begin{table}
+\begin{table}[htb]
 \centering
 \caption{Coverage interval for each bin and for different values of the regularization parameter, obtained using pseudo-experiments.}\label{tab:coverage}
-\begin{tabular}{c|cccc}
-\hline
+\begin{tabular}{lcccc}
+\toprule
 \multirow{2}{*}{\pth bin [GeV]} & \multicolumn{4}{c}{Coverage} \\
  & $k_\mathrm{reg}=2$ & $k_\mathrm{reg}=3$ & $k_\mathrm{reg}=4$ & $k_\mathrm{reg}=5$\\
-\hline\hline
+\midrule
 0--15 	      & $0.654\pm0.016$ & $0.704\pm0.015$ & $0.727\pm0.015$ & $0.755\pm0.014$ \\
 15--45 	      & $0.701\pm0.015$ & $0.665\pm0.016$ & $0.683\pm0.015$ & $0.733\pm0.015$ \\
 45-85 	      & $0.717\pm0.015$ & $0.706\pm0.015$ & $0.709\pm0.015$ & $0.716\pm0.015$ \\
 85--125       & $0.634\pm0.016$ & $0.681\pm0.015$ & $0.714\pm0.015$ & $0.739\pm0.015$ \\
 125--165      & $0.599\pm0.016$ & $0.650\pm0.016$ & $0.700\pm0.015$ & $0.751\pm0.014$ \\
 165--$\infty$ & $0.632\pm0.016$ & $0.674\pm0.015$ & $0.701\pm0.015$ & $0.722\pm0.015$ \\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
 
 
-\subsection{Treatment of systematic uncertainties}
+\subsection{Treatment of systematic uncertainties}\label{sec:uncunf}
 
 An important aspect of this analysis is the treatment of the systematic
 uncertainties and the error propagation through the unfolding procedure.
@@ -106,7 +106,7 @@ The correlation cor($i$,$j$) of bins $i$ and $j$ is defined as:
 where $\mathrm{cov}(i,j)$ is the covariance of bins $i$ and $j$, and ($s_{i}$,
 $s_{j}$) are the standard deviations of bins $i$ and $j$,  respectively.
 
-\begin{figure}[!h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.6\textwidth]{images/typeACovMatrix.pdf}
 \caption{Correlations among the signal strengths corresponding to the six \pth bins including all type A uncertainties.}\label{fig:typeA_corr}
@@ -155,11 +155,11 @@ These three matrices are used to unfold the reconstructed spectrum with the nomi
 %summing in quadrature positive and negative contributions separately for each bin. Type C uncertainties, also referred to as ``model dependence'', are instead quoted separately.
 %The effect of each source of the uncertainty is quoted for each bin of \pth~in Table~\ref{table:values_and_uncertainties}.
 
-\begin{table}
+\begin{table}[htb]
 \caption{Effect of all the Type B uncertainties on the signal strengths of each bin. In the table are reported the signal strength variations corresponding to an up or down scaling of each nuisance. Uncertainties related to \MET and lepton resolution are single-sided, i.e. only an up variation is implemented.}\label{table:corr_syst}
 \centering
 \footnotesize{
-\begin{tabular}{l|cccccc}
+\begin{tabular}{lcccccc}
 \toprule
 \multirow{2}{*}{Type B uncertainty} & \multicolumn{6}{c}{Effect on signal strength ($+1\sigma/-1\sigma$ [\%])}\\
  		   & [0--15] & [15--45] & [45--85] & [85--125] & [125--165] & [165--$\infty$] \\ 
@@ -169,8 +169,8 @@ lepton efficiency & -14.7/-3.9  & 4.5/15.1  & -5.7/2.5  & -13.2/-5.3  & -0.2/7.6
 \MET resolution & -12.5/0.0  & 15.4/-0.0  & -12.8/-0.0  & 8.7/0.0  & -20.9/-0.0  & 10.5/0.0  \\
 \MET scale & -14.4/-6.8  & -0.0/17.7  & -6.1/-7.1  & 9.6/-20.9  & 2.3/32.4  & 2.5/2.6  \\ 
 lepton resolution & -12.5/-0.0  & 11.2/0.0  & -2.4/0.0  & -13.4/-0.0  & 9.9/0.0  & -4.6/-0.0  \\ 
-electron momentum scale & -2.7/-13.1  & 15.9/9.9  & 10.8/-16.8  & 16.2/-33.1  & 30.9/-14.4  & 12.6/-10.9  \\
-muon momentum scale & -7.0/-10.7  & 11.8/8.9  & 1.1/-8.7  & -0.7/-14.4  & 14.5/-4.6  & 8.0/-1.6  \\ 
+e momentum scale & -2.7/-13.1  & 15.9/9.9  & 10.8/-16.8  & 16.2/-33.1  & 30.9/-14.4  & 12.6/-10.9  \\
+$\mu$ momentum scale & -7.0/-10.7  & 11.8/8.9  & 1.1/-8.7  & -0.7/-14.4  & 14.5/-4.6  & 8.0/-1.6  \\ 
 jet energy scale & -10.9/-10.1  & 9.0/9.0  & -3.0/-2.9  & -10.3/-8.9  & 0.3/3.4  & 5.2/3.1  \\
 
 \bottomrule

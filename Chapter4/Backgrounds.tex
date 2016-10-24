@@ -100,7 +100,7 @@ This results in an up and a down variation of the scale factors in the signal an
 A data driven estimation of the top quark background with the method described above is performed in each of the \pth bins independently. The reason to make this estimation in $\pth$ bins, rather than inclusively is explained in Fig.~\ref{fig:ttpth}, where the \pth distribution is shown in the CtrlDD region normalized to the cross section measured by a specific CMS analysis~\cite{Khachatryan:2016mqs}. As shown in the ratio plot, an overall normalization factor would not be able to accommodate for the variations of the data/simulation ratio from bin to bin.
 \end{comment}
 
-\begin{figure}[b]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.6\textwidth]{images/ttpth.pdf}
 \caption{Distribution of \pth in the $CR_{\ttbar}$ region, comparing data and simulation.\label{fig:ttpth}}
@@ -108,7 +108,7 @@ A data driven estimation of the top quark background with the method described a
 
 The results of the method discussed before are listed in Tab.~\ref{tab:ttdd} for each bin of \pth.
 
-\begin{table}
+\begin{table}[htb]
 \caption{Data driven scale factors related to the top quark background estimation.\label{tab:ttdd}}
 \centering
 \begin{tabular}{c c c c c c}
@@ -147,20 +147,20 @@ A comparison of the \mll distributions in the $CR_{\ttbar}$ region for data and 
 
 First of all, the \mll and \mt shapes of the $\mathrm{qq\to W^{+}W^{-}}$ background process have been compared to the data in a signal free phase space, as shown in Fig.~\ref{fig:WW}. The signal-free region is defined requiring the preselections described in Sec.~\ref{sec:Selections} with the additional cut $\mll>70$\GeV. The comparison, which is performed inclusively in \pth in the 0 and 1 jet categories, shows a good data to simulation agreement within uncertainties.
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
 \centering
 \subfigure[\mll{} -- 0 jets]{
-\includegraphics[width=0.4\textwidth]{images/WWctrl/mll0j.pdf}
+\includegraphics[width=0.35\textwidth]{images/WWctrl/mll0j.pdf}
 }
 \subfigure[\mt{} -- 0 jets]{
-\includegraphics[width=0.4\textwidth]{images/WWctrl/mt0j.pdf}
+\includegraphics[width=0.35\textwidth]{images/WWctrl/mt0j.pdf}
 }
 \\
 \subfigure[\mll{} -- 1 jet]{
-\includegraphics[width=0.4\textwidth]{images/WWctrl/mll1j.pdf}
+\includegraphics[width=0.35\textwidth]{images/WWctrl/mll1j.pdf}
 }
 \subfigure[\mt{} -- 1 jet]{
-\includegraphics[width=0.4\textwidth]{images/WWctrl/mt1j.pdf}
+\includegraphics[width=0.35\textwidth]{images/WWctrl/mt1j.pdf}
 }
 
 \caption{Comparison of the \mll and \mt shapes in data and simulation for events with 0 and 1 jets, inclusive in \pth. The events are required to pass the analysis requirements and, in order to define a signal-free control region, to have $\mll > 70$\GeV.\label{fig:WW}}
@@ -199,8 +199,6 @@ To check the residual dependence of the \mll and \mt shapes on the generator use
 \end{figure}
 
 The gluon-induced WW process, i.e. gg$\to \mathrm{W^{+}W^{-}}$, has a sub-dominant contribution with respect to the quark-induced process, being the cross section ratio between the two of about 5\%. The \mll and \mt shapes for this background are taken from simulation while the cross section is scaled to the approximate NLO calculation~\cite{Bonvini:2013jha,Passarino:2013bha}.
-
-
 
 
 
@@ -403,7 +401,7 @@ This method allows to avoid the simulation of very large MC samples that would b
 
 
 
-\subsubsection{Diboson backgrounds\label{sec:diboson}}
+\subsection{Diboson backgrounds\label{sec:diboson}}
 
 The WZ and ZZ background events are largely rejected by requiring exactly two high \pt isolated leptons with opposite charge and different flavour in the event. 
 
@@ -414,5 +412,4 @@ A high purity W$\gamma^*$ phase space is defined selecting events with three muo
 The measured data/simulation scale factor in this control region is found to be $1.5 \pm 0.5$.
 
 The W$\gamma$ background can also contribute to the signal phase space, because the photon can interact with the tracker material converting to an $\mathrm{e^+e^-}$ pair. Its normalization is taken from simulation while the \mll and \mt shapes are checked selecting a data sample with one lepton and one photon, finding a good agreement within uncertainties.
-
 

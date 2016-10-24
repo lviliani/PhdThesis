@@ -60,7 +60,7 @@ The uncertainties related to the unfolding procedure are treated separately and 
 
 
 %-------------------------------------------------------------------------------
-\subsection{Background predictions uncertainties}
+\subsection{Uncertainties on background predictions}
 %-------------------------------------------------------------------------------
 
 The signal extraction is performed fitting the estimated background contributions and subtracting them to the event counts in data. Therefore, the uncertainties on the background predictions indirectly reflect as uncertainties on the signal measurements. A list of the most important background uncertainties is given below.
@@ -80,7 +80,7 @@ due to the fact that the WW background (\mll, \mt) shape is entirely taken from 
 the systematic uncertainties on the W+jets background arise from the estimation method explained in Sec.~\ref{sec:wjetsbkg}. This uncertainty has two sources: the dependence of $\varepsilon_\mathrm{pass}$ on the sample composition, and the method. The first source is estimated by modifying the jet \pt threshold in the QCD multijet sample, which modifies the jet sample composition.  The uncertainty in the method is obtained from a closure test, where $\varepsilon_\mathrm{pass}$ is derived from simulated QCD multijet events and applied to simulated samples to predict the number of background events. The total uncertainty in $\varepsilon_\mathrm{pass}$, including the statistical precision of the control sample, is of the order of 40\%.
  
 \item {\bf\boldmath Diboson backgrounds:} 
-these backgrounds are expected to give a small contribution in the signal phase space. Uncertainties on the cross sections reported in \cite{xsecSM,bib:ellis} are 4\% for WZ and 2.5\% for ZZ. A 30\% uncertainty is assigned to the $W\gamma$ \cite{WgammaXsec} yield and another 30\% on $W\gamma^{*}$ contribution according to the uncertainty on the normalization study (see Sec.~\ref{sec:diboson}).
+these backgrounds are expected to give a small contribution in the signal phase space. Uncertainties on the cross sections reported in \cite{xsecSM,bib:ellis} are 4\% for WZ and 2.5\% for ZZ. A 30\% uncertainty is assigned to the W$\gamma$ \cite{WgammaXsec} yield and another 30\% on W$\gamma^{*}$ contribution according to the uncertainty on the normalization study (see Sec.~\ref{sec:diboson}).
       
 \end{itemize}
 
@@ -137,7 +137,20 @@ In order to take into account this effect, an uncertainty on the ggH production 
 \item {\bf PDFs uncertainties:} 
 the utilization of different PDF sets can affect the (\mll, \mt) shapes of the signal contributions, as well as the normalization and shape of the background predictions. The uncertainty related due to the variations in the choice of PDFs is considered following the PDF4LHC~\cite{Alekhin:2011sk,Botje:2011sn} prescription, using CT10, NNPDF2.1~\cite{Ball:2011mu} and MSTW2008~\cite{Martin:2009iq} PDF sets. The effect on the signal strengths is found to be of at most 1\%.
 
-\end{itemize} 
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+	\subfigure[]{
+		\centering
+		\includegraphics[width=0.4\textwidth]{images/eff_vs_pth.pdf}
+	}
+	\subfigure[]{
+		\centering
+		\includegraphics[width=0.4\textwidth]{images/eff_vs_jet.pdf}
+	}
+\caption{(a) Efficiency of the b-tagging veto in different bins of \pth. (b) Efficiency of the b-tagging veto in different bins of \pth, as a function of number of jets.}\label{fig:bveto_eff}
+\end{figure}
 
 \begin{comment}
 \subsubsection{Jet multiplicity uncertainty} \label{subsec:stewart-tackman}

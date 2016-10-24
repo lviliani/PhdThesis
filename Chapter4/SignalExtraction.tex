@@ -49,7 +49,7 @@ These out-of-fiducial signal events cannot be precisely handled by the unfolding
 
 At the end, the number of events in each bin $i$ of the measured spectrum is:
 
-\begin{equation}\label{ew:sig_yield}
+\begin{equation}\label{eq:sig_yield}
 N_i = \mu_i (s_i -f_i) \quad ,
 \end{equation}
 
@@ -74,79 +74,83 @@ Before running the fit on the data, the same procedure has been applied to the s
 
 A comparison of data and background prediction is shown in Fig.~\ref{fig:mllSignalRegion}, where the \mll{} distribution is shown for the six \pth bins. Distributions correspond to the \mt{} window of [60, 110]\GeV, in order to emphasize the signal contribution~\cite{Chatrchyan:2013iaa}. The \mt distributions are shown in Fig.~\ref{fig:mTSignalRegion} and correspond to the \mll window of [12, 75]\GeV.
 
-\begin{figure}[!htbp]
+\begin{figure}[htbp]
 \centering
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mllBin0.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mllBin0.pdf}
 }
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mllBin1.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mllBin1.pdf}
 }
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mllBin2.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mllBin2.pdf}
+}\\
+\subfigure{
+\includegraphics[width=0.3\textwidth]{images/unblinding/mllBin3.pdf}
 }
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mllBin3.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mllBin4.pdf}
 }
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mllBin4.pdf}
-}
-\subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mllBin5.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mllBin5.pdf}
 }
 \caption{Distributions of the \mll variable in each of the six \pth bins. Background normalizations correspond to the values obtained from the fit. Signal normalization is fixed to the SM expectation. The distributions are shown in an \mt window of [60,110]\GeV in order to emphasize the Higgs boson (H) signal. The signal contribution is shown both stacked on top of the background and superimposed to it. Ratios of the expected and observed event yields in individual bins are shown in the panels below the plots. The uncertainty band shown in the ratio plot corresponds to the envelope of systematic uncertainties after performing the fit to the data.}\label{fig:mllSignalRegion}
 \end{figure}
 
-\begin{figure}[!htbp]
+\begin{figure}[htbp]
 \centering
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mTBin0.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mTBin0.pdf}
 }
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mTBin1.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mTBin1.pdf}
 }
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mTBin2.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mTBin2.pdf}
+}\\
+\subfigure{
+\includegraphics[width=0.3\textwidth]{images/unblinding/mTBin3.pdf}
 }
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mTBin3.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mTBin4.pdf}
 }
 \subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mTBin4.pdf}
-}
-\subfigure{
-\includegraphics[width=0.31\textwidth]{images/unblinding/mTBin5.pdf}
+\includegraphics[width=0.3\textwidth]{images/unblinding/mTBin5.pdf}
 }
 \caption{Distributions of the \mt variable in each of the six \pth{} bins. Background normalizations correspond to the values obtained from the fit. Signal normalization is fixed to the SM expectation. The distributions are shown in an \mll window of [12,75]\GeV in order to emphasize the Higgs boson (H) signal. The signal contribution is shown both stacked on top of the background and superimposed to it. Ratios of the expected and observed event yields in individual bins are shown in the panels below the plots. The uncertainty band shown in the ratio plot corresponds to the envelope of systematic uncertainties after performing the fit to the data.}\label{fig:mTSignalRegion}
 \end{figure}
 
 The signal and background yields after the analysis selection are reported in Table \ref{table:yields}.
 
-\begin{table}[htbp]
-\small{
+\begin{table}[htb]
+\footnotesize{
 \begin{center}{
   \caption{Signal prediction, background estimates and observed number of events in data are shown in each \pth{} bin for the signal after applying the analysis selection requirements. The total uncertainty on the number of events is reported. For signal processes, the yield related to the ggH are shown, separated with respect to the contribution of the other production mechanisms (XH=VBF+VH). The WW process includes both quark and gluon induced contribution, while the Top process takes into account both \ttbar and tW. }\label{table:yields}
-\begin{tabular} {l c c c c c c}
+\begin{tabularx}{\textwidth}{ l >{\centering}X >{\centering}X >{\centering}X >{\centering}X >{\centering}X >{\centering}X }
+
 \toprule
-\multirow{2}{*}{Process} & \multicolumn{6}{c}{\pth [\GeV]} \\
- &	0--15	&	15--45	&	45--85	&	85--125	&	125--165	&	165--$\infty$ \\ 	
+
+\multirow{2}{*}{Process} & \multicolumn{6}{c}{\pth [\GeV]} \tabularnewline
+ &	0--15	&	15--45	&	45--85	&	85--125	&	125--165	&	165--$\infty$ \tabularnewline
 
 \midrule
 
-ggH	&	$73\pm3$	&	$175\pm5$	&                $59\pm3$	&                $15\pm2$	&                $5.1\pm1.5$	&                $4.9\pm1.4$	\\
-XH=VBF+VH	&	$4\pm2$ 	&	$15\pm4$ 	&		 $16\pm4$	&	         $8\pm2$ 	&		 $3.8\pm1.1$ 	&		 $3.0\pm0.8$    \\	
-Out-of-fiducial & $9.2\pm0.5$   &       $19.9\pm0.7$    &      $11.4\pm0.6$    &    $4.4\pm0.3$   &     $1.6\pm0.2$   &   $2.4\pm0.2$ \\
-Data 	&	2182	 	&         5305	 	&	         3042	 	& 	          1263	 	&	         431	 	& 	          343	 	\\
-Total background &  	 $2124\pm128$	 &     $5170\pm321$	 &       $2947\pm293$	 &            $1266\pm175$	 &         $420\pm80$	 &              $336\pm74$	 \\
+ggH	&	$73\pm3$	&	$175\pm5$	&                $59\pm3$	&                $15\pm2$	&                $5.1\pm1.5$	&                $4.9\pm1.4$	\tabularnewline
+XH=VBF+VH	&	$4\pm2$ 	&	$15\pm4$ 	&		 $16\pm4$	&	         $8\pm2$ 	&		 $3.8\pm1.1$ 	&		 $3.0\pm0.8$    \tabularnewline
+Out-of-fiducial & $9.2\pm0.5$   &       $19.9\pm0.7$    &      $11.4\pm0.6$    &    $4.4\pm0.3$   &     $1.6\pm0.2$   &   $2.4\pm0.2$ \tabularnewline
+Data 	&	2182	 	&         5305	 	&	         3042	 	& 	          1263	 	&	         431	 	& 	          343	 	\tabularnewline
+Total background &  	 $2124\pm128$	 &     $5170\pm321$	 &       $2947\pm293$	 &            $1266\pm175$	 &         $420\pm80$	 &              $336\pm74$	 \tabularnewline
 
-WW 	& 		$1616\pm107$	 &	 $3172\pm249$	 &	     $865\pm217$	 &	     $421\pm120$	 &	     $125\pm60$	 &		     $161\pm54$	 \\
-Top 	&	$184\pm38$	&	                $1199\pm165$	&	                $1741\pm192$	&	                $735\pm125$	&	                $243\pm51$	& 	        $139\pm49$	\\
-W+jets 	& $134\pm5$ 	&	         $455\pm10$ 	&	         $174\pm6$ 	&	         $48\pm4$ 	&	         $14\pm3$ 	&	         $9\pm3$ 	\\
-WZ+ZZ+VVV & $34\pm4$ 	 &	$107\pm10$ 	&                $71\pm7$ 	&	         $29\pm5$ 	&                $14\pm3$ 	&     $13\pm4$ 	\\
-\dytt 	&	$23\pm3$ 	&         $67\pm5$ 	&         $47\pm4$ 	&         $22\pm3$ 	&         $12\pm2$ 	&         $10\pm2$ 	\\
-W$\gamma^{(*)}$	& $132\pm49$     &             $170\pm58$    &              $48\pm30$ &                  $12\pm9$ &                  $3\pm3$ &                 $5\pm10$ \\
+WW 	& 		$1616\pm107$	 &	 $3172\pm249$	 &	     $865\pm217$	 &	     $421\pm120$	 &	     $125\pm60$	 &		     $161\pm54$	 \tabularnewline
+Top 	&	$184\pm38$	&	                $1199\pm165$	&	                $1741\pm192$	&	                $735\pm125$	&	                $243\pm51$	& 	        $139\pm49$	\tabularnewline
+W+jets 	& $134\pm5$ 	&	         $455\pm10$ 	&	         $174\pm6$ 	&	         $48\pm4$ 	&	         $14\pm3$ 	&	         $9\pm3$ 	\tabularnewline
+WZ+ZZ+VVV & $34\pm4$ 	 &	$107\pm10$ 	&                $71\pm7$ 	&	         $29\pm5$ 	&                $14\pm3$ 	&     $13\pm4$ 	\tabularnewline
+\dytt 	&	$23\pm3$ 	&         $67\pm5$ 	&         $47\pm4$ 	&         $22\pm3$ 	&         $12\pm2$ 	&         $10\pm2$ 	\tabularnewline
+W$\gamma^{(*)}$	& $132\pm49$     &             $170\pm58$    &              $48\pm30$ &                  $12\pm9$ &                  $3\pm3$ &                 $5\pm10$ \tabularnewline
+
 \bottomrule
-  \end{tabular}
+
+  \end{tabularx}
   }
    
   \end{center}
@@ -156,7 +160,7 @@ W$\gamma^{(*)}$	& $132\pm49$     &             $170\pm58$    &              $48\
 The signal strengths obtained performing the fit are shown in Table~\ref{tab:signal_strengths}.
 In order to assess the robustness of the fit, several toy MC samples have been generated, with a statistical accuracy corresponding to the one expected in data, and fitted with the same procedure described before. The distribution of the signal strengths extracted in each bin using the toy MC samples and the their pull distributions are shown in Fig.~\ref{fig:pull_fit}. 
 
-\begin{table}[h!]
+\begin{table}[htb]
 \caption{Signal strengths measured in data for each \pth bin with 68$\%$ CL uncertainties.}\label{table:signal_stregths}
 \begin{center}
 \begin{tabular}{ c  c  c  } \toprule
@@ -171,7 +175,6 @@ In order to assess the robustness of the fit, several toy MC samples have been g
 \end{tabular}
 \end{center}
 \end{table}
-
 
 \begin{figure}[htb]
 \centering
@@ -190,7 +193,7 @@ The reconstructed spectrum is obtained starting from the signal yield $N_i$ in e
 
 The spectrum shown in Fig. \ref{fig:pre_unfolding} is obtained after having performed the fit and after the subtraction of the out-of-fiducial signal events, but before undergoing the unfolding procedure. The theoretical distribution after the detector simulation and event reconstruction is also shown for comparison. Also, the expected distribution of the sub-dominant VBF and VH production mechanisms is shown.
 
-\begin{figure}[!h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.7\textwidth]{images/unblinding/pth_reco_paper.pdf}
 \caption{Differential Higgs boson production cross section as a function of the reconstructed \pth{}, before applying the unfolding procedure. Data values after the background subtraction are shown together with the statistical and the systematic uncertainties, determined propagating the sources of uncertainty through the fit procedure. The line and dashed area represent the SM theoretical estimates in which the acceptance of the dominant ggH contribution is modelled by \textsc{Powheg V1}. The sub-dominant component of the signal is denoted as XH=VBF+VH, and is shown with the cross filled area separately.}\label{fig:pre_unfolding}
