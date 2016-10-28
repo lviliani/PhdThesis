@@ -2,32 +2,46 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:SM}
 
-The Standard Model of Particle Physics (SM) is the theory that describes all fundamental constituents of matter and their interactions~\cite{Halzen:1984mc}. It is a renormalisable quantum field theory based on a $\mathrm{SU(3)_c \otimes SU(2)_L \otimes U(1)_Y}$ local gauge symmetry, and is capable to provide a quantitative description of three of the four interactions in nature: electromagnetism, weak interaction and strong nuclear force. 
+The Standard Model of Particle Physics is the theory that describes all fundamental constituents of matter and their interactions~\cite{Halzen:1984mc}. It is a renormalisable quantum field theory based on a $\mathrm{SU(3)_c \otimes SU(2)_L \otimes U(1)_Y}$ local gauge symmetry, and is capable to provide a quantitative description of three of the four interactions in nature: electromagnetism, weak interaction and strong nuclear force. 
 
 According to the SM, the ordinary matter is made up of spin-$1/2$ particles, denoted as fermions. The fermions are subdivided into two classifications of elementary particles: leptons and quarks. Both classes consist of six particles, grouped into three doublets, called generations. Additional three doublets for each class are composed of leptons and quarks antiparticles. A charged particle with electric charge $Q=-1$, either the electron e, the muon $\mu$ or the tauon $\tau$, and a neutral particle, the corresponding neutrino, compose the following lepton generations, ordered according to an increasing mass hierarchy:
 
 \begin{equation}
 \label{eq:leptons}
-\begin{pmatrix} e^-       \\ \nu_e      \end{pmatrix}, \quad
+\begin{pmatrix} \rm e^-       \\ \nu_{\rm e}      \end{pmatrix}, \quad
 \begin{pmatrix} \mu^-     \\ \nu_{\mu}  \end{pmatrix}, \quad
 \begin{pmatrix} \tau^-    \\ \nu_{\tau} \end{pmatrix}  \quad .
 \end{equation}
 
 Charged leptons can interact via the electromagnetic and weak force, while neutrinos, that are assumed to be massless, can interact only through the weak interaction.
 
-Similarly, the quarks are organized in pairs composed of a particle with $Q=+2/3$, \emph{up} (\emph{u
-}), \emph{charm} (\emph{c}) and \emph{top} (\emph{t}) quarks, and another particle with $Q=-1/3$, \emph{down} (\emph{d}), \emph{strange} (\emph{s}) and \emph{bottom} (\emph{b}) quarks:
+Similarly, the quarks are organized in pairs composed of a particle with $Q=+2/3$, \emph{up} (u), \emph{charm} (c) and \emph{top} (t) quarks, and another particle with $Q=-1/3$, \emph{down} (d), \emph{strange} (s) and \emph{bottom} (b) quarks:
 
 \begin{equation}
 \label{eq:quarks}
-\begin{pmatrix} u       \\ d      \end{pmatrix}, \quad
-\begin{pmatrix} c       \\ s      \end{pmatrix}, \quad
-\begin{pmatrix} t       \\ b      \end{pmatrix}  \quad .
+\begin{pmatrix} \rm u       \\ \rm d      \end{pmatrix}, \quad
+\begin{pmatrix} \rm c       \\ \rm s      \end{pmatrix}, \quad
+\begin{pmatrix} \rm t       \\ \rm b      \end{pmatrix}  \quad .
 \end{equation}
 
-As well as leptons, quarks can interact via the electromagnetic and weak forces, but also via the strong interaction, responsible of their confinement within hadrons. In fact, free quarks are not observed in nature, but they bind together forming two categories of hadrons: mesons, bound states of a quark q and an anti-quark $\mathrm{\bar{q}}$, and baryons, bound states of three quarks.
+As well as leptons, quarks can interact via the electromagnetic and weak force, but also through the strong interaction, responsible of their confinement within hadrons. In fact, free quarks are not observed in nature, but they bind together forming two categories of hadrons: mesons, bound states of a quark q and an anti-quark $\mathrm{\bar{q}}$, and baryons, bound states of three quarks.
 
 In the SM the interaction between elementary particles occurs through the exchange of spin-1 particles, known as bosons, which identify the fundamental forces. The photon $\gamma$ is the mediator of the electromagnetic interaction, the $\mathrm{W^{\pm}}$ and Z bosons are the mediators of the weak interaction, while the strong force is mediated by eight gluons g. Electromagnetic and weak interactions are actually the manifestations of the same fundamental interaction, the electroweak force.
+
+
+%%% EWK
+\subsection{The electroweak interaction}
+
+The theory of electroweak interaction was formulated in the 1960s by S. L. Glashow, A. Salam and S. Weinberg~\cite{Glashow:1961tr,Weinberg:1967tq} as an $\mathrm{SU(2) \otimes U(1)}$ local gauge theory.
+%In 1957 the experiments lead by Madame Wu~\cite{Wu:1957my} and Garwin-Lederman-Weinrich~\cite{Garwin:1957hc} confirmed that the parity symmetry is maximally violated for weak charged current interactions, proving that only left-handed particles or right-handed antiparticles are involved in these interactions.
+
+The Lagrangian density governing the electroweak interaction is invariant under gauge transformations of the $\mathrm{SU(2)_L\otimes U(1)_Y}$ symmetry group. The $\mathrm{SU(2)_L}$ group refers to the weak isospin charge $I$, while $\mathrm{U(1)_Y}$ to the weak hypercharge $Y$, which are connected to the charge Q by the following equation:
+
+\begin{equation}
+Y = 2(Q - I_3) \quad,
+\end{equation}
+
+\noindent where $I_3$ represents the third component of the weak isospin. According to the Noether theorem, the $\mathrm{SU(2)_L}$ invariance of the theory leads to the existence of three conserved currents, $J_\mu^\pm$ and $J_\mu^3$, which constitute an isospin triplet of weak current. The two currents $J_\mu^\pm$ represent the weak charged current interactions, which describe the interaction between fermions that are mediated by the charged $\mathrm{W^\pm}$ bosons. These currents only involve left-handed particles or right-handed anti-particles, in accordance with the fact that the parity symmetry is maximally violated for weak charged current interactions, as confirmed by the experiments of Madame Wu~\cite{Wu:1957my} and Garwin-Lederman-Weinrich~\cite{Garwin:1957hc} in 1957.
 
 Local gauge symmetries naturally lead to the presence of gauge bosons, the exchange particles mediators of the fundamental interactions. The symmetry requires these gauge bosons to be massless, which is unproblematic for photons and gluons, but in drastic contrast to the known masses of the Z and $\mathrm{W^\pm}$ bosons, which are $m_\mathrm{Z} = 91.1876 \pm 0.0021$\GeV and $m_\mathrm{W} = 80.385 \pm 0.015$\GeV, respectively. Moreover, the maximally parity violating structure of the weak charged currents also breaks local gauge invariance for all massive fermions, due to their coupling to the W boson. This leads to the apparent antagonism that, while the $\mathrm{SU(2)_L \otimes U(1)_Y}$ gauge symmetry does describe the coupling structure of the electroweak force, at the same time it seems to contradict the fact that the W and Z bosons, and all fermions have a non-vanishing mass. 
 
@@ -35,4 +49,9 @@ The proposed solution to this problem is the mechanism of \emph{spontaneous symm
 %This leads to the extension of the electroweak Lagrangian density with a potential term that has a minimum in correspondence to a degenerate state of the Higgs field. 
 
 During the past decades the predictions of the SM have been confirmed by experimental results with outstanding precision, and in 2012 the discovery of a new boson with a mass of about 125\GeV, consistent with the predicted Higgs boson was announced by the ATLAS and CMS experiments at CERN.
+
+%% Higgs couplings
+
+
+%%% QCD
 

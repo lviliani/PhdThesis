@@ -12,7 +12,7 @@
 \usepackage{fancyhdr}
 \usepackage{csquotes}
 \usepackage[english]{babel}
-\usepackage{hyperref}
+\usepackage[pdftex, colorlinks=false, breaklinks=true]{hyperref}
 \usepackage[nottoc]{tocbibind}
 \usepackage{amsmath}
 \usepackage{booktabs}
@@ -56,33 +56,22 @@
 \newcommand{\fb}{\ensuremath{\mathrm{fb}}\xspace}
 \newcommand{\pb}{\ensuremath{\mathrm{pb}}\xspace}
 \newcommand{\ifb}{\ensuremath{\,\mathrm{fb^{-1}}}\xspace}
-\newcommand{\ipb}{\ensuremath{\mathrm{pb^{-1}}}\xspace}
 \newcommand{\WW}{\ensuremath{\mathrm{WW}}\xspace}
-\newcommand{\W}{\ensuremath{\mathrm{W}}\xspace}
-\newcommand{\F}{\ensuremath{\cmsSymbolFace{F}}}
-\newcommand{\V}{\ensuremath{\cmsSymbolFace{V}}\xspace}
-\newcommand{\VVV}{\cmsSymbolFace{VVV}\xspace}
-\newcommand{\Wjets}{\ensuremath{\PW\text{+jets}}\xspace}
 \newcommand{\X}{\ensuremath{\cmsSymbolFace{X}}\xspace}
 \newcommand{\delphill}{\ensuremath{\Delta\phi_{\ell\ell}}}
 \newcommand{\delphillmet}{\ensuremath{\Delta\phi(\ell\ell,\VEtmiss)}}
 \newcommand{\dyll}{\ensuremath{Z/\gamma^*\to \ell^+\ell^-}\xspace}
 \newcommand{\dymm}{\ensuremath{Z/\gamma^*\to\Pgmp\Pgmm}}
-\newcommand{\dytt}{\ensuremath{Z/\gamma^* \to\tau^+\tau^-}}
+\newcommand{\dytt}{\ensuremath{Z/\gamma^* \to\tau^+\tau^-}\xspace}
 \newcommand{\jp}{\ensuremath{J^{P}}\xspace}
 \newcommand{\mll}{\ensuremath{m_{\ell\ell}}\xspace}
 \newcommand{\mt}{\ensuremath{m_\mathrm{T}}\xspace}
 \newcommand{\mti}{\ensuremath{m_\mathrm{T}^\mathrm{i}}\xspace}
-\newcommand{\psvectorKD}{\ensuremath{\mathcal{D}_{1^-}}\xspace}
 \newcommand{\ptl}{\ensuremath{p_\perp^{\ell}}\xspace}
 \newcommand{\ptll}{\ensuremath{\pt^{\ell\ell}}\xspace}
 \newcommand{\MET}{\ensuremath{E_\mathrm{T}^\mathrm{\,miss}}\xspace}
 \newcommand{\ptmiss}{\ensuremath{\vec{p}_\mathrm{T}^\mathrm{\,miss}}\xspace}
 \newcommand{\qq}{\ensuremath{\Pq\Pq}\xspace}
-\newcommand{\superKD}{\ensuremath{\mathcal{D}_\text{bkg}} }
-\newcommand{\tw}{\ensuremath{\cPqt\PW}\xspace}
-\newcommand{\vectorKD}{\ensuremath{\mathcal{D}_{1^+}} }
-\newcommand{\wgamma}{\ensuremath{\PW\gamma}\xspace}
 \newcommand{\mjj}{\ensuremath{m_{jj}}\xspace}
 \newcommand{\pt}{\ensuremath{p_\mathrm{T}}\xspace}
 \newcommand{\pth}{\ensuremath{p_\mathrm{T}^\mathrm{H}}\xspace}
@@ -108,15 +97,32 @@
         \renewcommand{\sectionmark}[1]{\markright{\thesection~{##1}}}
 }
 
-
-
 \pdfinfo{%
   /Title    (PhD Thesis)
   /Author   (Lorenzo Viliani)
 }
 
-\bibliography{PhDThesis}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareSourcemap{
+ \maps[datatype=bibtex,overwrite=true]{
+  \map{
+    \step[fieldsource=Collaboration, final=true]
+    \step[fieldset=usera, origfieldval, final=true]
+  }
+ }
+}
+
+\renewbibmacro*{author}{%
+  \iffieldundef{usera}{
+    \printnames{author}
+  }{
+    \printfield{usera}
+  }
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{PhDThesis}
 
 \title{Measurements of the Higgs boson decay to $\mathrm{W^+ W^-}$ with the CMS detector}
 \author{Lorenzo Viliani}
@@ -129,7 +135,7 @@
 
 \pagestyle{MyStyle}
 
-\layout
+%\layout
 %\extrafloats{100}
 %\setspacing{single}
 \linespread{1}
@@ -158,8 +164,8 @@
 \input{Chapter5/chapter5}
 \cleardoublepage
 \input{Chapter6/chapter6}
-\cleardoublepage
-\input{Chapter7/chapter7}
+%\cleardoublepage
+%\input{Chapter7/chapter7}
 \cleardoublepage
 \input{Summary.tex}
 \cleardoublepage

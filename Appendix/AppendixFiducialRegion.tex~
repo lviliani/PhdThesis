@@ -1,7 +1,8 @@
-\section{Fiducial region definition and optimization}
+\chapter{Fiducial region definition and optimization}
 \label{app:fiducial_region}
+\thispagestyle{empty}
 
-The fiducial region must be chosen in such a way to be as close as possible to the selections applied in the analysis, in order to reduce the model dependece in the extrapolation step. That means that for optimizing the fiducial volume definition, the efficiency has to be maximized. Another parameter entering the game is the number of fake events, in other words the number of reconstructed events which do not belong to the fiducial phase space. This parameter should instead be as small as possible. Even if we have to observe the trend of these two quantities as a function of \pth, we can maximize the ratio between the overall efficiency and the overall fake rate as a proxy for establishing the ``goodness'' of the fiducial region.
+The generator level fiducial phase space definition must be chosen in order to closely match the selections applied in the analysis at the reconstructed level, in order to reduce the model dependence in the extrapolation step. This means that, for optimizing the fiducial phase space definition, the efficiency $\varepsilon_\mathrm{fid}$ (see~\ref{sec:fid_space}) has to be maximized. Another parameter playing an important role is the number of out-of-fiducial signal events (also called fakes), $f_\mathrm{out-of-fid}$, in other words the number of reconstructed events which do not belong to the fiducial phase space. This parameter should instead be as small as possible. A simplistic way to improve the fiducial phase space definition is to maximize the ratio between the overall efficiency and out-of-fiducial rate.
 
 Several different fiducial region definitions were tested and the results show that:
 \begin{itemize}

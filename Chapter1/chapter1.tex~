@@ -1,16 +1,15 @@
 \chapter{Physics at the LHC}\label{chap1}
 \thispagestyle{empty}
 
-In this chapter the Standard Model of particle physics is briefly described, in particular the main characteristics of the electroweak and strong interactions are discussed, as well as the machanism of the electroweak symmetry breaking.
-In addition, the phenomenology of the proton-proton interactions is described and the main features of the Monte Carlo simulation techniques are given.
-Eventually, an overview of the Higgs boson physics from an experimental point of view is reported.
+In this chapter the Standard Model (SM) of particle physics is briefly described, in particular the main characteristics of the electroweak and strong interactions are discussed, as well as the mechanism of the electroweak symmetry breaking. Afterwards, few models that provide a simple extension of the SM Higgs sector are briefly described.
+In addition, the phenomenology of Higgs boson production at LHC is described, focusing on its kinematic properties and, in particular, on the \hww decay channel. An overview of the main features of the Monte Carlo simulation techniques for the Higgs boson production are also given, as well as a brief report of the Higgs boson highlights from the experiments.
+
+\noindent Unless otherwise stated, natural units $\hslash=c=1$ are used throughout this work.
 
 \input{Chapter1/SM.tex}
 %\input{Chapter1/EW.tex}
 %\input{Chapter1/Higgs.tex}
 \input{Chapter1/QCD.tex}
 \input{Chapter1/BSM.tex}
-%\input{Chapter1/ppInt.tex}
-%\input{Chapter1/MC.tex}
 \input{Chapter1/HiggsPheno.tex}
 \input{Chapter1/HiggsExp.tex}
