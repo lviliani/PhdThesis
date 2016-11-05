@@ -10,32 +10,34 @@ Jets are defined through sequential, iterative clustering algorithms that combin
 \begin{itemize}
 \item \emph{Infrared safety}: infrared singularities should not appear in the perturbative calculations and the solutions of the algorithm should be insensitive to soft radiation in the event;
 \item \emph{Collinear safety}: collinear singularities should not appear in the perturbative calculations and jets should be insensitive to collinear radiation in the event;
-\item \emph{Invariance under boosts}: the solutions of the algorithm should be the same independently of boosts in the longitudinal direction. This is particularly important for pp colliders, where the centre-of-mass of the individual proton-proton collisions is typically boosted along the beam direction;
+\item \emph{Invariance under boosts}: the solutions of the algorithm should be the same independently of boosts in the longitudinal direction. This is particularly important for hadron colliders, where the centre-of-mass of the individual parton-parton collisions is typically boosted along the beam direction;
 \item \emph{Order independence}: the algorithm should find the same jets at parton, particle and detector level;
 \item \emph{Straightforward implementation}: the algorithm should be straightforward to implement in perturbative calculations.
 \end{itemize}
-The ideal algorithm should also follow some experimental attributes. Among them, the performance of the algorithm should be as independent as possible of the detector that provides the data, the algorithm should not amplify the inevitable effects of resolution smearing and angle bias and should not be strongly affected by pile up and high beam luminosities. Furthermore, the algorithm should be easy to implement, efficient to identify all possible jet candidates and should keep at an acceptable level the necessary computing resources.
+The ideal algorithm should also follow some experimental attributes. Among them, the performance of the algorithm should be as independent as possible of the detector that provides the data, the algorithm should not amplify the inevitable effects of resolution smearing and angle bias and should not be strongly affected by pile up and high beam luminosities. Furthermore, the algorithm should be easy to implement, efficient to identify all possible jet candidates and should keep the necessary computing resources at an acceptable level.
 
-Two main classes of jet clustering algorithms can be defined. The first one consists in the ``cone'' recombination, where jets are reconstructed associating together particles whose trajectories lie within a cone of radius $\Delta R$ in the $\eta$--$\phi$ plane. The second class of algorithms uses the sequential recombination scheme, that iteratively recombine the closest pair of particles according to some distance measure. The standard algorithms used by CMS are the SISCone, which is a ``cone'' recombination algorithm, and the $k_t$, anti-$k_t$ and \emph{Cambridge Aachen} (CA) algorithms, which instead belong to the sequential recombination class.
+Two main classes of jet clustering algorithms may be defined. The first one consists in the ``cone'' recombination, where jets are reconstructed associating together particles whose trajectories lie within a cone of radius $\Delta R$ in the $\eta$--$\phi$ plane. The second class of algorithms uses the sequential recombination scheme, that iteratively recombine the closest pair of particles according to some distance measure.
+
+The standard algorithms used by CMS are the SISCone, which is a ``cone'' recombination algorithm, and the $k_t$, anti-$k_t$ and \emph{Cambridge Aachen} (CA) algorithms, which instead belong to the sequential recombination class.
 All the analyses presented in Secs.~\ref{chap4}, \ref{chap5} and \ref{chap6} make use of the sequential recombination scheme, in particular of the anti-$k_t$ algorithm with $R=0.4$, which is briefly described in the following.
 
-The $k_t$, anti-$k_t$ and CA algorithms are infrared and collinear safe algorithms characterized by the introduction of two definitions of distance: $d_{ij}$, the distance the two objects $i$ and $j$, and $d_{iB}$, the distance between the object $i$ and the beam. These distances are defined by the following equations:
+The $k_t$, anti-$k_t$ and CA algorithms are infrared and collinear safe algorithms characterized by the introduction of two definitions of distance: $d_{ij}$, the distance between the two objects $i$ and $j$, and $d_{iB}$, the distance between the object $i$ and the beam. These distances are defined by the following equations:
 \begin{equation}\label{eq:jetalgo}
 \begin{split}
 d_{ij} &= min\left(k_{ti}^{2p}, k_{tj}^{2p} \right) \frac{\Delta_{ij}^2}{R^2} \quad,\\
 d_{iB} &= k_{ti}^{2p} \quad,
 \end{split}
 \end{equation}
-where $\Delta_{ij} = (y_i - y_j)^2 + (\phi_i - \phi_j)^2$ and $k_ti$, $y_i$ and $\phi_i$ are the transverse momentum, rapidity and azimuthal angle of the particle $i$, respectively. In these formulas, $R$ represents the radial parameter and $p$ is a parameter that is 1 for $k_t$, 0 for CA and $-1$ for anti-$k_t$ algorithm. The algorithm proceeds as follows:
+where $\Delta_{ij} = (y_i - y_j)^2 + (\phi_i - \phi_j)^2$ and $k_{ti}$, $y_i$ and $\phi_i$ are the transverse momentum, rapidity and azimuthal angle of the particle $i$, respectively. In these formulas, $R$ represents the radial parameter and $p$ is a parameter that is 1 for $k_t$, 0 for CA and $-1$ for anti-$k_t$ algorithm. The algorithm proceeds as follows:
 \begin{itemize}
-\item the distances $d_{ij}$ are calculated for all pair of particle $i,j$ and the distances $d_{iB}$ are calculated for each particle $i$, according to Eq.~\eqref{eq:jetalgo};
+\item the distances $d_{ij}$ are calculated for all pairs of particles $i,j$ and the distances $d_{iB}$ are calculated for each particle $i$, according to Eq.~\eqref{eq:jetalgo};
 \item the smallest distance, which could be either of type $d_{ij}$ or $d_{iB}$, is identified;
 \item if the smallest distance is a $d_{ij}$, the particles $i$ and $j$ are combined into a single new particle summing their four-momenta and the algorithm restarts from the first step;
 \item otherwise, if it is a $d_{iB}$, $i$ is declared to be a final state jet and the algorithm returns to the first step;
 \item the procedure is repeated until no particles are left.
 \end{itemize}
 
-The physical difference between the three algorithms is the momentum weighting. For the $k_t$ algorithm, the weighting proportional to $k_t^2$ implies that jets are reconstructed starting from particles with low transverse momentum. Moreover this algorithm produces jets with irregular borders, thereby complicating the correction for effects such as pile up. For the CA algorithm there is no transverse momentum weighting, and the particles are merged following just an angular approach, based on the distance $\Delta_{ij}$. Also this algorithm leads to jets with irregular borders. Finally, the anti-$k_t$ algorithm, uses a weighting proportional to $1/k_t^2$, favouring the merging of high transverse momentum particles. In this case the jets grow around the particles with highest transverse momenta and the jets have a circular shape. 
+The physical difference between the three algorithms is the momentum weighting. For the $k_t$ algorithm, the weighting proportional to $k_t^2$ implies that jets are reconstructed starting from particles with low transverse momentum. Moreover this algorithm produces jets with irregular borders, thereby complicating the correction for effects such as pile up. For the CA algorithm there is no transverse momentum weighting, and the particles are merged following just an angular approach, based on the distance $\Delta_{ij}$. Also this algorithm leads to jets with irregular borders. Finally, the anti-$k_t$ algorithm uses a weighting proportional to $1/k_t^2$, favouring the merging of high transverse momentum particles. In this case the jets grow around the particles with highest transverse momenta and the jets have a circular shape. 
 
 Jets reconstructed with different algorithms starting from the same set of simulated particles are shown in Fig.~\ref{fig:jets}.
 
@@ -61,28 +63,28 @@ where $\pt'$ is the jet \pt after applying the offset correction and $\pt''$ is 
 
 \subsubsection{Offset correction}
  
-The offset correction purpose is to estimate and subtract, on average, the energy contribution that is not associated with the hard scattering in the event. The energy excess includes contributions from electronics noise and pile up. The approach followed for the estimation of the offset correction is known as \emph{Jet Area Method}. For each event, an average \pt-density per unit area, $\rho$, is estimated, characterizing the soft jet activity. This \pt-density represents the combination of the underlying event, the electronics noise and the pile up effects. 
+The offset correction purpose is to estimate and subtract the average energy contribution that is not associated with the hard scattering in the event. The approach followed for the estimation of the offset correction is known as \emph{Jet Area Method}. For each event, an average \pt-density per unit area, $\rho$, is estimated, characterizing the soft jet activity. This \pt-density represents the combination of the underlying event, the electronics noise and the pile up effects. 
 The two latter components contaminate the hard jet energy measurement and need to be
 corrected for with the offset correction. The key element for this approach is the jet area $A_j$.
-A very large number of infinitely soft four-momentum vectors (soft enough not to change the properties of the true jets) are artificially added in the event and clustered by the jet algorithm together with the true jet components. The extent of the region in the $\eta$--$\phi$ space occupied by the soft particles clustered in each jet defines the active jet area. The \pt-density $\rho$ is calculated with the $k_t$ algorithm with a distance parameter $R=0.6$. The quantity $\rho$ is estimated event by event as the median of the distribution of the variable $p_{\mathrm{T}j}/A_j$, where $j$ runs over all jets in the event, and is not sensitive to the presence of hard jets in the event. At the detector level, the measured density $\rho$ is the convolution of the true particle-level activity (underlying event, pile-up) with the detector response to the various particle types. The event-by-event and jet-by-jet offset correction can thus be defined as:
+A very large number of infinitely soft four-momentum vectors (soft enough not to change the properties of the true jets) are artificially added in the event and clustered by the jet algorithm together with the true jet components. The extent of the region in the $\eta$--$\phi$ space occupied by the soft particles clustered in each jet defines the active jet area. The \pt-density $\rho$ is calculated with the $k_t$ algorithm with a distance parameter $R=0.6$. The quantity $\rho$ is estimated event by event as the median of the distribution of the variable $p_{\mathrm{T}j}/A_j$, where $j$ runs over all jets in the event, and is not sensitive to the presence of hard jets. At detector level, the measured density $\rho$ is the convolution of the true particle-level activity (underlying event, pile up) with the detector response to the various particle types. Therefore, the event-by-event and jet-by-jet offset correction can be defined as:
 
 \begin{equation}
 C_\mathrm{offset}(\pt^\mathrm{raw},A_j,\rho) = 1 - \frac{\left( \rho - \langle\rho_\mathrm{UE}\rangle \right)\cdot A_j}{\pt^\mathrm{raw}}\quad .
 \end{equation}
 
-In the formula above, $\langle\rho_\mathrm{UE}\rangle$ represents the average \pt-density component due to the underlying event and electronics noise, and is measured in events with exactly one reconstructed primary vertex, i.e. no pile up.
+\noindent In the formula above, $\langle\rho_\mathrm{UE}\rangle$ represents the average \pt-density component due to the underlying event and electronics noise, and is measured in events with exactly one reconstructed primary vertex, i.e. no pile up.
 
-An additional pile up subtraction method that is used in CMS is called \emph{Charged Hadron Subtraction}. This method makes use of PF jets and exploits the excellent CMS tracking capabilities to identify and remove charged hadrons inside jets, which are known to originate from pile up vertices. This is a particle-by-particle method that is applied to jets before calculating the offset correction.
+An additional pile up subtraction method that is used in CMS is called \emph{Charged Hadron Subtraction}. This method makes use of PF jets and exploits the excellent CMS tracking capabilities to identify and remove charged hadrons inside jets that are known to originate from pile up vertices. This is a particle-by-particle method that is applied to jets before calculating the offset correction.
 
 \subsubsection{MC calibration correction}
 
-The MC calibration is based on the simulation and corrects the energy of the reconstructed jets such that it is equal on average to the energy of the generated jets. In order to evaluate this correction, simulated QCD events are generated and then processed through the CMS detector simulation, based on the \textsc{Geant4} software. The jet reconstruction in simulation is identical to the one applied to the data. Each reconstructed jet is spatially matched, in the $\eta$--$\phi$ space, to a generated jet by requiring $\Delta R < 0.25$. In each bin of the generated jet transverse momentum $\pt^\mathrm{gen}$, the response variable $\mathcal{R}=\pt^\mathrm{reco}/\pt^\mathrm{gen}$ and the reconstructed jet transverse momentum $\pt^\mathrm{reco}$, are saved. The average correction in each bin is therefore defined as:
+The MC calibration is based on simulation and corrects the energy of the reconstructed jets such that it is equal on average to the energy of the generated jets. In order to evaluate this correction, simulated QCD events are generated and then processed through the CMS detector simulation, based on the \textsc{Geant4} software. The jet reconstruction in simulation is identical to the one applied to the data. Each reconstructed jet is spatially matched, in the $\eta$--$\phi$ space, to a generated jet by requiring $\Delta R < 0.25$. In each bin of the generated jet transverse momentum $\pt^\mathrm{gen}$, the response variable $\mathcal{R}=\pt^\mathrm{reco}/\pt^\mathrm{gen}$ and the reconstructed jet transverse momentum $\pt^\mathrm{reco}$, are saved. The average correction in each bin is therefore defined as:
 
 \begin{equation}
 C_\mathrm{MC}(\pt^\mathrm{reco}) = \frac{1}{\langle R \rangle} \quad,
 \end{equation}
 
-and is expressed as a function of the average reconstructed jet \pt, $\langle \pt^\mathrm{reco} \rangle$.
+\noindent and is expressed as a function of the average reconstructed jet \pt, $\langle \pt^\mathrm{reco} \rangle$.
 
 \subsubsection{Relative jet energy scale}
 
@@ -90,11 +92,11 @@ The goal of the relative jet energy scale correction is to make the jet response
 
 \subsubsection{Absolute jet energy scale}
 
-The goal of the absolute jet energy scale correction is to make the jet response at versus \pt. The absolute jet energy response is measured in the reference region $|\eta|<1.3$ with the \emph{Missing Transverse Energy Projection Fraction} (MPF) method~\cite{Abbott:1998xw}, using $\gamma+\mathrm{jets}$ and Z$+\mathrm{jets}$ events. The method is used to estimate the absolute jet energy correction and is based on the fact that $\gamma+\mathrm{jets}$ and Z$+\mathrm{jets}$ events have no intrinsic \MET and that, at parton level, the $\gamma$ and Z boson are perfectly balanced by the hadronic recoil in the transverse plane.
+The goal of the absolute jet energy scale correction is to make the jet response flat versus \pt. The absolute jet energy response is measured in the reference region $|\eta|<1.3$ with the \emph{Missing Transverse Energy Projection Fraction} (MPF) method~\cite{Abbott:1998xw}, using $\gamma+\mathrm{jets}$ and Z$+\mathrm{jets}$ events. The method is used to estimate the absolute jet energy correction and is based on the fact that $\gamma+\mathrm{jets}$ and Z$+\mathrm{jets}$ events have no intrinsic \MET and that, at parton level, the $\gamma$ and Z boson are perfectly balanced by the hadronic recoil in the transverse plane.
 
 \subsubsection{Jet energy uncertainties}
 
-The uncertainties in the jet energy estimation arise from several different sources. Generally these can be categorized as follows:
+The uncertainties in the jet energy estimation arise from several sources. Generally these can be categorized as follows:
 \begin{itemize}
 \item physics modelling in MC such as showering, underlying event, etc.;
 \item MC modelling of true detector response and properties;

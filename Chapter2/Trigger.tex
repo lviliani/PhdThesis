@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:Trigger}
 
-The LHC can provide proton-proton interactions at a crossing frequency of 40\,MHz and, for each bunch crossing, several collisions can occur (approximately 20 at the nominal instantaneous luminosity). Since it is impossible to store and process the large amount of data associated with the resulting large number of events, a drastic rate reduction has to be achieved. In fact the speed at which data can be written to mass storage is limited and, moreover, the vast majority of events produced is not interesting for physics analyses, because it involves low transverse momentum interactions (also called \emph{minimum bias events}). The task of reducing this rate is accomplished by the CMS trigger system, which is the start of the physics event selection. CMS makes use of a two-stage trigger system, consisting of a \emph{Level-1} trigger (L1)~\cite{Dasu:2000ge} and a \emph{High Level Trigger} (HLT)~\cite{Cittolin:578006}.
+The LHC can provide proton-proton interactions at a crossing frequency of 40\,MHz and, for each bunch crossing, several collisions can occur (approximately 20 at the nominal instantaneous luminosity). Since it is impossible to store and process the large amount of data associated with the resulting large number of events, a drastic rate reduction has to be achieved. In fact the speed at which data can be written to mass storage is limited and, moreover, the vast majority of produced events is not interesting for physics analyses, because it involves low transverse momentum interactions (also called \emph{minimum bias events}). The task of reducing this rate is accomplished by the CMS trigger system, which represents the first step of the physics event selection. CMS makes use of a two-stage trigger system, consisting of a \emph{Level-1} trigger (L1)~\cite{Dasu:2000ge} and a \emph{High Level Trigger} (HLT)~\cite{Cittolin:578006}.
 
 Level-1 trigger runs on dedicated processors, and accesses coarse level granularity information from calorimetry and muon system. A L1 Trigger decision has to be taken for each bunch crossing within $3.2\,\mathrm{\mu s}$. Its task is to reduce the data flow from 40\,MHz to about 100\,kHz.
 
@@ -13,7 +13,7 @@ The main characteristics of the CMS trigger system are described in the followin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Level-1 trigger}
 
-The L1 trigger is responsible for the identification of electrons, muons, photons, jets and missing transverse energy. It is required to have a high and carefully understood efficiency. Its output rate and speed are limited by the readout electronics and by the performances of the data
+The L1 trigger is responsible for the identification of electrons, muons, photons, jets and missing transverse energy. It is required to have a high and carefully understood efficiency. Its output rate and speed are limited by readout electronics and performance of the data
 acquisition (DAQ) system~\cite{Cittolin:578006}. It consists of three main subsystems:
 \begin{itemize}
 \item L1 Calorimeter Trigger;
@@ -57,7 +57,7 @@ In order to take the decision, the L1 Global Trigger sorts the ranked objects pr
 \subsection{The high level trigger (HLT)}
 
 The High Level Trigger is designed to reduce the L1 output rate down to about 1000\,$\mathrm{events/s}$, which is the amount that will be written to mass storage. HLT code runs on commercial processors and performs reconstruction using the information from all sub-detectors. Events passing
-the HLT are stored on local disk or in CMS Tier 0\footnote{The Worldwide LHC Computing Grid (WLCG) is composed of four levels, or ``Tiers'', identified with numbers 0, 1, 2 and 3. Each Tier is made up of several computer centres and provides a specific set of services; they process, store and analyse all the data from the Large Hadron Collider (LHC). Tier 0 is the CERN Data Centre. All of the data from the LHC pass through this central hub. Tier 0 distributes the raw data and the reconstructed output to Tier 1's, and reprocesses data when the LHC is not running.}. 
+the HLT are stored on local disks or in CMS Tier 0\footnote{The Worldwide LHC Computing Grid (WLCG) is composed of four levels, or ``Tiers'', identified with numbers 0, 1, 2 and 3. Each Tier is made up of several computer centres and provides a specific set of services; they process, store and analyse all the data from the Large Hadron Collider (LHC). Tier 0 is the CERN Data Centre. All of the data from the LHC pass through this central hub. Tier 0 distributes the raw data and the reconstructed output to Tier 1's, and reprocesses data when the LHC is not running.}. 
 
 Data read from sub-detectors are assembled by a builder unit and then assigned to a switching network that dispatches events to the processor farm. The CMS switching network has a bandwidth of 1 Tbit/s. This simple design ensures maximum flexibility to the system, the only limitation being the total bandwidth and the number of processors. The system can be easily upgraded adding new processors or replacing the existing ones with faster ones as they become available. Since the algorithms have a fully software implementation, improvements to the algorithms can be easily implemented and do not require any hardware intervention.
 
@@ -68,7 +68,7 @@ in a virtually layered structure:
 \item Level 2.5: uses also the pixel information;
 \item Level 3: makes use of the full information from all the tracking detectors.
 \end{itemize}
-Each step reduces the number of events to be processed in the following step. The most computationally expensive tasks are executed in the Level 3; time consuming algorithms such as track reconstruction are only executed in the region of interest. Besides, since the ultimate precision is not required at a HLT level, track reconstruction is performed on a limited set of hits, and is stopped once the required resolution is achieved.
+Each step reduces the number of events to be processed in the following step. The most computationally expensive tasks are executed in the Level 3; time consuming algorithms such as track reconstruction are only executed in the region of interest. Besides, since the ultimate precision is not required at HLT level, track reconstruction is performed on a limited set of hits, and is stopped once the required resolution is achieved.
 
 
 

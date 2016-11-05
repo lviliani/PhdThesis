@@ -15,12 +15,11 @@ to make the ``true'' distribution of the variable of interest, which is obtained
 and event reconstruction. 
 
 These two distributions are used to calculate the detector response matrix $M$:
-
 \begin{equation}\label{eq:resp_matrix}
 R_{i}^{\rm {MC}} = \sum_{j=1}^{n} M_{ij}T_{j}^{\rm {MC}} \quad ,
 \end{equation}
 
-where $T^{\rm{MC}}$ and $R^{\rm{MC}}$ are two $n$-dimensional vectors
+\noindent where $T^{\rm{MC}}$ and $R^{\rm{MC}}$ are two $n$-dimensional vectors
 representing the distribution before and after event processing through CMS
 simulation and reconstruction. The dimension $n$ of the two vectors corresponds 
 to the number of bins in the distributions, equal to six in this analysis.
@@ -29,18 +28,17 @@ The goal of the unfolding procedure is to obtain the $T^{\rm{truth}}$ distributi
 $R^{\rm{observed}}$ distribution by inverting the matrix $M$.
 %To avoid the large variance and strong negative correlation between the neighbouring bins~\cite{Cowan:2002in}, 
 
-Given the finite data statistical accuracy, a simple inversion could lead to large fluctuations between bins in the unfolded result. In particular, if the off-diagonal elements of the response matrix are sizeable, the unfolded distribution has large variance and strong negative correlations between the neighbouring bins~\cite{Cowan:2002in}. Several unfolding methods with regularization are available in literature, such as a method based on the Bayes' theorem, which overcome  the unfolding instability using an iterative procedure~\cite{DAgostini:1994zf}.
+Given the finite data statistical accuracy, a simple inversion could lead to large fluctuations between bins in the unfolded result. In particular, if the off-diagonal elements of the response matrix are sizeable, the unfolded distribution has large variance and strong negative correlations between the neighbouring bins~\cite{Cowan:2002in}. Several unfolding methods with regularization are available in literature, such as a method based on the Bayes' theorem, which overcomes the unfolding instability using an iterative procedure~\cite{DAgostini:1994zf}.
 
 The unfolding procedure in this analysis relies on the Singular Value Decomposition (SVD)~\cite{Hocker:1995kb} method based on the Tikhonov regularization function. Such method introduces a regularization function that controls the smoothness of the distribution and depends generally on one regularization parameter, which can be controlled to achieve the desired degree of smoothness.
 The choice of the regularization parameter is particularly critical, and it should represent an optimal trade-off between taming the fluctuations in the unfolded result, and biasing the unfolded distribution.
 The main feature of this method is the use of the singular value decomposition of the response matrix, including an additional term to suppress the oscillatory component of the solution, i.e. the regularization term, which represents some \textit{a priori} knowledge of the final solution.
-The regularization parameter $k_\mathrm{reg}$ is chosen to obtain results that are robust against numerical instabilities and statistical fluctuations, following the prescription described in Ref.~\cite{Hocker:1995kb}. This prescription consists in the diagonalization of the response matrix using the SVD approach and in the subsequent calculation of the vector $\vec{d}$, whose values $d_i$ represent the measured distribution expressed in a specific base defined by the SVD decomposition. Plotting $log|d_i|$ as a function of $i$, where $i$ is related to the amount of regularization, one should obtain a curve that flattens out at some value of $i$. The regularization parameter corresponding to that value represents the optimal $k_\mathrm{reg}$ choice. The parameter obtained using this prescription is $k_\mathrm{reg} = 3$.
+The regularization parameter $k_\mathrm{reg}$ is chosen to obtain results that are robust against numerical instabilities and statistical fluctuations, following the prescription described in Ref.~\cite{Hocker:1995kb}. This prescription consists in the diagonalization of the response matrix using the SVD approach and in the subsequent calculation of the vector $\vec{d}$, whose values $d_i$ represent the measured distribution expressed in a specific base defined by the SVD decomposition. Plotting $\log|d_i|$ as a function of $i$, where $i$ is related to the amount of regularization, one should obtain a curve that flattens out at some value of $i$. The regularization parameter corresponding to that value represents the optimal $k_\mathrm{reg}$ choice. The parameter obtained using this prescription is $k_\mathrm{reg} = 3$.
 
 The detector response matrix is built as a two-dimensional histogram, with the generator-level \pth{} on the $y$ axis and the same variable after the reconstruction on the $x$ axis, using the same binning for both distributions.
 
 The resulting matrix, including all signal sources and normalized by row, is shown in Fig.~\ref{fig:matrix}(a).
-The diagonal bins correspond to the purity $P$, defined as the ratio of the number of events generated and reconstructed in a given bin, to the
-number of events generated in that bin. The same matrix, normalized by column, is shown in Fig.~\ref{fig:matrix}(b). In this case the diagonal bins correspond to the stability $S$, defined as the ratio of the number of events generated and reconstructed in a given bin, and the number of events reconstructed in that bin. The $S$ and $P$ parameters provide an estimate of the \pth resolution and migration effects, the main source being the limited resolution in the measurement of \MET.
+The diagonal bins correspond to the purity $P$, defined in Eq.\eqref{eq:purity}. The same matrix, normalized by column, is shown in Fig.~\ref{fig:matrix}(b). In this case the diagonal bins correspond to the stability $S$, defined as the ratio of the number of events generated and reconstructed in a given bin, and the number of events reconstructed in that bin. The $S$ and $P$ parameters provide an estimate of the \pth resolution and migration effects, the main source being the limited resolution in the measurement of \MET.
 
 \begin{figure}[htb]
 \centering
@@ -50,11 +48,11 @@ number of events generated in that bin. The same matrix, normalized by column, i
 \subfigure[Response matrix normalized by column]{
 \includegraphics[width=0.45\textwidth]{images/matrix_bycol_paper.pdf}
 }
-\caption{Response matrix normalized by row (a) and  by column (b) including all signal processes. The matrices are normalized either by row or by column in order to show the purity or stability respectively in diagonal bins.}\label{fig:matrix}
+\caption{Response matrix normalized by row (a) and  by column (b) including all signal processes. The matrices are normalized either by row or by column in order to show the purity or stability in diagonal bins.}\label{fig:matrix}
 \end{figure}
 
 Several tests are performed in order to validate the unfolding procedure. To estimate the uncertainty in the unfolding procedure due to the
-particular model adopted for building the response matrix, two independent gluon fusion samples are used, corresponding to two different generators: \textsc{Powheg V1} and \textsc{JHUGen} generators, both interfaced to \textsc{Pythia 6.4}.
+particular model adopted for building the response matrix, two independent ggH samples are used, corresponding to two different generators: \textsc{Powheg V1} and \textsc{JHUGen} generators, both interfaced to \textsc{Pythia 6.4}.
 The \textsc{JHUGen} generator sample is used to build the response matrix while the
 \textsc{Powheg V1} sample is used to build the \pth spectra at generator and reconstructed level. The reconstructed spectrum obtained using \textsc{Powheg V1} is then unfolded using the response matrix built with \textsc{JHUGen}, and the unfolded spectrum is compared to the \textsc{Powheg V1} spectrum at generator level. The result of this test shows good agreement between the two distributions.
 
@@ -81,10 +79,10 @@ From each pseudo-experiment the reconstructed \pth spectrum is obtained and then
 
 
 
-\subsection{Treatment of systematic uncertainties}\label{sec:uncunf}
+\subsection{Treatment of systematic uncertainties in the unfolding}\label{sec:uncunf}
 
-An important aspect of this analysis is the treatment of the systematic
-uncertainties and the error propagation through the unfolding procedure.
+An important aspect of this analysis is the treatment of systematic
+uncertainties and their propagation through the unfolding procedure.
 The sources of uncertainty are divided into three categories, depending
 on whether the uncertainty affects only the signal yield (type A), both the signal
 yield and the response matrix (type B), or only the response matrix (type C).
@@ -94,17 +92,14 @@ Type A uncertainties are extracted directly from the fit in the form of a covari
 matrix, which is passed to the unfolding tool as the covariance
 matrix of the measured distribution. The nuisance parameters belonging to this category
 are the background shape and normalization uncertainties.
-To extract the effect of type A uncertainties a dedicated fit is performed,
-fixing to constant all the nuisance parameters in the model, but type A nuisance parameters.
+To extract the effect of type A uncertainties a dedicated fit is performed fixing to constant all the nuisance parameters in the model but type A ones.
 The correlation matrix among the six signal strengths corresponding to the six \pth bins, including all type A uncertainties, is shown in Fig.~\ref{fig:typeA_corr}.
 The correlation cor($i$,$j$) of bins $i$ and $j$ is defined as:	
-
 \begin{equation}\label{eq:correlation}
 \mathrm{cor}(i,j) = \frac{ \mathrm{cov}(i,j) }{  s_{i}s_{j} } \qquad ,
 \end{equation} 
 
-where $\mathrm{cov}(i,j)$ is the covariance of bins $i$ and $j$, and ($s_{i}$,
-$s_{j}$) are the standard deviations of bins $i$ and $j$,  respectively.
+\noindent where $\mathrm{cov}(i,j)$ is the covariance of bins $i$ and $j$, and $s_{i}$, $s_{j}$ are the standard deviations of bins $i$ and $j$,  respectively.
 
 \begin{figure}[htb]
 \centering
@@ -114,15 +109,15 @@ $s_{j}$) are the standard deviations of bins $i$ and $j$,  respectively.
 
 The nuisance parameters belonging to the Type B class are the ones related to:
 \begin{itemize}
-\item b veto scale factor. It affects the signal and background templates
+\item b veto scale factor: it affects the signal and background templates
 by varying the number of events with jets that enter the selection. It also
-affects the response matrix because the reconstructed spectrum is harder or softer depending on the number of jets, which in turn depends on the veto. 
-\item lepton efficiency scale factor. It affects the signal and background
+affects the response matrix because the reconstructed spectrum is harder or softer depending on the number of jets, which in turn depends on the veto;
+\item lepton efficiency scale factor: it affects the signal and background
 template shape and normalization. It affects the response matrix by varying
 the reconstructed spectrum;
-\item \MET scale and resolution, which have an effect similar to the above;
-\item lepton scale and resolution. The effect is similar to the above;
-\item jet energy scale. It affects the signal and background template shape
+\item \MET scale and resolution: the effect is similar to the above;
+\item lepton scale and resolution: the effect is similar to the above;
+\item jet energy scale: it affects the signal and background template shape
 and normalization. It also affects the response matrix because, by varying the
 fraction of events with jets, the b veto can reject more or fewer events, thus
 making the reconstructed spectrum harder or softer.
@@ -140,7 +135,7 @@ source are built.
 The effects are propagated through the unfolding by building the corresponding variations of the response matrix and unfolding the
 measured spectra with the appropriate matrix.
 
-Type C uncertainties are related to the underlying assumption on the Higgs boson production mechanism used to extract the fiducial cross sections. These are evaluated using alternative response matrices that are obtained by varying the relative fraction of the VBF and ggH components within the experimental uncertainty, as given by the CMS combined measurement~\cite{Khachatryan:2014jba}.
+Type C uncertainties are related to the underlying assumption on the Higgs boson production mechanism used to extract the fiducial cross sections. These are evaluated using alternative response matrices that are obtained by varying the relative fraction of VBF and ggH components within the experimental uncertainty, as given by the CMS combined measurement~\cite{Khachatryan:2014jba}.
 Three different response matrices are built, corresponding to the nominal, scaled up, and scaled down
 VBF/ggH ratio. The nominal matrix assumes the SM VBF/ggH ratio, %with $\mu_{\mathrm{ggH}} = \mu_{\mathrm{VBF}} = 1$, 
 while up- and down-scaled matrices are constructed by varying the SM signal strengths within the
@@ -156,7 +151,7 @@ These three matrices are used to unfold the reconstructed spectrum with the nomi
 %The effect of each source of the uncertainty is quoted for each bin of \pth~in Table~\ref{table:values_and_uncertainties}.
 
 \begin{table}[htb]
-\caption{Effect of all the Type B uncertainties on the signal strengths of each bin. In the table are reported the signal strength variations corresponding to an up or down scaling of each nuisance. Uncertainties related to \MET and lepton resolution are single-sided, i.e. only an up variation is implemented.}\label{table:corr_syst}
+\caption{Effect of all the Type B uncertainties on the signal strengths of each bin. In the table are reported the signal strength variations corresponding to an up or down scaling of each nuisance parameter. Uncertainties related to \MET and lepton resolution are single-sided, i.e. only an up variation is implemented.}\label{table:corr_syst}
 \centering
 \footnotesize{
 \begin{tabular}{lcccccc}
