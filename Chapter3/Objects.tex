@@ -76,7 +76,7 @@ Another selection which is optimised for low-\pt muons coming from in flight dec
 \subsubsection{Muon isolation}
 One of the most powerful requirements to select prompt muons, as the ones produced from W or Z boson decays, and to reject muons produced by decays in flight, is the isolation. Indeed, prompt muons are expected to be isolated in the event, differently to non prompt muons that are generally produced within jets and characterized by many nearby particles.
 
-Muons commonly used to reconstruct the W or Z decays are thus required to pass an isolation requirement, which includes a pile up mitigation correction called ``$\Delta\beta$ correction''. This correction is needed to obtain a robust isolation definition that is less sensitive to the pile up contribution. Indeed, simultaneous interactions manifest themselves as a mean energy deposited over all the detector acceptance, which is not due to the particles produced in the primary events, thus spoiling the isolation measurement. The relative isolation variable, usually called \emph{PF relative isolation}, is defined as follows:
+Muons commonly used to reconstruct the W or Z decays are thus required to pass an isolation requirement, which includes a pile-up mitigation correction called ``$\Delta\beta$ correction''. This correction is needed to obtain a robust isolation definition that is less sensitive to the pile-up contribution. Indeed, simultaneous interactions manifest themselves as a mean energy deposited over all the detector acceptance, which is not due to the particles produced in the primary events, thus spoiling the isolation measurement. The relative isolation variable, usually called \emph{PF relative isolation}, is defined as follows:
 
 \begin{equation}\label{eq:isomu}
 I^{rel}_{\Delta\beta} = \left[  \sum_{ChH}\pt + max\left(0, \sum_{NH}\pt + \sum_{Ph}\pt - 0.5\sum_{ChHPU}\pt    \right)  \right]/\pt^\mathrm{muon} \quad .
@@ -132,13 +132,13 @@ conversion veto & yes & yes \\
 \end{table}
 
 \subsubsection{Electron isolation}
-Selected electrons are required to pass an isolation requirement that includes a pile up mitigation correction based on the electron effective catchment area, which is different in different $\eta$ ranges. The isolation variable is given by the following formula:
+Selected electrons are required to pass an isolation requirement that includes a pile-up mitigation correction based on the electron effective catchment area, which is different in different $\eta$ ranges. The isolation variable is given by the following formula:
 
 \begin{equation}
 I^{rel}_{EA~corrected} = \left[ \sum_{ChH}\pt + max\left( 0, \sum_{Ph}\pt + \sum_{NH}\pt - \rho EA \right) \right]/\pt^\mathrm{electron} \,
 \end{equation}
 
-where $ChH$ refers to charged hadrons, $Ph$ to photons, $NH$ to neutral hadrons, $\rho$ is the energy density due to pile up events, $E$ is the energy and $A$ is an effective area. The sums are performed inside a cone of radius $\Delta R < 0.4$ around the electron direction. The cut applied on this variable for the tight working point is $I^{rel}_{EA~corrected} < 0.04$.
+where $ChH$ refers to charged hadrons, $Ph$ to photons, $NH$ to neutral hadrons, $\rho$ is the energy density due to pile-up events, $E$ is the energy and $A$ is an effective area. The sums are performed inside a cone of radius $\Delta R < 0.4$ around the electron direction. The cut applied on this variable for the tight working point is $I^{rel}_{EA~corrected} < 0.04$.
 
 \subsubsection{Electron momentum scale and resolution}
 The electron momentum is estimated using a combination of the tracker and ECAL measurements. Before making the combination of the two measurements, the ECAL energy response is calibrated. Before doing the clustering, the energy response in individual crystals is calibrated and a correction factor is applied to take into account effects as energy leakage or changes in the crystal transparency induced by radiation~\footnote{The continuous monitoring of the crystals transparency is achieved by a laser-monitoring system.}. Then the supercluster energy is also corrected using an MVA technique, selecting Z$\to\mathrm{e^+ e^-}$ events in data and comparing to simulation. A detailed description of the techniques used to estimate the electron scale and resolution and the associated uncertainties is given in Ref.~\cite{Khachatryan:2015hwa}.
@@ -216,7 +216,7 @@ Jets are defined through sequential, iterative clustering algorithms that combin
 \item \emph{Order independence}: the algorithm should find the same jets at parton, particle and detector level;
 \item \emph{Straightforward implementation}: the algorithm should be straightforward to implement in perturbative calculations.
 \end{itemize}
-The ideal algorithm should also follow some experimental attributes. Among them, the performance of the algorithm should be as independent as possible of the detector that provides the data, the algorithm should not amplify the inevitable effects of resolution smearing and angle bias and should not be strongly affected by pile up and high beam luminosities. Furthermore, the algorithm should be easy to implement, efficient to identify all possible jet candidates and should keep at an acceptable level the necessary computing resources.
+The ideal algorithm should also follow some experimental attributes. Among them, the performance of the algorithm should be as independent as possible of the detector that provides the data, the algorithm should not amplify the inevitable effects of resolution smearing and angle bias and should not be strongly affected by pile-up and high beam luminosities. Furthermore, the algorithm should be easy to implement, efficient to identify all possible jet candidates and should keep at an acceptable level the necessary computing resources.
 
 Two main classes of jet clustering algorithms can be defined. The first one consists in the ``cone'' recombination, where jets are reconstructed associating together particles whose trajectories lie within a cone of radius $\Delta R$ in the $\eta$--$\phi$ plane. The second class of algorithms uses the sequential recombination scheme, that iteratively recombine the closest pair of particles according to some distance measure. The standard algorithms used by CMS are the SISCone, which is a ``cone'' recombination algorithm, and the $k_t$, anti-$k_t$ and \emph{Cambridge Aachen} (CA) algorithms, which instead belong to the sequential recombination class.
 All the analyses presented in Secs.~\ref{chap4}, \ref{chap5} and \ref{chap6} make use of the sequential recombination scheme, in particular of the anti-$k_t$ algorithm with $R=0.4$, which is briefly described in the following.
@@ -237,7 +237,7 @@ where $\Delta_{ij} = (y_i - y_j)^2 + (\phi_i - \phi_j)^2$ and $k_ti$, $y_i$ and 
 \item the procedure is repeated until no particles are left.
 \end{itemize}
 
-The physical difference between the three algorithms is the momentum weighting. For the $k_t$ algorithm, the weighting proportional to $k_t^2$ implies that jets are reconstructed starting from particles with low transverse momentum. Moreover this algorithm produces jets with irregular borders, thereby complicating the correction for effects such as pile up. For the CA algorithm there is no transverse momentum weighting, and the particles are merged following just an angular approach, based on the distance $\Delta_{ij}$. Also this algorithm leads to jets with irregular borders. Finally, the anti-$k_t$ algorithm, uses a weighting proportional to $1/k_t^2$, favouring the merging of high transverse momentum particles. In this case the jets grow around the particles with highest transverse momenta and the jets have a circular shape. 
+The physical difference between the three algorithms is the momentum weighting. For the $k_t$ algorithm, the weighting proportional to $k_t^2$ implies that jets are reconstructed starting from particles with low transverse momentum. Moreover this algorithm produces jets with irregular borders, thereby complicating the correction for effects such as pile-up. For the CA algorithm there is no transverse momentum weighting, and the particles are merged following just an angular approach, based on the distance $\Delta_{ij}$. Also this algorithm leads to jets with irregular borders. Finally, the anti-$k_t$ algorithm, uses a weighting proportional to $1/k_t^2$, favouring the merging of high transverse momentum particles. In this case the jets grow around the particles with highest transverse momenta and the jets have a circular shape. 
 
 Jets reconstructed with different algorithms starting from the same set of simulated particles are shown in Fig.~\ref{fig:jets}.
 
@@ -249,13 +249,13 @@ Jets reconstructed with different algorithms starting from the same set of simul
 
 \subsubsection{Jet energy correction}
 
-The purpose of jet energy correction is to relate, on average, the jet energy measured in the detector to the true energy of the corresponding final state particle or parton jet. The latter is obtained in simulation by clustering, with the same algorithm used for jets in the detector, all the stable particles, i.e. with $c\tau > 1$\,cm, produced in the event excluding neutrinos. This mismatch is mainly ascribable to the non uniform and linear response of the CMS calorimeters, to the electronics noise and to pile up. For this reason, CMS has developed a sequential procedure to calculate and apply the \emph{Jet energy corrections} (JEC)~\cite{Chatrchyan:2011ds}.
+The purpose of jet energy correction is to relate, on average, the jet energy measured in the detector to the true energy of the corresponding final state particle or parton jet. The latter is obtained in simulation by clustering, with the same algorithm used for jets in the detector, all the stable particles, i.e. with $c\tau > 1$\,cm, produced in the event excluding neutrinos. This mismatch is mainly ascribable to the non uniform and linear response of the CMS calorimeters, to the electronics noise and to pile-up. For this reason, CMS has developed a sequential procedure to calculate and apply the \emph{Jet energy corrections} (JEC)~\cite{Chatrchyan:2011ds}.
 
 The correction is applied as a multiplicative factor $\mathcal{C}$ to each component of the raw jet four-momentum $p_\mu^\mathrm{raw}$ (components are indexed by $\mu$ in the following):
 \begin{equation}
 p_\mu^\mathrm{cor} = \mathcal{C}\cdot p_\mu^\mathrm{raw} \quad,
 \end{equation}
-where $p_\mu^\mathrm{cor}$ is the corrected jet four-momentum. The correction factor is composed of the offset correction $C_\mathrm{offset}$, the MC calibration factor $C_\mathrm{MC}$, and the residual calibrations $C_\mathrm{rel}$ and $C_\mathrm{abs}$ for the relative and absolute energy scales, respectively. The offset correction removes the extra energy due to noise and pile up, and the MC correction removes the bulk of the non-uniformity in $\eta$ and the non-linearity in \pt. Finally, the residual corrections account for the small differences between data and simulation.  The various components are applied in sequence as described by the equation below:
+where $p_\mu^\mathrm{cor}$ is the corrected jet four-momentum. The correction factor is composed of the offset correction $C_\mathrm{offset}$, the MC calibration factor $C_\mathrm{MC}$, and the residual calibrations $C_\mathrm{rel}$ and $C_\mathrm{abs}$ for the relative and absolute energy scales, respectively. The offset correction removes the extra energy due to noise and pile-up, and the MC correction removes the bulk of the non-uniformity in $\eta$ and the non-linearity in \pt. Finally, the residual corrections account for the small differences between data and simulation.  The various components are applied in sequence as described by the equation below:
 \begin{equation}
 \mathcal{C} = C_\mathrm{offset}(\pt^\mathrm{raw}) \cdot C_\mathrm{MC}(\pt',\eta) \cdot C_\mathrm{rel}(\eta) \cdot C_\mathrm{abs}(\pt'') \quad ,
 \end{equation}
@@ -263,7 +263,7 @@ where $\pt'$ is the jet \pt after applying the offset correction and $\pt''$ is 
 
 \subsubsubsection{Offset correction}
  
-The offset correction purpose is to estimate and subtract, on average, the energy contribution that is not associated with the hard scattering in the event. The energy excess includes contributions from electronics noise and pile up.
+The offset correction purpose is to estimate and subtract, on average, the energy contribution that is not associated with the hard scattering in the event. The energy excess includes contributions from electronics noise and pile-up.
 
 \subsubsection{Jet b tagging}
 

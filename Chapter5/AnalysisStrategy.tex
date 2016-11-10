@@ -4,26 +4,31 @@
 
 Regarding the electrons, muons, jets and \MET definition and reconstruction, the standard CMS recommendations described in Chapter~\ref{chap2} are used. The specific selections used in this analysis are briefly summarised below.
 
-Muons are identified according to the CMS recommendations for the medium working point, with the addition of some extra cuts, as defined by the following selections:
-\begin{itemize}
-\item identified by the standard medium muon selection described in Sec.~\ref{sec:Objects}; \textcolor{red}{Not yet defined :)}
-\item $\pt> 10$\GeV;
-\item $|\eta < 2.4|$;
-\item $|d_{xy}| < 0.01$\,cm for $\pt < 20$\GeV and $|d_{xy}| < 0.02$\,cm for $\pt > 20$\GeV, $d_{xy}$ being the transverse impact parameter with respect to the primary vertex;
-\item $|d_{z}| < 0.1$\,cm, where $d_z$ is the longitudinal distance of the muon track in the tracker extrapolated along the beam direction.
-\end{itemize}
+Muons are identified according to the definition described in Sec.~\ref{sec:muID}, with some specific modifications regarding the impact parameters of the tracks ($d_{xy}$ and $d_z$) with respect to the primary vertex. In particular the requirements are lowered with respect to the \emph{tight muon selection} illustrated in Table~\ref{tab:tightmuon}.
 
-For the muon isolation, the CMS recommended particle flow isolation based on the tight working point is used, corresponding to a requirement on the isolation variable of $ISO_\mathrm{tight} < 0.15$. In addition a tracker relative isolation is also applied.
+%\begin{itemize}
+%\item identified by the standard medium muon selection described in Sec.~\ref{sec:Objects}; \textcolor{red}{Not yet defined :)}
+%\item $\pt> 10$\GeV;
+%\item $|\eta < 2.4|$;
+%\item $|d_{xy}| < 0.01$\,cm for $\pt < 20$\GeV and $|d_{xy}| < 0.02$\,cm for $\pt > 20$\GeV, $d_{xy}$ being the transverse impact parameter with respect to the primary vertex;
+%\item $|d_{z}| < 0.1$\,cm, where $d_z$ is the longitudinal distance of the muon track in the tracker extrapolated along the beam direction.
+%\end{itemize}
 
-For the electron identification, the tight working point is used. In addition some additional cuts to make the selection ``trigger-safe'' are included. This is done because the electron triggers already include some identification and isolation requirements that are based on the raw detector information, while the offline selections make use of particle flow requirements. The ``trigger-safe'' selections are defined to make the the offline identification and isolation requirements tighter with respect to the online triggers.
+For the muon isolation the PF relative isolation described in Eq.\eqref{eq:isomu} is used, corresponding to a requirement on the isolation variable of $I^{rel}_{\Delta\beta} < 0.15$. In addition a tracker relative isolation is also applied.
+
+For the electron identification the tight working point described by the requirements in Table~\ref{tab:tightele} is used. In addition some additional requirements to make the selection ``trigger-safe'' are included. This is done because the electron triggers already include some identification and isolation requirements that are based on the raw detector information, while the offline selections make use of particle flow requirements. The ``trigger-safe'' selections are defined to make the offline identification and isolation requirements tighter with respect to the online triggers.
 
 The simulated events are corrected for the lepton trigger, identification and isolation efficiencies measured in data using the same techniques described in Sec.~\ref{sec:Selections}.
 
-Jets are defined clustering the particle flow objects using the anti-$k_t$ algorithm with a distance parameter of 0.4. The CHS pileup mitigation technique is used. The L1, L2, L3 and L2L3 jet energy correction described in Sec.~\ref{sec:Objects} are applied. The reject jets coming from calorimeter or readout electronics noise, the loose working point for PF jet identification is used.
+Jets are obtained clustering the particle flow objects using the anti-$k_t$ algorithm with a distance parameter of 0.4. The CHS pile-up mitigation technique is used and the jet energy corrections are applied, as described in Sec.~\ref{sec:jec}. 
+To reject jets arising from calorimeter or readout electronics noise, the loose working point for PF jet identification is used (see Sec.~\ref{sec:jetID}). The jet counting used in the event selection is based on jets with $\pt>30$\GeV.
 
-The b-tagging algorithm for this analysis is chosen comparing the performances of different algorithms using simulations for signal and background contributions in the phase space defined by the analysis kinematic requirements. More precisely, two MC samples are used, one corresponding the the \hwwllnn signal produced via the ggH production mode and another corresponding to the \ttbar process. In fact, the first sample is enriched in light jets, i.e. originating by the hadronization of light quarks like u,d,c and s quarks, while the second sample is enriched in b jets, coming from the top quark decay. The b-veto efficiency, $\epsilon_\mathrm{b veto}$, is computed separately for the two samples and for the various b tagging algorithms. To compare the b tagging performance $\epsilon_\mathrm{b veto}$ is computed for different working points, i.e. different selections on the specific b tagging discriminator, and the results are reported in the form of a ROC curve. The ROC curves corresponding to events with 0, 1 and $\geq 2$ jets are shown in Fig.~\ref{fig:btag}. Events considered for this study are the ones passing the WW baseline selection.
+B tagging algorithms are used to identify jets that are likely arising from b quarks hadronization. A b-jets veto is then applied to suppress the top quark background, rejecting events that contain at least one b-tagged jet.
+The b tagging algorithm is chosen comparing the performance of different algorithms using simulations for signal and background contributions in the phase space defined by the analysis kinematic requirements. More precisely, two simulated samples are used: one corresponding to the \hwwllnn signal produced via the ggH mechanism and the other to the \ttbar background process. The first sample is enriched in light jets, i.e. originating by the hadronization of light quarks or gluons, while the second sample is enriched in b-jets, coming from the top quark decay. The b-veto efficiency, $\epsilon_\text{b veto}$, is computed separately for the two samples and for various b tagging algorithms. To compare the b tagging performance $\epsilon_\text{b veto}$ is computed for different working points, i.e. different selections on the specific b tagging discriminator, and the results are reported in the form of a ROC curve. In general, ROC curves are built reporting the signal efficiency on the $x$ axis and the background rejection on the $y$ axis. In this case the $x$ axis shows the b-jets veto efficiency for signal, $\epsilon_\text{b veto}^\text{ggH}$, and the $y$ axis the \ttbar background rejection, $1-\epsilon_\text{b veto}^{\ttbar}$. The best algorithm is the one that provides the highest background rejection for a given signal efficiency. 
 
-\begin{figure}[!h]
+The ROC curves corresponding to events with 0, 1 and $\geq 2$ jets are shown in Fig.~\ref{fig:btag}. Events considered for this study are the ones passing a WW baseline selection. Here 0 jets means that events do not contain any jet with \pt above 30\GeV. In this category the b veto rejects the event if at least one jet with $20\GeV < \pt < 30\GeV$ is identified by the b tagging algorithm. Events containing exactly one jet with $\pt>30$\GeV are rejected if that jet is b-tagged, while events with 2 or more jets are rejected if at least one jet is identified.
+
+\begin{figure}[htb]
 \centering
 \subfigure[$N_\mathrm{jets} = 0$]{
 \includegraphics[width=0.45\textwidth]{images/13TeV/ROC_njet0.pdf}
@@ -38,19 +43,16 @@ The b-tagging algorithm for this analysis is chosen comparing the performances o
 respectively.}\label{fig:btag}
 \end{figure}
 
-The ROC curves show that the cMVAv2 algorithm has the best performance for the analysis phase space among the algorithms taken into account. For both the CSVv2 and cMVAv2 algorithms, three working points are defined corresponding to the mistag rates\footnote{The mistag rate is defined as the probability for a light jet to be identified as a b-jet by the b tagging algorithms.} of 10\% for the loose, 1\% for the medium and 0.1\% for the tight working point. The distribution of the cMVAv2 discriminator associated to the leading jet both for the ggH and the \ttbar MC sample is shown in figure~\ref{fig:discriminator}.
+The ROC curves show that the cMVAv2 algorithm has the best performance for the analysis phase space among the algorithms taken into account. For both the CSVv2 and cMVAv2 algorithms, three working points are defined corresponding to the mistag rates (see Sec.~\ref{sec:btag}) of 10\% (loose), 1\% (medium) and 0.1\% (tight). The distribution of the cMVAv2 discriminator associated to the leading jet for both the ggH and \ttbar samples is shown in Fig.~\ref{fig:discriminator}. The events falling on the left side of the vertical lines, which corresponds to the three working points of the cMVAv2 algorithm, are those that pass the b veto requirement.
 
-\begin{figure}[!h]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.8\textwidth]{images/13TeV/cmva_WP.pdf}
-\caption{cMVAv2 discriminator associated to the leading jet (with $\pt > 30$~GeV) both for the ggH and the $t\bar t$ processes. The two processes are normalized to unity and stacked. The vertical dashed lines show the discriminator value corresponding to the three working points.}\label{fig:discriminator}
+\includegraphics[width=0.6\textwidth]{images/13TeV/cmva_WP.pdf}
+\caption{cMVAv2 discriminator associated to the leading jet (with $\pt > 30$\GeV) for both the ggH and the \ttbar processes. The two processes are normalized to unity and stacked. The vertical dashed lines show the discriminator value corresponding to the three working points.}\label{fig:discriminator}
 \end{figure}
 
-In order to determine the best working point for this analysis a preliminary significance assessment is performed, using a complete analysis procedure in which only statistical
-effects are taken into account (no systematics are included). The significance assessment
-was performed using a two dimensional discriminating
-variable consisting of the dilepton invariant mass versus the transverse
-mass. The assessment was performed with the following leptonic selection:
+In order to determine the best working point for this analysis a signal significance assessment is performed, in which only statistical uncertainties are taken into account. The expected signal significance is calculated applying the event selections and using the statistical procedure described in the next sections, testing the effect of the b veto for the three working points.
+\begin{comment}
 \begin{itemize}
 \item two leptons, an electron and a muon with opposite charge, with
 leading lepton \pt greater than 20\GeV and sub-leading lepton \pt greater than
@@ -67,16 +69,15 @@ b-vetoed with the cMVAv2 WP under study;
 \item 1 jet: exactly 1 jet above 30\GeV, no b-tagged jets above 30\GeV
 according to the cMVAv2 WP under study.
 \end{itemize}
-The two categories were eventually combined together and the significance 
-assessment was repeated for the three working points.
-With these selection we find the significance values listed in
-Table~\ref{tab:significance_wp_combine} for the three working points.
+\end{comment}
+
+The signal significance is computed for the two jet categories separately and eventually for the combination of the two. This leads to the values listed in Table~\ref{tab:significance_wp_combine} for the three working points.
+
 \begin{table}
-\caption{Significance corresponding to the three working points and for
-different jet categories using a shape
-analysis.\label{tab:significance_wp_combine}}
+\caption{Signal significance corresponding to the three working points and for
+different jet categories.\label{tab:significance_wp_combine}}
 \begin{center}
-\begin{tabular}{cccc}
+\begin{tabular}{lccc}
 \toprule
 Jet category & Loose WP (-0.715) & Medium WP (0.185) & Tight WP (0.875) \\
 \midrule
@@ -88,7 +89,7 @@ $0+1$ jets & 2.481 & 2.479 & 2.420 \\
 \end{center}
 \end{table}
 
-The working point providing the best significance in the combined $0+1$ jets category is found to be the loose one.
+The loose working point is found to be the one for which the best signal significance is achieved in the combined $0+1$ jets category, and is thus chosen for the definition of the b veto requirement.
 
 To correct for a possible different b tagging efficiency in data and simulation, the simulated events are reweighted using scale factors computed in bins of the jet $\eta$ and \pt. These scale factors and the corresponding uncertainties are centrally calculated for each working point, in such a way to be employable by all the CMS analyses. The prescription to reweight the simulated events is the following. First of all one has to compute the b tagging efficiency using the MC samples, $\varepsilon_\mathrm{MC}(p_\mathrm{T}, \eta, f)$, for the chosen working point in bins of jet \pt and $\eta$. The efficiency has to be computed for different flavours $f$ of the jets, b, c and light (u,d,s), using the jet matching information\footnote{There are a couple of techniques developed by the CMS Collaboration to assess the flavour of a reconstructed jet in simulation. The technique used here makes use of the flavour of the hadrons clustered into a jet.} which is available in all the MC samples. An MC-based event weight is then calculated computing the probability $P_\mathrm{MC}$ of a given b tagging configuration to occur, e.g.:
 \begin{equation}

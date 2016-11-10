@@ -34,7 +34,6 @@ In the SM the interaction between elementary particles occurs through the exchan
 
 The theory of electroweak interaction was formulated in the 1960s by S. L. Glashow, A. Salam and S. Weinberg~\cite{Glashow:1961tr,Weinberg:1967tq} as an $\mathrm{SU(2) \otimes U(1)}$ local gauge theory.
 The Lagrangian density governing the electroweak interaction is therefore invariant under gauge transformations of the $\mathrm{SU(2)_L\otimes U(1)_Y}$ symmetry group. The $\mathrm{SU(2)_L}$ group refers to the weak isospin charge $I$, while $\mathrm{U(1)_Y}$ to the weak hypercharge $Y$, which are connected to the charge Q by the following equation:
-
 \begin{equation}
 Y = 2(Q - I_3) \quad,
 \end{equation}
@@ -46,7 +45,7 @@ The two currents $J_\mu^\pm$ represent the weak charged current interactions, wh
 
 Another possible interaction in the weak sector is known as neutral current interaction and is mediated by the neutral Z boson. In the vertex of this interaction the identity of the interacting lepton does not change, resembling in this matter the electromagnetic current. Concerning the quark sector, the weak neutral currents involving different quark flavours, i.e. \emph{flavour changing neutral currents}, are strictly suppressed at tree level by the Glashow-Iliopoulos-Maiani mechanism (GIM)~\cite{Glashow:1970gm}.
 
-Nevertheless, the other component of the weak isospin triplet of currents $J_\mu^3$, cannot be identified with the weak neutral current, because the weak neutral current involves both left- and right-handed components. The electromagnetic current cannot be represented by $J_\mu^3$ as well, for the aforementioned reason and because it cannot be coupled with the uncharged neutrino. In order to save the $\mathrm{SU(2)}$ symmetry, the existence of the $\mathrm{U(1)_Y}$ symmetry is required, and a new conserved current, $j_\mu^Y$, arises. The $j_\mu^Y$ current is unchanged under $\mathrm{SU(2)}_L$ transformations (is an isospin singlet) and is incorporated, together with $J_\mu^3$, in the definition of the electromagnetic current, giving rise to the electroweak unification.
+Nevertheless, the other component of the weak isospin triplet of currents $J_\mu^3$, cannot be identified with the weak neutral current, because the latter involves both left- and right-handed components. The electromagnetic current cannot be represented by $J_\mu^3$ as well, for the aforementioned reason and because it cannot be coupled with the uncharged neutrino. In order to save the $\mathrm{SU(2)}$ symmetry, the existence of the $\mathrm{U(1)_Y}$ symmetry is required, and a new conserved current, $j_\mu^Y$, arises. The $j_\mu^Y$ current is unchanged under $\mathrm{SU(2)}_L$ transformations (is an isospin singlet) and is incorporated, together with $J_\mu^3$, in the definition of the electromagnetic current, giving rise to the electroweak unification.
 
 Local gauge symmetries naturally lead to the presence of gauge bosons, the exchange particles mediators of the fundamental interactions. The symmetry requires these gauge bosons to be massless, which is unproblematic for photons and gluons, but in drastic contrast to the known masses of the Z and $\mathrm{W^\pm}$ bosons, which are $m_\mathrm{Z} = 91.1876 \pm 0.0021$\GeV and $m_\mathrm{W} = 80.385 \pm 0.015$\GeV, respectively. Moreover, the maximally parity violating structure of the weak charged currents also breaks local gauge invariance for all massive fermions, due to their coupling to the W boson. This leads to the apparent antagonism that, while the $\mathrm{SU(2)_L \otimes U(1)_Y}$ gauge symmetry does describe the coupling structure of the electroweak force, at the same time it seems to contradict the fact that the W and Z bosons, and all fermions have a non-vanishing mass. 
 
@@ -63,7 +62,7 @@ V(\phi) &= -\mu^2\phi^\dagger\phi + \lambda(\phi^\dagger\phi)^2
 \end{split}
 \end{equation}
 
-\noindent Here th $\mathcal{D}_\mu$ represents the covariant derivative defined as:
+\noindent Here $\mathcal{D}_\mu$ represents the covariant derivative, which is defined as:
 \begin{equation}
 \mathcal{D}_\mu = \partial_\mu + i g \vec{A}_\mu \cdot \frac{\vec{\tau}}{2} - \frac{1}{2}i g' Y B_\mu \quad ,
 \end{equation}
@@ -84,11 +83,10 @@ The field $\phi$ can be expanded at first order around the ground state obtainin
 \end{equation}
 Introducing this field in the Higgs Lagrangian in Eq.~\eqref{eq:higgsL}, the bosonic fields acquire a mass given by:
 \begin{equation}
-m_\mathrm{W} = \frac{v}{2}g \qquad m_\mathrm{Z} = \frac{v}{2}\sqrt{g^2 +g'^2} \quad,
+m_\mathrm{W} = \frac{v}{2}g \qquad m_\mathrm{Z} = \frac{v}{2}\sqrt{g^2 +g'^2} \quad.
 \end{equation}
-\noindent where $g$ and $g'$ are the electroweak coupling constants for the gauge fields.
 
-Furthermore, given the self-interaction terms of the $h$ field, a new physical state also arises (the Higgs boson) with a mass:
+Furthermore, given the self-interaction terms of the $h$ field, a new physical state (the Higgs boson) also arises with a mass:
 \begin{equation}
 m_\mathrm{H} = v\sqrt{2\lambda} \quad.
 \end{equation}
@@ -107,7 +105,7 @@ f_\mathrm{HH\to HH} &\propto \frac{3m_\mathrm{H}^2}{v^2} ,\quad \text{Higgs boso
 \end{split}
 \end{equation}
 
-During the past decades the predictions of the SM have been confirmed by experimental results with outstanding precision, and in 2012 the discovery of a new boson with a mass of about 125\GeV, consistent with the predicted Higgs boson, was announced by the ATLAS and CMS experiments at the LHC.
+During the past decades the predictions of the SM have been confirmed by experimental results with outstanding precision, and in 2012 the discovery of a new boson with a mass of about 125\GeV, consistent with the predicted Higgs boson, was announced by the ATLAS and CMS experiments at LHC.
 
 
 \subsection{The strong interaction}

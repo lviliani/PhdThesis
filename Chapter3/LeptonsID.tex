@@ -37,7 +37,7 @@ Another selection which is optimised for low-\pt muons coming from in flight dec
 \subsection{Muon isolation}
 One of the most powerful requirements to select prompt muons, as the ones produced from W or Z boson decays, and to reject muons produced by decays in flight, is the isolation. Indeed, prompt muons are expected to be isolated in the event, differently to non-prompt muons that are generally produced within jets and characterized by many nearby particles.
 
-Muons commonly used to reconstruct the W or Z boson decays are thus required to pass an isolation requirement, which includes a pile up mitigation correction called ``$\Delta\beta$ correction''. This correction is needed to obtain a robust isolation definition that is less sensitive to the pile up contribution. Indeed, simultaneous interactions manifest themselves as a mean energy deposited over all the detector acceptance, which is not due to the particles produced in the primary events, thus spoiling the isolation measurement. The relative isolation variable, usually called \emph{PF relative isolation}, is defined as follows:
+Muons commonly used to reconstruct the W or Z boson decays are thus required to pass an isolation requirement, which includes a pile-up mitigation correction called ``$\Delta\beta$ correction''. This correction is needed to obtain a robust isolation definition that is less sensitive to the pile-up contribution. Indeed, simultaneous interactions manifest themselves as a mean energy deposited over all the detector acceptance, which is not due to the particles produced in the primary events, thus spoiling the isolation measurement. The relative isolation variable, usually called \emph{PF relative isolation}, is defined as follows:
 \begin{equation}\label{eq:isomu}
 I^{rel}_{\Delta\beta} = \left[  \sum_{ChH}\pt + max\left(0, \sum_{NH}\pt + \sum_{Ph}\pt - 0.5\sum_{ChHPU}\pt    \right)  \right]/\pt^\mathrm{muon} \quad .
 \end{equation}
@@ -69,7 +69,7 @@ Several strategies are used in CMS to identify prompt isolated electrons (charac
 \item a photon conversion veto ($\gamma \to \mathrm{e^+ e^-}$) based on the primary vertex measurement.
 \end{itemize}
 
-Different working points are provided by CMS corresponding to different selections on the previously defined variables. One of the common working points used by several physics analyses, as the \hww analyses described in Secs.\ref{chap4}, \ref{chap5} and \ref{chap6}, is the ``tight working point'', summarised in Table~\ref{tab:tightele}.
+Different working points are provided by CMS corresponding to different selections on the previously defined variables. One of the common working points used by several physics analyses, as the \hww analyses described in Chapters~\ref{chap4}, \ref{chap5} and \ref{chap6}, is the ``tight working point'', summarised in Table~\ref{tab:tightele}.
 
 \begin{table}[htb]
 \caption{Electron identification selections corresponding to the tight working point.}\label{tab:tightele}
@@ -93,12 +93,12 @@ conversion veto & yes & yes \\
 \end{table}
 
 \subsection{Electron isolation}
-Selected electrons are required to pass an isolation requirement that includes a pile up mitigation correction based on the electron effective catchment area, which is different in different $\eta$ ranges. The isolation variable is given by the following formula:
+Selected electrons are required to pass an isolation requirement that includes a pile-up mitigation correction based on the electron effective catchment area, which is different in different $\eta$ ranges. The isolation variable is given by the following formula:
 \begin{equation}
 I^{rel}_{EA~corrected} = \left[ \sum_{ChH}\pt + max\left( 0, \sum_{Ph}\pt + \sum_{NH}\pt - \rho EA \right) \right]/\pt^\mathrm{electron} \,
 \end{equation}
 
-where $ChH$ refers to charged hadrons, $Ph$ to photons, $NH$ to neutral hadrons, $\rho$ is the energy density due to pile up events, $E$ is the energy and $A$ is an effective area. The sums are performed inside a cone of radius $\Delta R < 0.4$ around the electron direction. The cut applied on this variable for the tight working point is $I^{rel}_{EA~corrected} < 0.04$.
+where $ChH$ refers to charged hadrons, $Ph$ to photons, $NH$ to neutral hadrons, $\rho$ is the energy density due to pile-up events, $E$ is the energy and $A$ is an effective area. The sums are performed inside a cone of radius $\Delta R < 0.4$ around the electron direction. The cut applied on this variable for the tight working point is $I^{rel}_{EA~corrected} < 0.04$.
 
 \subsection{Electron momentum scale and resolution}
 The electron momentum is estimated using a combination of the tracker and ECAL measurements. Before making the combination of the two measurements, the ECAL energy response is calibrated. Before doing the clustering, the energy response in individual crystals is calibrated and a correction factor is applied to take into account effects as energy leakage or changes in the crystal transparency induced by radiation~\footnote{The continuous monitoring of the crystals transparency is achieved by a laser-monitoring system.}. Then the supercluster energy is also corrected using an MVA technique, selecting $\mathrm{Z\to e^+ e^-}$ events in data and comparing to simulation. A detailed description of the techniques used to estimate the electron scale and resolution and the associated uncertainties is given in Ref.~\cite{Khachatryan:2015hwa}.
@@ -121,7 +121,7 @@ There are two methods to measure the efficiencies: the counting method consists 
 
 A similar approach is used to estimate the lepton isolation efficiency, requiring the probe lepton to pass the isolation requirements instead of the identification ones and calculating the corresponding scale factor.
 
-The identification and isolation efficiency and the scale factor are shown in Fig.~\ref{fig:eleIdIso} corresponding to the selections described in Sec.~\ref{sec:eleIdIso}, for events of interest for a typical physics analysis of the \hwwllnn channel (in particular the analyses described in Sec.~\ref{chap5} and \ref{chap6}).
+The identification and isolation efficiency and the scale factor are shown in Fig.~\ref{fig:eleIdIso} corresponding to the selections described in Sec.~\ref{sec:eleIdIso}, for events of interest for a typical physics analysis of the \hwwllnn channel (in particular the analyses described in Chapters~\ref{chap5} and \ref{chap6}).
 
 \begin{figure}[htb]
 \centering
