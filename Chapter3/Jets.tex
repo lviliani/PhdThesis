@@ -120,4 +120,26 @@ Measurements show that the jet energy resolution (JER) in data is worse than in 
 
 Reconstructed jets in simulated events are corrected for the jet energy resolution using a two step procedure. In the first step, the reconstructed jet \pt is scaled for the observed \pt difference between reconstructed and generated jets. This method only works for reconstructed jets that are well matched to generated jets, where the matching is based on $\Delta R$ and $\Delta \pt$ requirements. For reconstructed jets that do not fulfil the matching requirements, a gaussian smearing of the \pt distribution is applied in order to obtain the desired resolution.
 
-\subsection{Jet identification}
+\subsection{Jet identification}\label{sec:jetID}
+
+Some basic quality criteria for jets may be required in order to avoid fake jets to be used, which can originate from noisy calorimetric cells or electronics noise. These criteria are collectively called \emph{jet identification} (or Jet ID) and allow the rejection of badly reconstructed or noise jets while maintaining a very large fraction (about 99\%) of real jets. Two working points are defined, loose and tight, based on requirements on the hadron and electromagnetic components of the jet. The sets of criteria are illustrated in Table~\ref{tab:jetID} for PF jets with $|\eta|<3$. For $3<|\eta|<5$ the neutral electromagnetic fraction is required to be below $0.90$ and the neutral multiplicity larger than $10$ for both working points.
+
+\begin{table}[htb]
+\centering
+\caption{Jet identification criteria for the loose and tight working points. The requirements are based on PF jets with $|\eta|<3$ for the neutral component and $|\eta|<2.4$ for the charged component.}\label{tab:jetID}
+\begin{tabular}{l c c}
+\toprule
+Variable & Loose working point & Tight working point \\
+\midrule
+\pt & $>10$\GeV & $>10$\GeV \\
+Number of constituents & $>1$ & $>1$ \\
+Charged hadron fraction & $>0$ & $>0$ \\
+Neutral hadron fraction & $<0.99$ & $<0.90$ \\
+Charged multiplicity & $>0$ & $>0$ \\
+Charged electromagnetic fraction & $<0.99$ & $<0.90$ \\
+Neutral electromagnetic fraction & $<0.99$ & $<0.90$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+An additional algorithm may be used to reduce the incidence of jets originating from pile-up. These jets arise mainly from the overlap of multiple low-\pt jets originated from different interaction vertices, which combine forming single high-\pt jets. The pile-up jet identification algorithm makes use of both vertex information, exploiting the charged component of the jet, and jet shape information to identify jets ascribable to pile-up.

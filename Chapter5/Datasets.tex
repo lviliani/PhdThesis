@@ -1,6 +1,6 @@
 \section{Data and simulated samples}\label{chap5:dataset}
 
-Data recorded in proton-proton collisions at 13\TeV during 2015 are used in the analysis, with a total integrated luminosity of 2.3\ifb. Single and double lepton triggers are used, similarly to the same analysis at 8\TeV. The HLT trigger \pt thresholds used in this analysis are listed in Table~\ref{tab:trigger13TeV}.
+This analysis makes use of data recorded in proton-proton collisions at 13\TeV during 2015, corresponding to a total integrated luminosity of 2.3\ifb. Events are selected according to single and double lepton triggers, similarly to the 8\TeV analysis. The HLT trigger \pt thresholds used in this analysis are listed in Table~\ref{tab:trigger13TeV}. Trigger efficiencies are measured in data and applied to simulated events as described in Sec.~\ref{sec:trigeff}.
 
 \begin{table}[htb]
 \begin{center}
@@ -89,12 +89,11 @@ double muon triggers, it is around 95\%\\} \\
 \end{table}
 \end{comment}
 
-The trigger efficiencies are measured in data and applied to simulated events as described in Sec.~\ref{subsec:Datasets}.
 
 %Monte Carlo
 Concerning the simulated samples, several different MC generators are used. 
-Higgs boson signal samples are simulated in all channels using \textsc{Powheg v2}~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}, designed to describe the full NLO properties of these processes.
-In particular, for Higgs boson produced via ggH~\cite{Alioli:2008tz}, and VBF~\cite{Nason:2009ai},
+Higgs boson signal samples are simulated using \textsc{Powheg v2}~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}, designed to generate these processes with NLO QCD accuracy.
+In particular, for Higgs boson produced via ggH~\cite{Alioli:2008tz} and VBF~\cite{Nason:2009ai},
 the decay into two W bosons and subsequently into leptons is done using \textsc{JHUGen} v5.2.5. 
 For associated production with a vector boson ($\mathrm{W}^{+}\mathrm{H}$, $\mathrm{W}^{-}\mathrm{H}$, ZH)~\cite{Luisoni:2013kna}, including gluon fusion produced ZH (ggZH), 
 the Higgs boson decay is instead simulated using \textsc{pythia} 8.1~\cite{Sjostrand:2007gs}. All the signal samples are generated assuming a Higgs boson mass of 125\GeV.
@@ -128,9 +127,9 @@ $\mathrm{gg}\rightarrow$WW$\rightarrow2\ell2\nu$ & 0.5905 \\
 \toprule
 Process & $\sigma\times\mathcal{B}$ [pb] \\
 \midrule
-Single top &   71.7  \\
 Drell-Yan ($10\GeV < \mll < 50\GeV$)  &  20471.0  \\
 Drell-Yan ($\mll > 50\GeV$)   &  6025.26  \\
+Single top &   71.7  \\
 WZ$\to2\ell2\mathrm{q}$ &  5.5950 \\
 ZZ$\to2\ell2\mathrm{q}$ &  3.2210 \\
 WWZ &  0.1651 \\
@@ -143,15 +142,15 @@ ZZZ &  0.01398  \\
 
 All processes are generated using NNPDF2.3~\cite{Ball:2013hta,Ball:2011uy} for NLO generators.
 The LO version of the same PDF set is used for LO generators. All the event generators are interfaced  to \textsc{pythia} 8.1~\cite{Sjostrand:2007gs} for the showering of
-partons and hadronization, as well as including a simulation of the underlying event (UE) and multiple interaction (MPI) based on the CUET8PM1 tune~\cite{Khachatryan:2015pea}. 
+partons and hadronization, as well as for including a simulation of underlying event (UE) and multiple parton interaction (MPI) based on the CUET8PM1 tune~\cite{Khachatryan:2015pea}. 
 
-To estimate the systematic uncertainties related to the choice of UE and MPI tune, the signal processes and the WW background are also generated with two alternative tunes which are representative of the errors on the tuning parameters.
+To estimate the systematic uncertainties related to the choice of UE and MPI tunes, the signal processes and the WW background are generated with two alternative tunes which are representative of the errors on the tuning parameters.
 The showering and hadronization systematic uncertainty is estimated by interfacing the same MC samples with the \textsc{herwig++} 2.7 parton shower~\cite{Richardson:2013nfo,Bellm:2013hwb} instead of \textsc{pythia 8}.
 
 Drell-Yan (DY) production of Z/$\gamma^{*}$ is generated using \textsc{amc@nlo}~\cite{Alwall:2014hca}. 
-Other multiboson processes, such as WZ,ZZ, and VVV (V$=$W/Z), are generated with \textsc{amc@nlo} and normalized to the cross section calculation at NLO accuracy.
+Other multiboson processes, such as WZ, ZZ, and VVV (V$=$W/Z), are generated with \textsc{amc@nlo} and normalized to the cross section calculated at NLO accuracy.
 
-The simulated samples are generated with distributions for the number of pile-up interactions that are meant to roughly cover, though not exactly match, the conditions expected for the different data-taking periods. In order to factorize these effects, the number of true pile-up interactions from the simulation truth is reweighted to match the data.
+The simulated samples are generated with distributions for the number of pile-up interactions that are meant to roughly cover, though not exactly match, the conditions expected for the different data taking periods. In order to factorize these effects, the number of true pile-up interactions from the simulation truth is reweighted to match the data.
 In Fig.~\ref{Fig:pu}, the effect of this reweighting on a sample enriched in Drell-Yan events is shown. The average number of pile-up is approximately $11.5$.
 
 \begin{figure}[htbp]
@@ -165,9 +164,9 @@ In Fig.~\ref{Fig:pu}, the effect of this reweighting on a sample enriched in Dre
 
 For Higgs boson signal, the inclusive cross sections used are the ones reported by the LHC Higgs Cross Section Working Group~\cite{temphiggsxsecs}. The ggH cross section is computed at NNLO+NNLL QCD and NLO EW accuracy, while NNLO QCD and NLO EW accuracy is used for the other production modes. The branching fractions are the ones reported in Ref.~\cite{Heinemeyer:2013tqa}.
 
-The cross section used for the $\mathrm{q\bar q}$ induced WW processes is computed at NNLO QCD accuracy~\cite{Gehrmann:2014fva}. The normalization of this background is eventually directly taken from a fit to data and the NNLO cross section is used just as an initial guess. The LO cross section for the gluon induced WW process is obtained directly from \textsc{mcfm}, and a $k$-factor of 1.4 is applied to correct for the difference between the LO and NLO theoretical calculation~\cite{Caola:2015rqy}.
-The contribution of the interference between the $\mathrm{gg \to WW}$ and $\mathrm{gg\to H\to WW}$ processes is also evaluated using \textsc{mcfm} and is found to be negligible compared to the signal contribution.
+The cross section used for the $\mathrm{q\bar q}$ induced WW processes is computed at NNLO QCD accuracy~\cite{Gehrmann:2014fva}. The normalization of this background is eventually directly taken from a fit to data and the NNLO cross section is used as initial guess. The LO cross section for the gluon induced WW process is obtained directly from \textsc{mcfm}, and a $k$-factor of 1.4 is applied to correct for the difference between the LO and NLO theoretical calculation~\cite{Caola:2015rqy}.
+The contribution of the interference between the $\mathrm{gg \to WW}$ and $\mathrm{gg\to H\to WW}$ processes is evaluated using \textsc{mcfm} and is found to be negligible compared to the signal contribution.
 
 The cross sections of the different single top processes are estimated by the LHC Top Working group~\cite{singletop} with NLO accuracy.
-The \ttbar cross section is also provided by the LHC Top Working group~\cite{topxsec}, and it is computed at NNLO accuracy, with NNLL soft gluon resummation.
+The \ttbar cross section is also provided by the LHC Top Working group~\cite{topxsec}, and it is computed at NNLO QCD accuracy and NNLL accuracy for soft gluon resummation effects.
 

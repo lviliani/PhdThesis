@@ -56,10 +56,10 @@ N_i = \mu_i (s_i -f_i) \quad ,
 
 The fit makes use of the binned maximum likelihood approach. The likelihood function, $\mathcal{L}$, restricted to the \pth bin $j$, can be written as:
 \begin{equation}
-\mathcal{L}(\mu_j,\theta) = \prod_{i=0}^{N_\mathrm{bins}} \frac{(\mu_j s_i(\theta) + b_i(\theta))^{n_i}}{n_i!}e^{-\mu_j s_i(\theta) - b_i(\theta)} \cdot p(\theta | \tilde{\theta}) \quad ,
+\mathcal{L}(\mu_j,\theta) = \prod_{i=0}^{N_\mathrm{bins}} \frac{(\mu_j s_i(\theta) + b_i(\theta))^{n_i}}{n_i!}e^{-\mu_j s_i(\theta) - b_i(\theta)} \cdot p(\tilde{\theta} |\theta ) \quad ,
 \end{equation}
 
-\noindent where $\mu_j$ is the signal strength in the bin $j$, i.e. the parameter of interest of the fit, which multiplies the signal yield. The index $i$ runs over the bins of the \mll-\mt two-dimensional histogram corresponding to the \pth bin $j$, $s_i$ and $b_i$ are the expected number of signal and background events respectively in bin $i$, and $n_i$ is the total number of observed events in bin $i$. The set of parameters $\theta$ represents the full suite of nuisance parameters used to incorporate the systematic uncertainties. Each nuisance parameter is constrained in the fit including the prior distributions functions $p(\theta | \tilde{\theta})$ in the likelihood, where $\tilde{\theta}$ is the set of default values for the $\theta$ parameters~\cite{CMS-NOTE-2011-005}. For the major part of the nuisance parameters a log-normal prior distribution is used, with a standard deviation corresponding to the given systematic uncertainty. This is the optimal choice to describe uncertainties on definite positive observables, like cross sections, efficiencies, luminosity, etc. The usage of a gaussian distribution, under certain circumstances, would indeed allow the observable value to fluctuate below zero.
+\noindent where $\mu_j$ is the signal strength in the bin $j$, i.e. the parameter of interest of the fit, which multiplies the signal yield. The index $i$ runs over the bins of the \mll-\mt two-dimensional histogram corresponding to the \pth bin $j$, $s_i$ and $b_i$ are the expected number of signal and background events respectively in bin $i$, and $n_i$ is the total number of observed events in bin $i$. The set of parameters $\theta$ represents the full suite of nuisance parameters used to incorporate the systematic uncertainties. Each nuisance parameter is constrained in the fit including the prior distributions functions $p(\tilde{\theta}|\theta)$ in the likelihood, where $\tilde{\theta}$ is the set of default values for the $\theta$ parameters~\cite{CMS-NOTE-2011-005}. For the major part of the nuisance parameters a log-normal prior distribution is used, with a standard deviation corresponding to the given systematic uncertainty. This is the optimal choice to describe uncertainties on definite positive observables, like cross sections, efficiencies, luminosity, etc. The usage of a gaussian distribution, under certain circumstances, would indeed allow the observable value to fluctuate below zero.
 For some nuisance parameters, as the ones related to the statistical uncertainty coming from the background measurement in data control regions, a Gamma distribution is instead recommended. 
 A log-uniform distribution is used for the uncertainties related to the normalization of background contributions that are left unconstrained in the fit, such as for the WW background process.
 Finally, some of the experimental uncertainties related to the shape of signal and background processes are modelled by means of additional histograms as explained in Sec.~\ref{sec:syst_treatment}. The correlations of nuisance parameters across different \pth bins are taken into account. Moreover the nuisance parameters can also be correlated (or anti-correlated) between signal and different background processes. As an example, the uncertainty related to the integrated luminosity measurement is fully correlated for all the signal and background processes.
@@ -155,10 +155,11 @@ W$\gamma^{(*)}$	& $132\pm49$     &             $170\pm58$    &              $48\
 \end{table}
 
 The signal strengths obtained performing the fit are shown in Table~\ref{tab:signal_strengths}.
-In order to assess the robustness of the fit, several toy MC samples have been generated, with a statistical accuracy corresponding to the one expected in data, and fitted with the same procedure described before. The distribution of the signal strengths extracted in each bin using the toy MC samples and the their pull distributions are shown in Fig.~\ref{fig:pull_fit}. 
+In order to assess the robustness of the fit, several toy MC samples have been generated with a mean value for each bin corresponding to the sum of the expected background plus signal events and a statistical accuracy comparable to the one expected in data. Each toy sample is fitted with the same procedure described before. The distribution of the signal strengths extracted in each bin using the toy MC samples and found to be consistent with 1, implying that no bias is introduced by the fit procedure. 
+%Moreover, the pull distribution of each signal strength has also been checked, showing an average and RMS value consistent with 0 and 1, respectively.
 
 \begin{table}[htb]
-\caption{Signal strengths measured in data for each \pth bin with 68$\%$ CL uncertainties.}\label{table:signal_stregths}
+\caption{Signal strengths measured in data for each \pth bin with 68$\%$ CL uncertainties.}\label{table:signal_strengths}
 \begin{center}
 \begin{tabular}{ c  c  c  } \toprule
  \pth [GeV] & $\mu$  & Uncertainty (68$\%$ CL) \\ \midrule
@@ -173,12 +174,12 @@ In order to assess the robustness of the fit, several toy MC samples have been g
 \end{center}
 \end{table}
 
-\begin{figure}[htb]
-\centering
-\subfigure[]{\includegraphics[width=0.45\textwidth]{images/mu_toys.pdf}}
-\subfigure[]{\includegraphics[width=0.45\textwidth]{images/pull_toys.pdf}}
-\caption{Signal strength distribution as extracted from the fit of toy MC samples (a). Distribution of the pull of the signal strength parameters (b).\label{fig:pull_fit}}
-\end{figure}
+%\begin{figure}[htb]
+%\centering
+%\subfigure[]{\includegraphics[width=0.45\textwidth]{images/mu_toys.pdf}}
+%\subfigure[]{\includegraphics[width=0.45\textwidth]{images/pull_toys.pdf}}
+%\caption{Signal strength distribution as extracted from the fit of toy MC samples (a). Distribution of the pull of the signal strength parameters (b).\label{fig:pull_fit}}
+%\end{figure}
 
 
 %The signal yield after the fit with data is found to be of $318 \pm 12$ events, to be compared with the expected value of $382 \pm 7$ events.

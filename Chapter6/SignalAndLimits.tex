@@ -1,12 +1,14 @@
 \section{Signal extraction and limit setting}\label{chap6:SignalExtractionAndLimits}
 
-The signal yield, including both the ggH and VBF production modes, is extracted performing a combined fit of the three categories to the \mti simulation templates for backgrounds and signal, and is repeated for each resonance mass hypothesis. Moreover, fixed the mass of the resonance, the fit is performed again for the various hypotheses of the resonance decay width. A single signal strength $\mu$ is extracted from the fit, which multiplies both the ggH and VBF contributions. In other words it is assumed that the ratio of the two production mechanism stays the same as the one predicted by the SM\footnote{This is an approximation which limits the amount of models that can be tested with the provided results. A future development od this analysis will also include the cases for which different ggH and VBF relative contributions are expected.}.
+The signal yield, including both ggH and VBF production modes, is extracted performing a combined fit of the three categories to the \mti simulation templates for backgrounds and signal, and is repeated for each resonance mass hypothesis. Moreover, fixed the mass of the resonance, the fit is performed again for the various hypotheses of the resonance decay width. A single signal strength $\mu$ is extracted from each fit, which multiplies both the ggH and VBF contributions. In other words it is assumed that the ratio of the two production mechanism stays the same as the one predicted by the SM\footnote{This is an approximation that limits the amount of models that can be tested with the provided results. A future development of this analysis, with larger integrated luminosity, might also include the cases for which different ggH and VBF relative contributions are expected.}.
 
 The background yields expected from simulation corresponding to the three jet categories and after the analysis event selection are shown in Table~\ref{tab:bkg_yields}. The signal yields corresponding to a selection of mass points and assuming $\Gamma' = \Gamma_\mathrm{SM}$ are shown in Table~\ref{tab:sig_yields}.
 
-\begin{table}[h!]\begin{center}
+\begin{table}[htb]
+\begin{center}
 \caption{Expected yields estimated from simulation (except for the non-prompt contribution which is estimated using data) for each background process in the three analysis categories, after the analysis event selection. The uncertainties are shown for the processes estimated from simulation.}\label{tab:bkg_yields}
-\small{\begin{tabular}{c c c c }
+\small{
+\begin{tabular}{c c c c }
 \toprule
              Background process           &         0 jets                                          &          1 jet                                         &        VBF                                           \\
 \midrule
@@ -32,11 +34,12 @@ The background yields expected from simulation corresponding to the three jet ca
 \end{center}
 \end{table}
 
-\begin{table}[h!]\begin{center}
+\begin{table}[htb]
+\begin{center}
 \caption{Expected signal yields for the ggH and VBF production modes estimated from simulation after the analysis event selection for different mass hypothesis assuming $\Gamma' = \Gamma_\mathrm{SM}$ in the three analysis categories. The errors correspond to the theoretical uncertainties in the signal estimation.}\label{tab:sig_yields}
 \small{\begin{tabular}{c c c c } 
 \toprule
-                 Mass (\GeV)                 &          0 jets    &          1 jet              & VBF           \\ 
+                 Mass [GeV]                 &          0 jets    &          1 jet              & VBF           \\ 
 \midrule
 \multicolumn{4}{c}{ggH signal yields} \\
 \midrule
@@ -59,17 +62,17 @@ The background yields expected from simulation corresponding to the three jet ca
 \end{center}
 \end{table}
 
-The strategy for computing the exclusion limits is based on the modified frequentist approach, also referred to as $\mathrm{CL_s}$, as described in~\cite{CMS-NOTE-2011-005}. The first step is to construct the likelihood function $\mathcal{L}(data|\mu,\theta)$:
+The strategy for computing the exclusion limits is based on the modified frequentist approach, also referred to as $\mathrm{CL_s}$, as described in~\cite{CMS-NOTE-2011-005}. The first step is to construct the likelihood function $\mathcal{L}(\mu,\theta)$:
 \begin{equation}
-\mathcal{L}(data|\mu,\theta) = Poisson(data|\mu\cdot s(\theta) + b(\theta))\cdot p(\tilde{\theta}|\theta) \quad,
+\mathcal{L}(\mu,\theta) = Poisson(data|\mu\cdot s(\theta) + b(\theta))\cdot p(\tilde{\theta}|\theta) \quad,
 \end{equation}
-where $data$ represents the experimental observation, $s$ and $b$ are the expected signal and background yields respectively and $\theta$ is the full set of nuisance parameters constrained by the prior distribution functions $p(\tilde{\theta}|\theta)$. The default values for the nuisance parameters are labelled as $\tilde{\theta}$.
+where $data$ represents the experimental observation, $s$ and $b$ are the expected signal and background yields respectively and $\theta$ is the full set of true values for the nuisance parameters constrained by the prior distribution functions $p(\tilde{\theta}|\theta)$. The default values assigned to the nuisance parameters are labelled as $\tilde{\theta}$.
 
 For a binned shape analysis, $Poisson(data|\mu\cdot s + b)$ is the product of the Poisson probabilities to observe $n_i$ events in bin i:
 \begin{equation}
 \prod_i \frac{(\mu\cdot s_i + b_i)^{n_i}}{n_i !} e^{-\mu\cdot s_i - b_i} \quad.
 \end{equation}
-In order to test the compatibility of the data with the signal plus background (or the background only) hypothesis, the test statistic $\tilde{q}_\mu$ is constructed based on the profile likelihood reatio:
+In order to test the compatibility of the data with the signal plus background (or the background only) hypothesis, the test statistic $\tilde{q}_\mu$ is constructed based on the profile likelihood ratio:
 \begin{equation}
 \tilde{q}_\mu = -2 \ln{\frac{\mathcal{L}(data|\mu,\hat{\theta}_\mu)}{\mathcal{L}(data|\hat{\mu},\hat{\theta})	}}  \quad \mathrm{with} \quad 0 \leq \hat{\mu} \leq \mu \quad ,
 \end{equation}
@@ -89,11 +92,11 @@ If, for a given signal strength $\mu$, $\mathrm{CL_s} \leq \alpha$, then the hyp
 
 The expected median upper limit, as well as the $\pm 1\sigma$ (68\% CL) and $\pm 2\sigma$ (95\% CL) bands, are determined generating a large amount of pseudo-data in the background only hypothesis and calculating $\mathrm{CL_s}$ and the 95\% CL upper limit for each of them, as if they were real data. Then the cumulative distribution of the 95\% CL upper limits is built and the median expected value is identified as the value at which the cumulative distribution crosses the 50\% quantile. The $\pm 1\sigma$ ($\pm 2 \sigma$) band is defined by the values at which the cumulative distribution crosses the 16\% (2.5\%) and 84\% (97.5\%) quantiles.
 
-In order to assess the sensitivity of the analysis, the expected upper exclusion limits at 95\% CL on the signal strength are shown in Fig.~\ref{fig:13TeVexplim} for the three jet categories separately. For a given mass of the resonance, the limits are derived assuming a signal decay width $\Gamma' = \Gamma_\mathrm{SM}$ and a cross section equal to the one expected from a SM Higgs boson at that mass. The other decay width hypothesis have also been tested, showing a very similar expected exclusion limit, suggesting that this analysis is not strongly sensitive to variations of the resonance decay width.
+In order to assess the sensitivity of the analysis, the expected upper exclusion limits at 95\% CL on the signal strength are shown in Fig.~\ref{fig:13TeVexplim} for the three jet categories separately. For a given mass of the resonance, the limits are derived assuming a signal decay width $\Gamma' = \Gamma_\mathrm{SM}$ and a cross section equal to the one expected from a SM Higgs boson at that mass. The other decay width hypotheses have been tested as well, showing a very similar expected exclusion limit, suggesting that this analysis is not strongly sensitive to variations of the resonance decay width. In fact, the width of the \mti distribution is driven by the experimental resolution and the choice of different decay widths has a mild effect on this variable.
 
-The 0 jets category is the most sensitive especially in the low mass region, while for very large masses of the resonance the 1 jet and VBF categories start being important. This is explained mainly by the fact that the VBF contribution increases, with respect to ggH, as the mass increases. The expected exclusion limit on the signal strength after the combination of the three categories is shown in Fig.~\ref{fig:13TeVcombexplim}. Comparing the limits in the single categories with the combination of the three it is evident how the higher jet multiplicity categories help in improving the results for large values of $M_\mathrm{X}$.
+The 0 jets category is the most sensitive especially in the low mass region, while for very large masses of the resonance the 1 jet and VBF categories start being important. This is explained mainly by the fact that the VBF contribution increases, with respect to ggH, as the mass increases. The expected exclusion limit on the signal strength after the combination of the three categories is shown in Fig.~\ref{fig:13TeVcombexplim}. Comparing the limits in the single categories with the combination of the three it is evident how the higher jet multiplicity categories help in improving the results for large values of $M_\mathrm{X}$. For the analysed luminosity the expected exclusion mass range for the production of a resonance with the SM Higgs boson cross section extends roughly from 350 to 450\GeV.
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
 \centering
 \subfigure[0 jets]{
 \includegraphics[width=0.31\textwidth]{images/13TeV/HighMass/exp_limit_0jet_mu.pdf}
@@ -104,13 +107,13 @@ The 0 jets category is the most sensitive especially in the low mass region, whi
 \subfigure[2 jets]{
 \includegraphics[width=0.31\textwidth]{images/13TeV/HighMass/exp_limit_2jet_mu.pdf}
 }
-\caption{Expected exclusion upper limits at 95\% CL on the signal strength in the three categories, as a function of the resonance mass. The dashed line corresponds to median upper limit, while the green and yellow regions represent the $\pm 1\sigma$ and $\pm 2 \sigma$ uncertainty bands, respectively. Limits are derived assuming a SM Higgs boson cross section and decay width for each mass point.}\label{fig:13TeVexplim}
+\caption{Expected exclusion upper limits at 95\% CL on the signal strength in the three categories, as a function of the resonance mass. The dashed line corresponds to median upper limit, while the green and yellow regions represent the $\pm 1\sigma$ and $\pm 2 \sigma$ uncertainty bands, respectively. Limits are derived assuming the SM Higgs boson cross section and decay width for each mass point.}\label{fig:13TeVexplim}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.5\textwidth]{images/13TeV/HighMass/exp_limit_012jet_mu.pdf}
-\caption{Expected exclusion upper limit at 95\% CL on the signal strength for the combination of the three categories, as a function of the resonance mass. The dashed line corresponds to median upper limit, while the green and yellow regions represent the $\pm 1\sigma$ and $\pm 2 \sigma$ uncertainty bands, respectively. The limit is derived assuming a SM Higgs boson cross section and decay width for each mass point.}\label{fig:13TeVcombexplim}
+\caption{Expected exclusion upper limit at 95\% CL on the signal strength for the combination of the three categories, as a function of the resonance mass. The dashed line corresponds to median upper limit, while the green and yellow regions represent the $\pm 1\sigma$ and $\pm 2 \sigma$ uncertainty bands, respectively. The limit is derived assuming the SM Higgs boson cross section and decay width for each mass point.}\label{fig:13TeVcombexplim}
 \end{figure}
 
 
