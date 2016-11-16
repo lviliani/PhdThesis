@@ -1,9 +1,5 @@
 \documentclass[a4paper,12pt,english,twoside,openright]{book}
-\addtolength{\topmargin}{-0.6cm}
-\addtolength{\textwidth}{1.6cm}
-\addtolength{\textheight}{1.2cm}
-\addtolength{\oddsidemargin}{0.7cm}
-\addtolength{\evensidemargin}{-1.4cm} %%il doppio del precedente...
+
 %\documentclass[english,12pt,booktabs,titling,twoside,openright]{hepthesis}
 %%% hepthesis requirements
 %\usepackage{setspace,fancyhdr,rotating,comment,tocbibind,changepage,varwidth,csquotes,babel,a4wide,amsmath,hyperref,booktabs,draftcopy,lineno}
@@ -31,6 +27,14 @@
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{layout}
+%\usepackage{showframe}
+%\usepackage{geometry}
+
+\addtolength{\topmargin}{-0.6cm}
+\addtolength{\textwidth}{1.6cm}
+\addtolength{\textheight}{1.2cm}
+\addtolength{\oddsidemargin}{0.6cm}
+\addtolength{\evensidemargin}{-1.6cm} %%il doppio del precedente...
 
 %\oddsidemargin 1.5cm
 %\evensidemargin 0.6cm
@@ -83,6 +87,10 @@
 \newcommand{\tpp}{{\em tag-pass-probe}\xspace}
 \newcommand{\tfp}{{\em tag-fail-probe}\xspace}
 
+\def\changemargin#1{\list{}{\topmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+
 \pagestyle{fancy}
 \fancypagestyle{MyStyle}{
 	\fancyhead{}
@@ -133,8 +141,6 @@
 
 \setlength\extrarowheight{2pt}
 
-\pagestyle{MyStyle}
-
 %\layout
 %\extrafloats{100}
 %\setspacing{single}
@@ -143,13 +149,14 @@
 \begin{frontmatter}
 \input{Title.tex}
 \cleardoublepage
-
 \tableofcontents
 \cleardoublepage
 
 \end{frontmatter}
 
 \begin{mainmatter}
+
+\pagestyle{MyStyle}
 
 \input{Introduction.tex}
 \cleardoublepage
