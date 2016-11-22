@@ -27,6 +27,7 @@
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{layout}
+\usepackage[titletoc]{appendix}
 %\usepackage{showframe}
 %\usepackage{geometry}
 
@@ -64,9 +65,9 @@
 \newcommand{\X}{\ensuremath{\cmsSymbolFace{X}}\xspace}
 \newcommand{\delphill}{\ensuremath{\Delta\phi_{\ell\ell}}}
 \newcommand{\delphillmet}{\ensuremath{\Delta\phi(\ell\ell,\VEtmiss)}}
-\newcommand{\dyll}{\ensuremath{Z/\gamma^*\to \ell^+\ell^-}\xspace}
-\newcommand{\dymm}{\ensuremath{Z/\gamma^*\to\Pgmp\Pgmm}}
-\newcommand{\dytt}{\ensuremath{Z/\gamma^* \to\tau^+\tau^-}\xspace}
+\newcommand{\dyll}{\ensuremath{\mathrm{Z/\gamma^*\to \ell^+\ell^-}}\xspace}
+\newcommand{\dymm}{\ensuremath{\mathrm{Z/\gamma^*\to\Pgmp\Pgmm}}}
+\newcommand{\dytt}{\ensuremath{\mathrm{Z/\gamma^* \to\tau^+\tau^-}}\xspace}
 \newcommand{\jp}{\ensuremath{J^{P}}\xspace}
 \newcommand{\mll}{\ensuremath{m_{\ell\ell}}\xspace}
 \newcommand{\mt}{\ensuremath{m_\mathrm{T}}\xspace}
@@ -99,9 +100,9 @@
 	\fancyhead[RE]{{\nouppercase {\bfseries {\footnotesize \leftmark }}}}
 	\fancyhead[RO]{\thepage}
 	\fancyhead[LE]{\thepage}
-%	\renewcommand{\chaptermark}[1]{\markboth{\thechapter. {\slshape{##1}}}{}}
+%%%%	\renewcommand{\chaptermark}[1]{\markboth{\thechapter. {\slshape{##1}}}{}}
 	\renewcommand{\chaptermark}[1]{\markboth{{\slshape{##1}}}{}}
-% 	\renewcommand{\sectionmark}[1]{\markboth{ \thesection {##1}}{}}
+%%%% 	\renewcommand{\sectionmark}[1]{\markboth{ \thesection {##1}}{}}
         \renewcommand{\sectionmark}[1]{\markright{\thesection~{##1}}}
 }
 
@@ -174,22 +175,26 @@
 \input{Chapter5/chapter5}
 \cleardoublepage
 \input{Chapter6/chapter6}
-%\cleardoublepage
-%\input{Chapter7/chapter7}
 \cleardoublepage
 \input{Summary.tex}
 \cleardoublepage
-\appendix
+\begin{appendices}
 \input{Appendix/AppendixFiducialRegion.tex}
+\cleardoublepage
+\end{appendices}
+
 \end{mainmatter}
 
 \begin{backmatter}
-
+\renewcommand{\bibsetup}{\thispagestyle{empty}}
 \clearpage\thispagestyle{empty}\cleardoublepage
+\pagestyle{MyStyle}
+%\fancyhead{}
+%\renewcommand{\headrulewidth}{0pt}
+\markboth{Bibliography}{Bibliography}
 \addcontentsline{toc}{chapter}{\bibname}
 \printbibliography
 \clearpage\thispagestyle{empty}\cleardoublepage
-%\pagestyle{empty}
 
 \end{backmatter}
 

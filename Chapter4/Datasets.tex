@@ -7,7 +7,7 @@
 The data set used for this analysis corresponds to 19.4\ifb of proton-proton collisions at $\sqrt{s}=8$\TeV, collected by the CMS detector during 2012.
 Only data corresponding to good data taking quality are considered.
 
-Events are required to fire one of the unprescaled single-electron, single-muon or muon-electron triggers. Due the rather high LHC instantaneous luminosity the single-lepton triggers must have high HLT \pt thresholds, otherwise the rate of these triggers would be too large to be sustained. The double-lepton triggers allow to lower down the \pt thresholds while keeping a sustainable trigger rate, thus maintaining a good sensitivity to the Higgs boson signal, for which the lepton \pt can be rather small.
+Events are required to fire one of the unprescaled single-electron, single-muon or muon-electron triggers. Due to the rather high LHC instantaneous luminosity the single-lepton triggers must have high HLT \pt thresholds, otherwise the rate of these triggers would be too large to be sustained. The double-lepton triggers allow to lower down the \pt thresholds while keeping a sustainable trigger rate, thus maintaining a good sensitivity to the Higgs boson signal, for which the lepton \pt can be rather small.
 A brief overview of the HLT \pt criteria on the leptons
 is given in Table~\ref{tab:trigger}. While the HLT lepton \pt thresholds of 17 and 8 \GeV for the double
 lepton triggers accommodate the offline lepton \pt selection of 20 and 10 \GeV, the higher \pt thresholds
@@ -86,19 +86,21 @@ is estimated from data and applied as a weight to all simulated events, as descr
 
 Several Monte Carlo event generators are used to simulate the signal and background processes:
 \begin{itemize}
-\item the first version of the \textsc{Powheg} program (\textsc{Powheg V1}) provides event samples for the \hww signal
-for the ggH and VBF production mechanisms, as well as \ttbar and tW processes~\cite{Alioli:2011as}, with NLO accuracy;
-\item the VH process is simulated using \textsc{pythia 6.426}~\cite{Sjostrand:2006za};
-\item the $\mathrm{qq} \to \mathrm{W^{+}W^{-}}$, Drell-Yan, ZZ, WZ, W$\gamma$, W$\gamma^*$, tribosons and W+jets processes are generated using
+\item the first version of the \textsc{Powheg} program (\textsc{Powheg V1}) provides event samples with NLO QCD accuracy for the \hww signal
+for produced through the ggH and VBF production mechanisms, as well as \ttbar and tW processes~\cite{Alioli:2011as};
+\item the VH process is simulated using \textsc{Pythia 6.426}~\cite{Sjostrand:2006za};
+\item the $\mathrm{qq'} \to \mathrm{W^{+}W^{-}}$, \dyll, ZZ, WZ, W$\gamma$, W$\gamma^*$, triboson and W+jets processes are generated using
 the \textsc{Madgraph 5.1.3} event generator;
-\item the gg$\to \mathrm{W^{+}W^{-}}$ process is generated using the \textsc{gg2ww} 3.1 generator ~\cite{Binoth:2006mf} and its cross section is scaled to the approximate NLO prediction~\cite{Bonvini:2013jha,Passarino:2013bha}.
+\item the $\mathrm{gg\to W^{+}W^{-}}$ process is generated using the \textsc{gg2ww} 3.1 generator ~\cite{Binoth:2006mf}.
 \end{itemize}
-For samples generated at leading-order (LO) accuracy in perturbative QCD, the \textsc{cteq6l}~\cite{Lai:2010nw} set of parton distribution functions
-(PDF) is used, while \textsc{ct10}~\cite{Lai:2010vv} is used for next-to-leading order (NLO) ones.
-Cross section calculations at next-to-next-to-leading order (NNLO) are used for the \hww process~\cite{Dittmaier:2011ti}.
-The $\hww$ process simulation is reweighted so that the \pth spectrum and inclusive production cross section closely match the SM calculations that have NNLO+NNLL QCD accuracy in the description of the Higgs boson inclusive production, in accordance with the LHC Higgs Cross Section Working Group recommendations~\cite{Heinemeyer:2013tqa}.
+
+For samples generated at LO accuracy in perturbative QCD, the \textsc{cteq6l}~\cite{Lai:2010nw} set of parton distribution functions
+(PDF) is used, while \textsc{ct10}~\cite{Lai:2010vv} is used for NLO ones.
+Cross section calculations at NNLO accuracy are used for the \hww process~\cite{Dittmaier:2011ti}.
+The \hww process simulation is reweighted so that the \pth spectrum and inclusive production cross section closely match the SM calculations that have NNLO+NNLL QCD accuracy in the description of the Higgs boson inclusive production, in accordance with the LHC Higgs Cross Section Working Group recommendations~\cite{Heinemeyer:2013tqa}.
 The reweighting of the \pth spectrum is achieved by tuning the \textsc{Powheg} generator, as described in detail in Ref.~\cite{Alioli:2010xd}.
 Cross sections computed with NLO QCD accuracy are used for the background processes~\cite{Heinemeyer:2013tqa}.
+
 The contribution of the \ttH production mechanism is checked to be negligible (below 1\%) in the whole \pth spectrum and is not included in the analysis. In Fig.~\ref{fig:signal_comp} the relative fraction of the four production mechanisms is shown for each \pth bin.
 
 \begin{figure}[htb]
@@ -119,12 +121,12 @@ The simulated events are reweighted to correct for observed differences between 
 \caption{Distribution of the number of vertices in data and simulation, before and after applying the pile-up reweighting.}\label{fig:nvertices}
 \end{figure}
 
-For the comparison of the measured unfolded spectrum with the theoretical predictions, two additional MC generators are used for simulating the SM Higgs boson production in the ggH process: \textsc{HRes} 2.3~\cite{deFlorian:2012mx,Grazzini:2013mca} and the second version of the \textsc{Powheg} generator (\textsc{Powheg V2})~\cite{Bagnaschi:2011tu}.
+For the comparison of the unfolded spectrum with the theoretical predictions, two additional MC generators are used for simulating the SM Higgs boson production in the ggH process: \textsc{HRes} 2.3~\cite{deFlorian:2012mx,Grazzini:2013mca} and the second version of the \textsc{Powheg} generator (\textsc{Powheg V2})~\cite{Bagnaschi:2011tu}.
 \textsc{HRes} is a partonic level MC generator that computes the SM Higgs
 boson cross section at NNLO accuracy in QCD and performs the NNLL
 resummation of soft-gluon effects at small \pt. The central predictions of
-\textsc{HRes} are obtained including the top and bottom quark mass contribution to
-the gluon fusion loop, fixing the renormalization and factorization scale central values at a Higgs boson mass of 125\GeV. The cross section normalization is scaled, to take into account electroweak corrections (by a factor of 1.05) and effects of threshold resummation (by a factor of 1.06)~\cite{Actis:2008ug,Catani:2003zt}. The upper and lower bounds of the uncertainties are obtained by scaling up and down both the renormalization and the factorization scales by a factor of two.
+\textsc{HRes} are obtained including the top and bottom quark mass contributions to
+the gluon fusion loop, fixing the renormalization and factorization scale central values at $m_{\rm H}=125$\GeV. The cross section normalization is scaled, to take into account electroweak corrections (by a factor of 1.05) and effects of threshold resummation (by a factor of 1.06)~\cite{Actis:2008ug,Catani:2003zt}. The upper and lower bounds of the uncertainties are obtained by scaling up and down both the renormalization and factorization scales by a factor of 2.
 The \textsc{Powheg V2} generator is a matrix element based generator that provides a NLO description of the ggH process in association with zero jets, taking into account the finite mass of the bottom and top quarks.
-The \textsc{Powheg} prediction is tuned using the \textsc{Powheg} damping factor \textit{hdump} of 104.17~\GeV, in order to match the \pth{} spectrum predicted by \textsc{HRes} in the full phase space. This factor reduces the emission of additional jets in the high \pt regime, and enhances the contribution from the Sudakov form factor in the limit of low \pt.
+The \textsc{Powheg} prediction is tuned using the \textsc{Powheg} damping factor \textit{hdump} of 104.17~\GeV, in order to match the \pth{} spectrum predicted by \textsc{HRes} in the full phase space. This factor reduces the emission of additional jets in the high \pt regime, and enhances the contribution from the Sudakov form factor in the limit of low \pt~\cite{Bagnaschi:2011tu}.
 The \textsc{Powheg} generator is interfaced to the \textsc{JHUGen} generator version 5.2.5~\cite{Gao:2010qx,Bolognesi:2012mm,Anderson:2013afp} for the decay of the Higgs boson to a W boson pair and interfaced with \textsc{Pythia 8}~\cite{Sjostrand:2007gs} for the simulation of parton shower and hadronization effects.

@@ -2,22 +2,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:SignalExtraction}
 
-The fitting procedure as well as the measured signal and background yields are described in this section.
+In this section the fitting procedure as well as the measured signal and background yields are described.
 
 
 \subsection{Fitting procedure}\label{sec:fit}
 
-The signal, including ggH, VBF, and VH production mechanisms, is extracted in each bin of \pth{} by performing a binned maximum likelihood fit simultaneously in all \pth{} bins to a two-dimensional template for signal and background in the \mll--\mt{} plane.
-The variables used for the two-dimensional template are chosen for their power to discriminate signal and background contributions. This is shown in Fig.~\ref{fig:2Dlegacy}, where the two-dimensional simulated distributions are shown for the signal and background processes in the 0-jets category. As can be observed, the signal contribution in the 0-jets category is mostly distributed in the low-\mll region and for \mt values around 90--110\GeV. The background contribution, which is mainly owed to the WW, W+jets and \dytt production, is instead distributed in the high-\mll region and for intermediate values of \mt (below 100\GeV).
+The signal, including ggH, VBF, and VH production mechanisms, is extracted in each bin of \pth{} by performing a binned maximum likelihood fit simultaneously in all \pth bins to a two-dimensional template for signal and background in the \mll--\mt plane.
+The variables used for the two-dimensional template are chosen for their power to discriminate signal and background contributions. This is shown in Fig.~\ref{fig:2Dlegacy}, where the two-dimensional simulated distributions are shown for the signal and background processes in the 0 jets category. As can be observed, the signal contribution in the 0 jets category is mostly distributed in the low \mll region and for \mt values around 90--110\GeV. The background contribution, which is mainly owed to the WW, W+jets and \dytt production, is instead distributed in the high \mll region and for intermediate values of \mt (below 100\GeV).
 
 \begin{figure}[htb]
 \centering
 \subfigure[]{\includegraphics[width=0.45\textwidth]{images/legacyPlots/2d_prefit_0j_125_sig_paper.pdf}}
 \subfigure[]{\includegraphics[width=0.45\textwidth]{images/legacyPlots/2d_prefit_0j_125_bkg_paper.pdf}}
-\caption{Two-dimensional \mll--\mt distribution for signal (a) and background (b) processes in the 0-jets category.\label{fig:2Dlegacy}}
+\caption{Two-dimensional \mll--\mt distribution for signal (a) and background (b) processes in the 0 jets category.\label{fig:2Dlegacy}}
 \end{figure}
 
-Six different signal strength parameters are extracted from the fit, one for each \pth~bin. The relative contributions of the different Higgs production mechanisms in the signal template are taken to be the same as in the SM. The sources of systematic uncertainty are considered as nuisance parameters in the fit.
+Six different signal strengths are extracted from the fit, one for each \pth~bin. The relative contributions of the different Higgs production mechanisms in the signal template are taken to be the same as in the SM. The sources of systematic uncertainty are considered as nuisance parameters in the fit.
 
 The binning of the \mll and \mt templates is chosen to be:
 \begin{itemize}
@@ -26,7 +26,7 @@ The binning of the \mll and \mt templates is chosen to be:
 \end{itemize}
 
 To avoid a dependence of the results on the variables used for the template fit, \mll and \mt need to be uncorrelated with respect to \pth.
-This as been verified and the correlation between the discriminating variables and \pth is shown in Fig.~\ref{fig:correlation_ggH} and Fig.~\ref{fig:correlation_vbf} for ggH and VBF production modes, respectively.
+This has been verified and the correlation between the discriminating variables and \pth is shown in Fig.~\ref{fig:correlation_ggH} and Fig.~\ref{fig:correlation_vbf} for ggH and VBF production modes, respectively.
 
 \begin{figure}[htb]
 \centering
@@ -59,7 +59,7 @@ The fit makes use of the binned maximum likelihood approach. The likelihood func
 \mathcal{L}(\mu_j,\theta) = \prod_{i=0}^{N_\mathrm{bins}} \frac{(\mu_j s_i(\theta) + b_i(\theta))^{n_i}}{n_i!}e^{-\mu_j s_i(\theta) - b_i(\theta)} \cdot p(\tilde{\theta} |\theta ) \quad ,
 \end{equation}
 
-\noindent where $\mu_j$ is the signal strength in the bin $j$, i.e. the parameter of interest of the fit, which multiplies the signal yield. The index $i$ runs over the bins of the \mll-\mt two-dimensional histogram corresponding to the \pth bin $j$, $s_i$ and $b_i$ are the expected number of signal and background events respectively in bin $i$, and $n_i$ is the total number of observed events in bin $i$. The set of parameters $\theta$ represents the full suite of nuisance parameters used to incorporate the systematic uncertainties. Each nuisance parameter is constrained in the fit including the prior distributions functions $p(\tilde{\theta}|\theta)$ in the likelihood, where $\tilde{\theta}$ is the set of default values for the $\theta$ parameters~\cite{CMS-NOTE-2011-005}. For the major part of the nuisance parameters a log-normal prior distribution is used, with a standard deviation corresponding to the given systematic uncertainty. This is the optimal choice to describe uncertainties on definite positive observables, like cross sections, efficiencies, luminosity, etc. The usage of a gaussian distribution, under certain circumstances, would indeed allow the observable value to fluctuate below zero.
+\noindent where $\mu_j$ is the signal strength in the bin $j$, i.e. the parameter of interest of the fit, which multiplies the signal yield. The index $i$ runs over the bins of the \mll-\mt two-dimensional histogram corresponding to the \pth bin $j$, $s_i$ and $b_i$ are the expected number of signal and background events respectively in bin $i$, and $n_i$ is the total number of observed events in bin $i$. The set of parameters $\theta$ represents the full suite of nuisance parameters used to incorporate the systematic uncertainties. Each nuisance parameter is constrained in the fit including the prior distribution functions $p(\tilde{\theta}|\theta)$ in the likelihood, where $\tilde{\theta}$ is the set of default values for the $\theta$ parameters~\cite{CMS-NOTE-2011-005}. For the major part of the nuisance parameters a log-normal prior distribution is used, with a standard deviation corresponding to the given systematic uncertainty. This is the optimal choice to describe uncertainties on definite positive observables, like cross sections, efficiencies, luminosity, etc. The usage of a gaussian distribution, under certain circumstances, would indeed allow the value of the observable to fluctuate below zero.
 For some nuisance parameters, as the ones related to the statistical uncertainty coming from the background measurement in data control regions, a Gamma distribution is instead recommended. 
 A log-uniform distribution is used for the uncertainties related to the normalization of background contributions that are left unconstrained in the fit, such as for the WW background process.
 Finally, some of the experimental uncertainties related to the shape of signal and background processes are modelled by means of additional histograms as explained in Sec.~\ref{sec:syst_treatment}. The correlations of nuisance parameters across different \pth bins are taken into account. Moreover the nuisance parameters can also be correlated (or anti-correlated) between signal and different background processes. As an example, the uncertainty related to the integrated luminosity measurement is fully correlated for all the signal and background processes.
@@ -69,7 +69,7 @@ Before running the fit on the data, the same procedure has been applied to the s
 
 \subsection{Signal and background yields}\label{subsec:yields}
 
-A comparison of data and background predictions is shown in Fig.~\ref{fig:mllSignalRegion}, where the \mll{} distribution is shown for the six \pth bins. Distributions are shown in the \mt window of [60, 110]\GeV, in order to emphasize the signal contribution. The \mt distributions are shown in Fig.~\ref{fig:mTSignalRegion} and correspond to the \mll window of [12, 75]\GeV.
+A comparison of data and background predictions is shown in Fig.~\ref{fig:mllSignalRegion}, where the \mll{} distribution is shown for the six \pth bins. Distributions are shown in the \mt window of [60, 110]\GeV, in order to emphasize the signal contribution. The \mt distributions are shown in Fig.~\ref{fig:mTSignalRegion} and correspond to the \mll window of [12, 75]\GeV. The signal and background yields after the analysis selection are reported in Table \ref{table:yields}.
 
 \begin{figure}[htbp]
 \centering
@@ -117,8 +117,6 @@ A comparison of data and background predictions is shown in Fig.~\ref{fig:mllSig
 \caption{Distributions of the \mt variable in each of the six \pth{} bins. Background normalizations correspond to the values obtained from the fit. Signal normalization is fixed to the SM expectation. The distributions are shown in an \mll window of [12,75]\GeV in order to emphasize the Higgs boson (H) signal. The signal contribution is shown both stacked on top of the background and superimposed on it. Ratios of the expected and observed event yields in individual bins are shown in the panels below the plots. The uncertainty band shown in the ratio plot corresponds to the envelope of systematic uncertainties after performing the fit to the data.}\label{fig:mTSignalRegion}
 \end{figure}
 
-The signal and background yields after the analysis selection are reported in Table \ref{table:yields}.
-
 \begin{table}[htb]
 \footnotesize{
 \begin{center}{
@@ -155,11 +153,11 @@ W$\gamma^{(*)}$	& $132\pm49$     &             $170\pm58$    &              $48\
 \end{table}
 
 The signal strengths obtained performing the fit are shown in Table~\ref{tab:signal_strengths}.
-In order to assess the robustness of the fit, several toy MC samples have been generated with a mean value for each bin corresponding to the sum of the expected background plus signal events and a statistical accuracy comparable to the one expected in data. Each toy sample is fitted with the same procedure described before. The distribution of the signal strengths extracted in each bin using the toy MC samples and found to be consistent with 1, implying that no bias is introduced by the fit procedure. 
+In order to assess the robustness of the fit, several toy MC samples have been generated with a mean value for each bin corresponding to the sum of the expected background plus signal events and a statistical accuracy comparable to the one expected in data. Each toy sample is fitted with the same procedure described before. The distribution of the signal strengths extracted in each bin using the toy MC samples are found to be consistent with 1, implying that no bias is introduced by the fit procedure. 
 %Moreover, the pull distribution of each signal strength has also been checked, showing an average and RMS value consistent with 0 and 1, respectively.
 
 \begin{table}[htb]
-\caption{Signal strengths measured in data for each \pth bin with 68$\%$ CL uncertainties.}\label{table:signal_strengths}
+\caption{Signal strengths measured in data for each \pth bin with 68$\%$ CL uncertainties.}\label{tab:signal_strengths}
 \begin{center}
 \begin{tabular}{ c  c  c  } \toprule
  \pth [GeV] & $\mu$  & Uncertainty (68$\%$ CL) \\ \midrule
@@ -188,7 +186,7 @@ The reconstructed spectrum is obtained starting from the signal yield $N_i$ in e
 \frac{d\sigma_i}{d p_\mathrm{T,reco}^\mathrm{H}} = \frac{N_i}{w_i \mathcal{L}} \quad.
 \end{equation}
 
-The spectrum shown in Fig. \ref{fig:pre_unfolding} is obtained after having performed the fit and after the subtraction of the out-of-fiducial signal events, but before undergoing the unfolding procedure. The theoretical distribution after the detector simulation and event reconstruction is also shown for comparison. Also, the expected distribution of the sub-dominant VBF and VH production mechanisms is shown.
+The spectrum shown in Fig. \ref{fig:pre_unfolding} is obtained after having performed the fit and after the subtraction of the out-of-fiducial signal events, but before undergoing the unfolding procedure. The theoretical distribution after the detector simulation and event reconstruction is also shown for comparison. Also, the expected distribution of the sub-dominant VBF and VH production mechanisms is displayed.
 
 \begin{figure}[htb]
 \centering

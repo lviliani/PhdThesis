@@ -13,8 +13,7 @@ algorithms.
 The basic principle behind the unfolding procedure in this analysis is to use MC signal samples
 to make the ``true'' distribution of the variable of interest, which is obtained using simulated events before particle interaction with the detector, and the same distribution obtained using events reconstructed after the full \textsc{Geant4} simulation of the CMS detector
 and event reconstruction. 
-
-These two distributions are used to calculate the detector response matrix $M$:
+These two distributions are used to calculate the detector response matrix $M$, defined by the following equation:
 \begin{equation}\label{eq:resp_matrix}
 R_{i}^{\rm {MC}} = \sum_{j=1}^{n} M_{ij}T_{j}^{\rm {MC}} \quad ,
 \end{equation}
@@ -28,17 +27,17 @@ The goal of the unfolding procedure is to obtain the $T^{\rm{truth}}$ distributi
 $R^{\rm{observed}}$ distribution by inverting the matrix $M$.
 %To avoid the large variance and strong negative correlation between the neighbouring bins~\cite{Cowan:2002in}, 
 
-Given the finite data statistical accuracy, a simple inversion could lead to large fluctuations between bins in the unfolded result. In particular, if the off-diagonal elements of the response matrix are sizeable, the unfolded distribution has large variance and strong negative correlations between the neighbouring bins~\cite{Cowan:2002in}. Several unfolding methods with regularization are available in literature, such as a method based on the Bayes' theorem, which overcomes the unfolding instability using an iterative procedure~\cite{DAgostini:1994zf}.
+Given the finite data statistical accuracy, a simple inversion could lead to large fluctuations in the bins of the unfolded spectrum. In particular, if the off-diagonal elements of the response matrix are sizeable, the unfolded distribution has large variance and strong negative correlations between the neighbouring bins~\cite{Cowan:2002in}. Several unfolding methods with regularization are available in literature, such as a method based on the Bayes' theorem, which overcomes the unfolding instability using an iterative procedure~\cite{DAgostini:1994zf}.
 
-The unfolding procedure in this analysis relies on the Singular Value Decomposition (SVD)~\cite{Hocker:1995kb} method based on the Tikhonov regularization function. Such method introduces a regularization function that controls the smoothness of the distribution and depends generally on one regularization parameter, which can be controlled to achieve the desired degree of smoothness.
+The unfolding procedure in this analysis relies on the Singular Value Decomposition (SVD)~\cite{Hocker:1995kb} method based on the Tikhonov regularization function. Such method introduces a regularization function that controls the smoothness of the distribution and depends generally on one regularization parameter, which can be tuned to achieve the desired degree of smoothness.
 The choice of the regularization parameter is particularly critical, and it should represent an optimal trade-off between taming the fluctuations in the unfolded result, and biasing the unfolded distribution.
 The main feature of this method is the use of the singular value decomposition of the response matrix, including an additional term to suppress the oscillatory component of the solution, i.e. the regularization term, which represents some \textit{a priori} knowledge of the final solution.
-The regularization parameter $k_\mathrm{reg}$ is chosen to obtain results that are robust against numerical instabilities and statistical fluctuations, following the prescription described in Ref.~\cite{Hocker:1995kb}. This prescription consists in the diagonalization of the response matrix using the SVD approach and in the subsequent calculation of the vector $\vec{d}$, whose values $d_i$ represent the measured distribution expressed in a specific base defined by the SVD decomposition. Plotting $\log|d_i|$ as a function of $i$, where $i$ is related to the amount of regularization, one should obtain a curve that flattens out at some value of $i$. The regularization parameter corresponding to that value represents the optimal $k_\mathrm{reg}$ choice. The parameter obtained using this prescription is $k_\mathrm{reg} = 3$.
+The regularization parameter $k_\mathrm{reg}$ is chosen to obtain results that are robust against numerical instabilities and statistical fluctuations, following the prescription described in Ref.~\cite{Hocker:1995kb}. This prescription consists in the diagonalization of the response matrix using the SVD approach and in the subsequent calculation of the vector $\vec{d}$, whose values $d_i$ represent the measured distribution expressed in a specific base defined by the SVD decomposition. Plotting $\log|d_i|$ as a function of $i$, where $i$ is related to the amount of regularization, one should obtain a curve that flattens out at some value of $i$. The regularization parameter corresponding to that value represents the optimal $k_\mathrm{reg}$ choice. The parameter obtained using this prescription with toy MC samples is $k_\mathrm{reg} = 3$.
 
-The detector response matrix is built as a two-dimensional histogram, with the generator-level \pth{} on the $y$ axis and the same variable after the reconstruction on the $x$ axis, using the same binning for both distributions.
+The detector response matrix is built as a two-dimensional histogram, with the generator level \pth on the $y$ axis and the same variable after the reconstruction on the $x$ axis, using the same binning for both distributions.
 
 The resulting matrix, including all signal sources and normalized by row, is shown in Fig.~\ref{fig:matrix}(a).
-The diagonal bins correspond to the purity $P$, defined in Eq.\eqref{eq:purity}. The same matrix, normalized by column, is shown in Fig.~\ref{fig:matrix}(b). In this case the diagonal bins correspond to the stability $S$, defined as the ratio of the number of events generated and reconstructed in a given bin, and the number of events reconstructed in that bin. The $S$ and $P$ parameters provide an estimate of the \pth resolution and migration effects, the main source being the limited resolution in the measurement of \MET.
+The diagonal bins correspond to the purity $P$, defined in Eq.\eqref{eq:purity}. The same matrix, normalized by column, is shown in Fig.~\ref{fig:matrix}(b). In this case the diagonal bins correspond to the stability $S$, defined as the ratio of the number of events generated and reconstructed in a given bin, and the number of events reconstructed in that bin. The $S$ and $P$ parameters provide an estimate of the \pth resolution and migration effects, whose main source is the limited resolution in the measurement of \MET.
 
 \begin{figure}[htb]
 \centering
@@ -57,7 +56,8 @@ The \textsc{JHUGen} generator sample is used to build the response matrix while 
 \textsc{Powheg V1} sample is used to build the \pth spectra at generator and reconstructed level. The reconstructed spectrum obtained using \textsc{Powheg V1} is then unfolded using the response matrix built with \textsc{JHUGen}, and the unfolded spectrum is compared to the \textsc{Powheg V1} spectrum at generator level. The result of this test shows good agreement between the two distributions.
 
 In order to further prove the choice of the regularization parameter, a large number of simulated pseudo-experiments has been generated to verify that the coverage of the unfolded uncertainties obtained with this procedure is as expected.
-From each pseudo-experiment the reconstructed \pth spectrum is obtained and then unfolded using the procedure described above, including only the statistical uncertainties. The coverage is calculated for each \pth bin, counting the number of pseudo-experiments for which the statistical uncertainty covers the true value. The results are shown in Table~\ref{tab:coverage} for different values of the regularization parameter: starting from $k_\mathrm{reg}=2$ (stronger regularization) up to $k_\mathrm{reg}=5$ (weaker regularization). The criterion for choosing the best $k_\mathrm{reg}$ value is to increase the regularization as much as possible without introducing a bias, i.e. until a 68\% coverage is fulfilled. This criterion leads to the same result as the prescription described before, strengthening the choice of $k_\mathrm{reg}=3$.
+From each pseudo-experiment the reconstructed \pth spectrum is obtained and then unfolded using the procedure described above, including only the statistical uncertainties. The response matrix used for this test is different from the nominal matrix, and is obtained by changing the relative ggH and VBF fractions in order to obtain a modified spectrum with respect to the SM one.
+The coverage is calculated for each \pth bin, counting the number of pseudo-experiments for which the statistical uncertainty covers the true value. The results are shown in Table~\ref{tab:coverage} for different values of the regularization parameter: starting from $k_\mathrm{reg}=2$ (stronger regularization) up to $k_\mathrm{reg}=5$ (weaker regularization). The criterion for choosing the best $k_\mathrm{reg}$ value is to increase the regularization as much as possible without introducing a bias, i.e. until a 68\% coverage is fulfilled. This criterion leads to the same result as the prescription described before, strengthening the choice of $k_\mathrm{reg}=3$.
 
 \begin{table}[htb]
 \centering
@@ -107,11 +107,11 @@ The correlation cor($i$,$j$) of bins $i$ and $j$ is defined as:
 \caption{Correlations among the signal strengths corresponding to the six \pth bins including all type A uncertainties.}\label{fig:typeA_corr}
 \end{figure}
 
-The nuisance parameters belonging to the Type B class are the ones related to:
+The nuisance parameters belonging to the type B class are the ones related to:
 \begin{itemize}
 \item b veto scale factor: it affects the signal and background templates
 by varying the number of events with jets that enter the selection. It also
-affects the response matrix because the reconstructed spectrum is harder or softer depending on the number of jets, which in turn depends on the veto;
+affects the response matrix because the reconstructed spectrum is harder or softer depending on the number of jets, which in turn depends on the b veto;
 \item lepton efficiency scale factor: it affects the signal and background
 template shape and normalization. It affects the response matrix by varying
 the reconstructed spectrum;
@@ -134,6 +134,28 @@ Using these uncertainties, the measured spectra for each type B
 source are built.
 The effects are propagated through the unfolding by building the corresponding variations of the response matrix and unfolding the
 measured spectra with the appropriate matrix.
+\begin{table}[!htb]
+\caption{Effect of all the Type B uncertainties on the signal strengths of each bin. In the table are reported the signal strength variations corresponding to an up or down scaling of each nuisance parameter. Uncertainties related to \MET and lepton resolution are single-sided, i.e. only an up variation is implemented.}\label{table:corr_syst}
+\centering
+\footnotesize{
+\begin{tabular}{lcccccc}
+\toprule
+\multirow{2}{*}{Type B uncertainty} & \multicolumn{6}{c}{Effect on signal strength ($+1\sigma/-1\sigma$ [\%])}\\
+ 		   & [0--15] & [15--45] & [45--85] & [85--125] & [125--165] & [165--$\infty$] \\ 
+\midrule
+b veto & -10.1/-8.8 & 7.3/12.2 & -6.3/3.1 & -14.4/-4.8 & -5.4/14.5  & -7.9/17.8  \\ 
+lepton efficiency & -14.7/-3.9  & 4.5/15.1  & -5.7/2.5  & -13.2/-5.3  & -0.2/7.6  & -0.1/6.8  \\ 
+\MET resolution & -12.5/0.0  & 15.4/0.0  & -12.8/0.0  & 8.7/0.0  & -20.9/0.0  & 10.5/0.0  \\
+\MET scale & -14.4/-6.8  & 0.0/17.7  & -6.1/-7.1  & 9.6/-20.9  & 2.3/32.4  & 2.5/2.6  \\ 
+lepton resolution & -12.5/0.0  & 11.2/0.0  & -2.4/0.0  & -13.4/0.0  & 9.9/0.0  & -4.6/0.0  \\ 
+e momentum scale & -2.7/-13.1  & 15.9/9.9  & 10.8/-16.8  & 16.2/-33.1  & 30.9/-14.4  & 12.6/-10.9  \\
+$\mu$ momentum scale & -7.0/-10.7  & 11.8/8.9  & 1.1/-8.7  & -0.7/-14.4  & 14.5/-4.6  & 8.0/-1.6  \\ 
+jet energy scale & -10.9/-10.1  & 9.0/9.0  & -3.0/-2.9  & -10.3/-8.9  & 0.3/3.4  & 5.2/3.1  \\
+
+\bottomrule
+\end{tabular}
+}
+\end{table}
 
 Type C uncertainties are related to the underlying assumption on the Higgs boson production mechanism used to extract the fiducial cross sections. These are evaluated using alternative response matrices that are obtained by varying the relative fraction of VBF and ggH components within the experimental uncertainty, as given by the CMS combined measurement~\cite{Khachatryan:2014jba}.
 Three different response matrices are built, corresponding to the nominal, scaled up, and scaled down
@@ -149,28 +171,3 @@ These three matrices are used to unfold the reconstructed spectrum with the nomi
 %Type A and B uncertainties are finally combined together after the unfolding
 %summing in quadrature positive and negative contributions separately for each bin. Type C uncertainties, also referred to as ``model dependence'', are instead quoted separately.
 %The effect of each source of the uncertainty is quoted for each bin of \pth~in Table~\ref{table:values_and_uncertainties}.
-
-\begin{table}[htb]
-\caption{Effect of all the Type B uncertainties on the signal strengths of each bin. In the table are reported the signal strength variations corresponding to an up or down scaling of each nuisance parameter. Uncertainties related to \MET and lepton resolution are single-sided, i.e. only an up variation is implemented.}\label{table:corr_syst}
-\centering
-\footnotesize{
-\begin{tabular}{lcccccc}
-\toprule
-\multirow{2}{*}{Type B uncertainty} & \multicolumn{6}{c}{Effect on signal strength ($+1\sigma/-1\sigma$ [\%])}\\
- 		   & [0--15] & [15--45] & [45--85] & [85--125] & [125--165] & [165--$\infty$] \\ 
-\midrule
-b veto & -10.1/-8.8 & 7.3/12.2 & -6.3/3.1 & -14.4/-4.8 & -5.4/14.5  & -7.9/17.8  \\ 
-lepton efficiency & -14.7/-3.9  & 4.5/15.1  & -5.7/2.5  & -13.2/-5.3  & -0.2/7.6  & -0.1/6.8  \\ 
-\MET resolution & -12.5/0.0  & 15.4/-0.0  & -12.8/-0.0  & 8.7/0.0  & -20.9/-0.0  & 10.5/0.0  \\
-\MET scale & -14.4/-6.8  & -0.0/17.7  & -6.1/-7.1  & 9.6/-20.9  & 2.3/32.4  & 2.5/2.6  \\ 
-lepton resolution & -12.5/-0.0  & 11.2/0.0  & -2.4/0.0  & -13.4/-0.0  & 9.9/0.0  & -4.6/-0.0  \\ 
-e momentum scale & -2.7/-13.1  & 15.9/9.9  & 10.8/-16.8  & 16.2/-33.1  & 30.9/-14.4  & 12.6/-10.9  \\
-$\mu$ momentum scale & -7.0/-10.7  & 11.8/8.9  & 1.1/-8.7  & -0.7/-14.4  & 14.5/-4.6  & 8.0/-1.6  \\ 
-jet energy scale & -10.9/-10.1  & 9.0/9.0  & -3.0/-2.9  & -10.3/-8.9  & 0.3/3.4  & 5.2/3.1  \\
-
-\bottomrule
-\end{tabular}
-}
-\end{table}
-
-
