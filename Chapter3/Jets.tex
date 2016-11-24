@@ -1,10 +1,10 @@
 \section{Jets reconstruction and identification}\label{sec:jets}
 
-Jets are the experimental signature of quarks and gluons produced in high energy physics processes. They arise from the hadronization of partons, which forms collimated sprays of particles and play a predominant role in hadron colliders like the LHC, where the production cross section is very large. In this section the jet reconstruction techniques used in CMS are described.
+Jets are the experimental signature of quarks and gluons produced in high energy physics processes. They arise from the hadronization of partons, which forms collimated sprays of particles. In this section the jet reconstruction techniques used in CMS are described.
 
 \subsection{Jet reconstruction in CMS}
 
-The majority of physics analyses involving jets in the final state make use of Particle Flow jets. The PF jets are reconstructed using the technique described in Sec.~\ref{sec:PF}, clustering all particles reconstructed with the PF algorithm, without any distinction of type and energy threshold. This method allows a remarkable improvement in the jet momentum and spatial resolution with respect to the calorimeter jets, which are instead reconstructed using solely the information from the calorimeters. Indeed the use of the tracker information provides a better \pt resolution for the charged particles constituting the jets\footnote{On average, the typical jet energy fractions carried by charged particles, photons and neutral particles are 65\%, 25\% and 10\%, respectively.}. 
+The majority of physics analyses involving jets in the final state make use of Particle Flow jets. The PF jets are reconstructed using the technique described in Sec.~\ref{sec:PF}, clustering all particles reconstructed with the PF algorithm, without any distinction of type and energy threshold. This method allows a remarkable improvement in the jet momentum and spatial resolution with respect to the calorimeter jets, which are instead reconstructed using solely the information from the calorimeters. Indeed the use of the tracker information provides a better \pt resolution for the charged particles belonging to jets\footnote{On average, the typical jet energy fractions carried by charged particles, photons and neutral particles are 65\%, 25\% and 10\%, respectively at low \pt. For higher jet \pt the energy fraction carried by photons and neutral hadrons increases.}. 
 
 Jets are defined through sequential, iterative clustering algorithms that combine the four-momenta of input particles until certain conditions are satisfied and jets are formed~\cite{Salam:2009jx}. Several algorithms are available for jet clustering, characterized by different features. From a theoretical point of view, an ideal jet clustering algorithm should fulfil the following requirements~\cite{Blazey:2000qt}:
 \begin{itemize}
@@ -16,11 +16,9 @@ Jets are defined through sequential, iterative clustering algorithms that combin
 \end{itemize}
 The ideal algorithm should also follow some experimental attributes. Among them, the performance of the algorithm should be as independent as possible of the detector that provides the data, the algorithm should not amplify the inevitable effects of resolution smearing and angle bias and should not be strongly affected by pile-up and high beam luminosities. Furthermore, the algorithm should be easy to implement, efficient to identify all possible jet candidates and should keep the necessary computing resources at an acceptable level.
 
-Two main classes of jet clustering algorithms may be defined. The first one consists in the ``cone'' recombination, where jets are reconstructed associating together particles whose trajectories lie within a cone of radius $\Delta R$ in the $\eta$--$\phi$ space. The second class of algorithms uses the sequential recombination scheme, that iteratively recombine the closest pair of particles according to some distance measure.
+Two main classes of jet clustering algorithms may be defined. The first one consists in the ``cone'' recombination, where jets are reconstructed associating together particles whose trajectories lie within a cone of radius $\Delta R$ in the $\eta$--$\phi$ plane. An example of this approach is the SISCone algorithm. The second class of algorithms uses the sequential recombination scheme, that iteratively recombine the closest pair of particles according to some distance measure.
 
-The standard algorithms used by CMS are the SISCone, which is a ``cone'' recombination algorithm, and the $k_t$, anti-$k_t$ and \emph{Cambridge Aachen} (CA) algorithms, which instead belong to the sequential recombination class.
-All the analyses presented in Secs.~\ref{chap4}, \ref{chap5} and \ref{chap6} make use of the sequential recombination scheme, in particular of the anti-$k_t$ algorithm with $R=0.4$.
-
+The standard algorithms used by CMS are the $k_t$, anti-$k_t$ and \emph{Cambridge Aachen} (CA) algorithms, which belong to the sequential recombination class.
 The $k_t$, anti-$k_t$ and CA algorithms are infrared and collinear safe algorithms characterized by the introduction of two definitions of distance: $d_{ij}$, the distance between the two objects $i$ and $j$, and $d_{iB}$, the distance between the object $i$ and the beam. These distances are defined by the following equations:
 \begin{equation}\label{eq:jetalgo}
 \begin{split}
@@ -39,7 +37,7 @@ where $\Delta_{ij}^2 = (y_i - y_j)^2 + (\phi_i - \phi_j)^2$ and $k_{ti}$, $y_i$ 
 
 The physical difference between the three algorithms is the momentum weighting. For the $k_t$ algorithm, the weighting proportional to $k_t^2$ implies that jets are reconstructed starting from particles with low transverse momentum. Moreover, this algorithm produces jets with irregular borders, thereby complicating the correction for effects such as pile-up. For the CA algorithm there is no transverse momentum weighting and particles are merged following just an angular approach, based on the distance $\Delta_{ij}$. Also this algorithm leads to jets with irregular borders. Finally, the anti-$k_t$ algorithm uses a weighting proportional to $1/k_t^2$, favouring the merging of high transverse momentum particles. In this case the jets grow around particles with highest transverse momenta and jets have a circular shape. 
 
-Jets reconstructed with different algorithms starting from the same set of simulated particles are shown in Fig.~\ref{fig:jets}.
+Jets reconstructed with different algorithms starting from the same set of simulated particles are shown in Fig.~\ref{fig:jets}. All the analyses presented in Chapters~\ref{chap4}, \ref{chap5} and \ref{chap6} make use of the sequential recombination scheme. In particular the anti-$k_t$ algorithm is used, with $R=0.5$ and $R=0.4$ for analyses at 8\TeV and 13\TeV, respectively.
 
 \begin{figure}[htb]
 \centering
@@ -49,7 +47,7 @@ Jets reconstructed with different algorithms starting from the same set of simul
 
 \subsection{Jet energy correction}\label{sec:jec}
 
-The purpose of jet energy correction is to relate, on average, the jet energy measured in the detector to the true energy of the corresponding final state particle or parton jet. The latter is obtained in simulation by clustering all stable particles, i.e. with $c\tau > 1$\,cm, produced in the event excluding neutrinos, using the same clustering algorithm as for jets in the detector. This mismatch is mainly ascribable to the nonuniform and nonlinear response of the CMS calorimeters, electronics noise and pile-up. For this reason, CMS has developed a sequential procedure to calculate and apply the \emph{jet energy corrections} (JEC)~\cite{Chatrchyan:2011ds}.
+The purpose of jet energy correction is to relate, on average, the jet energy measured in the detector to the true energy of the corresponding final state particle or parton jet. The latter is obtained in simulation by clustering all stable particles, i.e. with $c\tau > 1$\,cm, produced in the event excluding neutrinos, using the same clustering algorithm as for jets in the detector. A mismatch is mainly ascribable to the nonuniform and nonlinear response of the CMS calorimeters, electronics noise and pile-up. For this reason, CMS has developed a sequential procedure to calculate and apply the \emph{jet energy corrections} (JEC)~\cite{Chatrchyan:2011ds}.
 
 The correction is applied as a multiplicative factor ($\mathcal{C}$) to each component of the raw jet four-momentum $p_\mu^\mathrm{raw}$ (components are indexed by $\mu$ in the following):
 \begin{equation}
@@ -63,7 +61,7 @@ where $\pt'$ is the jet \pt after applying the offset correction and $\pt''$ is 
 
 \subsubsection{Offset correction}
  
-The offset correction purpose is to estimate and subtract the average energy contribution that is not associated with the hard scattering in the event. The approach followed for the estimation of the offset correction is known as \emph{Jet Area Method}. For each event, an average \pt-density per unit area, $\rho$, is estimated, characterizing the soft jet activity. This \pt-density represents the combination of underlying event, electronics noise and pile-up effects. 
+The offset correction purpose is to estimate and subtract the average energy contribution that is not associated with the hard scattering in the event. The approach followed for the estimation of the offset correction is known as \emph{Jet Area Method}~\cite{Cacciari:2007fd}. For each event, an average \pt-density per unit area, $\rho$, is estimated, characterizing the soft jet activity. This \pt-density represents the combination of underlying event, electronics noise and pile-up effects. 
 The two latter components contaminate the hard jet energy measurement and need to be
 corrected for with the offset correction. The key element for this approach is the jet area $A_j$.
 A very large number of infinitely soft four-momentum vectors (soft enough not to change the properties of the true jets) are artificially added in the event and clustered by the jet algorithm together with the true jet components. The extent of the region in the $\eta$--$\phi$ space occupied by the soft particles clustered in each jet defines the active jet area. The \pt-density $\rho$ is calculated with the $k_t$ algorithm with a distance parameter $R=0.6$. The quantity $\rho$ is estimated event by event as the median of the distribution of the variable $p_{\mathrm{T}j}/A_j$, where $j$ runs over all jets in the event, and is not sensitive to the presence of hard jets. At detector level, the measured density $\rho$ is the convolution of the true particle-level activity (underlying event, pile-up) with the detector response to the various particle types. Therefore, the event-by-event and jet-by-jet offset correction can be defined as:
@@ -92,7 +90,7 @@ The goal of the relative jet energy scale correction is to make the jet response
 
 \subsubsection{Absolute jet energy scale}
 
-The goal of the absolute jet energy scale correction is to make the jet response flat versus \pt. The absolute jet energy response is measured in the reference region $|\eta|<1.3$ with the \emph{Missing Transverse Energy Projection Fraction} (MPF) method~\cite{Abbott:1998xw}, using $\gamma+\mathrm{jets}$ and Z$+\mathrm{jets}$ events. This method is used to estimate the absolute jet energy correction and is based on the fact that $\gamma+\mathrm{jets}$ and Z$+\mathrm{jets}$ events have no intrinsic \MET and that, at parton level, the $\gamma$ and Z boson are perfectly balanced by the hadronic recoil in the transverse plane.
+The goal of the absolute jet energy scale correction is to make the jet response flat versus \pt. The absolute jet energy response is measured in the reference region $|\eta|<1.3$ with the \emph{Missing Transverse Energy Projection Fraction} (MPF) method~\cite{Abbott:1998xw}, using $\gamma+\mathrm{jets}$ and Z$+\mathrm{jets}$ events. This method is used to estimate the absolute jet energy correction and is based on the fact that $\gamma+\mathrm{jets}$ and Z$+\mathrm{jets}$ events have no intrinsic \MET and that, at parton level, the $\gamma$ and Z boson are perfectly balanced by the hadronic recoil in the transverse plane (see Sec.~\ref{sec:metscale}).
 
 \subsubsection{Jet energy uncertainties}
 
@@ -118,7 +116,7 @@ The sources are combined in different groups: absolute scale, relative scale, pi
 \subsubsection{Jet energy resolution}
 Measurements show that the jet energy resolution (JER) in data is worse than in simulation, therefore the simulated jets need to undergo a smearing procedure in order to have a better description of the data. 
 
-Reconstructed jets in simulated events are corrected for the jet energy resolution using a two step procedure. In the first step, the reconstructed jet \pt is scaled for the observed \pt difference between reconstructed and generated jets. This method only works for reconstructed jets that are well matched to generated jets, where the matching is based on $\Delta R$ and $\Delta \pt$ requirements. For reconstructed jets that do not fulfil the matching requirements, a gaussian smearing of the \pt distribution is applied in order to obtain the desired resolution.
+Reconstructed jets in simulated events are corrected for the jet energy resolution using a two step procedure. In the first step, the reconstructed jet \pt is scaled for the observed \pt difference between reconstructed and generated jets. This method only works for reconstructed jets that are well matched to generated jets, where the matching is based on $\Delta R$ and $\Delta \pt$ requirements. In the second step, a gaussian smearing of the \pt distribution of the reconstructed jet is applied in order to obtain the desired resolution. For reconstructed jets that do not fulfil the matching requirement to generated jets, only the second step is applied.
 
 \subsection{Jet identification}\label{sec:jetID}
 
