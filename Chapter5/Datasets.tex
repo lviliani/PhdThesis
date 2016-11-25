@@ -26,7 +26,7 @@ Higgs boson signal samples are simulated using \textsc{Powheg v2}~\cite{Nason:20
 In particular, for Higgs boson produced via ggH~\cite{Alioli:2008tz} and VBF~\cite{Nason:2009ai},
 the decay into two W bosons and subsequently into leptons is done using \textsc{JHUGen} v5.2.5. 
 For associated production with a vector boson (WH, ZH)~\cite{Luisoni:2013kna}, including gluon fusion produced ZH, 
-the Higgs boson decay is instead simulated using \textsc{pythia} 8.1~\cite{Sjostrand:2007gs}. All signal samples are generated assuming a Higgs boson mass of 125\GeV.
+the Higgs boson decay is instead simulated using \textsc{Pythia} 8.1~\cite{Sjostrand:2007gs}. All signal samples are generated assuming a Higgs boson mass of 125\GeV.
 
 The \textsc{Powheg v2}~\cite{Melia:2011tj} is also used for simulating the $\mathrm{q\bar{q}' \to W^+W^-}$ production in different decay channels. The simulated events are reweighted to reproduce the $\pt^\mathrm{WW}$ distribution obtained from \pt-resummed calculations~\cite{Meade:2014fca,Jaiswal:2014yba}. Gluon fusion produced WW is generated at LO QCD accuracy using \textsc{MCFM} v7.0~\cite{Campbell:2013wga}.
 %The cross section used for normalizing WW processes produced via $\mathrm{q\bar q}$ was computed at next-to-next-to-leading order (NNLO)~\cite{Gehrmann:2014fva}. 
@@ -70,11 +70,11 @@ ZZZ &  0.01398  \\
 \end{table}
 
 All processes are generated using NNPDF 2.3~\cite{Ball:2013hta,Ball:2011uy} for NLO generators.
-The LO version of the same PDF set is used for LO generators. All the event generators are interfaced  to \textsc{pythia 8.1}~\cite{Sjostrand:2007gs} for the showering of
+The LO version of the same PDF set is used for LO generators. All the event generators are interfaced  to \textsc{Pythia 8.1}~\cite{Sjostrand:2007gs} for the showering of
 partons and hadronization, as well as for including a simulation of underlying event (UE) and multiple parton interaction (MPI) based on the CUET8PM1 tune~\cite{Khachatryan:2015pea}. 
 
 To estimate the systematic uncertainties related to the choice of UE and MPI tunes, the signal processes and the WW background are generated with two alternative tunes that are representative of the errors on the tuning parameters.
-The showering and hadronization systematic uncertainty is estimated by interfacing the same MC samples with the \textsc{herwig++} 2.7 parton shower~\cite{Richardson:2013nfo,Bellm:2013hwb} instead of \textsc{pythia 8}.
+The showering and hadronization systematic uncertainty is estimated by interfacing the same MC samples with the \textsc{Herwig++} 2.7 parton shower~\cite{Richardson:2013nfo,Bellm:2013hwb} instead of \textsc{Pythia 8}.
 
 Drell-Yan production of $\mathrm{Z/\gamma^{*}}$ is generated using \textsc{MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca}. 
 Other multiboson processes, such as WZ, ZZ, and VVV (V$=$W/Z), are generated with \textsc{MadGraph5\_aMC@NLO} and normalized to the cross section calculated at NLO accuracy.
