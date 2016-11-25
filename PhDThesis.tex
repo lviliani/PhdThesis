@@ -28,9 +28,11 @@
 \usepackage{tabularx}
 \usepackage{layout}
 \usepackage[titletoc]{appendix}
+\usepackage{pdfpages}
 %\usepackage{showframe}
 %\usepackage{geometry}
 
+\headheight=15pt
 \addtolength{\topmargin}{-0.6cm}
 \addtolength{\textwidth}{1.6cm}
 \addtolength{\textheight}{1.2cm}
@@ -148,7 +150,8 @@
 \linespread{1}
 
 \begin{frontmatter}
-\input{Title.tex}
+\includepdf{frontpage.pdf}
+%\input{Title.tex}
 \cleardoublepage
 \pagestyle{fancy}
 \fancyhead{}
