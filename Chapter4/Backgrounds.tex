@@ -1,9 +1,8 @@
 \section{Background estimation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:Backgrounds}
-The signal extraction procedure requires the determination of the normalization and the (\mll, \mt)
+The signal extraction procedure requires the determination of the normalization and (\mll, \mt)
 shape for each background source. In this section, the methods used to estimate these quantities are described.
-
 
 
 \subsection{WW background \label{sec:WWBackground}}
@@ -72,8 +71,8 @@ The gluon-induced WW process, i.e. $\mathrm{gg\to W^{+}W^{-}}$, has a subdominan
 In this analysis the top quark background is divided into two different categories depending on the number of jets in the event. Different selections are applied in the two categories, especially concerning the b tagging requirements, as explained in Sec.~\ref{sec:Selections}.
 A top quark enriched control region, $CR_{\ttbar}$, is defined for each of the two categories in order to estimate the process cross section directly from data. For the category with 0 counted jets, the control region is defined selecting events containing at least one soft jet, i.e. with $\pt < 30$\GeV, that is identified as a b-jet by the TCHE and soft-muon algorithms. In the category with more than 0 counted jets, a similar control region is defined requiring events to contain at least one jet with $\pt>30$\GeV identified by the JP algorithm. The control regions defined in this way are very pure and can be used to normalize the simulation prediction to data (data driven method).
 
-Since the $CR_{\ttbar}$ control region and the signal region ($SR$) are orthogonal, a factor $\alpha$ connecting the number of events in the two is evaluated using simulation with the following formula:
-\begin{equation}
+Since the $CR_{\ttbar}$ control region and the signal region ($SR$) are orthogonal, a factor $\alpha$ connecting the number of events in the two is evaluated in simulation using the following formula:
+\begin{equation}\label{eq:alpha}
 \alpha = \frac{N_\mathrm{MC}^{SR}}{N_\mathrm{MC}^{CR_{\ttbar}}} \quad ,
 \end{equation}
 
@@ -84,90 +83,15 @@ N_\mathrm{Data}^{SR} = \alpha N_\mathrm{Data}^{CR_{\ttbar}} \quad .
 
 \noindent Before applying this procedure, the simulated events have been reweighted using the b tagging efficiency scale factors described in Sec.~\ref{sec:ScaleFactors}.
 
-In the 0 jets category the residual top quark background is very small, and its normalization is estimated inclusively in \pth. For the other category, the aforementioned procedure is applied independently in each \pth bin, rather than inclusively, because an overall normalization factor would not be able to cover the discrepancies between data and simulation from bin to bin. This can be understood looking at the \pth distribution in the $CR_{\ttbar}$ region, shown in Fig.~\ref{fig:ttpth}, where data and simulation are compared.
-
-\begin{comment}
-The general strategy for determining the residual top events in the signal region is to first measure the top tagging efficiencies from an orthogonal region of phase space in data. The orthogonal phase space is  defined inverting the b-veto requirement of the signal region, in such a way to have a control region enriched in top quark events.  Then, using this efficiency, the number of events with the associated uncertainty is propagated from the control region to the signal region.
-The number of surviving top events in the signal region would then be:
-
-\begin{equation}
- N^{\mathrm{signal}}_{bveto} = N^{\mathrm{control}}_{btag} \cdot \frac{1-\epsilon_{\mathrm{top}}}{\epsilon_{\mathrm{top}}}
-\label{eq:top_equation}
-\end{equation}
-
-where $N^{\rm control}_{\rm btag}$ is the number of events in the 
-control region and $\epsilon_{\rm top}$ is the efficiency as measured
-in data.
-
-The methods to estimate the top background contribution in the two jet categories are different and are explained below.
-
-
-\subsubsection{0-jets category}
-Most of the top background, composed of \ttbar and tW processes, is rejected in the 0-jet bin by the
-jet veto. The top-tagging efficiency in the zero jet bin, $\epsilon_{\rm tag}^{0-jet}$, is the probability for a top event to
-fail one of either the b-tagging veto or the soft muon veto, and is defined as:
-
-\begin{equation}\label{eq:eff_top_0j}
-\epsilon_{\rm tag} = \frac{N_{\rm tag}^{\rm control}}{N^{\rm control}} \quad ,
-\end{equation}
-
-where $N^{\rm control}$ is the number of events in the top control phase space defined requiring one b-tagged jet with $\pt>30$\GeV, and $N_{\rm tag}^{\rm control}$ is the subset of those events that pass either the soft muon tagging or the low-\pt b jet tagging. The purity of this control sample, as estimated from simulation, is about 97\%. The remaining 3\% background contribution is estimated from simulation and subtracted from the numerator and denominator of Eq.~\eqref{eq:eff_top_0j}. The efficiency $\epsilon_{\rm top}^{0-jet}$ can then be estimated using the following formula:
-
-\begin{equation}\label{eq:eff_top_0j}
-\epsilon_{\rm top}^{0-jet} = f_{\ttbar} \cdot \epsilon_{2b} + f_\mathrm{tW} \cdot ( x \cdot \epsilon_{2b} + (1-x) \cdot \epsilon_{\rm tag} ) \quad ,
-\end{equation}
-
-\begin{equation}
-\epsilon_{2b} = 1 - (1 - \epsilon_{\rm tag})^{2} \quad ,
-\end{equation}
-where $f_{\ttbar}$ and $f_\mathrm{tW}$ are the \ttbar and tW fractions respectively, $x$ is the fraction of tW events containing 2 b jets, and $\epsilon_{2b}$ is the efficiency for a top event with 0 counted jets, i.e. two soft b jets, to pass the top veto. For the ratio of \ttbar and tW cross-sections an uncertainty of 17\% is assumed. The fraction $f_{\ttbar}$ is estimated using MC simulation of the \ttbar and tW processes at NLO accuracy.
-
-Using this procedure a data/simulation scale factor of $0.98 \pm 0.17$ is found, and is applied to correct the MC simulation in order to match the data.
-
-
-\subsubsection{Data driven estimation \label{sec:DD}}
-In addition to the b-tagging efficiency, the other ingredient to estimate the \ttbar background is the process cross section. The idea is to measure the cross section in a \ttbar enriched control region, that is called CtrlDD. CtrlDD is defined according to the lepton preselection cuts defined in Sec.~\ref{sec:Selections}, and requiring in addition at least one jet with \jpb score higher than 1.4.
-
-From the simulation we derive the factor $\alpha$ that connects CrtlDD to the signal region, calculating the ratio of \ttbar events in the two regions:
-
-\begin{equation}
-\alpha=\frac{N_{\ttbar~MC}^{SIG}}{N_{\ttbar~MC}^{CtrlDD}} \quad.
-\end{equation}
-
-The number of events in the CtrlDD region in data is counted, subtracting the expected number of events from non-\ttbar backgrounds, and obtaining $N_{\ttbar~Data}^{CtrlDD}$. Finally the number of expected \ttbar events in the signal region ($N_{\ttbar~Data}^{SIG}$) is obtained as:
-
-\begin{equation}
-N_{\ttbar~Data}^{SIG} = \alpha{}N_{\ttbar~Data}^{CtrlDD}.
-\end{equation}
-
-In evaluating $\alpha$ and its error the b-tagging efficiencies determined in Sec.~\ref{sec:TagAndProbe} are used. 
-For each event an efficiency scale factor and a mistag rate scale factor are derived, depending on whether the event falls in the signal or CtrlDD region.
-
-\begin{equation}
-\label{eq:sfsig}
-SF_{SIG} = \left(\frac{1-\epsilon_{s}^{Data}}{1-\epsilon_{s}^{MC}}\right)^{min(2, n_{b-jets})} \left(\frac{1-\epsilon_{b}^{Data}}{1-\epsilon_{b}^{MC}}\right)^{n_{non-b-jets}} 
-\end{equation}
-
-\begin{equation}
-\label{eq:sfbkg}
-SF_{CtrlDD} = \left(\frac{\epsilon_{s}^{Data}}{\epsilon_{s}^{MC}}\right)^{(jet1 == b-jet)} \left(\frac{\epsilon_{b}^{Data}}{\epsilon_{b}^{MC}}\right)^{(jet1 == non-b-jets)} 
-\end{equation}
-
-where $n_{b-jets}$ is the number of true b-jets in the event and $n_{non-b-jets}$ is the number of non-b-jets in the event. The writing $jet1 == b-jet$ ($jet1 == non-b-jets$) is a boolean flag that is true when the leading jet, the one used for the CtrlDD selection, is (not) a true b-jet.
-
-Since the efficiency and mistag rate that have been measured on data are close to the one in the simulation, it was decided to assume a scale factor of 1 for both b-tagging efficiency and mis-tag rate. This means that the central values of the scale factors defined in Eq.~\ref{eq:sfsig} and Eq.~\ref{eq:sfbkg} is 1, but these numbers have an error that is derived assuming an uncertainty on $\epsilon_{s}^{Data}$ and $\epsilon_{b}^{Data}$ that covers both the statistical error from the fit of the two quantities and the difference with respect to the simulation.
-This results in an up and a down variation of the scale factors in the signal and CtrlDD regions, that is used to derive an error on $\alpha$.
-
-A data driven estimation of the top quark background with the method described above is performed in each of the \pth bins independently. The reason to make this estimation in $\pth$ bins, rather than inclusively is explained in Fig.~\ref{fig:ttpth}, where the \pth distribution is shown in the CtrlDD region normalized to the cross section measured by a specific CMS analysis~\cite{Khachatryan:2016mqs}. As shown in the ratio plot, an overall normalization factor would not be able to accommodate for the variations of the data/simulation ratio from bin to bin.
-\end{comment}
+This procedure is applied independently in each \pth bin, rather than inclusively, because an overall normalization factor would not be able to cover the discrepancies between data and simulation from bin to bin. This can be understood looking at the \pth distribution in the $CR_{\ttbar}$ region, shown in Fig.~\ref{fig:ttpth}, where data and simulation are compared.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.6\textwidth]{images/ttpth.pdf}
+\includegraphics[width=0.6\textwidth]{images/ttpth-v2.pdf}
 \caption{Distribution of \pth in the $CR_{\ttbar}$ region, comparing data and simulation.\label{fig:ttpth}}
 \end{figure}
 
-\noindent The results of the method discussed before are listed in Tab.~\ref{tab:ttdd} for each bin of \pth.
+\noindent The results of the method discussed before are listed in Table~\ref{tab:ttdd} for each bin of \pth.
 
 \begin{table}[htb]
 \caption{Data driven scale factors related to the top quark background estimation.\label{tab:ttdd}}
@@ -190,16 +114,16 @@ A comparison of the \mll distributions in the $CR_{\ttbar}$ region for data and 
 
 \begin{figure}[htb]
 \centering
-\subfigure[$\pth<15\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin0CtrlDD.pdf}}
-\subfigure[$15\GeV<\pth<45\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin1CtrlDD.pdf}}
-\subfigure[$45\GeV<\pth<85\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin2CtrlDD.pdf}}\\
-\subfigure[$85\GeV<\pth<125\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin3CtrlDD.pdf}}
-\subfigure[$125\GeV<\pth<165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin4CtrlDD.pdf}}
-\subfigure[$\pth>165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin5CtrlDD.pdf}}
+\subfigure[$\pth<15\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin0CtrlDD-v2.pdf}}
+\subfigure[$15\GeV<\pth<45\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin1CtrlDD-v2.pdf}}
+\subfigure[$45\GeV<\pth<85\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin2CtrlDD-v2.pdf}}\\
+\subfigure[$85\GeV<\pth<125\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin3CtrlDD-v2.pdf}}
+\subfigure[$125\GeV<\pth<165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin4CtrlDD-v2.pdf}}
+\subfigure[$\pth>165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin5CtrlDD-v2.pdf}}
 \caption{Comparison of the \mll distributions in the $CR_{\ttbar}$ region for data and simulation in each \pth bin, after the application of the data driven scale factors.\label{fig:mllCtrlDD}}
 \end{figure}
 
-
+In the 0 jets category the residual top quark background is very small, and its normalization is estimated inclusively in \pth. In this category the factor defined in Eq.\eqref{eq:alpha} is found to be $\alpha = 0.60 \pm 0.06$.
 
 
 \subsection{W+jets background\label{sec:wjetsbkg}}	
@@ -384,20 +308,16 @@ The systematic uncertainty on the prompt and fake rate estimation is evaluated b
 
 
 
-
 \subsection[\dytt background]{\boldmath$\dytt$ background\label{sec:DYtautaubkg}}
 
 The low \MET threshold in the e$\mu$ final state requires the consideration of the contribution from \dytt, which is estimated from data.
 This is accomplished by selecting \dymm events in data and replacing both muons with a simulated
-$\tau\to \ell\nu_\tau\bar{\nu_\ell}$ decay~\cite{Chatrchyan:2013iaa}, thus obtaining a ``hybrid'' event. The Z boson four-momentum is reconstructed in data from the four-momenta of the daughter muons. Then a simulation step allows the replacement of the muon objects with $\tau$ leptons, in such a way to preserve the Z boson momentum direction in its rest frame. The \dytt decay is simulated with the \textsc{Tauola} package~\cite{Jadach:1990mz} to correctly describe the $\tau$-polarization effects.
+$\tau\to \ell\nu_\tau\bar{\nu}_\ell$ decay~\cite{Chatrchyan:2013iaa}, thus obtaining ``hybrid'' events. The Z boson four-momentum is reconstructed in data from the four-momenta of the daughter muons. Then a simulation step allows the replacement of the muon objects with $\tau$ leptons, in such a way to preserve the Z boson momentum direction in its rest frame. The \dytt decay is simulated with the \textsc{Tauola} package~\cite{Jadach:1990mz} to correctly describe the $\tau$-polarization effects.
 
 After replacing muons from \dymm decays with simulated $\tau$ decays, the set of pseudo-\dytt events undergoes the reconstruction step. Good agreement in kinematic distributions for this sample
 and a simulated \dytt sample is found. The global normalization of pseudo-\dytt events is checked in the low \mt spectrum, where a rather pure sample enriched in \dytt events is expected.
 
-This method allows to avoid the simulation of very large MC samples that would be needed for an accurate description of this process, given its large cross section. 
-
-
-
+This method permits to avoid the simulation of very large MC samples that would be needed for an accurate description of this process, given its large cross section. 
 
 
 \subsection{Diboson backgrounds\label{sec:diboson}}
@@ -410,5 +330,4 @@ process using the \textsc{MadGraph} generator. Nevertheless, the low \mll region
 A high purity W$\gamma^*$ phase space is defined selecting events with three muons, where the two muons with lowest invariant mass, which is required to be less than 12\GeV, are assumed to originate from the $\gamma^*$ decay. The top quark background contribution is suppressed using a b tagging veto. The W+jets and multijet contributions are rejected requiring the minimum transverse mass of each lepton and \MET to be larger than 25\GeV, and the transverse mass of the lepton associated with the W boson and \MET to be larger than 45\GeV. Moreover, the $\mathrm{J/\Psi}$ meson decays are rejected by requiring $|m_{\mu^{\pm}\mu^{\mp}} - m_\mathrm{J/\Psi}|>0.1$\GeV.
 The measured data/simulation scale factor in this control region is found to be $1.5 \pm 0.5$.
 
-The W$\gamma$ background can also contribute to the signal phase space, because the photon can interact with the tracker material converting to an $\mathrm{e^+e^-}$ pair. Its normalization is taken from simulation while the \mll and \mt shapes are checked selecting a data sample with one lepton and one photon, finding good agreement within uncertainties.
-
+The W$\gamma$ background can also contribute to the signal phase space, because the photon can interact with the tracker material converting to an $\mathrm{e^+e^-}$ pair. Its normalization is taken from simulation while the \mll and \mt shapes are checked selecting a data sample with one lepton and one converted photon, finding good agreement within uncertainties.

@@ -1,6 +1,6 @@
 \section{Data and simulated samples}\label{chap5:dataset}
 
-This analysis makes use of data recorded in proton-proton collisions at 13\TeV during 2015, corresponding to a total integrated luminosity of 2.3\ifb. Events are selected according to single and double lepton triggers, similarly to the 8\TeV analysis. The HLT trigger \pt thresholds used in this analysis are listed in Table~\ref{tab:trigger13TeV}. Trigger efficiencies are measured in data and applied to simulated events as described in Sec.~\ref{sec:trigeff}.
+Events are selected according to single and double lepton triggers, similarly to the 8\TeV analysis. The HLT trigger \pt thresholds used in this analysis are listed in Table~\ref{tab:trigger13TeV}. Trigger efficiencies are measured in data and applied to simulated events as described in Sec.~\ref{sec:trigeff}.
 
 \begin{table}[htb]
 \begin{center}
@@ -21,7 +21,7 @@ Electron-Muon      & $\pt > 17$ and $8$\GeV         \\
 \end{table}
 
 %Monte Carlo
-Concerning the simulated samples, several different MC generators are used. 
+Concerning the simulated samples, several MC generators are used. 
 Higgs boson signal samples are simulated using \textsc{Powheg v2}~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}, designed to generate these processes with NLO QCD accuracy.
 In particular, for Higgs boson produced via ggH~\cite{Alioli:2008tz} and VBF~\cite{Nason:2009ai},
 the decay into two W bosons and subsequently into leptons is done using \textsc{JHUGen} v5.2.5. 
@@ -32,7 +32,10 @@ The \textsc{Powheg v2}~\cite{Melia:2011tj} is also used for simulating the $\mat
 %The cross section used for normalizing WW processes produced via $\mathrm{q\bar q}$ was computed at next-to-next-to-leading order (NNLO)~\cite{Gehrmann:2014fva}. 
 %In order to control the top quark background processes, the analysis is performed with events that have no more than one high-\pt jet. The veto on high-\pt jets enhances the importance of logarithms of the jet \pt, spoiling the convergence of fixed-order calculations of the qq$\rightarrow$WW process and requiring the use of dedicated resummation techniques for an accurate prediction of differential distributions~\cite{Meade:2014fca,Jaiswal:2014yba}. The \pt of the jets produced in association with the WW system is strongly correlated with its transverse momentum, $\pt^\mathrm{WW}$, especially in the case where only one jet is produced. The simulated qq$\rightarrow$WW events are reweighted to reproduce the $\pt^\mathrm{WW}$ distribution from the \pt-resummed calculation.
 
-The \ttbar process with dilepton final state is also generated using \textsc{Powheg v2}. The simulated processes for the WW and \ttbar production are illustrated in Table~\ref{tab:wwl}, together with the associated cross sections. Other minor background samples are also generated, a list of the most relevant ones is presented in Table~\ref{tab:otherbck}.
+The \ttbar process with dilepton final state is also generated using \textsc{Powheg v2}. The simulated processes for the WW and \ttbar production are illustrated in Table~\ref{tab:wwl}, together with the associated cross sections.
+
+Drell-Yan production of $\mathrm{Z/\gamma^{*}}$ is generated using \textsc{MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca}. 
+Other multiboson processes, such as WZ, ZZ, and VVV (V$=$W/Z), are generated with \textsc{MadGraph5\_aMC@NLO} and normalized to the cross section calculated at NLO accuracy. Other minor background samples are also generated, a list of the most relevant ones is presented in Table~\ref{tab:otherbck}.
 
 \begin{table}[htb]
 \caption{Simulated processes and cross sections for \ttbar and \WW production.}\label{tab:wwl}
@@ -70,16 +73,13 @@ ZZZ &  0.01398  \\
 \end{table}
 
 All processes are generated using NNPDF 2.3~\cite{Ball:2013hta,Ball:2011uy} for NLO generators.
-The LO version of the same PDF set is used for LO generators. All the event generators are interfaced  to \textsc{Pythia 8.1}~\cite{Sjostrand:2007gs} for the showering of
+The LO version of the same PDF set is used for LO generators. All the event generators are interfaced with \textsc{Pythia 8.1}~\cite{Sjostrand:2007gs} for the showering of
 partons and hadronization, as well as for including a simulation of underlying event (UE) and multiple parton interaction (MPI) based on the CUET8PM1 tune~\cite{Khachatryan:2015pea}. 
 
 To estimate the systematic uncertainties related to the choice of UE and MPI tunes, the signal processes and the WW background are generated with two alternative tunes that are representative of the errors on the tuning parameters.
 The showering and hadronization systematic uncertainty is estimated by interfacing the same MC samples with the \textsc{Herwig++} 2.7 parton shower~\cite{Richardson:2013nfo,Bellm:2013hwb} instead of \textsc{Pythia 8}.
 
-Drell-Yan production of $\mathrm{Z/\gamma^{*}}$ is generated using \textsc{MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca}. 
-Other multiboson processes, such as WZ, ZZ, and VVV (V$=$W/Z), are generated with \textsc{MadGraph5\_aMC@NLO} and normalized to the cross section calculated at NLO accuracy.
-
-The simulated samples are generated with distributions for the number of pile-up interactions that are meant to roughly cover the conditions expected for the different data taking periods. In order to factorize these effects, the number of true pile-up interactions from the simulation truth is reweighted to match the data.
+The simulated samples are generated with distributions for the number of pile-up interactions that are meant to roughly cover the expected conditions for the different data taking periods. In order to factorize these effects, the number of true pile-up interactions from the simulation truth is reweighted to match the data.
 In Fig.~\ref{Fig:pu}, the effect of this reweighting on a sample enriched in \dyll events is shown. The average number of pile-up is approximately $11.5$.
 
 \begin{figure}[htbp]

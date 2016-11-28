@@ -4,7 +4,7 @@
 
 Regarding electrons, muons, jets and \MET definition and reconstruction, the standard CMS recommendations described in Chapter~\ref{chap2} are used. The specific selections used in this analysis are briefly summarized below.
 
-Muons are identified according to the definition described in Sec.~\ref{sec:muID}, with some specific modifications regarding the impact parameters of the tracks ($d_{xy}$ and $d_z$) with respect to the primary vertex. In particular the requirements are lowered with respect to the \emph{tight muon selection} illustrated in Table~\ref{tab:tightmuon}.
+Muons are identified according to the definition described in Sec.~\ref{sec:muID}, with some specific modifications regarding the impact parameters of the tracks with respect to the primary vertex. In particular the requirements are lowered to $d_{xy}<0.01$\,cm and $d_z < 0.1$\,cm with respect to the \emph{tight muon selection} illustrated in Table~\ref{tab:tightmuon}.
 
 %\begin{itemize}
 %\item identified by the standard medium muon selection described in Sec.~\ref{sec:Objects}; \textcolor{red}{Not yet defined :)}
@@ -25,8 +25,7 @@ To reject jets arising from calorimeter or readout electronics noise, the loose 
 
 \subsection{B tagging performance}
 
-B tagging algorithms are used to identify jets that are likely arising from b quarks hadronization. A b-jets veto is then applied to suppress the top quark background, rejecting events that contain at least one b-tagged jet.
-The b tagging algorithm is chosen comparing the performance of different algorithms using simulations for signal and background contributions in the phase space defined by the analysis kinematic requirements. More precisely, two simulated samples are used: one corresponding to the \hwwllnn signal produced via the ggH mechanism and the other to the \ttbar background process. The first sample is enriched in light jets, i.e. originating by the hadronization of light quarks or gluons, while the second sample is enriched in b-jets, coming from the top quark decay. 
+The b tagging algorithm is chosen comparing the performance of different algorithms on simulated \hwwllnn signal produced via the ggH mechanism and \ttbar background.
 
 The b veto efficiency, $\epsilon_\text{b veto}$, is computed separately for the two samples and for various b tagging algorithms. To compare the b tagging performance, $\epsilon_\text{b veto}$ is computed for different working points, i.e. different selections on the specific b tagging discriminator, and the results are reported in the form of a ROC curve. In general, ROC curves are built reporting the signal efficiency on the $x$ axis and the background rejection on the $y$ axis. In this case the $x$ axis shows the b-jets veto efficiency for signal ($\epsilon_\text{b veto}^\text{ggH}$) and the $y$ axis the \ttbar background rejection ($1-\epsilon_\text{b veto}^{\ttbar}$). The best algorithm is the one that provides the highest background rejection for a given signal efficiency. 
 
@@ -59,7 +58,7 @@ In order to determine the best working point for this analysis a signal signific
 The signal significance is computed for the two jet categories separately and eventually for the combination of the two. This leads to the values listed in Table~\ref{tab:significance_wp_combine} for the three working points. The loose working point is found to be the one for which the best signal significance is achieved in the combined $0+1$ jets category, and is thus chosen for the definition of the b veto requirement.
 
 \begin{table}
-\caption{Signal significance corresponding to the three working points and for
+\caption{Signal significance corresponding to the three working points of the cMVAv2 algorithm and for
 different jet categories.\label{tab:significance_wp_combine}}
 \begin{center}
 \begin{tabular}{lccc}
@@ -77,8 +76,8 @@ $0+1$ jets & 2.481 & 2.479 & 2.420 \\
 To correct for a possible different b tagging efficiency in data and simulation, the simulated events are reweighted using scale factors computed in bins of the jet $\eta$ and \pt.
 The scale factors related to the b tagging efficiency and mistag rate, together with the corresponding uncertainties, are estimated in data and simulation adopting a Tag and Probe technique similar to the one described in Sec.~\ref{sec:ScaleFactors}.
 
-The efficiency in simulation has to be computed for different jet flavours, i.e. b, c and light (u,d,s), using jet matching information\footnote{There are a couple of techniques developed by the CMS Collaboration to assess the flavour of a reconstructed jet in simulation. The technique used here makes use of the flavour of the hadrons clustered into a jet.}.
-The efficiencies for tagging b-, c- and light-jets estimated using \ttbar simulated events are shown in Fig.~\ref{fig:effmc} in $\eta$ and \pt bins. The uncertainties associated to the efficiencies are representative of the statistics of the simulated \ttbar sample, and are computed according to a binomial distribution.
+The efficiency in simulation has to be computed for different jet flavours, i.e. b, c and light (u, d, s), using jet matching information\footnote{There are different techniques developed by the CMS Collaboration to assess the flavour of a reconstructed jet in simulation. The technique used here makes use of the flavour of the hadrons clustered into a jet.}.
+The efficiencies for tagging b-, c- and light-jets estimated using simulated \ttbar events are shown in Fig.~\ref{fig:effmc} in $\eta$ and \pt bins. The uncertainties associated to the efficiencies are representative of the statistics of the simulated \ttbar sample, and are computed according to a binomial distribution.
 
 \begin{comment}
 These scale factors and the corresponding uncertainties are centrally calculated for each working point, in such a way to be employable by all the CMS analyses. The prescription to reweight the simulated events is the following. First of all one has to compute the b tagging efficiency using the MC samples, $\varepsilon_\mathrm{MC}(p_\mathrm{T}, \eta, f)$, for the chosen working point in bins of jet \pt and $\eta$. The efficiency has to be computed for different flavours $f$ of the jets, b, c and light (u,d,s), using the jet matching information\footnote{There are a couple of techniques developed by the CMS Collaboration to assess the flavour of a reconstructed jet in simulation. The technique used here makes use of the flavour of the hadrons clustered into a jet.} which is available in all the MC samples. An MC-based event weight is then calculated computing the probability $P_\mathrm{MC}$ of a given b tagging configuration to occur, e.g.:
@@ -127,9 +126,9 @@ leading lepton \pt greater than 20\GeV and subleading lepton \pt greater than 15
 \item at least two jets with \pt greater than 30\GeV;
 \item no jets above 20\GeV with a TCHE score above 2.1. 
 \end{itemize}
-Although a Z+jets sample is dominated by light flavor jets, a b-veto on an
+Although the Z+jets sample is dominated by light flavor jets, a b-veto on an
 alternative algorithm (TCHE) is applied to reduce the contamination from b-jets,
-especially above the cMVAv2 cut. This helps mitigating possible data/simulation discrepancies in the modelling of the heavy/light flavour ratio.
+especially above the cMVAv2 cut. This helps mitigating possible discrepancies between data and simulation in the modelling of the heavy/light flavour ratio.
 The comparison of the discriminator shape in data and simulation after the event reweighting is shown in Figs.~\ref{fig:bpogSF} and \ref{fig:bpogSF_Z} for the b-jets and light jets enriched control regions, respectively. The discriminator distribution is displayed in two bins and the edge represents the discriminator cut, in this case the one corresponding to the loose working point. Therefore, the entries falling in the left (right) bin correspond to events in which the leading or subleading jet fails (passes) the b tagging selection.
 
 \begin{figure}[htb]
@@ -152,10 +151,12 @@ jet in the light jets enriched control region.\label{fig:bpogSF_Z}}
 
 \subsection{Event selection and background rejection}\label{chap5:eventSel}
 
-Since the ggH production mechanism, which is the main production mode for a Higgs boson mass of 125\GeV, is characterized by the emission of few jets arising from initial state radiation, this analysis is limited to events with no jets or one jet. Due to the large \dyll background in events with two electrons or two muons, only the $e\mu$ final state is studied in this early Run 2 data analysis, including the indirect contribution from $\tau$ leptons decaying to electrons or muons.
+Since the ggH production mechanism, which is the main production mode for a Higgs boson mass of 125\GeV, is characterized by the emission of few jets arising from initial state radiation, this analysis is limited to events with no jets or one jet. Higher jet multiplicity categories that are sensitive to other Higgs boson production mechanisms, such as VBF, are not included given the very low expected yield for the analysed integrated luminosity. 
+
+Due to the large \dyll background in events with two electrons or two muons, only the $e\mu$ final state is studied in this early Run 2 data analysis, including the indirect contribution from $\tau$ leptons decaying to electrons or muons.
 Exactly one electron and one muon with opposite charge and a minimum \pt of 10 (13)\GeV for the muon (electron) are required to be reconstructed in the event. One of the two leptons should also have a \pt larger than 20\GeV and both leptons are required to be well identified and isolated to reject fake leptons and leptons coming from hadron decays. To suppress background processes with three or more leptons in the final state, such as ZZ, WZ, Z$\gamma$, W$\gamma$, or triboson production, no additional identified and isolated lepton with $\pt>10$\GeV should be reconstructed. The low \mll region dominated by hadron decays of leptons is not considered in the analysis and \mll is requested to be larger than 12\GeV. To suppress the \dytt background where the $\tau$ leptons subsequently decay to an $e\mu$ final state, and suppress processes without genuine \MET, a minimal \MET of 20\GeV is required. The \dytt background is further reduced by requesting $\ptll > 30$\GeV. Finally the contribution from leptonic decays of single top quark and \ttbar production is reduced by requesting the b-jet veto.
 
-The requirements described above define the WW baseline selection. After those requirements the data sample is dominated by events arising from the nonresonant WW production and \ttbar production. To further reduce the effect of these backgrounds on the signal sensitivity, the events are categorized depending on the jet multiplicity, counting jets with $\pt > 30$\GeV. Events with 0 associated jets mainly arise from WW production, while \ttbar production has a larger contribution in the category with 1 jet. The b-jet veto acts differently in the two categories as explained in the previous section: in the 0 jets category it rejects events containing at least one b-tagged jet with $20\GeV < \pt < 30\GeV$, while in the category with exactly one jet, the event is rejected if that same jet is identified by the b tagging algorithm. Higher jet multiplicity categories that are sensitive to other Higgs boson production mechanisms, such as VBF, are not included given the very low expected yield for the analysed integrated luminosity.
+The requirements described above define the WW baseline selection. After those requirements the data sample is dominated by events arising from the nonresonant WW production and \ttbar production. To further reduce the effect of these backgrounds on the signal sensitivity, the events are categorized depending on the jet multiplicity, counting jets with $\pt > 30$\GeV. Events with 0 associated jets mainly arise from WW production, while \ttbar production has a larger contribution in the category with 1 jet. The b-jet veto acts differently in the two categories as explained in the previous section: in the 0 jets category it rejects events containing at least one b-tagged jet with $20\GeV < \pt < 30\GeV$, while in the category with exactly one jet, the event is rejected if that same jet is identified by the b tagging algorithm.
 
 Distributions of some variables of interest for the 0 and 1 jets categories are shown in Figs.~\ref{fig:distr1}, \ref{fig:distr2} and \ref{fig:distr3} after applying the WW baseline selections, with the addition of a cut on \mll to remove the Higgs signal contribution ($\mll > 80$\GeV), and a cut on \mt ($\mt > 60$\GeV) to define a phase space orthogonal to the control region used to estimate the \dytt background.
 
@@ -173,7 +174,7 @@ Distributions of some variables of interest for the 0 and 1 jets categories are 
 \subfigure[1 jet - $\eta^{\ell,1}$]{
   \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_eta1}
 }
-\caption{Distributions of \pt (left) and $\eta$ (right) of the leading lepton for events with 0 jets (upper row) and 1 jet (bottom row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram) at the WW selection level.}\label{fig:distr1}
+\caption{Distributions of \pt (left) and $\eta$ (right) of the leading lepton in events with 0 jets (upper row) and 1 jet (bottom row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram)  after the analysis event selection.}\label{fig:distr1}
 \end{figure}
 
 \begin{figure}
@@ -190,7 +191,7 @@ Distributions of some variables of interest for the 0 and 1 jets categories are 
 \subfigure[1 jet - $\eta^{\ell,2}$]{
   \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_eta2}
 }
-\caption{Distributions of \pt (left) and $\eta$ (right) of the subleading lepton for events with 0 jets (upper row) and 1 jet (bottom row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram) at the WW selection level.}\label{fig:distr2}
+\caption{Distributions of \pt (left) and $\eta$ (right) of the subleading lepton in events with 0 jets (upper row) and 1 jet (bottom row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram)  after the analysis event selection.}\label{fig:distr2}
 \end{figure}
 
 \begin{figure}
@@ -207,7 +208,7 @@ Distributions of some variables of interest for the 0 and 1 jets categories are 
 \subfigure[1 jet - \ptll]{
   \includegraphics[width=0.45\textwidth]{images/13TeV/cratio_ww2l2v_13TeV_ww_of1j_ptll}
 }
-\caption{Distributions of \MET (left) and \ptll (right) for events with 0 jets (upper row) and 1 jet (bottom row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram) at the WW selection level.}\label{fig:distr3}
+\caption{Distributions of \MET (left) and \ptll (right) in events with 0 jets (upper row) and 1 jet (bottom row), for the main backgrounds (stacked histograms), and for a SM Higgs boson signal with $m_\mathrm{H}=125$\GeV (superimposed and stacked red histogram) after the analysis event selection.}\label{fig:distr3}
 \end{figure}
 
 An additional categorization is applied in order to increase the signal sensitivity. The 0 ad 1 jets categories are further split according to the lepton flavour to e$\mu$ and $\mu$e, where the first lepton refers to the leading one. In this way an improvement of about 10\% in terms of signal significance can be achieved, exploiting the different W+jets background contribution in the two categories. Actually, this background is characterized by the presence of one jet misidentified as a lepton, and the probability for a jet to be misidentified as a muon is larger than as an electron.
@@ -217,7 +218,7 @@ An additional categorization is applied in order to increase the signal sensitiv
 To extract the Higgs boson signal contribution in the four previously mentioned categories, a similar approach to the one used in the Run 1 analysis~\cite{Chatrchyan:2013iaa} is pursued. The analysis is based on two-dimensional templates of \mll versus \mt to discriminate signal and background contributions. The \mll template is defined using 5 bins from $\mll=10$\GeV up to $\mll=110$\GeV, while for the \mt template 7 bins are defined in the range $60\GeV < \mt < 200$\GeV. The phase space with $\mt<60$\GeV is used as an orthogonal control region to extract the normalization of the \dytt background. A binned maximum likelihood fit to the signal and background two-dimensional templates is performed to extract the signal strength in the four categories.
 
 The statistical methodology used to interpret the data and combine the results from the independent 0 and 1 jets categories in the e$\mu$ and $\mu$e final states has been developed by the ATLAS and CMS collaborations in the context of the LHC Higgs Combination Group~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba}.
-The number of events in each category and in each bin of the two-dimensional template is modelled as a Poisson random variable, with a mean value given by the sum of the contributions from all the processes under consideration. Systematic uncertainties are represented by individual nuisance parameters with log-normal distributions. The uncertainties affect the overall normalization of signal and backgrounds, as well as their (\mll, \mt) shape. Correlation between systematic uncertainties in different categories are taken into account. 
+The number of events in each category and in each bin of the two-dimensional template is modelled as a Poisson random variable, with a mean value given by the sum of the contributions from all the processes under consideration. Systematic uncertainties are represented by individual nuisance parameters with log-normal distributions. The uncertainties affect the overall normalization of signal and backgrounds, as well as their (\mll, \mt) shape. Correlations between systematic uncertainties in different categories are taken into account. 
 
 
 

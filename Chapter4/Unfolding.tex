@@ -10,9 +10,7 @@ An unfolding procedure is used relying on the \textsc{RooUnfold} package
 \cite{Adye:2011gm}, which provides the tools to run various unfolding
 algorithms.
 
-The basic principle behind the unfolding procedure in this analysis is to use MC signal samples
-to make the ``true'' distribution of the variable of interest, which is obtained using simulated events before particle interaction with the detector, and the same distribution obtained using events reconstructed after the full \textsc{Geant4} simulation of the CMS detector
-and event reconstruction. 
+The basic principle behind the unfolding procedure in this analysis is to use MC signal samples to obtain both the ``true'' distribution of the variable of interest before particle interactions with the detector, and the distribution in reconstructed events after the full \textsc{Geant4} simulation of the CMS detector and event reconstruction.
 These two distributions are used to calculate the detector response matrix $M$, defined by the following equation:
 \begin{equation}\label{eq:resp_matrix}
 R_{i}^{\rm {MC}} = \sum_{j=1}^{n} M_{ij}T_{j}^{\rm {MC}} \quad ,
@@ -51,7 +49,7 @@ The diagonal bins correspond to the purity $P$, defined in Eq.\eqref{eq:purity}.
 \end{figure}
 
 Several tests are performed in order to validate the unfolding procedure. To estimate the uncertainty in the unfolding procedure due to the
-particular model adopted for building the response matrix, two independent ggH samples are used, corresponding to two different generators: \textsc{Powheg V1} and \textsc{JHUGen} generators, both interfaced to \textsc{Pythia 6.4}.
+particular model adopted for building the response matrix, two independent ggH samples are used, corresponding to two different generators: \textsc{Powheg V1} and \textsc{JHUGen} generators, both interfaced with \textsc{Pythia 6.4}.
 The \textsc{JHUGen} generator sample is used to build the response matrix while the
 \textsc{Powheg V1} sample is used to build the \pth spectra at generator and reconstructed level. The reconstructed spectrum obtained using \textsc{Powheg V1} is then unfolded using the response matrix built with \textsc{JHUGen}, and the unfolded spectrum is compared to the \textsc{Powheg V1} spectrum at generator level. The result of this test shows good agreement between the two distributions.
 
@@ -91,7 +89,7 @@ These three classes propagate differently through the unfolding procedure.
 Type A uncertainties are extracted directly from the fit in the form of a covariance
 matrix, which is passed to the unfolding tool as the covariance
 matrix of the measured distribution. The nuisance parameters belonging to this category
-are the background shape and normalization uncertainties.
+are mainly the background shape and normalization uncertainties.
 To extract the effect of type A uncertainties a dedicated fit is performed fixing to constant all the nuisance parameters in the model but type A ones.
 The correlation matrix among the six signal strengths corresponding to the six \pth bins, including all type A uncertainties, is shown in Fig.~\ref{fig:typeA_corr}.
 The correlation cor($i$,$j$) of bins $i$ and $j$ is defined as:	
@@ -128,14 +126,14 @@ In order to evaluate their effect on the signal strengths parameters, two additi
 performed, each time fixing  the nuisance parameter value to $\pm 1$  standard
 deviation with respect
 to its nominal value. The results of the fits are then compared to the results of the full fit obtained by floating  all the nuisance parameters, thus 
-determining the relative uncertainty on the signal strengths due to each
-nuisance parameter, as shown in Tab.~\ref{table:corr_syst}. 
+determining the relative uncertainty in the signal strengths due to each
+nuisance parameter, as shown in Table~\ref{table:corr_syst}. 
 Using these uncertainties, the measured spectra for each type B
 source are built.
 The effects are propagated through the unfolding by building the corresponding variations of the response matrix and unfolding the
 measured spectra with the appropriate matrix.
 \begin{table}[!htb]
-\caption{Effect of all the type B uncertainties on the signal strengths of each bin. In the table are reported the signal strength variations corresponding to an up or down scaling of each nuisance parameter. Uncertainties related to \MET and lepton resolution are single-sided, i.e. only an up variation is implemented.}\label{table:corr_syst}
+\caption{Effect of all the type B uncertainties in the signal strengths of each bin. The table shows the signal strength variations corresponding to an up or down scaling of each nuisance parameter. Uncertainties related to \MET and lepton resolution are single-sided, i.e. only an up variation is implemented.}\label{table:corr_syst}
 \centering
 \footnotesize{
 \begin{tabular}{lcccccc}
@@ -162,10 +160,9 @@ Three different response matrices are built, corresponding to the nominal, scale
 VBF/ggH ratio. The nominal matrix assumes the SM VBF/ggH ratio, %with $\mu_{\mathrm{ggH}} = \mu_{\mathrm{VBF}} = 1$, 
 while up- and down-scaled matrices are constructed by varying the SM signal strengths within the
 experimental constraints for VBF and ggH in such a way as to obtain the
-maximal variation of the VBF/ggH ratio allowed by the experimental
-constraints.
+maximal allowed variation of the VBF/ggH ratio.
 %The VBF/ggH fractions are varied in an anticorrelated way in order to produce the maximum variation of the spectrum shape allowed by the experimental constraints.
-These three matrices are used to unfold the reconstructed spectrum with the nominal VBF/ggH fraction, and obtain an uncertainty on the unfolded spectrum.
+These three matrices are used to unfold the reconstructed spectrum with the nominal VBF/ggH fraction, and obtain an uncertainty in the unfolded spectrum.
 %It was verified that the variations of the measured spectrum do not affect the shape of the signal templates, \textit{i.e.} \mll~and \mth.
 
 %Type A and B uncertainties are finally combined together after the unfolding
