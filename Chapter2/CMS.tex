@@ -42,15 +42,14 @@ The silicon tracker is the detector closest to the beams collision point. Its go
 \item a large redundancy of the measured points (\emph{hits}) per track.
 \end{itemize}
 The first requirement is achieved building a detector with high granularity\footnote{The granularity of a detector is defined as the angular range ($\Delta\eta\times\Delta\phi$) that each individual element is able to resolve.}. The redundancy of the hits is instead achieved having several detecting layers, and is necessary to reduce the ambiguity on the assignment of the hits to a given track. Nevertheless, the amount of tracker material has to be as low as possible, in order to avoid compromising the measurement of the particle trajectory. An excessive amount of material would indeed deteriorate the measurement, mainly because of the increased probability of particle multiple scattering. The outer detectors such as ECAL would be influenced by the material as well, for example because of the increased probability for a photon to convert to an electron-positron pair in the tracker material. For this reasons, the tracker layers are limited in number and thickness.
-
-The tracker comprises a large silicon strip detector with a small silicon pixel detector inside it. In the central $\eta$ region, the pixel tracker consists of three co-axial barrel layers at radii between $4.4$\,cm and $10.2$\,cm and the strip tracker consists of ten co-axial barrel layers extending outwards to a radius of $110$\,cm. Both subdetectors are completed by endcaps on either
-side of the barrel, each consisting of two disks in the pixel tracker, and three small plus nine large disks in the strip tracker. The endcaps extend the acceptance of the tracker up to $|\eta|<2.5$. A three-dimensional schematic view of the tracker is shown in Fig.~\ref{fig:tracker3D}, while in Fig.~\ref{fig:tracker2D} a pictorial representation of a slice of the tracker is displayed, showing the various layers of the subdetectors.
-
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.6\textwidth]{images/tracker.pdf}
 \caption{Three-dimensional schematic view of the CMS silicon tracker.}\label{fig:tracker3D}
 \end{figure}
+The tracker comprises a large silicon strip detector with a small silicon pixel detector inside it. In the central $\eta$ region, the pixel tracker consists of three co-axial barrel layers at radii between $4.4$\,cm and $10.2$\,cm and the strip tracker consists of ten co-axial barrel layers extending outwards to a radius of $110$\,cm. Both subdetectors are completed by endcaps on either
+side of the barrel, each consisting of two disks in the pixel tracker, and three small plus nine large disks in the strip tracker. The endcaps extend the acceptance of the tracker up to $|\eta|<2.5$. A three-dimensional schematic view of the tracker is shown in Fig.~\ref{fig:tracker3D}, while in Fig.~\ref{fig:tracker2D} a pictorial representation of a slice of the tracker is displayed, showing the various layers of the subdetectors.
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{images/tracker2D.pdf}
@@ -62,13 +61,13 @@ strip stereo modules are shown as blue thick lines.}\label{fig:tracker2D}
 The whole tracker has a cylindrical shape with a length of $5.8$\,m and a diameter of $2.5$\,m, with the axis aligned to the beams direction. The average number of hits per track is 12-14, allowing high reconstruction efficiency and low rate of fake tracks.
 
 The material budget of the tracker as obtained from a simulation of the detector is shown in Fig.~\ref{fig:material_budget}, reported both in units of radiation length ($t/X_0$) and in units of nuclear interaction length ($t/\lambda_I$), as a function of $\eta$. The region $1 < |\eta| < 2$ exhibits larger material budget due to the presence of cables and services.
-\begin{figure}[htb]
+\begin{figure}[!htb]
 \centering
 \subfigure{
-\includegraphics[width=0.45\textwidth]{images/materialBudget_X.png}
+\includegraphics[width=0.4\textwidth]{images/materialBudget_X.png}
 }
 \subfigure{
-\includegraphics[width=0.45\textwidth]{images/materialBudget_lambda.png}
+\includegraphics[width=0.4\textwidth]{images/materialBudget_lambda.png}
 }
 \caption{Total thickness $t$ of the tracker material expressed in units of $X_0$ (left) and $\lambda_I$ (right), as a function of $\eta$. The contribution to the total material budget of each region of the detector is shown.}\label{fig:material_budget}
 \end{figure}
@@ -145,7 +144,7 @@ The CMS HCAL~\cite{hcal} is used together with ECAL to make a complete calorimet
 formed by two units placed in the very forward region ($3<|\eta|<5$) outside the magnetic coil. The quartz fibers emit Cherenkov light with the passage of charged particles and this light is detected by radiation resistant photomultipliers.
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.6\textwidth]{images/hcal.png}
+\includegraphics[width=0.65\textwidth]{images/hcal.png}
 \caption{Longitudinal view of the CMS detector showing the HCAL subdetectors.}\label{fig:hcal}
 \end{figure}
 In order to maximize particle containment for a precise missing transverse energy measurement, the amount of absorber material was maximized, reducing therefore the amount of the active material. Since HCAL is mostly placed inside the magnetic coil, a nonmagnetic material like brass was chosen as absorber. HB and HE are therefore made with 5\,cm brass absorber layers interleaved with 3.7\,mm plastic scintillators. The scintillation light is collected by wavelength shifting (WLS) fibres and read out by hybrid photodiodes (HPD). The granularity of the calorimeter is $\Delta\eta\times\Delta\phi = 0.087 \times 0.087$ for $|\eta|<1.6$ and $\Delta\eta\times\Delta\phi \approx 0.17 \times 0.17$ for $|\eta|\geq1.6$. HO is made of 5 rings installed in the wheel that compose the return yoke and is divided in 12 sectors, each one covering a $30\degree$ angle in $\phi$. It consists of scintillating layers, with the same granularity as HB, and the solenoid coil is used as an additional absorber to increase the effective depth of the calorimeter in the barrel region, which is extended up to $11.8\,\lambda_I$, thus improving the energy resolution.
