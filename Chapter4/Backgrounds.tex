@@ -28,12 +28,12 @@ First of all, the \mll and \mt shapes of the $\mathrm{q\bar{q}'\to W^{+}W^{-}}$ 
 \caption{Comparison of the \mll and \mt shapes in data and simulation for events with 0 and 1 jets, inclusive in \pth. The events are required to pass the analysis requirements and, in order to define a signal-free control region, to have $\mll > 70$\GeV.\label{fig:WW}}
 \end{figure}
 
-In this analysis the $\mathrm{q\bar{q}'\to W^{+}W^{-}}$ background normalization is left free to float in each of the six \pth bins to match the data during the fitting procedure. This choice helps mitigating the \pth shape difference between data and simulation. This difference is due to missing higher order QCD corrections in the adopted simulation, obtained using the \textsc{Madgraph} generator. In fact, as shown in Fig.~\ref{fig:ww_wwnlo}, the theoretical calculations for this process performed at NLO QCD accuracy and including soft-gluon resummation effects, i.e. NLO+NNLL accuracy, predict a rather different \pth spectrum.
+In this analysis the $\mathrm{q\bar{q}'\to W^{+}W^{-}}$ background normalization is left free to float in each of the six \pth bins to match the data during the fitting procedure. This choice helps mitigating the \pth shape difference between data and simulation. This difference is due to missing higher order QCD corrections in the adopted simulation, obtained using the \textsc{MadGraph} generator. In fact, as shown in Fig.~\ref{fig:ww_wwnlo}, the theoretical calculations for this process performed at NLO QCD accuracy and including soft-gluon resummation effects, i.e. NLO+NNLL accuracy, predict a rather different \pth spectrum.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.6\textwidth]{images/WWnlo/WW_WWnlo-v2.pdf}
-\caption{Comparison between the $p_\mathrm{T}^\mathrm{WW}$ distributions obtained with two different MC generators: the blue line corresponds to the \textsc{Madgraph} generator and the red line refers to the same sample in which a reweighting has been applied in order to match the theoretical prediction at NLO+NNLL precision. }\label{fig:ww_wwnlo}
+\caption{Comparison between the $p_\mathrm{T}^\mathrm{WW}$ distributions obtained with two different MC generators: the blue line corresponds to the \textsc{MadGraph} generator and the red line refers to the same sample in which a reweighting has been applied in order to match the theoretical prediction at NLO+NNLL precision. }\label{fig:ww_wwnlo}
 \end{figure}
 
 To check the residual dependence of the \mll and \mt shapes on the generator used for simulating the $\mathrm{q\bar{q}'\to W^{+}W^{-}}$ process, the shapes obtained using different generators have been compared in each \pth bin, as shown in Figs.~\ref{fig:ww_mll} and \ref{fig:ww_mth}. The usage of different generators only mildly affect the \mll and \mt shapes. Nevertheless the observed differences are taken as shape uncertainties and propagated through the fit.
@@ -46,7 +46,7 @@ To check the residual dependence of the \mll and \mt shapes on the generator use
 \subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/v2/mllBin4.pdf}}
 \subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/v2/mllBin5.pdf}}
 \subfigure[$\pth>165$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/v2/mllBin6.pdf}}
-\caption{Comparison between the \mll shape obtained with the default $\mathrm{q\bar{q}'\to W^{+}W^{-}}$ background simulation (\textsc{Madgraph}) and other theoretical models in every \pth bin.\label{fig:ww_mll}}
+\caption{Comparison between the \mll shape obtained with the default $\mathrm{q\bar{q}'\to W^{+}W^{-}}$ background simulation (\textsc{MadGraph}) and other theoretical models in every \pth bin.\label{fig:ww_mll}}
 \end{figure}
 
 \begin{figure}[htb]
@@ -57,7 +57,7 @@ To check the residual dependence of the \mll and \mt shapes on the generator use
 \subfigure[$85<\pth<125$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/v2/mthBin4.pdf}}
 \subfigure[$125<\pth<165$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/v2/mthBin5.pdf}}
 \subfigure[$\pth>165$\GeV]{\includegraphics[width=0.31\textwidth]{images/WWnlo/v2/mthBin6.pdf}}
-\caption{Comparison between the \mt shape obtained with the default $\mathrm{q\bar{q}'\to W^{+}W^{-}}$ background simulation (\textsc{Madgraph}) and other theoretical models in every \pth bin.\label{fig:ww_mth}}
+\caption{Comparison between the \mt shape obtained with the default $\mathrm{q\bar{q}'\to W^{+}W^{-}}$ background simulation (\textsc{MadGraph}) and other theoretical models in every \pth bin.\label{fig:ww_mth}}
 \end{figure}
 
 The gluon-induced WW process, i.e. $\mathrm{gg\to W^{+}W^{-}}$, has a subdominant contribution with respect to the quark-induced process, being the cross section ratio between the two of about 5\%. The \mll and \mt shapes for this background are taken from simulation while the cross section is scaled to the approximate NLO calculation~\cite{Bonvini:2013jha,Passarino:2013bha}.
@@ -115,10 +115,10 @@ A comparison of the \mll distributions in the $CR_{\ttbar}$ region for data and 
 \begin{figure}[htb]
 \centering
 \subfigure[$\pth<15\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin0CtrlDD-v2.pdf}}
-\subfigure[$15\GeV<\pth<45\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin1CtrlDD-v2.pdf}}
-\subfigure[$45\GeV<\pth<85\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin2CtrlDD-v2.pdf}}\\
-\subfigure[$85\GeV<\pth<125\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin3CtrlDD-v2.pdf}}
-\subfigure[$125\GeV<\pth<165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin4CtrlDD-v2.pdf}}
+\subfigure[$15<\pth<45\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin1CtrlDD-v2.pdf}}
+\subfigure[$45<\pth<85\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin2CtrlDD-v2.pdf}}\\
+\subfigure[$85<\pth<125\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin3CtrlDD-v2.pdf}}
+\subfigure[$125<\pth<165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin4CtrlDD-v2.pdf}}
 \subfigure[$\pth>165\GeV$]{\includegraphics[width=0.31\textwidth]{images/mllBin5CtrlDD-v2.pdf}}
 \caption{Comparison of the \mll distributions in the $CR_{\ttbar}$ region for data and simulation in each \pth bin, after the application of the data driven scale factors.\label{fig:mllCtrlDD}}
 \end{figure}
