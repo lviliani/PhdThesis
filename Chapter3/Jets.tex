@@ -59,6 +59,8 @@ where $p_\mu^\mathrm{cor}$ is the corrected jet four-momentum. The correction fa
 \end{equation}
 where $\pt'$ is the jet \pt after applying the offset correction and $\pt''$ is the jet \pt after applying all previous corrections. Each component is briefly described in the following sections.
 
+Before applying the offset correction, a pile-up subtraction method that is called \emph{Charged Hadron Subtraction} (CHS) is used in CMS. This is a particle-by-particle method that makes use of PF jets and exploits the excellent CMS tracking capabilities to identify and remove charged hadrons inside jets that are known to originate from pile-up vertices.
+
 \subsubsection{Offset correction}
  
 The offset correction purpose is to estimate and subtract the average energy contribution that is not associated with the hard scattering in the event. The approach followed for the estimation of the offset correction is known as \emph{Jet Area Method}~\cite{Cacciari:2007fd}. For each event, an average \pt-density per unit area, $\rho$, is estimated, characterizing the soft jet activity. This \pt-density represents the combination of underlying event, electronics noise and pile-up effects. 
@@ -72,7 +74,7 @@ C_\mathrm{offset}(\pt^\mathrm{raw},A_j,\rho) = 1 - \frac{\left( \rho - \langle\r
 
 \noindent In the formula above, $\langle\rho_\mathrm{UE}\rangle$ represents the average \pt-density component due to underlying event and electronics noise, measured in events with exactly one reconstructed primary vertex, i.e. no pile-up.
 
-An additional pile-up subtraction method that is used in CMS is called \emph{Charged Hadron Subtraction} (CHS). This method makes use of PF jets and exploits the excellent CMS tracking capabilities to identify and remove charged hadrons inside jets that are known to originate from pile-up vertices. This is a particle-by-particle method that is applied to jets before calculating the offset correction.
+%An additional pile-up subtraction method that is used in CMS is called \emph{Charged Hadron Subtraction} (CHS). This method makes use of PF jets and exploits the excellent CMS tracking capabilities to identify and remove charged hadrons inside jets that are known to originate from pile-up vertices. This is a particle-by-particle method that is applied to jets before calculating the offset correction.
 
 \subsubsection{MC calibration correction}
 

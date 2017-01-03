@@ -964,7 +964,7 @@ decay channel in pp collisions at sqrt(s) = 7 and 8 TeV},
 @article{Agostinelli:2002hh,
       author         = "Agostinelli, S. and others",
       title          = "{GEANT4: A simulation toolkit}",
-      collaboration  = "GEANT4",
+%      collaboration  = "GEANT4",
       journal        = "Nucl. Instrum. Meth. A",
       volume         = "506",
       pages          = "250",
@@ -2578,15 +2578,20 @@ language={English}
    doi = {10.1103/PhysRevD.85.034011},
    url = {http://link.aps.org/doi/10.1103/PhysRevD.85.034011}
 }
+
 @techreport{CMS-NOTE-2011-005,
-	title         = "Procedure for the LHC Higgs boson search combination in Summer 2011",
-	institution   = "CERN",
-	collaboration = "ATLAS and CMS Collaborations",
-	address       = "Geneva",
-	number        = "CMS-NOTE-2011-005. ATL-PHYS-PUB-2011-11",
-	month         = "Aug",
-	year          = "2011",
+      title         = "{Procedure for the LHC Higgs boson search combination in
+                       Summer 2011}",
+      institution   = "CERN",
+      collaboration = "ATLAS and CMS Collaborations",
+      address       = "Geneva",
+      number        = "CMS-NOTE-2011-005. ATL-PHYS-PUB-2011-11",
+      month         = "Aug",
+      year          = "2011",
+      reportNumber  = "CMS-NOTE-2011-005",
+      url           = "https://cds.cern.ch/record/1379837",
 }
+
 @TECHREPORT{CMS_PAS_HIG_13-017,
      AUTHOR       = "CMS collaboration",
      TITLE        = "Search for associated Higgs boson production (VH) with $H\to{}W^+W^-\to\ell\nu\ell\nu$ and hadronic V decay in pp collisions at $sqrt(s) = 7$~TeV and 8~TeV",
@@ -3005,23 +3010,23 @@ language={English}
       SLACcitation   = "%%CITATION = ARXIV:1312.1628;%%"
 }
 
-@misc{temphiggsxsecs,
- collaboration  = "LHC Higgs Cross Section Working Group",
- Title = {SM Higgs production cross sections at $\sqrt{s}$ = 13-14 \TeV },
- Howpublished={\url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt1314TeV}}
-}
+%@misc{temphiggsxsecs,
+% collaboration  = "LHC Higgs Cross Section Working Group",
+% Title = {SM Higgs production cross sections at $\sqrt{s}$ = 13-14 \TeV },
+% Howpublished={\url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt1314TeV}}
+%}
 
-@misc{topxsec,
- collaboration  = "LHC Top Working Group",
- Title = {NNLO+NNLL top-quark-pair cross sections },
- Howpublished={\url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/TtbarNNLO}}
-}
+%@misc{topxsec,
+% collaboration  = "LHC Top Working Group",
+% Title = {NNLO+NNLL top-quark-pair cross sections },
+% Howpublished={\url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/TtbarNNLO}}
+%}
 
-@misc{singletop,
- collaboration  = "LHC Top Working Group",
- Title = {NLO single-top channel cross sections},
- Howpublished={\url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopRefXsec}}
-}	
+%@misc{singletop,
+% collaboration  = "LHC Top Working Group",
+% Title = {NLO single-top channel cross sections},
+% Howpublished={\url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopRefXsec}}
+%}	
 @article{ATLAS:2011tau,
       title          = "{Procedure for the LHC Higgs boson search combination in
                         summer 2011}",
@@ -3252,21 +3257,23 @@ language={English}
 }
 
 @book{LEPreport1,
-      title         = "{LEP design report}",
+      author        = "LEP Injector Study Group",
+      title         = "{LEP design report: Vol. 1 The LEP injector chain}",
       publisher     = "CERN",
       address       = "Geneva",
       year          = "1983",
       url           = "http://cds.cern.ch/record/98881",
-      note          = "By the LEP Injector Study Group",
+%      note          = "By the LEP Injector Study Group",
 }
 
 @book{LEPreport2,
-      title         = "{LEP design report}",
+      author        = "LEP Collaboration",
+      title         = "{LEP design report: Vol. 2 The LEP main ring}",
       publisher     = "CERN",
       address       = "Geneva",
       year          = "1984",
       url           = "http://cds.cern.ch/record/102083",
-      note          = "Copies shelved as reports in LEP, PS and SPS libraries",
+%      note          = "Copies shelved as reports in LEP, PS and SPS libraries",
 }
 
 @book{Wyss:314187,
@@ -3460,6 +3467,7 @@ language={English}
 @techreport{Adam:815410,
       author        = "Adam, W. and Fr{\"u}hwirth, R. and Strandlie, A. and
                        Todor, T.",
+      collaboration = "CMS Collaboration",
       title         = "{Reconstruction of Electrons with the Gaussian-Sum Filter
                        in the CMS Tracker at the LHC}",
       institution   = "CERN",
@@ -3472,8 +3480,7 @@ language={English}
 }
 
 @techreport{CMS-PAS-EGM-10-004,
-      title         = "{Electron reconstruction and identification at $\sqrt{s} = 7$
-                       TeV}",
+      title         = "{Electron reconstruction and identification at $\sqrt{s} = 7$ TeV}",
       institution   = "CERN",
       collaboration = "CMS Collaboration",
       address       = "Geneva",
@@ -3880,3 +3887,60 @@ language={English}
       SLACcitation   = "%%CITATION = ARXIV:1608.06425;%%"
 }
 
+@techreport{Pinfold:2009oia,
+      author         = "Pinfold, J. and others",
+      title         = "{Technical Design Report of the MoEDAL Experiment}",
+      collaboration = "MoEDAL Collaboration",
+      number        = "CERN-LHCC-2009-006. MoEDAL-TDR-001",
+      month         = "Jun",
+      year          = "2009",
+      reportNumber  = "CERN-LHCC-2009-006",
+      url           = "https://cds.cern.ch/record/1181486",
+}
+
+@article{Aliev:2010zk,
+      author         = "Aliev, M. and Lacker, H. and Langenfeld, U. and Moch, S.
+                        and Uwer, P. and Wiedermann, M.",
+      title          = "{HATHOR: HAdronic Top and Heavy quarks crOss section
+                        calculatoR}",
+      journal        = "Comput. Phys. Commun.",
+      volume         = "182",
+      year           = "2011",
+      pages          = "1034",
+      doi            = "10.1016/j.cpc.2010.12.040",
+      eprint         = "1007.1327",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "DESY-10-091, HU-EP-10-33, SFB-CPP-10-60",
+      SLACcitation   = "%%CITATION = ARXIV:1007.1327;%%"
+}
+
+@article{Beneke:2011mq,
+      author         = "Beneke, M. and Falgari, P. and Klein, S. and Schwinn, C.",
+      title          = "{Hadronic top-quark pair production with NNLL threshold
+                        resummation}",
+      journal        = "Nucl. Phys. B",
+      volume         = "855",
+      year           = "2012",
+      pages          = "695",
+      doi            = "10.1016/j.nuclphysb.2011.10.021",
+      eprint         = "1109.1536",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "TTK-11-38, ITP-UU-11-26, SPIN-11-19, FR-PHENO-2011-015,
+                        SFB-CPP-11-49",
+      SLACcitation   = "%%CITATION = ARXIV:1109.1536;%%"
+}
+
+@article{deFlorian:2016spz,
+      author         = "de Florian, D. and others",
+      title          = "{Handbook of LHC Higgs Cross Sections: 4. Deciphering the
+                        Nature of the Higgs Sector}",
+      collaboration  = "LHC Higgs Cross Section Working Group",
+      year           = "2016",
+      eprint         = "1610.07922",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "FERMILAB-FN-1025-T",
+      SLACcitation   = "%%CITATION = ARXIV:1610.07922;%%"
+}
