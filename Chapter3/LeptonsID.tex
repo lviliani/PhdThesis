@@ -1,4 +1,4 @@
-\section{Leptons reconstruction and identification}\label{sec:leptonID}
+\section{Lepton reconstruction and identification}\label{sec:leptonID}
 
 \subsection{Muon reconstruction and identification}\label{sec:muID}
 Muons produced at the collision point can go through the entire detector with a negligible energy loss, reaching the detector outermost part where the muon chambers are installed (see Sec.~\ref{sec:muonsyst}). Muons interact through ionization with the layers of the silicon tracker, which is able to reconstruct their tracks (\emph{tracker track}). The muon tracks are also reconstructed using the muon system (\emph{standalone muon track}). Based on these objects, two reconstruction approaches are used~\cite{Chatrchyan:2012xi}: in the first method (outside-in), for each standalone muon track a tracker track is searched for by extrapolating the two tracks to a common surface. If a match is found, the hits associated to the two tracks are fitted together giving rise to a \emph{Global Muon}. The second approach (inside-out) consists in considering all tracker tracks with $\pt > 0.5$\,\GeV as potential muon candidates. These tracks are extrapolated to the muon system taking into account the magnetic field, the expected energy losses and the multiple scattering in the detector material. If at least one muon segment (a short track stub made of DT or CSC hits) matches the extrapolated tracks, the corresponding tracker track is identified as a \emph{Tracker Muon}.
@@ -10,7 +10,7 @@ The matching with the muon system improves significantly the muon \pt resolution
 \caption{Muon \pt resolution as a function of the muon \pt in the barrel (left) and in the endcap (right) region. The resolution is provided for the measurement using the tracking system or the muon system only, as well as for the combination of the two methods.}\label{fig:muptres}
 \end{figure}
 
-Depending on the physics analysis, different muon definitions can be used by changing the selection on the muon identification variables, hence balancing between the muon identification efficiency and purity. The most widely used definition in physics analyses at CMS is the so-called \emph{Tight muon selection}\footnote{Small variations with respect to this baseline definition are adopted by the specific analyses.}. This selection requires the muon candidate to be reconstructed as a Global Muon and identified by the PF algorithm. The fit of the global track, which is required to include muon segments in at least two muon stations, must have a $\chi^2/d.o.f.$ less than 10 and use more than 10 inner tracker hits. The transverse impact parameter with respect to the primary vertex is required to be $|d_{xy}|<2$\,mm, significantly reducing the rate of muons from in flight decays, i.e. non-prompt muons. The requirements defining the Tight Muon identification are summarized in Table~\ref{tab:tightmuon}.
+Depending on the physics analysis, different muon definitions can be used by changing the selection on the muon identification variables, hence balancing between the muon identification efficiency and purity. The most widely used definition in physics analyses at CMS is the so-called \emph{Tight muon selection}\footnote{Small variations with respect to this baseline definition are adopted by the specific analyses.}. This selection requires the muon candidate to be reconstructed as a Global Muon and identified by the PF algorithm. The fit of the global track, which is required to include muon segments in at least two muon stations, must have a $\chi^2/d.o.f.$ less than 10, use more than 5 tracker layers with valid hits and have at least 1 pixel hit. The transverse impact parameter with respect to the primary vertex is required to be $|d_{xy}|<2$\,mm, significantly reducing the rate of muons from in flight decays, i.e. non-prompt muons. The requirements defining the Tight Muon identification are summarized in Table~\ref{tab:tightmuon}.
 
 \begin{table}[htb]
 \caption{Summary of the muon identification variables and the corresponding selections commonly used by physics analyses.}\label{tab:tightmuon}
@@ -23,7 +23,7 @@ Is Global Muon & true \\
 Is PF muon & true \\
 Tracker layers with valid hits & $>5$ \\
 Number of valid pixel hits & $>0$ \\
-Number of valid muon hits & $>0$ \\
+%Number of valid muon hits & $>0$ \\
 Number of matched muon stations & $>1$ \\
 $\chi^2/d.o.f.$ & $<10$ \\
 $d_{xy}(PV)$ & $< 0.2$\,cm \\
@@ -79,13 +79,13 @@ Different working points are used, corresponding to different selections on the 
 \multirow{2}{*}{Variable} & \multicolumn{2}{c}{Selection}\\
  & $|\eta_\mathrm{SC}|\leq 1.479$ & $1.479 < |\eta_\mathrm{SC}| \leq 2.5$ \\
 \midrule
-$\sigma_{i\eta,i\eta}$ & 0.01 & 0.028 \\
-$|\Delta\eta_\mathrm{trk,SC}|$ & 0.009 & 0.007 \\
-$|\Delta\phi_\mathrm{trk,SC}|$ & 0.03 & 0.09 \\
-$H/E$ & 0.06 & 0.06 \\
-$|1/E - 1/p|$ & 0.012 & 0.010 \\
-$|d_{xy}|$ & 0.011\,cm & 0.035\,cm\\
-$|d_{z}|$ & 0.047\,cm & 0.42\,cm\\
+$\sigma_{i\eta,i\eta}$ & $<0.01$ & $<0.028$ \\
+$|\Delta\eta_\mathrm{trk,SC}|$ & $<0.009$ & $<0.007$ \\
+$|\Delta\phi_\mathrm{trk,SC}|$ & $<0.03$ & $<0.09$ \\
+$H/E$ & $<0.06$ & $<0.06$ \\
+$|1/E - 1/p|$ & $<0.012$ & $<0.010$ \\
+$|d_{xy}|$ & $<0.011$\,cm & $<0.035$\,cm\\
+$|d_{z}|$ & $<0.047$\,cm & $<0.42$\,cm\\
 missing inner hits & $\leq 2$ & $\leq 1$\\
 conversion veto & yes & yes \\
 \bottomrule
@@ -127,7 +127,7 @@ The electron identification and isolation efficiency and the scale factor for th
 \centering
 %\includegraphics[width=0.5\textwidth]{images/effEleIdIso.pdf}
 \includegraphics[width=0.45\textwidth]{images/eleIdIsoEff.pdf}
-\caption{Electron identification and isolation efficiencies in data (top panel) and data/simulation scale factor (bottom panel), as a function of the electron \pt and for different $\eta$ bins.}\label{fig:eleIdIso}
+\caption{Electron identification and isolation efficiencies in data (top panel) and data/simulation scale factor (bottom panel), as a function of the electron \pt and for different $\eta$ bins. The data set used corresponds to 2.5\ifb collected at 13\TeV.}\label{fig:eleIdIso}
 \end{figure}
 	
 The identification and isolation efficiency and the scale factor for muons, according to the requirements in Table~\ref{tab:tightmuon}, are shown in Fig.~\ref{fig:muIdIso}.
@@ -140,10 +140,10 @@ The identification and isolation efficiency and the scale factor for muons, acco
 \subfigure[]{
 \includegraphics[width=0.45\textwidth]{images/muIdIsoEffEta.pdf}
 }
-\caption{Muon identification and isolation efficiencies in data and simulation (top panels) and data/simulation scale factor (bottom panels), as a function of the muon \pt (a) and $\eta$ (b).}\label{fig:muIdIso}
+\caption{Muon identification and isolation efficiencies in data and simulation (top panels) and data/simulation scale factor (bottom panels), as a function of the muon \pt (a) and $\eta$ (b). The data set used for this comparison corresponds to 0.8\ifb collected at 13\TeV.}\label{fig:muIdIso}
 \end{figure}	
-	
-	
+
+
 \subsection{Lepton trigger efficiency}\label{sec:trigeff}
 Analyses that involve leptons in the final state generally select the interesting events using lepton triggers. For instance, the \hwwllnn channel is characterized by the presence of two leptons in the final state, thereby both single lepton and double lepton triggers are used. The lepton triggers at the HLT level are characterized by \pt thresholds above which the trigger efficiency is very high (plateau region). Nevertheless, the trigger efficiency as a function of the lepton \pt is not a step function, but is characterized by a steep increase of the efficiency around the \pt threshold (turn-on region). The simulated samples thus need to be corrected in order to properly take into account the trigger efficiency. This can be achieved in two ways: including the HLT trigger in the event simulation or calculating the trigger efficiency in data and then applying it on simulated events. Several analyses, such as those related to the \hwwllnn channel, opt for the second approach.
 

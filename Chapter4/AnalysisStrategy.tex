@@ -39,7 +39,7 @@ The event selection consists of several steps. The first step is to select WW-li
 \item {\bf Extra lepton veto}: the event is required to have two and only two leptons passing the lepton selection;
 \item {\bf \boldmath$\MET$ preselection}: particle flow \MET is required to be greater than 20\GeV;
 \item {\bf Projected \boldmath$\MET$ selection}: minimum projected \MET is required to be larger than 20\GeV;
-\item {\bf Dilepton mass cut}: $\mll > 12$\GeV in order to reject low mass resonances and multijet backgrounds;
+\item {\bf Dilepton mass cut}: $\mll > 12$\GeV in order to reject multijet backgrounds;
 \item {\bf Dilepton \boldmath$\pt$ cut}: $\ptll > 30$\GeV to reduce the contribution of W+jets and \dytt backgrounds;
 \item {\bf Transverse mass}: $\mt>60$\GeV to reject \dytt events. 
 \end{itemize}
@@ -78,7 +78,7 @@ In this analysis, the b tagging efficiency and the misidentification probability
 
 The control sample is defined selecting events that pass the selections listed in Sec.~\ref{sec:Selections}, and have at least two jets with \pt greater than 30\GeV. If the leading jet has a JP discriminator value above the threshold of 0.5 it is considered a \emph{tag}, and the subleading jet is the \emph{probe}. In order to avoid any bias that could arise from the probe being always the subleading jet, the pair is tested also in reverse order, i.e. subleading jet is tested against the \emph{tag} selection, and in case it passes, the leading jet is used as \emph{probe} forming an independent \emph{tag-probe} pair. If the \probe jet has a discriminator value above the threshold used in the analysis, i.e. $>1.4$, then the \tp pair is called a \tpp pair. Otherwise it is identified as a \tfp pair\footnote{In general the Tag and Probe technique requires the \emph{tag} selection to be tighter then the \emph{probe} one, i.e. the \emph{tag} efficiency to be smaller. Nevertheless, a looser \emph{tag} selection has been preferred in this case in order to increase the background contribution in the \tpp category and obtain a more stable fit.}.
 
-If the \tg selection was sufficient to suppress any non top quark event, one could estimate the efficiency by dividing the number of \tp pairs in which the \probe passes the analysis JP requirement by the total number of \tp pairs. However this is not the case, since the contamination due to other background sources is not negligible. In order to estimate the efficiency in the presence of background, a variable that discriminates between true b-jets and other jets in a \ttbar sample is needed. This variable is the \pt of the \probe jet. For real b-jets this variable has a peak around 60\GeV, while it has a broad distribution for other types of jets.
+If the \tg selection was sufficient to suppress any non top quark event, one could estimate the efficiency by dividing the number of \tp pairs in which the \probe passes the analysis JP requirement by the total number of \tp pairs. However this is not the case, since the contamination due to other background sources is not negligible. In order to estimate the efficiency in the presence of background, a variable that discriminates between true b-jets and other jets in a \ttbar sample is needed. This variable is the \pt of the \probe jet. For real b-jets from top quark decays this variable has a peak around 60\GeV, while it has a broad distribution for other types of jets.
 
 The efficiencies are estimated performing a $\chi^{2}$ simultaneous fit of the \probe \pt spectrum in two different categories: one containing events with a \tpp pair and the other containing events with a \tfp pair. The normalisations in the two categories are linked by the following formulas:
 \begin{equation}
@@ -111,7 +111,7 @@ The result of the fit on MC simulation is shown in Fig.~\ref{fig:mc_tp}. The rel
 \varepsilon_\mathrm{b}^\mathrm{MC} &= 0.208\pm0.015 \quad .
 \end{split}
 \end{equation}
-These values are found to be equal to the true values of the b tagging efficiencies in simulation. The true value is computed by selecting jets that are matched within a cone of $\Delta{R}<0.5$ with a generator level b quark, and counting the fraction of those that have a JP discriminator above the threshold of 1.4. This check also assures that the \tp method does not introduce any bias within the simulation statistic accuracy.
+These values are found to be compatible with the true values of the b tagging efficiencies in simulation. The true value is computed by selecting jets that are matched within a cone of $\Delta{R}<0.5$ with a generator level b quark, and counting the fraction of those that have a JP discriminator above the threshold of 1.4. This check also assures that the \tp method does not introduce any bias within the simulation statistic accuracy.
 
 \begin{figure}[htb]
 \centering
