@@ -34,9 +34,6 @@ The \textsc{Powheg v2}~\cite{Melia:2011tj} is also used for simulating the $\mat
 
 The \ttbar process with dilepton final state is also generated using \textsc{Powheg v2}. The simulated processes for the WW and \ttbar production are illustrated in Table~\ref{tab:wwl}, together with the associated cross sections.
 
-Drell-Yan production of $\mathrm{Z/\gamma^{*}}$ is generated using \textsc{MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca}. 
-Other multiboson processes, such as WZ, ZZ, and VVV (V$=$W/Z), are generated with \textsc{MadGraph5\_aMC@NLO} and normalized to the cross section calculated at NLO accuracy. Other minor background samples are also generated, a list of the most relevant ones is presented in Table~\ref{tab:otherbck}.
-
 \begin{table}[htb]
 \caption{Simulated processes and cross sections for \ttbar and \WW production.}\label{tab:wwl}
 \begin{center}
@@ -52,6 +49,9 @@ $\mathrm{gg\to WW \to 2\ell2\nu}$ & 0.5905 \\
 \end{center}
 \end{table}
 
+Drell-Yan production of $\mathrm{Z/\gamma^{*}}$ is generated using \textsc{MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca}. 
+Other multiboson processes, such as WZ, ZZ, and VVV (V$=$W/Z), are generated with \textsc{MadGraph5\_aMC@NLO} and normalized to the cross section calculated at NLO accuracy. Other minor background samples are also generated, a list of the most relevant ones is presented in Table~\ref{tab:otherbck}.
+
 \begin{table}[htb]
 \caption{Simulated samples and cross sections for other minor background processes used in the analysis. Single top quark production includes the dominant tW process, as well as the subdominant production in the s- and t-channels.\label{tab:otherbck}}
 \begin{center}
@@ -62,8 +62,8 @@ Process & $\sigma\times\mathcal{B}$ [pb] \\
 Drell-Yan ($10\GeV < \mll < 50\GeV$)  &  20471.0  \\
 Drell-Yan ($\mll > 50\GeV$)   &  6025.26  \\
 Single top &   71.7  \\
-WZ$\to2\ell2\mathrm{q}$ &  5.5950 \\
-ZZ$\to2\ell2\mathrm{q}$ &  3.2210 \\
+$\mathrm{WZ\to2\ell 2 q}$ &  5.5950 \\
+$\mathrm{ZZ\to2\ell2q}$ &  3.2210 \\
 WWZ &  0.1651 \\
 WZZ &  0.05565 \\
 ZZZ &  0.01398  \\
@@ -82,7 +82,7 @@ The showering and hadronization systematic uncertainty is estimated by interfaci
 The simulated samples are generated with distributions for the number of pile-up interactions that are meant to roughly cover the expected conditions for the different data taking periods. In order to factorize these effects, the number of true pile-up interactions from the simulation truth is reweighted to match the data.
 In Fig.~\ref{Fig:pu}, the effect of this reweighting on a sample enriched in \dyll events is shown. The average number of pile-up is approximately $11.5$.
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.45\textwidth]{images/13TeV/nvertices.png}
 \caption{

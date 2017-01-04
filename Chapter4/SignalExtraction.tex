@@ -54,12 +54,20 @@ N_i = \mu_i (s_i -f_i) \quad ,
 
 \noindent where $\mu_i$ is the measured signal strength, $s_i$ and $f_i$ are the total number of reconstructed signal events and the number of reconstructed out-of-fiducial signal events expected from simulation, respectively.
 
-The fit makes use of the binned maximum likelihood approach. The likelihood function, $\mathcal{L}$, restricted to the \pth bin $j$, can be written as:
+The fit makes use of the binned maximum likelihood approach. The likelihood function $\mathcal{L}$, restricted to the \pth bin $j$, can be written as:
 \begin{equation}
-\mathcal{L}(\mu_j,\theta) = \prod_{i=0}^{N_\mathrm{bins}} \frac{(\mu_j s_i(\theta) + b_i(\theta))^{n_i}}{n_i!}e^{-\mu_j s_i(\theta) - b_i(\theta)} \cdot p(\tilde{\theta} |\theta ) \quad ,
+\mathcal{L}(data|\mu_j,\theta) = Poisson(data|\mu_j \cdot s(\theta) + b(\theta)) \cdot p(\tilde{\theta} |\theta ) \quad ,
 \end{equation}
 
-\noindent where $\mu_j$ is the signal strength in the bin $j$, i.e. the parameter of interest of the fit, which multiplies the signal yield. The index $i$ runs over the bins of the \mll-\mt two-dimensional histogram corresponding to the \pth bin $j$, $s_i$ and $b_i$ are the expected number of signal and background events respectively in bin $i$, and $n_i$ is the total number of observed events in bin $i$. The set of parameters $\theta$ represents the full suite of nuisance parameters used to incorporate the systematic uncertainties. Each nuisance parameter is constrained in the fit including the prior distribution functions $p(\tilde{\theta}|\theta)$ in the likelihood, where $\tilde{\theta}$ is the set of default values for the $\theta$ parameters~\cite{CMS-NOTE-2011-005}. For the major part of the nuisance parameters a log-normal prior distribution is used, with a standard deviation corresponding to the given systematic uncertainty. This is the optimal choice to describe uncertainties of definite positive observables, like cross sections, efficiencies, luminosity, etc. The usage of a gaussian distribution, under certain circumstances, would indeed allow the value of the observable to fluctuate below zero.
+\noindent where $Poisson(data|\mu_j \cdot s + b)$ is the product of the Poisson probabilities to observe $n_i$ events in bin $i$, i.e.:
+\begin{equation}\label{eq:poisson}
+\prod_i \frac{(\mu_j\cdot s_i + b_i)^{n_i}}{n_i !} e^{-\mu_j \cdot s_i - b_i} \quad.
+\end{equation}
+
+%\begin{equation}
+%\mathcal{L}(\mu_j,\theta) = \prod_{i=0}^{N_\mathrm{bins}} \frac{(\mu_j s_i(\theta) + b_i(\theta))^{n_i}}{n_i!}e^{-\mu_j s_i(\theta) - b_i(\theta)} \cdot p(\tilde{\theta} |\theta ) \quad ,
+%\end{equation}
+Here $\mu_j$ is the signal strength in the bin $j$, i.e. the parameter of interest of the fit, which multiplies the signal yield. The index $i$ runs over the bins of the \mll-\mt two-dimensional histogram corresponding to the \pth bin $j$, $s_i$ and $b_i$ are the expected number of signal and background events respectively in bin $i$, and $n_i$ is the total number of observed events in bin $i$. The set of parameters $\theta$ represents the full suite of nuisance parameters used to incorporate the systematic uncertainties. Each nuisance parameter is constrained in the fit including the prior distribution functions $p(\tilde{\theta}|\theta)$ in the likelihood, where $\tilde{\theta}$ is the set of default values for the $\theta$ parameters~\cite{CMS-NOTE-2011-005}. For the major part of the nuisance parameters a log-normal prior distribution is used, with a standard deviation corresponding to the given systematic uncertainty. This is the optimal choice to describe uncertainties of definite positive observables, like cross sections, efficiencies, luminosity, etc. The usage of a gaussian distribution, under certain circumstances, would indeed allow the value of the observable to fluctuate below zero.
 For some nuisance parameters, as the ones related to the statistical uncertainty coming from the background measurement in data control regions, a Gamma distribution is instead recommended. 
 A log-uniform distribution is used for the uncertainties related to the normalization of background contributions that are left unconstrained in the fit, such as for the WW background process.
 Finally, some of the experimental uncertainties related to the shape of signal and background processes are modelled by means of additional histograms as explained in Sec.~\ref{sec:syst_treatment}. The correlations of nuisance parameters across different \pth bins are taken into account. Moreover the nuisance parameters can also be correlated (or anti-correlated) between signal and different background processes. As an example, the uncertainty related to the integrated luminosity measurement is fully correlated for all the signal and background processes.
@@ -120,7 +128,7 @@ A comparison of data and background predictions is shown in Fig.~\ref{fig:mllSig
 \begin{table}[htb]
 \footnotesize{
 \begin{center}{
-  \caption{Signal prediction, background estimates and observed number of events in data are shown in each \pth{} bin after applying the analysis selection requirements. The total uncertainty in the number of events is reported. For signal processes, the yield related to ggH are shown, separated with respect to the contribution of the other production mechanisms (XH=VBF+VH). The WW process includes both quark and gluon induced contributions, while the Top process takes into account both \ttbar and tW. }\label{table:yields}
+  \caption{Signal prediction, post-fit background estimates and observed number of events in data are shown in each \pth{} bin after applying the analysis selection requirements. The total uncertainty in the number of events is reported. For signal processes, the yield related to ggH are shown, separated with respect to the contribution of the other production mechanisms (XH=VBF+VH). The WW process includes both quark and gluon induced contributions, while the Top process takes into account both \ttbar and tW. }\label{table:yields}
 \begin{tabularx}{\textwidth}{ l >{\centering}X >{\centering}X >{\centering}X >{\centering}X >{\centering}X >{\centering}X }
 
 \toprule
@@ -199,5 +207,5 @@ In order to measure the inclusive cross section times branching fraction in the 
 \sigma_{\mathrm{fid}} = 39\pm 8~(\mathrm{stat}) \pm 9~(\mathrm{syst})~\mathrm{fb} \quad ,
 \end{equation} 
 
-\noindent in agreement within uncertainties with the theoretical estimate of $48 \pm 8 ~\mathrm{fb}$, computed integrating the simulated spectrum obtained with the \textsc{Powheg V2} generator for the ggH process and including the XH contribution.
+\noindent in agreement within uncertainties with the theoretical estimate of $48 \pm 8 ~\mathrm{fb}$, computed integrating the simulated spectrum obtained with the \textsc{Powheg V2} generator for the ggH process, scaled to the NNLO+NNLL cross section, and including the XH contribution.
 
