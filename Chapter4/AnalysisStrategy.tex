@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:AnalysisStrategy}
 
-The analysis presented here is based on the previously published inclusive \hwwllnn measurements by CMS~\cite{Chatrchyan:2013iaa}, modified to be inclusive in the number of jets. 
+The analysis presented here is based on the published inclusive \hwwllnn measurements by CMS~\cite{Chatrchyan:2013iaa}, modified to be inclusive in the number of jets. 
 This modification significantly reduces the uncertainties related to the modelling of the number of jets produced in association with the Higgs boson.
 
 The signal contribution is extracted performing a template binned likelihood fit, using the two-dimensional (\mll, \mt) shape for each background and signal process, as described in Sec.~\ref{sec:SignalExtraction}.
@@ -25,7 +25,7 @@ Since the \MET resolution is degraded by pile-up, the minimum of two projected \
 Background events from \ttbar and tW production are rejected applying a soft-muon veto and a b tagging veto. The soft-muon algorithm is designed to identify muons from b quark decays requiring loose muon identification selections, as described in Sec.~\ref{sec:muID}, and low relative isolation (greater than 0.1 for muons with $\pt>20$\GeV). Events containing at least one muon satisfying these requirements are rejected by the soft-muon veto.
 
 The b tagging veto rejects events that contain jets identified as b-jets using two different algorithms for high and low \pt jets (see Sec.~\ref{sec:btag}). For jets with \pt between 10 and 30\GeV, the TCHE algorithm is used. Low-\pt jets passing the TCHE discriminant threshold of 2.1 are tagged as b-jets.
-For jets with $\pt>30$\GeV, a better performing algorithm, JP, is used. Jets are identified as b-jets by the JP algorithm if the discriminating variable has a value above 1.4.
+For jets with $\pt>30$\GeV, a better performing algorithm, JP, is used\footnote{The default algorithm used in the 8\TeV inclusive analysis was TCHE. Here the event selection has been optimized to perform an inclusive analysis in number of jets, and the usage of a better performing b tagging algorithm (JP) has been preferred for events containing high \pt jets.}. Jets are identified as b-jets by the JP algorithm if the discriminating variable has a value above 1.4.
 In the following, a b-tagged jet is defined as a jet, within $|\eta|<2.4$ (b tagging requires the tracker information), and with a value of the discriminating variable above the mentioned thresholds for the two algorithms.
 
 The event selection consists of several steps. The first step is to select WW-like events applying a selection that consists of the following set of cuts:
